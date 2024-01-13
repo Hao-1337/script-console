@@ -13,10 +13,10 @@ cd ./script-console
 ## Select the version you want
 + You can see all available version by using:
 ```bash
-npn view @minecraft/server versions
-npn view @minecraft/server-ui versions
+npm view @minecraft/server versions
+npm view @minecraft/server-ui versions
 ```
-+ Just coppy the version you want and install it:
++ Just copy the version you want and install it:
 ```bash
 npm i @minecraft/server@<you version>
 npm i @minecraft/server-ui@<you version>
