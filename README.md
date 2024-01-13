@@ -4,7 +4,7 @@
 
 > [!NOTE]
 > Note that ingame-doucment can't auto up-to-date with game.<br>
-> [Check this out]() for change the document versions
+> [Check this out](/version.md) for change the document versions
  -----------
 ### What we get here
  ✅ Document friendly.<br>
@@ -17,3 +17,6 @@
 ![Screenshot_20240110_213057_5c8300b655012b1930f2e0a7b81bf6a9](https://github.com/Hao-1337/script-console/assets/108588018/541739c4-7f19-46d5-b717-9f38d219ecba)
 ### And the console
 ![Screenshot_20240113_182202_5c8300b655012b1930f2e0a7b81bf6a9](https://github.com/Hao-1337/script-console/assets/108588018/0f2bec4c-2661-47f2-8023-08544875e630)
+--------
+## About script usage
++ [See right here](/script.md)
