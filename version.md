@@ -9,7 +9,8 @@ git clone https://github.com/Hao-1337/script-console.git
 cd ./script-console
 
 ```
-## Select the version you want:
+--------
+## Select the version you want
 + You can see all available version by using:
 ```bash
 npn view @minecraft/server versions
