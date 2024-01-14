@@ -9,6 +9,11 @@ git clone https://github.com/Hao-1337/script-console.git
 cd ./script-console
 
 ```
++ Install the necessary npm:
+```bash
+npm i
+```
++ If you can't do it ik [here is](https://github.com/Hao-1337/script-console/releases)
 --------
 ## Select the version you want
 + You can see all available version by using:
