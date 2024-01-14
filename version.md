@@ -18,8 +18,8 @@ npm view @minecraft/server-ui versions
 ```
 + Just copy the version you want and install it:
 ```bash
-npm i @minecraft/server@<you version>
-npm i @minecraft/server-ui@<you version>
+npm i @minecraft/server@<your version>
+npm i @minecraft/server-ui@<your version>
 ```
 + When finished, run this command:
 ```bash
