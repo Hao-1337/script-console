@@ -63,7 +63,7 @@ export class ScriptDocument {
   constructor(player) {
     if (!this.hasSpinnet()) throw new InternalError("Spinnet not found");
 
-    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(`\n§aWelcome to script document. Here are all the classes for the specified script version. Choose any class to view.\n\n§6Version§f:§a @minecraft/server§f: ${ScriptDocument.version.server}\n              §a@minecraft/server-ui§f: ${ScriptDocument.version["server-ui"]}\n§6Made by§f:§e Choigame123`);
+    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(`\n§aWelcome to script document. Here are all the classes for the specified script version. Choose any class to view.\n\n§6Version§f:§a @minecraft/server§f: ${ScriptDocument.version.server}\n              §a@minecraft/server-ui§f: ${ScriptDocument.version["server-ui"]}\n§6Made by§f:§e Hao1337`);
 
     this.allClass = Object.keys(Spinnet).slice(1);
     this.forms = [];
@@ -239,7 +239,7 @@ export class ScriptConsole {
    */
   static uiID = "§s§c§r§i§p§t";
   /** @type {string} */
-  static intro = '\n§a      Welcome to javascript console.\n\n§b      Enter the code you want to test -> "Execute code" to execute\n§e      "Reboot this console"§f:§a The console will automatically reopen when finish the execute\n\n      §a All data from the previous session will be saved\n\n      §eMade by§f:§6 Choigame123\n\n';
+  static intro = '\n§a      Welcome to javascript console.\n\n§b      Enter the code you want to test -> "Execute code" to execute\n§e      "Reboot this console"§f:§a The console will automatically reopen when finish the execute\n\n      §a All data from the previous session will be saved\n\n      §eMade by§f:§6 Hao1337\n\n';
   /**
    * Checks if eval is enabled.
    * @returns {boolean} Returns true if eval is enabled, otherwise false.
@@ -382,7 +382,7 @@ export class ScriptConsole {
       input = input.replace(match[0], ScriptConsole.staticImport(match[0]));
     }
     
-    world.debug(input)
+    //world.debug(input)
     function timeStamp() {
       let date = new Date(),
           mili = date.getMilliseconds();
