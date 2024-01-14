@@ -63,7 +63,7 @@ export class ScriptDocument {
   constructor(player) {
     if (!this.hasSpinnet()) throw new InternalError("Spinnet not found");
 
-    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(`\n§aWelcome to script document. Here are all the classes for the specified script version. Choose any class to view.\n\n§6Version§f:§a @minecraft/server§f: ${ScriptDocument.version.server}\n              §a@minecraft/server-ui§f: ${ScriptDocument.version["server-ui"]}\n§6Made by§f:§e Hao1337`);
+    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(`\n§aWelcome to script document. Here are all the classes for the specified script version. Choose any class to view.\n\n§6Version§f:§a @minecraft/server§f: ${ScriptDocument.version.server}\n              §a@minecraft/server-ui§f: ${ScriptDocument.version["server-ui"]}\n§6Made by§f:§e Choigame123`);
 
     this.allClass = Object.keys(Spinnet).slice(1);
     this.forms = [];
@@ -239,7 +239,7 @@ export class ScriptConsole {
    */
   static uiID = "§s§c§r§i§p§t";
   /** @type {string} */
-  static intro = '\n§a      Welcome to javascript console.\n\n§b      Enter the code you want to test -> "Execute code" to execute\n§e      "Reboot this console"§f:§a The console will automatically reopen when finish the execute\n\n      §a All data from the previous session will be saved\n\n      §eMade by§f:§6 Hao1337\n\n';
+  static intro = '\n§a      Welcome to javascript console.\n\n§b      Enter the code you want to test -> "Execute code" to execute\n§e      "Reboot this console"§f:§a The console will automatically reopen when finish the execute\n\n      §a All data from the previous session will be saved\n\n      §eMade by§f:§6 Choigame123\n\n';
   /**
    * Checks if eval is enabled.
    * @returns {boolean} Returns true if eval is enabled, otherwise false.
@@ -250,6 +250,34 @@ export class ScriptConsole {
       eval("a = 1");
     } catch { return false }
     return true;
+  }
+  static staticImport(str) {
+    let regex = /(\n|)import\s*(((?:\*\s*as\s*(\w+)\s*)?((\w+)(?:\s*as\s+?(\w+)|))?\s*(?:(,|)\s*{([\s\S]+?)})?)\s*from\s*"(.+?)")?(;|)/gm,
+        match,
+        out = "";
+    while ((match = regex.exec(str)) !== null) {
+      regex.lastIndex = match.index + match[0].length;
+      out += match[1] || "";
+      /**
+       * import everything (*)
+       */
+      if (match[4]) {
+        out += `var ${match[4]} = await import("${match[10]}");`;
+        continue;
+      }
+      /**
+       * Default import
+       */
+      if (match[6]) out += `var { "default": ${match[7] || match[6]}`;
+      /**
+       * Normal import
+       */
+      if (match[9]) {
+        out += `${match[5] ? "," : "var {"} ${match[9].replace(/as/g, ":")}`;
+      }
+      out += ` } = await import("${match[10]}");`;
+    }
+    return out;
   }
   /**
    * Splits a given string into chunks.
@@ -336,7 +364,7 @@ export class ScriptConsole {
    * Executes the code entered by the user.
    * @param {ModalFormDataRespone} param - Form values and cancellation status.
    */
-  onExecute({formValues, canceled}) {
+  async onExecute({formValues, canceled}) {
     if (canceled) return;
     if (!formValues[0].trim().length) {
       this.body = "§cYou even didn't enter a thing!";
@@ -344,15 +372,24 @@ export class ScriptConsole {
     }
     
     
-    let output = "", error, result, Time = {};
+    let input = formValues[0],
+        match, rf, output = "",
+        error, result, Time = {},
+        regex = /^\s*import\s*[\s\S]+?\s*from\s.+(;|)$/gm;
 
+    while ((match = regex.exec(input)) !== null) {
+      regex.lastIndex = match.index + match[0].length;
+      input = input.replace(match[0], ScriptConsole.staticImport(match[0]));
+    }
+    
+    world.debug(input)
     function timeStamp() {
       let date = new Date(),
           mili = date.getMilliseconds();
       return date.toString().split(" ")[4] + `:${mili}`;
     }
 
-    function evalScope() {
+    async function evalScope() {
         let console = {
           log: function (value) { output += `\n[${timeStamp()} LOG] ${value}` },
           warn: function (value) { output += `\n[${timeStamp()} WARN] ${value}` },
@@ -372,12 +409,12 @@ export class ScriptConsole {
           },
           info: function (value) { output += `\n[${timeStamp()} INFO] ${value}` }
         };
-        try { eval(`try { result = (${formValues[0]}) } catch (e) { console.error(e + e.stack) }`) } catch {
-        try { eval(`try { ${formValues[0]} } catch (e) { console.error(e + e.stack) }`) } catch (e) { error = e }
+        try { eval(`result = (${formValues[0]})`) } catch {
+        try { eval(`rf = (async function() {try { ${input} } catch (e) { console.error(e + e.stack) }})()`) } catch (e) { error = e };
+        await rf;
       }
     }
-
-    evalScope();
+    await evalScope();
     this.code = formValues[0];
     
     if (output.startsWith("\n")) output = output.slice(1, output.length);
