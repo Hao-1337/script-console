@@ -1,12 +1,14 @@
 let Spinnet = {
   "versions": {
     "server": "1.8.0-beta.1.20.50-stable",
-    "server-ui": "1.2.0-beta.1.20.50-stable"
+    "server-ui": "1.2.0-beta.1.20.50-stable",
+    "server-gametest": "1.0.0-beta.1.20.50-stable"
   },
   "Block": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16,7 +18,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Returns the dimension that the block is within."
+        "remarks": [
+          "Returns the dimension that the block is within."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -26,7 +30,9 @@ let Spinnet = {
     "isAir": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this block is an air block (i.e., empty space).",
+        "remarks": [
+          "Returns true if this block is an air block (i.e., empty space)."
+        ],
         "throws": "property can throw when used. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "readonly isAir: boolean",
@@ -37,7 +43,9 @@ let Spinnet = {
     "isLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this block is a liquid block - (e.g., a water block and a lava block are liquid, while an air block and a stone block are not. Water logged blocks are not liquid blocks).",
+        "remarks": [
+          "Returns true if this block is a liquid block - (e.g., a water block and a lava block are liquid, while an air block and a stone block are not. Water logged blocks are not liquid blocks)."
+        ],
         "throws": "property can throw when used. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "readonly isLiquid: boolean",
@@ -48,8 +56,10 @@ let Spinnet = {
     "isSolid": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns true if this block is solid and impassible - (e.g., a cobblestone block and a diamond block are solid, while a ladder block and a fence block are not)."
+        ],
         "beta": "",
-        "remarks": "Returns true if this block is solid and impassible - (e.g., a cobblestone block and a diamond block are solid, while a ladder block and a fence block are not).",
         "throws": "property can throw when used. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "readonly isSolid: boolean",
@@ -60,8 +70,10 @@ let Spinnet = {
     "isWaterlogged": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Returns or sets whether this block has a liquid on it. This property can't be edited in read-only mode."
+        "remarks": [
+          "Returns or sets whether this block has a liquid on it. This property can't be edited in read-only mode."
+        ],
+        "beta": ""
       },
       "match": "isWaterlogged: boolean",
       "kind": "public",
@@ -71,7 +83,9 @@ let Spinnet = {
     "location": {
       "comment": {
         "params": {},
-        "remarks": "Coordinates of the specified block.",
+        "remarks": [
+          "Coordinates of the specified block."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly location: Vector3",
@@ -82,7 +96,9 @@ let Spinnet = {
     "permutation": {
       "comment": {
         "params": {},
-        "remarks": "Additional block configuration data that describes the block.",
+        "remarks": [
+          "Additional block configuration data that describes the block."
+        ],
         "throws": "property can throw when used. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "readonly permutation: BlockPermutation",
@@ -93,8 +109,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Gets the type of block."
+        ],
         "beta": "",
-        "remarks": "Gets the type of block.",
         "throws": "property can throw when used. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "readonly typeId: string",
@@ -105,7 +123,9 @@ let Spinnet = {
     "x": {
       "comment": {
         "params": {},
-        "remarks": "X coordinate of the block."
+        "remarks": [
+          "X coordinate of the block."
+        ]
       },
       "match": "readonly x: number",
       "kind": "readonly",
@@ -115,7 +135,9 @@ let Spinnet = {
     "y": {
       "comment": {
         "params": {},
-        "remarks": "Y coordinate of the block."
+        "remarks": [
+          "Y coordinate of the block."
+        ]
       },
       "match": "readonly y: number",
       "kind": "readonly",
@@ -125,7 +147,9 @@ let Spinnet = {
     "z": {
       "comment": {
         "params": {},
-        "remarks": "Z coordinate of the block."
+        "remarks": [
+          "Z coordinate of the block."
+        ]
       },
       "match": "readonly z: number",
       "kind": "readonly",
@@ -137,7 +161,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps above to step before returning."
         },
-        "remarks": "Returns the {@link Block} above this block (positive in the Y direction).",
+        "remarks": [
+          "Returns the {@link Block} above this block (positive in the Y direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "above(steps?: number): Block | undefined",
@@ -150,7 +176,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps below to step before returning."
         },
-        "remarks": "Returns the {@link Block} below this block (negative in the Y direction).",
+        "remarks": [
+          "Returns the {@link Block} below this block (negative in the Y direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "below(steps?: number): Block | undefined",
@@ -161,7 +189,9 @@ let Spinnet = {
     "bottomCenter": {
       "comment": {
         "params": {},
-        "remarks": "Returns the {@link @minecraft/server.Location} of the center of this block on the X and Z axis."
+        "remarks": [
+          "Returns the {@link @minecraft/server.Location} of the center of this block on the X and Z axis."
+        ]
       },
       "match": "bottomCenter(): Vector3",
       "kind": "public",
@@ -174,8 +204,10 @@ let Spinnet = {
           "blockToPlace": "Block type or block permutation to check placement for.",
           "faceToPlaceOn": "Optional specific face of this block to check placement against."
         },
+        "remarks": [
+          "Checks to see whether it is valid to place the specified block type or block permutation, on a specified face on this block"
+        ],
         "beta": "",
-        "remarks": "Checks to see whether it is valid to place the specified block type or block permutation, on a specified face on this block",
         "returns": "Returns `true` if the block type or permutation can be placed on this block, else `false`.",
         "throws": "function can throw errors. {@link Error} {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -187,7 +219,9 @@ let Spinnet = {
     "center": {
       "comment": {
         "params": {},
-        "remarks": "Returns the {@link @minecraft/server.Location} of the center of this block on the X, Y, and Z axis."
+        "remarks": [
+          "Returns the {@link @minecraft/server.Location} of the center of this block on the X, Y, and Z axis."
+        ]
       },
       "match": "center(): Vector3",
       "kind": "public",
@@ -199,7 +233,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps to the east to step before returning."
         },
-        "remarks": "Returns the {@link Block} to the east of this block (positive in the X direction).",
+        "remarks": [
+          "Returns the {@link Block} to the east of this block (positive in the X direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "east(steps?: number): Block | undefined",
@@ -212,7 +248,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:inventory'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the {@link BlockComponentTypes} enum."
         },
-        "remarks": "Gets a component (that represents additional capabilities) for a block - for example, an inventory component of a chest block.",
+        "remarks": [
+          "Gets a component (that represents additional capabilities) for a block - for example, an inventory component of a chest block."
+        ],
         "returns": "Returns the component if it exists on the block, otherwise undefined.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -224,8 +262,10 @@ let Spinnet = {
     "getRedstonePower": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns the net redstone power of this block."
+        ],
         "beta": "",
-        "remarks": "Returns the net redstone power of this block.",
         "returns": "Returns undefined if redstone power is not applicable to this block.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -237,8 +277,10 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns a set of tags for a block."
+        ],
         "beta": "",
-        "remarks": "Returns a set of tags for a block.",
         "returns": "The list of tags that the block has.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -252,8 +294,10 @@ let Spinnet = {
         "params": {
           "tag": "Tag to check for."
         },
+        "remarks": [
+          "Checks to see if the permutation of this block has a specific tag."
+        ],
         "beta": "",
-        "remarks": "Checks to see if the permutation of this block has a specific tag.",
         "returns": "Returns `true` if the permutation of this block has the tag, else `false`.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}",
         "example": "```typescript import { world } from \"@minecraft/server\"; // Fetch the block const block = world.getDimension(\"overworld\").getBlock({ x: 1, y: 2, z: 3 }); console.log(`Block is dirt: ${block.hasTag(\"dirt\")}`); console.log(`Block is wood: ${block.hasTag(\"wood\")}`); console.log(`Block is stone: ${block.hasTag(\"stone\")}`); ```"
@@ -266,7 +310,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a block is still valid (for example, if the block is unloaded, references to that block will no longer be valid.)",
+        "remarks": [
+          "Returns true if this reference to a block is still valid (for example, if the block is unloaded, references to that block will no longer be valid.)"
+        ],
         "returns": "True if this block object is still working and valid."
       },
       "match": "isValid(): boolean",
@@ -279,7 +325,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps to the north to step before returning."
         },
-        "remarks": "Returns the {@link Block} to the north of this block (negative in the Z direction).",
+        "remarks": [
+          "Returns the {@link Block} to the north of this block (negative in the Z direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "north(steps?: number): Block | undefined",
@@ -292,7 +340,9 @@ let Spinnet = {
         "params": {
           "offset": "The offset vector. For example, an offset of 0, 1, 0 will return the block above the current block."
         },
-        "remarks": "Returns a block at an offset relative vector to this block.",
+        "remarks": [
+          "Returns a block at an offset relative vector to this block."
+        ],
         "returns": "Block at the specified offset, or undefined if that block could not be retrieved (for example, the block and its relative chunk is not loaded yet.)",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -306,7 +356,9 @@ let Spinnet = {
         "params": {
           "permutation": "Permutation that contains a set of property states for the Block."
         },
-        "remarks": "Sets the block in the dimension to the state of the permutation. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the block in the dimension to the state of the permutation. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "setPermutation(permutation: BlockPermutation): void",
@@ -319,8 +371,10 @@ let Spinnet = {
         "params": {
           "blockType": "Identifier of the type of block to apply - for example, minecraft:powered_repeater."
         },
+        "remarks": [
+          "Sets the type of block. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Sets the type of block. This function can't be called in read-only mode.",
         "throws": "function can throw errors. {@link Error} {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "setType(blockType: BlockType | string): void",
@@ -333,7 +387,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps to the south to step before returning."
         },
-        "remarks": "Returns the {@link Block} to the south of this block (positive in the Z direction).",
+        "remarks": [
+          "Returns the {@link Block} to the south of this block (positive in the Z direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "south(steps?: number): Block | undefined",
@@ -346,8 +402,10 @@ let Spinnet = {
         "params": {
           "permutation": "Permutation that contains a set of property states for the Block."
         },
+        "remarks": [
+          "Tries to set the block in the dimension to the state of the permutation by first checking if the placement is valid. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Tries to set the block in the dimension to the state of the permutation by first checking if the placement is valid. This function can't be called in read-only mode.",
         "returns": "Returns `true` if the block permutation data was successfully set, else `false`.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -361,7 +419,9 @@ let Spinnet = {
         "params": {
           "steps": "Number of steps to the west to step before returning."
         },
-        "remarks": "Returns the {@link Block} to the west of this block (negative in the X direction).",
+        "remarks": [
+          "Returns the {@link Block} to the west of this block (negative in the X direction)."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "west(steps?: number): Block | undefined",
@@ -374,7 +434,9 @@ let Spinnet = {
     "x": {
       "comment": {
         "params": {},
-        "remarks": "X size (west to east) component of this block area."
+        "remarks": [
+          "X size (west to east) component of this block area."
+        ]
       },
       "match": "x: number",
       "kind": "public",
@@ -384,7 +446,9 @@ let Spinnet = {
     "y": {
       "comment": {
         "params": {},
-        "remarks": "Y size (down to up) of this block area size."
+        "remarks": [
+          "Y size (down to up) of this block area size."
+        ]
       },
       "match": "y: number",
       "kind": "public",
@@ -394,7 +458,9 @@ let Spinnet = {
     "z": {
       "comment": {
         "params": {},
-        "remarks": "Z size (south to north) of this block area size."
+        "remarks": [
+          "Z size (south to north) of this block area size."
+        ]
       },
       "match": "z: number",
       "kind": "public",
@@ -404,7 +470,9 @@ let Spinnet = {
     "constructor": {
       "comment": {
         "params": {},
-        "remarks": "Creates a new BlockAreaSize object."
+        "remarks": [
+          "Creates a new BlockAreaSize object."
+        ]
       },
       "match": "constructor(x: number, y: number, z: number)",
       "kind": "public",
@@ -414,7 +482,9 @@ let Spinnet = {
     "equals": {
       "comment": {
         "params": {},
-        "remarks": "Tests whether this block area size is equal to another BlockAreaSize object."
+        "remarks": [
+          "Tests whether this block area size is equal to another BlockAreaSize object."
+        ]
       },
       "match": "equals(other: BlockAreaSize): boolean",
       "kind": "public",
@@ -425,7 +495,8 @@ let Spinnet = {
   "BlockComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -435,7 +506,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -445,7 +518,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -455,7 +530,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -467,7 +544,8 @@ let Spinnet = {
   "BlockEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -477,7 +555,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -487,7 +567,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -498,7 +580,8 @@ let Spinnet = {
   "BlockExplodeAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -508,7 +591,9 @@ let Spinnet = {
     "explodedBlockPermutation": {
       "comment": {
         "params": {},
-        "remarks": "Description of the block that has exploded."
+        "remarks": [
+          "Description of the block that has exploded."
+        ]
       },
       "match": "readonly explodedBlockPermutation: BlockPermutation",
       "kind": "readonly",
@@ -518,7 +603,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Optional source of the explosion."
+        "remarks": [
+          "Optional source of the explosion."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -528,7 +615,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -539,7 +628,8 @@ let Spinnet = {
   "BlockExplodeAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -549,7 +639,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an explosion occurs, as it impacts individual blocks. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an explosion occurs, as it impacts individual blocks. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: BlockExplodeAfterEvent) => void): (arg: BlockExplodeAfterEvent) => void",
       "kind": "public",
@@ -559,7 +651,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an explosion occurs, as it impacts individual blocks. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an explosion occurs, as it impacts individual blocks. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: BlockExplodeAfterEvent) => void): void",
@@ -571,7 +665,8 @@ let Spinnet = {
   "BlockInventoryComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -581,7 +676,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The container which holds an {@link ItemStack}.",
+        "remarks": [
+          "The container which holds an {@link ItemStack}."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly block: Block",
@@ -592,7 +689,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -602,7 +701,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -614,7 +715,8 @@ let Spinnet = {
   "BlockLavaContainerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -623,7 +725,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:lavaContainer'",
       "kind": "static readonly",
@@ -633,7 +736,9 @@ let Spinnet = {
     "fillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        "remarks": [
+          "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        ]
       },
       "match": "fillLevel: number",
       "kind": "public",
@@ -643,7 +748,9 @@ let Spinnet = {
     "isValidLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)",
+        "remarks": [
+          "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)"
+        ],
         "returns": "True if this liquid container still exists, is valid and contains the expected liquid type."
       },
       "match": "isValidLiquid(): boolean",
@@ -654,7 +761,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -664,7 +773,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -674,7 +785,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -686,7 +799,8 @@ let Spinnet = {
   "BlockLiquidContainerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -696,7 +810,9 @@ let Spinnet = {
     "fillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        "remarks": [
+          "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        ]
       },
       "match": "fillLevel: number",
       "kind": "public",
@@ -706,7 +822,9 @@ let Spinnet = {
     "isValidLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)",
+        "remarks": [
+          "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)"
+        ],
         "returns": "True if this liquid container still exists, is valid and contains the expected liquid type."
       },
       "match": "isValidLiquid(): boolean",
@@ -717,7 +835,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -727,7 +847,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -737,7 +859,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -749,7 +873,8 @@ let Spinnet = {
   "BlockLocationIterator": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -759,7 +884,9 @@ let Spinnet = {
     "next": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "next(): IteratorResult<Vector3>",
       "kind": "public",
@@ -770,7 +897,8 @@ let Spinnet = {
   "BlockPermutation": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -780,8 +908,10 @@ let Spinnet = {
     "clone": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The {@link BlockType} that the permutation has."
+        "remarks": [
+          "The {@link BlockType} that the permutation has."
+        ],
+        "beta": ""
       },
       "match": "clone(): BlockPermutation",
       "kind": "public",
@@ -791,8 +921,10 @@ let Spinnet = {
     "getAllStates": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns all available block states associated with this block."
+        ],
         "beta": "",
-        "remarks": "Returns all available block states associated with this block.",
         "returns": "Returns the list of all of the block states that the permutation has."
       },
       "match": "getAllStates(): Record<string, boolean | number | string>",
@@ -805,8 +937,10 @@ let Spinnet = {
         "params": {
           "amount": "Number of instances of this block to place in the prototype item stack."
         },
-        "beta": "",
-        "remarks": "Retrieves a prototype item stack based on this block permutation that can be used with item Container/ContainerSlot APIs."
+        "remarks": [
+          "Retrieves a prototype item stack based on this block permutation that can be used with item Container/ContainerSlot APIs."
+        ],
+        "beta": ""
       },
       "match": "getItemStack(amount?: number): ItemStack | undefined",
       "kind": "public",
@@ -818,8 +952,10 @@ let Spinnet = {
         "params": {
           "stateName": "Name of the block state who's value is to be returned."
         },
+        "remarks": [
+          "Gets a state for the permutation."
+        ],
         "beta": "",
-        "remarks": "Gets a state for the permutation.",
         "returns": "Returns the state if the permutation has it, else `undefined`."
       },
       "match": "getState(stateName: string): boolean | number | string | undefined",
@@ -830,8 +966,10 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Creates a copy of the permutation."
+        "remarks": [
+          "Creates a copy of the permutation."
+        ],
+        "beta": ""
       },
       "match": "getTags(): string[]",
       "kind": "public",
@@ -841,8 +979,10 @@ let Spinnet = {
     "hasTag": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Checks to see if the permutation has a specific tag."
+        ],
         "beta": "",
-        "remarks": "Checks to see if the permutation has a specific tag.",
         "returns": "Returns `true` if the permutation has the tag, else `false`.",
         "example": "```typescript import { world } from \"@minecraft/server\"; // Fetch the block const block = world.getDimension(\"overworld\").getBlock({ x: 1, y: 2, z: 3 }); const blockPerm = block.getPermutation(); console.log(`Block is dirt: ${blockPerm.hasTag(\"dirt\")}`); console.log(`Block is wood: ${blockPerm.hasTag(\"wood\")}`); console.log(`Block is stone: ${blockPerm.hasTag(\"stone\")}`); ```"
       },
@@ -856,7 +996,9 @@ let Spinnet = {
         "params": {
           "blockName": "An optional set of states to compare against."
         },
-        "remarks": "Returns a boolean whether a specified permutation matches this permutation. If states is not specified, matches checks against the set of types more broadly."
+        "remarks": [
+          "Returns a boolean whether a specified permutation matches this permutation. If states is not specified, matches checks against the set of types more broadly."
+        ]
       },
       "match": "matches(blockName: string, states?: Record<string, boolean | number | string>): boolean",
       "kind": "public",
@@ -869,8 +1011,10 @@ let Spinnet = {
           "name": "Identifier of the block property.",
           "value": "Value of the block property."
         },
+        "remarks": [
+          "Returns a derived BlockPermutation with a specific property set."
+        ],
         "beta": "",
-        "remarks": "Returns a derived BlockPermutation with a specific property set.",
         "throws": "function can throw errors."
       },
       "match": "withState(name: string, value: boolean | number | string): BlockPermutation",
@@ -883,7 +1027,9 @@ let Spinnet = {
         "params": {
           "blockName": "Identifier of the block to check."
         },
-        "remarks": "Given a type identifier and an optional set of properties, will return a BlockPermutation object that is usable in other block APIs (e.g., block.setPermutation)",
+        "remarks": [
+          "Given a type identifier and an optional set of properties, will return a BlockPermutation object that is usable in other block APIs (e.g., block.setPermutation)"
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const allColorNames: string[] = [ \"white\", \"orange\", \"magenta\", \"light_blue\", \"yellow\", \"lime\", \"pink\", \"gray\", \"silver\", \"cyan\", \"purple\", \"blue\", \"brown\", \"green\", \"red\", \"black\", ]; const cubeDim = 7; let colorIndex = 0; for (let x = 0; x <= cubeDim; x++) { for (let y = 0; y <= cubeDim; y++) { for (let z = 0; z <= cubeDim; z++) { colorIndex++; overworld .getBlock({ x: targetLocation.x + x, y: targetLocation.y + y, z: targetLocation.z + z }) ?.setPermutation( mc.BlockPermutation.resolve(\"minecraft:wool\", { color: allColorNames[colorIndex % allColorNames.length], }) ); } } } ```"
       },
@@ -896,7 +1042,8 @@ let Spinnet = {
   "BlockPistonComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -906,7 +1053,9 @@ let Spinnet = {
     "isExpanded": {
       "comment": {
         "params": {},
-        "remarks": "Whether the piston is fully expanded.",
+        "remarks": [
+          "Whether the piston is fully expanded."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isExpanded: boolean",
@@ -917,7 +1066,9 @@ let Spinnet = {
     "isExpanding": {
       "comment": {
         "params": {},
-        "remarks": "Whether the piston is in the process of expanding.",
+        "remarks": [
+          "Whether the piston is in the process of expanding."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isExpanding: boolean",
@@ -928,7 +1079,9 @@ let Spinnet = {
     "isMoving": {
       "comment": {
         "params": {},
-        "remarks": "Whether the piston is in the process of expanding or retracting.",
+        "remarks": [
+          "Whether the piston is in the process of expanding or retracting."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isMoving: boolean",
@@ -939,7 +1092,9 @@ let Spinnet = {
     "isRetracted": {
       "comment": {
         "params": {},
-        "remarks": "Whether the piston is fully retracted.",
+        "remarks": [
+          "Whether the piston is fully retracted."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isRetracted: boolean",
@@ -950,7 +1105,9 @@ let Spinnet = {
     "isRetracting": {
       "comment": {
         "params": {},
-        "remarks": "Whether the piston is in the process of retracting.",
+        "remarks": [
+          "Whether the piston is in the process of retracting."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isRetracting: boolean",
@@ -960,7 +1117,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:piston'",
       "kind": "static readonly",
@@ -970,7 +1128,9 @@ let Spinnet = {
     "getAttachedBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves a set of blocks that this piston is connected with.",
+        "remarks": [
+          "Retrieves a set of blocks that this piston is connected with."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getAttachedBlocks(): Vector3[]",
@@ -981,7 +1141,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -991,7 +1153,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1001,7 +1165,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1013,7 +1179,8 @@ let Spinnet = {
   "BlockPotionContainerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1022,7 +1189,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:potionContainer'",
       "kind": "static readonly",
@@ -1032,7 +1200,9 @@ let Spinnet = {
     "setPotionType": {
       "comment": {
         "params": {},
-        "remarks": "Sets the potion type based on an item stack. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the potion type based on an item stack. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setPotionType(itemStack: ItemStack): void",
@@ -1043,7 +1213,9 @@ let Spinnet = {
     "fillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        "remarks": [
+          "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        ]
       },
       "match": "fillLevel: number",
       "kind": "public",
@@ -1053,7 +1225,9 @@ let Spinnet = {
     "isValidLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)",
+        "remarks": [
+          "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)"
+        ],
         "returns": "True if this liquid container still exists, is valid and contains the expected liquid type."
       },
       "match": "isValidLiquid(): boolean",
@@ -1064,7 +1238,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1074,7 +1250,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1084,7 +1262,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1096,7 +1276,8 @@ let Spinnet = {
   "BlockRecordPlayerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1105,7 +1286,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:recordPlayer'",
       "kind": "static readonly",
@@ -1115,7 +1297,9 @@ let Spinnet = {
     "clearRecord": {
       "comment": {
         "params": {},
-        "remarks": "Clears the currently playing record of this record-playing block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Clears the currently playing record of this record-playing block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "clearRecord(): void",
@@ -1126,7 +1310,9 @@ let Spinnet = {
     "isPlaying": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if the record-playing block is currently playing a record.",
+        "remarks": [
+          "Returns true if the record-playing block is currently playing a record."
+        ],
         "throws": "function can throw errors."
       },
       "match": "isPlaying(): boolean",
@@ -1137,7 +1323,9 @@ let Spinnet = {
     "setRecord": {
       "comment": {
         "params": {},
-        "remarks": "Sets and plays a record based on an item type. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets and plays a record based on an item type. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setRecord(recordItemType: ItemType | string): void",
@@ -1148,7 +1336,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1158,7 +1348,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1168,7 +1360,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1180,7 +1374,8 @@ let Spinnet = {
   "BlockSignComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1190,7 +1385,9 @@ let Spinnet = {
     "isWaxed": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not players can edit the sign. This happens if a sign has had a honeycomb used on it or `setWaxed` was called on the sign.",
+        "remarks": [
+          "Whether or not players can edit the sign. This happens if a sign has had a honeycomb used on it or `setWaxed` was called on the sign."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isWaxed: boolean",
@@ -1200,7 +1397,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:sign'",
       "kind": "static readonly",
@@ -1212,7 +1410,9 @@ let Spinnet = {
         "params": {
           "side": "The side of the sign to read the message from. If not provided, this will return the message from the front side of the sign."
         },
-        "remarks": "Returns the RawText of the sign if `setText` was called with a RawMessage or a RawText object, otherwise returns undefined.",
+        "remarks": [
+          "Returns the RawText of the sign if `setText` was called with a RawMessage or a RawText object, otherwise returns undefined."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getRawText(side?: SignSide): RawText | undefined",
@@ -1225,7 +1425,9 @@ let Spinnet = {
         "params": {
           "side": "The side of the sign to read the message from. If not provided, this will return the message from the front side of the sign."
         },
-        "remarks": "Returns the text of the sign if `setText` was called with a string, otherwise returns undefined.",
+        "remarks": [
+          "Returns the text of the sign if `setText` was called with a string, otherwise returns undefined."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getText(side?: SignSide): string | undefined",
@@ -1238,7 +1440,9 @@ let Spinnet = {
         "params": {
           "side": "The side of the sign to read the dye from. If not provided, this will return the dye on the front side of the sign."
         },
-        "remarks": "Gets the dye that is on the text or undefined if the sign has not been dyed.",
+        "remarks": [
+          "Gets the dye that is on the text or undefined if the sign has not been dyed."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getTextDyeColor(side?: SignSide): DyeColor | undefined",
@@ -1252,7 +1456,9 @@ let Spinnet = {
           "message": "The message to set on the sign. If set to a string, then call `getText` to read that string. If set to a RawMessage, then calling `getRawText` will return a RawText. If set to a RawText, then calling `getRawText` will return the same object that was passed in.",
           "side": "The side of the sign the message will be set on. If not provided, the message will be set on the front side of the sign."
         },
-        "remarks": "Sets the text of the sign component. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the text of the sign component. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript // Set sign to say 'Hello' sign.setText('Hello'); sign.getText(); // 'Hello' ```"
       },
@@ -1267,7 +1473,9 @@ let Spinnet = {
           "color": "The dye color to apply to the sign or undefined to clear the dye on the sign.",
           "side": "The side of the sign the color will be set on. If not provided, the color will be set on the front side of the sign."
         },
-        "remarks": "Sets the dye color of the text. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the dye color of the text. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setTextDyeColor(color?: DyeColor, side?: SignSide): void",
@@ -1278,7 +1486,9 @@ let Spinnet = {
     "setWaxed": {
       "comment": {
         "params": {},
-        "remarks": "Makes it so players cannot edit this sign. This function can't be called in read-only mode.",
+        "remarks": [
+          "Makes it so players cannot edit this sign. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setWaxed(): void",
@@ -1289,7 +1499,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1299,7 +1511,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1309,7 +1523,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1321,7 +1537,8 @@ let Spinnet = {
   "BlockSnowContainerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1330,7 +1547,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:snowContainer'",
       "kind": "static readonly",
@@ -1340,7 +1558,9 @@ let Spinnet = {
     "fillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        "remarks": [
+          "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        ]
       },
       "match": "fillLevel: number",
       "kind": "public",
@@ -1350,7 +1570,9 @@ let Spinnet = {
     "isValidLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)",
+        "remarks": [
+          "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)"
+        ],
         "returns": "True if this liquid container still exists, is valid and contains the expected liquid type."
       },
       "match": "isValidLiquid(): boolean",
@@ -1361,7 +1583,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1371,7 +1595,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1381,7 +1607,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1393,7 +1621,8 @@ let Spinnet = {
   "BlockStates": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1403,7 +1632,9 @@ let Spinnet = {
     "get": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves a specific block state instance.",
+        "remarks": [
+          "Retrieves a specific block state instance."
+        ],
         "returns": "Returns the {@link Block} state instance if it is found. If the block state instance is not found returns undefined."
       },
       "match": "static get(stateName: string): BlockStateType | undefined",
@@ -1414,7 +1645,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves a set of all available block states."
+        "remarks": [
+          "Retrieves a set of all available block states."
+        ]
       },
       "match": "static getAll(): BlockStateType[]",
       "kind": "static",
@@ -1425,7 +1658,8 @@ let Spinnet = {
   "BlockStateType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1435,7 +1669,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the block property."
+        "remarks": [
+          "Identifier of the block property."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -1445,7 +1681,9 @@ let Spinnet = {
     "validValues": {
       "comment": {
         "params": {},
-        "remarks": "A set of valid values for the block property."
+        "remarks": [
+          "A set of valid values for the block property."
+        ]
       },
       "match": "readonly validValues: (boolean | number | string)[]",
       "kind": "readonly",
@@ -1456,7 +1694,8 @@ let Spinnet = {
   "BlockType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1466,7 +1705,9 @@ let Spinnet = {
     "canBeWaterlogged": {
       "comment": {
         "params": {},
-        "remarks": "Represents whether this type of block can be waterlogged."
+        "remarks": [
+          "Represents whether this type of block can be waterlogged."
+        ]
       },
       "match": "readonly canBeWaterlogged: boolean",
       "kind": "readonly",
@@ -1476,7 +1717,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Block type name - for example, `minecraft:acacia_stairs`."
+        "remarks": [
+          "Block type name - for example, `minecraft:acacia_stairs`."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -1487,7 +1730,8 @@ let Spinnet = {
   "BlockTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1499,7 +1743,9 @@ let Spinnet = {
         "params": {
           "typeName": "Identifier of the block type. Should follow a namespace:id pattern, such as minecraft:dirt."
         },
-        "remarks": "Returns a BlockType object for the specified identifier.",
+        "remarks": [
+          "Returns a BlockType object for the specified identifier."
+        ],
         "returns": "BlockType object, or undefined if the block type is not available within this world."
       },
       "match": "static get(typeName: string): BlockType | undefined",
@@ -1510,7 +1756,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Returns a collection of all available block types."
+        "remarks": [
+          "Returns a collection of all available block types."
+        ]
       },
       "match": "static getAll(): BlockType[]",
       "kind": "static",
@@ -1521,7 +1769,8 @@ let Spinnet = {
   "BlockVolumeUtils": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1534,7 +1783,9 @@ let Spinnet = {
           "volume": "The volume to test against",
           "pos": "The world block location to test"
         },
-        "remarks": "Check to see if the given location is directly adjacent to the outer surface of a BlockVolume. This function can't be called in read-only mode.",
+        "remarks": [
+          "Check to see if the given location is directly adjacent to the outer surface of a BlockVolume. This function can't be called in read-only mode."
+        ],
         "returns": "If the location is either inside or more than 0 blocks away, the function will return false. If the location is directly contacting the outer surface of the BlockVolume, the function will return true."
       },
       "match": "static doesLocationTouchFaces(volume: BlockVolume, pos: Vector3): boolean",
@@ -1548,7 +1799,9 @@ let Spinnet = {
           "volume": "The volume to test against",
           "other": "The volume to test"
         },
-        "remarks": "Check to see if a two block volumes are directly adjacent and two faces touch. This function can't be called in read-only mode.",
+        "remarks": [
+          "Check to see if a two block volumes are directly adjacent and two faces touch. This function can't be called in read-only mode."
+        ],
         "returns": "If the outer faces of both block volumes touch and are directly adjacent at any point, return true."
       },
       "match": "static doesVolumeTouchFaces(volume: BlockVolume, other: BlockVolume): boolean",
@@ -1559,7 +1812,9 @@ let Spinnet = {
     "equals": {
       "comment": {
         "params": {},
-        "remarks": "Test the equality of two block volumes This function can't be called in read-only mode.",
+        "remarks": [
+          "Test the equality of two block volumes This function can't be called in read-only mode."
+        ],
         "returns": "Return true if two block volumes are identical"
       },
       "match": "static equals(volume: BlockVolume, other: BlockVolume): boolean",
@@ -1570,7 +1825,9 @@ let Spinnet = {
     "getBlockLocationIterator": {
       "comment": {
         "params": {},
-        "remarks": "Fetch a {@link BlockLocationIterator} that represents all of the block world locations within the specified volume This function can't be called in read-only mode."
+        "remarks": [
+          "Fetch a {@link BlockLocationIterator} that represents all of the block world locations within the specified volume This function can't be called in read-only mode."
+        ]
       },
       "match": "static getBlockLocationIterator(volume: BlockVolume): BlockLocationIterator",
       "kind": "static",
@@ -1580,7 +1837,9 @@ let Spinnet = {
     "getBoundingBox": {
       "comment": {
         "params": {},
-        "remarks": "Return a {@link BoundingBox} object which represents the validated min and max coordinates of the volume This function can't be called in read-only mode."
+        "remarks": [
+          "Return a {@link BoundingBox} object which represents the validated min and max coordinates of the volume This function can't be called in read-only mode."
+        ]
       },
       "match": "static getBoundingBox(volume: BlockVolume): BoundingBox",
       "kind": "static",
@@ -1590,7 +1849,9 @@ let Spinnet = {
     "getCapacity": {
       "comment": {
         "params": {},
-        "remarks": "Return the capacity (volume) of the BlockVolume (W*D*H) This function can't be called in read-only mode."
+        "remarks": [
+          "Return the capacity (volume) of the BlockVolume (W*D*H) This function can't be called in read-only mode."
+        ]
       },
       "match": "static getCapacity(volume: BlockVolume): number",
       "kind": "static",
@@ -1600,7 +1861,9 @@ let Spinnet = {
     "getMax": {
       "comment": {
         "params": {},
-        "remarks": "Get the largest corner position of the volume (guaranteed to be >= min) This function can't be called in read-only mode."
+        "remarks": [
+          "Get the largest corner position of the volume (guaranteed to be >= min) This function can't be called in read-only mode."
+        ]
       },
       "match": "static getMax(volume: BlockVolume): Vector3",
       "kind": "static",
@@ -1610,7 +1873,9 @@ let Spinnet = {
     "getMin": {
       "comment": {
         "params": {},
-        "remarks": "Get the smallest corner position of the volume (guaranteed to be <= max) This function can't be called in read-only mode."
+        "remarks": [
+          "Get the smallest corner position of the volume (guaranteed to be <= max) This function can't be called in read-only mode."
+        ]
       },
       "match": "static getMin(volume: BlockVolume): Vector3",
       "kind": "static",
@@ -1620,7 +1885,9 @@ let Spinnet = {
     "getSpan": {
       "comment": {
         "params": {},
-        "remarks": "Get a {@link Vector3} object where each component represents the number of blocks along that axis This function can't be called in read-only mode."
+        "remarks": [
+          "Get a {@link Vector3} object where each component represents the number of blocks along that axis This function can't be called in read-only mode."
+        ]
       },
       "match": "static getSpan(volume: BlockVolume): Vector3",
       "kind": "static",
@@ -1630,7 +1897,9 @@ let Spinnet = {
     "intersects": {
       "comment": {
         "params": {},
-        "remarks": "Return an enumeration which represents the intersection between two BlockVolume objects This function can't be called in read-only mode."
+        "remarks": [
+          "Return an enumeration which represents the intersection between two BlockVolume objects This function can't be called in read-only mode."
+        ]
       },
       "match": "static intersects(volume: BlockVolume, other: BlockVolume): BlockVolumeIntersection",
       "kind": "static",
@@ -1640,7 +1909,9 @@ let Spinnet = {
     "isInside": {
       "comment": {
         "params": {},
-        "remarks": "Check to see if a given world block location is inside a BlockVolume This function can't be called in read-only mode."
+        "remarks": [
+          "Check to see if a given world block location is inside a BlockVolume This function can't be called in read-only mode."
+        ]
       },
       "match": "static isInside(volume: BlockVolume, pos: Vector3): boolean",
       "kind": "static",
@@ -1652,7 +1923,9 @@ let Spinnet = {
         "params": {
           "delta": "Amount of blocks to move by"
         },
-        "remarks": "Move a BlockVolume by a specified amount This function can't be called in read-only mode.",
+        "remarks": [
+          "Move a BlockVolume by a specified amount This function can't be called in read-only mode."
+        ],
         "returns": "Returns a new BlockVolume object which represents the new volume"
       },
       "match": "static translate(volume: BlockVolume, delta: Vector3): BlockVolume",
@@ -1664,7 +1937,8 @@ let Spinnet = {
   "BlockWaterContainerComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1673,7 +1947,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:waterContainer'",
       "kind": "static readonly",
@@ -1683,7 +1958,9 @@ let Spinnet = {
     "addDye": {
       "comment": {
         "params": {},
-        "remarks": "Adds an item and colors the water based on a dye item type. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds an item and colors the water based on a dye item type. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "addDye(itemType: ItemType): void",
@@ -1694,7 +1971,9 @@ let Spinnet = {
     "getCustomColor": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves a custom base color used for the sign text.",
+        "remarks": [
+          "Retrieves a custom base color used for the sign text."
+        ],
         "returns": "Color that is used as the base color for sign text.",
         "throws": "function can throw errors."
       },
@@ -1706,7 +1985,9 @@ let Spinnet = {
     "setCustomColor": {
       "comment": {
         "params": {},
-        "remarks": "Sets a custom base color used for the sign text. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets a custom base color used for the sign text. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCustomColor(color: RGBA): void",
@@ -1717,7 +1998,9 @@ let Spinnet = {
     "fillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        "remarks": [
+          "Relative fill level of the liquid container. This property can't be edited in read-only mode."
+        ]
       },
       "match": "fillLevel: number",
       "kind": "public",
@@ -1727,7 +2010,9 @@ let Spinnet = {
     "isValidLiquid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)",
+        "remarks": [
+          "Returns true if this reference to a liquid container is still valid and contains the liquid of the type you have a reference for (for example, if the block is unloaded, no longer a liquid container or contains lava when you have a potion container component, isValidLiquid will not be true.)"
+        ],
         "returns": "True if this liquid container still exists, is valid and contains the expected liquid type."
       },
       "match": "isValidLiquid(): boolean",
@@ -1738,7 +2023,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block instance that this component pertains to."
+        "remarks": [
+          "Block instance that this component pertains to."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1748,7 +2035,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -1758,7 +2047,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -1770,7 +2061,8 @@ let Spinnet = {
   "BoundingBoxUtils": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1783,7 +2075,9 @@ let Spinnet = {
           "min": "A corner world location",
           "max": "A corner world location diametrically opposite"
         },
-        "remarks": "Create a validated instance of a {@link",
+        "remarks": [
+          "Create a validated instance of a {@link"
+        ],
         "minecraft-server.BoundingBox}": "the min and max components are guaranteed to be (min <= max) This function can't be called in read-only mode."
       },
       "match": "static createValid(min: Vector3, max: Vector3): BoundingBox",
@@ -1794,7 +2088,9 @@ let Spinnet = {
     "dilate": {
       "comment": {
         "params": {},
-        "remarks": "Expand a {@link @minecraft-server.BoundingBox} by a given amount along each axis. Sizes can be negative to perform contraction. Note: corners can be inverted if the contraction size is greater than the span, but the min/max relationship will remain correct This function can't be called in read-only mode.",
+        "remarks": [
+          "Expand a {@link @minecraft-server.BoundingBox} by a given amount along each axis. Sizes can be negative to perform contraction. Note: corners can be inverted if the contraction size is greater than the span, but the min/max relationship will remain correct This function can't be called in read-only mode."
+        ],
         "returns": "Return a new {@link @minecraft-server.BoundingBox} object representing the changes"
       },
       "match": "static dilate(box: BoundingBox, size: Vector3): BoundingBox",
@@ -1805,7 +2101,9 @@ let Spinnet = {
     "equals": {
       "comment": {
         "params": {},
-        "remarks": "Check if two {@link @minecraft-server.BoundingBox} objects are identical This function can't be called in read-only mode."
+        "remarks": [
+          "Check if two {@link @minecraft-server.BoundingBox} objects are identical This function can't be called in read-only mode."
+        ]
       },
       "match": "static equals(box: BoundingBox, other: BoundingBox): boolean",
       "kind": "static",
@@ -1815,7 +2113,9 @@ let Spinnet = {
     "expand": {
       "comment": {
         "params": {},
-        "remarks": "Expand the initial box object bounds to include the 2nd box argument.  The resultant {@link",
+        "remarks": [
+          "Expand the initial box object bounds to include the 2nd box argument.  The resultant {@link"
+        ],
         "minecraft-server.BoundingBox}": "will be a BoundingBox which exactly encompasses the two boxes. This function can't be called in read-only mode.",
         "returns": "A new {@link @minecraft-server.BoundingBox} instance representing the smallest possible bounding box which can encompass both"
       },
@@ -1827,7 +2127,9 @@ let Spinnet = {
     "getCenter": {
       "comment": {
         "params": {},
-        "remarks": "Calculate the center block of a given {@link",
+        "remarks": [
+          "Calculate the center block of a given {@link"
+        ],
         "minecraft-server.BoundingBox}": "This function can't be called in read-only mode.",
         "returns": "Note that {@link @minecraft-server.BoundingBox} objects represent whole blocks, so the center of boxes which have odd numbered bounds are not mathematically centered... i.e. a BoundingBox( 0,0,0 -> 3,3,3 )  would have a center of (1,1,1)  (not (1.5, 1.5, 1.5) as expected)"
       },
@@ -1839,7 +2141,9 @@ let Spinnet = {
     "getIntersection": {
       "comment": {
         "params": {},
-        "remarks": "Calculate the BoundingBox which represents the union area of two intersecting BoundingBoxes This function can't be called in read-only mode."
+        "remarks": [
+          "Calculate the BoundingBox which represents the union area of two intersecting BoundingBoxes This function can't be called in read-only mode."
+        ]
       },
       "match": "static getIntersection(box: BoundingBox, other: BoundingBox): BoundingBox | undefined",
       "kind": "static",
@@ -1849,7 +2153,9 @@ let Spinnet = {
     "getSpan": {
       "comment": {
         "params": {},
-        "remarks": "Get the Span of each of the BoundingBox Axis components This function can't be called in read-only mode."
+        "remarks": [
+          "Get the Span of each of the BoundingBox Axis components This function can't be called in read-only mode."
+        ]
       },
       "match": "static getSpan(box: BoundingBox): Vector3",
       "kind": "static",
@@ -1859,7 +2165,9 @@ let Spinnet = {
     "intersects": {
       "comment": {
         "params": {},
-        "remarks": "Check to see if two BoundingBox objects intersect This function can't be called in read-only mode."
+        "remarks": [
+          "Check to see if two BoundingBox objects intersect This function can't be called in read-only mode."
+        ]
       },
       "match": "static intersects(box: BoundingBox, other: BoundingBox): boolean",
       "kind": "static",
@@ -1869,7 +2177,9 @@ let Spinnet = {
     "isInside": {
       "comment": {
         "params": {},
-        "remarks": "Check to see if a given coordinate is inside a BoundingBox This function can't be called in read-only mode."
+        "remarks": [
+          "Check to see if a given coordinate is inside a BoundingBox This function can't be called in read-only mode."
+        ]
       },
       "match": "static isInside(box: BoundingBox, pos: Vector3): boolean",
       "kind": "static",
@@ -1879,7 +2189,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Check to see if a BoundingBox is valid (i.e. (min <= max)) This function can't be called in read-only mode."
+        "remarks": [
+          "Check to see if a BoundingBox is valid (i.e. (min <= max)) This function can't be called in read-only mode."
+        ]
       },
       "match": "static isValid(box: BoundingBox): boolean",
       "kind": "static",
@@ -1889,7 +2201,9 @@ let Spinnet = {
     "translate": {
       "comment": {
         "params": {},
-        "remarks": "Move a BoundingBox by a given amount This function can't be called in read-only mode.",
+        "remarks": [
+          "Move a BoundingBox by a given amount This function can't be called in read-only mode."
+        ],
         "returns": "Return a new BoundingBox object which represents the change"
       },
       "match": "static translate(box: BoundingBox, delta: Vector3): BoundingBox",
@@ -1901,7 +2215,8 @@ let Spinnet = {
   "ButtonPushAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1911,7 +2226,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Optional source that triggered the button push."
+        "remarks": [
+          "Optional source that triggered the button push."
+        ]
       },
       "match": "readonly source: Entity",
       "kind": "readonly",
@@ -1921,7 +2238,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -1931,7 +2250,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -1942,7 +2263,8 @@ let Spinnet = {
   "ButtonPushAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1952,7 +2274,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ButtonPushAfterEvent) => void): (arg: ButtonPushAfterEvent) => void",
       "kind": "public",
@@ -1962,7 +2286,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ButtonPushAfterEvent) => void): void",
@@ -1974,7 +2300,8 @@ let Spinnet = {
   "Camera": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -1984,7 +2311,9 @@ let Spinnet = {
     "clear": {
       "comment": {
         "params": {},
-        "remarks": "Clears the active camera for the specified player. Causes the specified players to end any in-progress camera perspectives, including any eased camera motions, and return to their normal perspective. This function can't be called in read-only mode.",
+        "remarks": [
+          "Clears the active camera for the specified player. Causes the specified players to end any in-progress camera perspectives, including any eased camera motions, and return to their normal perspective. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "clear(): void",
@@ -1997,7 +2326,9 @@ let Spinnet = {
         "params": {
           "fadeCameraOptions": "Additional options around camera fade operations."
         },
-        "remarks": "Begins a camera fade transition. A fade transition is a full-screen color that fades-in, holds, and then fades-out. This function can't be called in read-only mode.",
+        "remarks": [
+          "Begins a camera fade transition. A fade transition is a full-screen color that fades-in, holds, and then fades-out. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "fade(fadeCameraOptions?: CameraFadeOptions): void",
@@ -2011,7 +2342,9 @@ let Spinnet = {
           "cameraPreset": "Identifier of a camera preset file defined within JSON.",
           "setOptions": "Additional options for the camera."
         },
-        "remarks": "Sets the current active camera for the specified player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current active camera for the specified player. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCamera(cameraPreset: string,setOptions?:| CameraDefaultOptions| CameraSetFacingOptions| CameraSetLocationOptions| CameraSetPosOptions| CameraSetRotOptions,): void",
@@ -2023,7 +2356,8 @@ let Spinnet = {
   "ChatSendAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2033,7 +2367,9 @@ let Spinnet = {
     "message": {
       "comment": {
         "params": {},
-        "remarks": "Message that is being broadcast."
+        "remarks": [
+          "Message that is being broadcast."
+        ]
       },
       "match": "message: string",
       "kind": "public",
@@ -2043,7 +2379,9 @@ let Spinnet = {
     "sender": {
       "comment": {
         "params": {},
-        "remarks": "Player that sent the chat message."
+        "remarks": [
+          "Player that sent the chat message."
+        ]
       },
       "match": "sender: Player",
       "kind": "public",
@@ -2052,7 +2390,8 @@ let Spinnet = {
     },
     "sendToTargets": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "sendToTargets: boolean",
       "kind": "public",
@@ -2061,7 +2400,8 @@ let Spinnet = {
     },
     "getTargets": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "getTargets(): Player[]",
       "kind": "public",
@@ -2072,7 +2412,8 @@ let Spinnet = {
   "ChatSendAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2082,7 +2423,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when new chat messages are sent. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a callback that will be called when new chat messages are sent. This function can't be called in read-only mode."
+        ],
         "example": "```typescript const chatCallback = World.beforeEvents.chatSend.subscribe((eventData) => { if (eventData.message.includes(\"cancel\")) { // Cancel event if the message contains \"cancel\" eventData.canceled = true; } else { // Modify chat message being sent eventData.message = `Modified '${eventData.message}'`; } }); ```"
       },
       "match": "subscribe(callback: (arg: ChatSendAfterEvent) => void): (arg: ChatSendAfterEvent) => void",
@@ -2093,7 +2436,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when new chat messages are sent. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when new chat messages are sent. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ChatSendAfterEvent) => void): void",
@@ -2105,7 +2450,8 @@ let Spinnet = {
   "ChatSendBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2115,7 +2461,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true in a beforeChat event handler, this message is not broadcast out."
+        "remarks": [
+          "If set to true in a beforeChat event handler, this message is not broadcast out."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -2124,7 +2472,8 @@ let Spinnet = {
     },
     "setTargets": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "setTargets(players: Player[]): void",
       "kind": "public",
@@ -2134,7 +2483,9 @@ let Spinnet = {
     "message": {
       "comment": {
         "params": {},
-        "remarks": "Message that is being broadcast."
+        "remarks": [
+          "Message that is being broadcast."
+        ]
       },
       "match": "message: string",
       "kind": "public",
@@ -2144,7 +2495,9 @@ let Spinnet = {
     "sender": {
       "comment": {
         "params": {},
-        "remarks": "Player that sent the chat message."
+        "remarks": [
+          "Player that sent the chat message."
+        ]
       },
       "match": "sender: Player",
       "kind": "public",
@@ -2153,7 +2506,8 @@ let Spinnet = {
     },
     "sendToTargets": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "sendToTargets: boolean",
       "kind": "public",
@@ -2162,7 +2516,8 @@ let Spinnet = {
     },
     "getTargets": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "getTargets(): Player[]",
       "kind": "public",
@@ -2173,7 +2528,8 @@ let Spinnet = {
   "ChatSendBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2183,7 +2539,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before new chat messages are sent. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before new chat messages are sent. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ChatSendBeforeEvent) => void): (arg: ChatSendBeforeEvent) => void",
       "kind": "public",
@@ -2193,7 +2551,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before new chat messages are sent. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before new chat messages are sent. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ChatSendBeforeEvent) => void): void",
@@ -2205,7 +2565,8 @@ let Spinnet = {
   "CommandResult": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2215,7 +2576,9 @@ let Spinnet = {
     "successCount": {
       "comment": {
         "params": {},
-        "remarks": "If the command operates against a number of entities, blocks, or items, this returns the number of successful applications of this command."
+        "remarks": [
+          "If the command operates against a number of entities, blocks, or items, this returns the number of successful applications of this command."
+        ]
       },
       "match": "readonly successCount: number",
       "kind": "readonly",
@@ -2226,7 +2589,8 @@ let Spinnet = {
   "Component": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2236,7 +2600,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -2246,7 +2612,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -2259,7 +2627,9 @@ let Spinnet = {
     "capacity": {
       "comment": {
         "params": {},
-        "remarks": "Return the 'capacity' of the bounding rectangle which represents the collection of volumes in the stack"
+        "remarks": [
+          "Return the 'capacity' of the bounding rectangle which represents the collection of volumes in the stack"
+        ]
       },
       "match": "readonly capacity: number",
       "kind": "readonly",
@@ -2269,7 +2639,9 @@ let Spinnet = {
     "volumeCount": {
       "comment": {
         "params": {},
-        "remarks": "Return the number of volumes (positive and negative) in the volume stack"
+        "remarks": [
+          "Return the number of volumes (positive and negative) in the volume stack"
+        ]
       },
       "match": "readonly volumeCount: number",
       "kind": "readonly",
@@ -2281,7 +2653,9 @@ let Spinnet = {
         "params": {
           "origin": "An optional world space origin on which to center the compound volume. If not specified, the origin is set to (0,0,0)"
         },
-        "remarks": "Create a CompoundBlockVolume object"
+        "remarks": [
+          "Create a CompoundBlockVolume object"
+        ]
       },
       "match": "constructor(origin?: Vector3)",
       "kind": "public",
@@ -2291,7 +2665,9 @@ let Spinnet = {
     "clear": {
       "comment": {
         "params": {},
-        "remarks": "Clear the contents of the volume stack This function can't be called in read-only mode."
+        "remarks": [
+          "Clear the contents of the volume stack This function can't be called in read-only mode."
+        ]
       },
       "match": "clear(): void",
       "kind": "public",
@@ -2301,7 +2677,9 @@ let Spinnet = {
     "getBlockLocationIterator": {
       "comment": {
         "params": {},
-        "remarks": "Fetch a Block Location Iterator for the Compound Block Volume.  This iterator will allow a creator to iterate across all of the selected volumes within the larger bounding area. Areas of a volume which have been overridden by a subtractive volume will not be included in the iterator step. (i.e. if you push a cube to the stack, and then push a subtractive volume to the same location, then the iterator will step over the initial volume because it is considered negative space) Note that the Block Locations returned by this iterator are in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        "remarks": [
+          "Fetch a Block Location Iterator for the Compound Block Volume.  This iterator will allow a creator to iterate across all of the selected volumes within the larger bounding area. Areas of a volume which have been overridden by a subtractive volume will not be included in the iterator step. (i.e. if you push a cube to the stack, and then push a subtractive volume to the same location, then the iterator will step over the initial volume because it is considered negative space) Note that the Block Locations returned by this iterator are in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        ]
       },
       "match": "getBlockLocationIterator(): BlockLocationIterator",
       "kind": "public",
@@ -2311,7 +2689,9 @@ let Spinnet = {
     "getBoundingBox": {
       "comment": {
         "params": {},
-        "remarks": "Get the largest bounding box that represents a container for all of the volumes on the stack Note that the bounding box returned is represented in absolute world space  (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        "remarks": [
+          "Get the largest bounding box that represents a container for all of the volumes on the stack Note that the bounding box returned is represented in absolute world space  (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        ]
       },
       "match": "getBoundingBox(): BoundingBox",
       "kind": "public",
@@ -2321,7 +2701,9 @@ let Spinnet = {
     "getMax": {
       "comment": {
         "params": {},
-        "remarks": "Get the max block location of the outermost bounding rectangle which represents the volumes on the stack. Note that the max location returned is in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        "remarks": [
+          "Get the max block location of the outermost bounding rectangle which represents the volumes on the stack. Note that the max location returned is in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        ]
       },
       "match": "getMax(): Vector3",
       "kind": "public",
@@ -2331,7 +2713,9 @@ let Spinnet = {
     "getMin": {
       "comment": {
         "params": {},
-        "remarks": "Get the min block location of the outermost bounding rectangle which represents the volumes on the stack. Note that the min location returned is in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        "remarks": [
+          "Get the min block location of the outermost bounding rectangle which represents the volumes on the stack. Note that the min location returned is in absolute world space (irrespective of whether the compound volume items pushed are absolute or relative) This function can't be called in read-only mode."
+        ]
       },
       "match": "getMin(): Vector3",
       "kind": "public",
@@ -2341,7 +2725,9 @@ let Spinnet = {
     "getOrigin": {
       "comment": {
         "params": {},
-        "remarks": "Fetch the origin in world space of the compound volume This function can't be called in read-only mode."
+        "remarks": [
+          "Fetch the origin in world space of the compound volume This function can't be called in read-only mode."
+        ]
       },
       "match": "getOrigin(): Vector3",
       "kind": "public",
@@ -2351,7 +2737,9 @@ let Spinnet = {
     "isEmpty": {
       "comment": {
         "params": {},
-        "remarks": "Return a boolean which signals if there are any volume items pushed to the volume This function can't be called in read-only mode."
+        "remarks": [
+          "Return a boolean which signals if there are any volume items pushed to the volume This function can't be called in read-only mode."
+        ]
       },
       "match": "isEmpty(): boolean",
       "kind": "public",
@@ -2361,7 +2749,9 @@ let Spinnet = {
     "isInside": {
       "comment": {
         "params": {},
-        "remarks": "Return a boolean representing whether or not a given absolute world space block location is inside a positive block volume. E.g. if the stack contains a large cube followed by a slightly smaller negative cube, and the test location is within the negative cube - the function will return false because it's not 'inside' a volume (it IS inside the bounding rectangle, but it is not inside a positively defined location) This function can't be called in read-only mode."
+        "remarks": [
+          "Return a boolean representing whether or not a given absolute world space block location is inside a positive block volume. E.g. if the stack contains a large cube followed by a slightly smaller negative cube, and the test location is within the negative cube - the function will return false because it's not 'inside' a volume (it IS inside the bounding rectangle, but it is not inside a positively defined location) This function can't be called in read-only mode."
+        ]
       },
       "match": "isInside(worldLocation: Vector3): boolean",
       "kind": "public",
@@ -2373,7 +2763,9 @@ let Spinnet = {
         "params": {
           "forceRelativity": "Determine whether the function returns a CompoundBlockVolumeItem which is forced into either relative or absolute coordinate system. `true` = force returned item to be relative to volume origin `false` = force returned item to be absolute world space location If no flag is specified, the item returned retains whatever relativity it had when it was pushed"
         },
-        "remarks": "Inspect the last entry pushed to the volume stack without affecting the stack contents. This function can't be called in read-only mode.",
+        "remarks": [
+          "Inspect the last entry pushed to the volume stack without affecting the stack contents. This function can't be called in read-only mode."
+        ],
         "returns": "Returns undefined if the stack is empty"
       },
       "match": "peekLastVolume(forceRelativity?: CompoundBlockVolumePositionRelativity): CompoundBlockVolumeItem | undefined",
@@ -2384,7 +2776,9 @@ let Spinnet = {
     "popVolume": {
       "comment": {
         "params": {},
-        "remarks": "Remove the last entry from the volume stack.  This will reduce the stack size by one This function can't be called in read-only mode."
+        "remarks": [
+          "Remove the last entry from the volume stack.  This will reduce the stack size by one This function can't be called in read-only mode."
+        ]
       },
       "match": "popVolume(): boolean",
       "kind": "public",
@@ -2396,7 +2790,9 @@ let Spinnet = {
         "params": {
           "item": "Item to push to the end of the stack"
         },
-        "remarks": "Push a volume item to the stack.  The volume item contains an 'action' parameter which determines whether this volume is a positive or negative space. The item also contains a `locationRelativity` which determines whether it is relative or absolute to the compound volume origin This function can't be called in read-only mode."
+        "remarks": [
+          "Push a volume item to the stack.  The volume item contains an 'action' parameter which determines whether this volume is a positive or negative space. The item also contains a `locationRelativity` which determines whether it is relative or absolute to the compound volume origin This function can't be called in read-only mode."
+        ]
       },
       "match": "pushVolume(item: CompoundBlockVolumeItem): void",
       "kind": "public",
@@ -2408,7 +2804,9 @@ let Spinnet = {
         "params": {
           "item": "Item to add or replace"
         },
-        "remarks": "If the volume stack is empty, this function will push the specified item to the stack. If the volume stack is NOT empty, this function will replace the last item on the stack with the new item. This function can't be called in read-only mode."
+        "remarks": [
+          "If the volume stack is empty, this function will push the specified item to the stack. If the volume stack is NOT empty, this function will replace the last item on the stack with the new item. This function can't be called in read-only mode."
+        ]
       },
       "match": "replaceOrAddLastVolume(item: CompoundBlockVolumeItem): boolean",
       "kind": "public",
@@ -2420,7 +2818,9 @@ let Spinnet = {
         "params": {
           "preserveExistingVolumes": "This optional boolean flag determines whether the relative `CompoundBlockVolumeItem`'s are frozen in place, or are affected by the new origin. Imagine a scenario where you have a series of relative locations around an origin which make up a sphere; all of these locations are in the range of -2 to 2. Push each of these locations to the compound volume as relative items. Now, move the origin and all of the locations representing the sphere move accordingly. However, let's say you want to add a 2nd sphere next to the 1st. In this case, set the new origin a few locations over, but 'preserveExistingVolumes' = true. This will set a new origin, but the existing sphere locations will remain relative to the original origin. Now, you can push the relative sphere locations again (this time they will be relative to the new origin) - resulting in 2 spheres next to each other."
         },
-        "remarks": "Set the origin of the compound volume to an absolute world space location This function can't be called in read-only mode."
+        "remarks": [
+          "Set the origin of the compound volume to an absolute world space location This function can't be called in read-only mode."
+        ]
       },
       "match": "setOrigin(position: Vector3, preserveExistingVolumes?: boolean): void",
       "kind": "public",
@@ -2432,7 +2832,9 @@ let Spinnet = {
         "params": {
           "preserveExistingVolumes": "See the description for the arguments to {@link"
         },
-        "remarks": "Similar to {@link",
+        "remarks": [
+          "Similar to {@link"
+        ],
         "minecraft-server/CompoundBlockVolume.setOrigin}": ""
       },
       "match": "translateOrigin(delta: Vector3, preserveExistingVolumes?: boolean): void",
@@ -2444,7 +2846,8 @@ let Spinnet = {
   "Container": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2454,7 +2857,9 @@ let Spinnet = {
     "emptySlotsCount": {
       "comment": {
         "params": {},
-        "remarks": "Count of the slots in the container that are empty.",
+        "remarks": [
+          "Count of the slots in the container that are empty."
+        ],
         "throws": "Throws if the container is invalid."
       },
       "match": "readonly emptySlotsCount: number",
@@ -2465,7 +2870,9 @@ let Spinnet = {
     "size": {
       "comment": {
         "params": {},
-        "remarks": "The number of slots in this container. For example, a standard single-block chest has a size of 27. Note, a player's inventory container contains a total of 36 slots, 9 hotbar slots plus 27 inventory slots.",
+        "remarks": [
+          "The number of slots in this container. For example, a standard single-block chest has a size of 27. Note, a player's inventory container contains a total of 36 slots, 9 hotbar slots plus 27 inventory slots."
+        ],
         "throws": "Throws if the container is invalid."
       },
       "match": "readonly size: number",
@@ -2478,7 +2885,9 @@ let Spinnet = {
         "params": {
           "itemStack": "The stack of items to add."
         },
-        "remarks": "Adds an item to the container. The item is placed in the first available slot(s) and can be stacked with existing items of the same type. Note, use {@link Container.setItem} if you wish to set the item in a particular slot. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds an item to the container. The item is placed in the first available slot(s) and can be stacked with existing items of the same type. Note, use {@link Container.setItem} if you wish to set the item in a particular slot. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "addItem(itemStack: ItemStack): ItemStack | undefined",
@@ -2489,7 +2898,9 @@ let Spinnet = {
     "clearAll": {
       "comment": {
         "params": {},
-        "remarks": "Clears all inventory items in the container. This function can't be called in read-only mode.",
+        "remarks": [
+          "Clears all inventory items in the container. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the container is invalid."
       },
       "match": "clearAll(): void",
@@ -2502,7 +2913,9 @@ let Spinnet = {
         "params": {
           "slot": "Zero-based index of the slot to retrieve items from."
         },
-        "remarks": "Gets an {@link ItemStack} of the item at the specified slot. If the slot is empty, returns `undefined`. This method does not change or clear the contents of the specified slot. To get a reference to a particular slot, see {@link Container.getSlot}.",
+        "remarks": [
+          "Gets an {@link ItemStack} of the item at the specified slot. If the slot is empty, returns `undefined`. This method does not change or clear the contents of the specified slot. To get a reference to a particular slot, see {@link Container.getSlot}."
+        ],
         "throws": "Throws if the container is invalid or if the `slot` index is out of bounds.",
         "example": "```typescript // Get a copy of the first item in the player's hotbar const inventory = player.getComponent(\"inventory\") as EntityInventoryComponent; const itemStack = inventory.container.getItem(0); ```"
       },
@@ -2516,8 +2929,10 @@ let Spinnet = {
         "params": {
           "slot": "The index of the slot to return. This index must be within the bounds of the container."
         },
+        "remarks": [
+          "Returns a container slot. This acts as a reference to a slot at the given index for this container."
+        ],
         "beta": "",
-        "remarks": "Returns a container slot. This acts as a reference to a slot at the given index for this container.",
         "throws": "Throws if the container is invalid or if the `slot` index is out of bounds."
       },
       "match": "getSlot(slot: number): ContainerSlot",
@@ -2528,7 +2943,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether a container object (or the entity or block that this container is associated with) is still available for use in this context."
+        "remarks": [
+          "Returns whether a container object (or the entity or block that this container is associated with) is still available for use in this context."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -2542,7 +2959,9 @@ let Spinnet = {
           "toSlot": "Zero-based index of the slot to transfer an item to, on `toContainer`.",
           "toContainer": "Target container to transfer to. Note this can be the same container as the source."
         },
-        "remarks": "Moves an item from one slot to another, potentially across containers. This function can't be called in read-only mode.",
+        "remarks": [
+          "Moves an item from one slot to another, potentially across containers. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if either this container or `toContainer` are invalid or if the `fromSlot` or `toSlot` indices out of bounds.",
         "example": "```typescript // Move an item from the first slot of fromPlayer's inventory to the fifth slot of toPlayer's inventory const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent; const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent; fromInventory.container.moveItem(0, 4, toInventory.container); ```"
       },
@@ -2557,7 +2976,9 @@ let Spinnet = {
           "slot": "Zero-based index of the slot to set an item at.",
           "itemStack": "Stack of items to place within the specified slot. Setting `itemStack` to undefined will clear the slot."
         },
-        "remarks": "Sets an item stack within a particular slot. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets an item stack within a particular slot. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the container is invalid or if the `slot` index is out of bounds."
       },
       "match": "setItem(slot: number, itemStack?: ItemStack): void",
@@ -2572,7 +2993,9 @@ let Spinnet = {
           "otherSlot": "Zero-based index of the slot to swap with.",
           "otherContainer": "Target container to swap with. Note this can be the same container as this source."
         },
-        "remarks": "Swaps items between two different slots within containers. This function can't be called in read-only mode.",
+        "remarks": [
+          "Swaps items between two different slots within containers. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if either this container or `otherContainer` are invalid or if the `slot` or `otherSlot` are out of bounds.",
         "example": "```typescript // Swaps an item between slots 0 and 4 in the player's inventory const inventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent; inventory.container.swapItems(0, 4, inventory); ```"
       },
@@ -2587,7 +3010,9 @@ let Spinnet = {
           "fromSlot": "Zero-based index of the slot to transfer an item from, on this container.",
           "toContainer": "Target container to transfer to. Note this can be the same container as the source."
         },
-        "remarks": "Moves an item from one slot to another container, or to the first available slot in the same container. This function can't be called in read-only mode.",
+        "remarks": [
+          "Moves an item from one slot to another container, or to the first available slot in the same container. This function can't be called in read-only mode."
+        ],
         "returns": "An itemStack with the items that couldn't be transferred. Returns undefined if all items were transferred.",
         "throws": "Throws if either this container or `toContainer` are invalid or if the `fromSlot` or `toSlot` indices out of bounds.",
         "example": "```typescript // Transfer an item from the first slot of fromPlayer's inventory to toPlayer's inventory const fromInventory = fromPlayer.getComponent('inventory') as EntityInventoryComponent; const toInventory = toPlayer.getComponent('inventory') as EntityInventoryComponent; fromInventory.container.transferItem(0, toInventory.container); ```"
@@ -2601,7 +3026,8 @@ let Spinnet = {
   "ContainerSlot": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2611,7 +3037,9 @@ let Spinnet = {
     "amount": {
       "comment": {
         "params": {},
-        "remarks": "Number of the items in the stack. Valid values range between 1-255. The provided value will be clamped to the item's maximum stack size. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Number of the items in the stack. Valid values range between 1-255. The provided value will be clamped to the item's maximum stack size. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the value is outside the range of 1-255."
       },
       "match": "amount: number",
@@ -2622,7 +3050,9 @@ let Spinnet = {
     "isStackable": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the item is stackable. An item is considered stackable if the item's maximum stack size is greater than 1 and the item does not contain any custom data or properties.",
+        "remarks": [
+          "Returns whether the item is stackable. An item is considered stackable if the item's maximum stack size is greater than 1 and the item does not contain any custom data or properties."
+        ],
         "throws": "Throws if the slot's container is invalid."
       },
       "match": "readonly isStackable: boolean",
@@ -2633,7 +3063,9 @@ let Spinnet = {
     "keepOnDeath": {
       "comment": {
         "params": {},
-        "remarks": "Gets or sets whether the item is kept on death. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Gets or sets whether the item is kept on death. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid."
       },
       "match": "keepOnDeath: boolean",
@@ -2644,7 +3076,9 @@ let Spinnet = {
     "lockMode": {
       "comment": {
         "params": {},
-        "remarks": "Gets or sets the item's lock mode. The default value is `ItemLockMode.none`. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Gets or sets the item's lock mode. The default value is `ItemLockMode.none`. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid."
       },
       "match": "lockMode: ItemLockMode",
@@ -2655,7 +3089,9 @@ let Spinnet = {
     "maxAmount": {
       "comment": {
         "params": {},
-        "remarks": "The maximum stack size. This value varies depending on the type of item. For example, torches have a maximum stack size of 64, while eggs have a maximum stack size of 16.",
+        "remarks": [
+          "The maximum stack size. This value varies depending on the type of item. For example, torches have a maximum stack size of 64, while eggs have a maximum stack size of 16."
+        ],
         "throws": "Throws if the slot's container is invalid."
       },
       "match": "readonly maxAmount: number",
@@ -2666,7 +3102,9 @@ let Spinnet = {
     "getItem": {
       "comment": {
         "params": {},
-        "remarks": "Given name of this stack of items. The name tag is displayed when hovering over the item. Setting the name tag to an empty string or `undefined` will remove the name tag. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Given name of this stack of items. The name tag is displayed when hovering over the item. Setting the name tag to an empty string or `undefined` will remove the name tag. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid. Also throws if the length exceeds 255 characters."
       },
       "match": "getItem(): ItemStack | undefined",
@@ -2677,7 +3115,9 @@ let Spinnet = {
     "getLore": {
       "comment": {
         "params": {},
-        "remarks": "Returns the lore value - a secondary display string - for an ItemStack.",
+        "remarks": [
+          "Returns the lore value - a secondary display string - for an ItemStack."
+        ],
         "returns": "An array of lore strings. If the item does not have lore, returns an empty array.",
         "throws": "Throws if the slot's container is invalid."
       },
@@ -2689,7 +3129,9 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
-        "remarks": "Returns all tags for the item in the slot.",
+        "remarks": [
+          "Returns all tags for the item in the slot."
+        ],
         "returns": "Returns all tags for the item in the slot. Return an empty array if the the slot is empty.",
         "throws": "function can throw errors."
       },
@@ -2703,7 +3145,9 @@ let Spinnet = {
         "params": {
           "tag": "The item tag."
         },
-        "remarks": "Returns whether the item in the slot slot has the given tag.",
+        "remarks": [
+          "Returns whether the item in the slot slot has the given tag."
+        ],
         "returns": "Returns false when the slot is empty or the item in the slot does not have the given tag.",
         "throws": "function can throw errors."
       },
@@ -2717,7 +3161,9 @@ let Spinnet = {
         "params": {
           "itemStack": "The ItemStack that is being compared."
         },
-        "remarks": "Returns whether this item stack can be stacked with the given `itemStack`. This is determined by comparing the item type and any custom data and properties associated with the item stacks. The amount of each item stack is not taken into consideration.",
+        "remarks": [
+          "Returns whether this item stack can be stacked with the given `itemStack`. This is determined by comparing the item type and any custom data and properties associated with the item stacks. The amount of each item stack is not taken into consideration."
+        ],
         "returns": "Returns whether this item stack can be stacked with the given `itemStack`.",
         "throws": "Throws if the slot's container is invalid."
       },
@@ -2729,7 +3175,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the ContainerSlot is valid. The container slot is valid if the container exists and is loaded, and the slot index is valid."
+        "remarks": [
+          "Returns whether the ContainerSlot is valid. The container slot is valid if the container exists and is loaded, and the slot index is valid."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -2741,7 +3189,9 @@ let Spinnet = {
         "params": {
           "blockIdentifiers": "The list of blocks, given by their identifiers."
         },
-        "remarks": "The list of block types this item can break in Adventure mode. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode.",
+        "remarks": [
+          "The list of block types this item can break in Adventure mode. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid. Also throws if any of the provided block identifiers are invalid."
       },
       "match": "setCanDestroy(blockIdentifiers?: string[]): void",
@@ -2754,7 +3204,9 @@ let Spinnet = {
         "params": {
           "blockIdentifiers": "The list of blocks, given by their identifiers."
         },
-        "remarks": "The list of block types this item can be placed on in Adventure mode. This is only applicable to block items. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode.",
+        "remarks": [
+          "The list of block types this item can be placed on in Adventure mode. This is only applicable to block items. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid. Also throws if any of the provided block identifiers are invalid."
       },
       "match": "setCanPlaceOn(blockIdentifiers?: string[]): void",
@@ -2767,7 +3219,9 @@ let Spinnet = {
         "params": {
           "itemStack": "The ItemStack to be placed in the slot."
         },
-        "remarks": "Sets the given ItemStack in the slot, replacing any existing item. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the given ItemStack in the slot, replacing any existing item. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setItem(itemStack?: ItemStack): void",
@@ -2780,7 +3234,9 @@ let Spinnet = {
         "params": {
           "loreList": "A list of lore strings. Setting this argument to undefined will clear the lore."
         },
-        "remarks": "Sets the lore value - a secondary display string - for an ItemStack. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the lore value - a secondary display string - for an ItemStack. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the slot's container is invalid."
       },
       "match": "setLore(loreList?: string[]): void",
@@ -2792,7 +3248,8 @@ let Spinnet = {
   "DataDrivenEntityTriggerAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2802,7 +3259,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that the event triggered on."
+        "remarks": [
+          "Entity that the event triggered on."
+        ]
       },
       "match": "readonly entity: Entity",
       "kind": "readonly",
@@ -2812,7 +3271,9 @@ let Spinnet = {
     "eventId": {
       "comment": {
         "params": {},
-        "remarks": "Name of the data driven event being triggered."
+        "remarks": [
+          "Name of the data driven event being triggered."
+        ]
       },
       "match": "readonly eventId: string",
       "kind": "readonly",
@@ -2822,7 +3283,9 @@ let Spinnet = {
     "getModifiers": {
       "comment": {
         "params": {},
-        "remarks": "An updateable list of modifications to component state that are the effect of this triggered event."
+        "remarks": [
+          "An updateable list of modifications to component state that are the effect of this triggered event."
+        ]
       },
       "match": "getModifiers(): DefinitionModifier[]",
       "kind": "public",
@@ -2833,7 +3296,8 @@ let Spinnet = {
   "DataDrivenEntityTriggerAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2843,7 +3307,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called after a data driven entity event is triggered. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called after a data driven entity event is triggered. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: DataDrivenEntityTriggerAfterEvent) => void,options?: EntityDataDrivenTriggerEventOptions,): (arg: DataDrivenEntityTriggerAfterEvent) => void",
       "kind": "public",
@@ -2853,7 +3319,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback that will be called after a data driven entity event is triggered. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback that will be called after a data driven entity event is triggered. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: DataDrivenEntityTriggerAfterEvent) => void): void",
@@ -2865,7 +3333,8 @@ let Spinnet = {
   "DataDrivenEntityTriggerBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2875,7 +3344,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, this entity event is not triggered."
+        "remarks": [
+          "If set to true, this entity event is not triggered."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -2885,7 +3356,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that the event triggered on."
+        "remarks": [
+          "Entity that the event triggered on."
+        ]
       },
       "match": "readonly entity: Entity",
       "kind": "readonly",
@@ -2895,7 +3368,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Name of the data driven event being triggered."
+        "remarks": [
+          "Name of the data driven event being triggered."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -2905,7 +3380,9 @@ let Spinnet = {
     "getModifiers": {
       "comment": {
         "params": {},
-        "remarks": "An updateable list of modifications to component state that are the effect of this triggered event."
+        "remarks": [
+          "An updateable list of modifications to component state that are the effect of this triggered event."
+        ]
       },
       "match": "getModifiers(): DefinitionModifier[]",
       "kind": "public",
@@ -2917,7 +3394,9 @@ let Spinnet = {
         "params": {
           "modifiers": "An updated list of modifications to component state."
         },
-        "remarks": "Changes a list of modifications to component state that are the effect of this triggered event."
+        "remarks": [
+          "Changes a list of modifications to component state that are the effect of this triggered event."
+        ]
       },
       "match": "setModifiers(modifiers: DefinitionModifier[]): void",
       "kind": "public",
@@ -2928,7 +3407,8 @@ let Spinnet = {
   "DataDrivenEntityTriggerBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2938,7 +3418,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a data driven entity event is triggered. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before a data driven entity event is triggered. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void,options?: EntityDataDrivenTriggerEventOptions,): (arg: DataDrivenEntityTriggerBeforeEvent) => void",
       "kind": "public",
@@ -2948,7 +3430,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback that will be called before a data driven entity event is triggered. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback that will be called before a data driven entity event is triggered. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: DataDrivenEntityTriggerBeforeEvent) => void): void",
@@ -2960,7 +3444,8 @@ let Spinnet = {
   "Dimension": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -2970,7 +3455,9 @@ let Spinnet = {
     "heightRange": {
       "comment": {
         "params": {},
-        "remarks": "Height range of the dimension.",
+        "remarks": [
+          "Height range of the dimension."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly heightRange: minecraftcommon.NumberRange",
@@ -2981,7 +3468,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the dimension."
+        "remarks": [
+          "Identifier of the dimension."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -2995,8 +3484,10 @@ let Spinnet = {
           "radius": "Radius, in blocks, of the explosion to create.",
           "explosionOptions": "Additional configurable options for the explosion."
         },
+        "remarks": [
+          "Creates an explosion at the specified location. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Creates an explosion at the specified location. This function can't be called in read-only mode.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}",
         "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); const explodeNoBlocksLoc = { x: Math.floor(targetLocation.x + 1), y: Math.floor(targetLocation.y + 2), z: Math.floor(targetLocation.z + 1) }; log(\"Creating an explosion of radius 15 that does not break blocks.\"); overworld.createExplosion(explodeNoBlocksLoc, 15, { breaksBlocks: false }); ```"
       },
@@ -3013,8 +3504,10 @@ let Spinnet = {
           "block": "Type of block to fill the volume with.",
           "options": "A set of additional options, such as a matching block to potentially replace this fill block with."
         },
+        "remarks": [
+          "Fills an area between begin and end with block of type block. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Fills an area between begin and end with block of type block. This function can't be called in read-only mode.",
         "returns": "Returns number of blocks placed.",
         "throws": "function can throw errors."
       },
@@ -3028,7 +3521,9 @@ let Spinnet = {
         "params": {
           "location": "The location at which to return a block."
         },
-        "remarks": "Returns a block instance at the given location.",
+        "remarks": [
+          "Returns a block instance at the given location."
+        ],
         "returns": "Block at the specified location, or 'undefined' if asking for a block at an unloaded chunk.",
         "throws": "PositionInUnloadedChunkError: Exception thrown when trying to interact with a Block object that isn't in a loaded and ticking chunk anymore PositionOutOfWorldBoundariesError: Exception thrown when trying to interact with a position outside of dimension height range {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}"
       },
@@ -3044,7 +3539,9 @@ let Spinnet = {
           "direction": "Vector direction to cast the ray.",
           "options": "Additional options for processing this raycast query."
         },
-        "remarks": "Gets the first block that intersects with a vector emanating from a location."
+        "remarks": [
+          "Gets the first block that intersects with a vector emanating from a location."
+        ]
       },
       "match": "getBlockFromRay(location: Vector3, direction: Vector3, options?: BlockRaycastOptions): BlockRaycastHit | undefined",
       "kind": "public",
@@ -3056,7 +3553,9 @@ let Spinnet = {
         "params": {
           "options": "Additional options that can be used to filter the set of entities returned."
         },
-        "remarks": "Returns a set of entities based on a set of conditions defined via the EntityQueryOptions set of filter criteria.",
+        "remarks": [
+          "Returns a set of entities based on a set of conditions defined via the EntityQueryOptions set of filter criteria."
+        ],
         "returns": "An entity array.",
         "throws": "function can throw errors.",
         "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); const items = overworld.getEntities({ location: targetLocation, maxDistance: 20, }); for (const item of items) { const itemComp = item.getComponent(\"item\") as mc.EntityItemComponent; if (itemComp) { if (itemComp.itemStack.typeId.endsWith(\"feather\")) { log(\"Success! Found a feather\", 1); } } } ```"
@@ -3071,7 +3570,9 @@ let Spinnet = {
         "params": {
           "location": "The location at which to return entities."
         },
-        "remarks": "Returns a set of entities at a particular location.",
+        "remarks": [
+          "Returns a set of entities at a particular location."
+        ],
         "returns": "Zero or more entities at the specified location."
       },
       "match": "getEntitiesAtBlockLocation(location: Vector3): Entity[]",
@@ -3084,7 +3585,9 @@ let Spinnet = {
         "params": {
           "options": "Additional options for processing this raycast query."
         },
-        "remarks": "Gets entities that intersect with a specified vector emanating from a location."
+        "remarks": [
+          "Gets entities that intersect with a specified vector emanating from a location."
+        ]
       },
       "match": "getEntitiesFromRay(location: Vector3, direction: Vector3, options?: EntityRaycastOptions): EntityRaycastHit[]",
       "kind": "public",
@@ -3096,7 +3599,9 @@ let Spinnet = {
         "params": {
           "options": "Additional options that can be used to filter the set of players returned."
         },
-        "remarks": "Returns a set of players based on a set of conditions defined via the EntityQueryOptions set of filter criteria.",
+        "remarks": [
+          "Returns a set of players based on a set of conditions defined via the EntityQueryOptions set of filter criteria."
+        ],
         "returns": "A player array.",
         "throws": "function can throw errors."
       },
@@ -3108,8 +3613,10 @@ let Spinnet = {
     "getWeather": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns the current weather. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Returns the current weather. This function can't be called in read-only mode.",
         "returns": "Returns a WeatherType that explains the broad category of weather that is currently going on."
       },
       "match": "getWeather(): WeatherType",
@@ -3122,7 +3629,9 @@ let Spinnet = {
         "params": {
           "commandString": "Command to run. Note that command strings should not start with slash."
         },
-        "remarks": "Runs a command synchronously using the context of the broader dimenion. This function can't be called in read-only mode.",
+        "remarks": [
+          "Runs a command synchronously using the context of the broader dimenion. This function can't be called in read-only mode."
+        ],
         "returns": "Returns a command result with a count of successful values from the command.",
         "throws": "Throws an exception if the command fails due to incorrect parameters or command syntax, or in erroneous cases for the command. Note that in many cases, if the command does not operate (e.g., a target selector found no matches), this method will not throw an exception. {@link CommandError}"
       },
@@ -3136,7 +3645,9 @@ let Spinnet = {
         "params": {
           "commandString": "Command to run. Note that command strings should not start with slash."
         },
-        "remarks": "Runs a particular command asynchronously from the context of the broader dimension.  Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick.",
+        "remarks": [
+          "Runs a particular command asynchronously from the context of the broader dimension.  Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick."
+        ],
         "returns": "For commands that return data, returns a CommandResult with an indicator of command results.",
         "throws": "Throws an exception if the command fails due to incorrect parameters or command syntax, or in erroneous cases for the command. Note that in many cases, if the command does not operate (e.g., a target selector found no matches), this method will not throw an exception."
       },
@@ -3151,7 +3662,9 @@ let Spinnet = {
           "weatherType": "Set the type of weather to apply.",
           "duration": "Sets the duration of the weather (in ticks). If no duration is provided, the duration will be set to a random duration between 300 and 900 seconds."
         },
-        "remarks": "Sets the current weather within the dimension This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current weather within the dimension This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setWeather(weatherType: WeatherType, duration?: number): void",
@@ -3165,7 +3678,9 @@ let Spinnet = {
           "identifier": "Identifier of the type of entity to spawn. If no namespace is specified, 'minecraft:' is assumed.",
           "location": "The location at which to create the entity."
         },
-        "remarks": "Creates a new entity (e.g., a mob) at the specified location. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates a new entity (e.g., a mob) at the specified location. This function can't be called in read-only mode."
+        ],
         "returns": "Newly created entity at the specified location.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}",
         "example": "```typescript const creeper = overworld.spawnEntity(\"minecraft:creeper\", targetLocation); creeper.triggerEvent(\"minecraft:start_exploding_forced\"); ```"
@@ -3180,7 +3695,9 @@ let Spinnet = {
         "params": {
           "location": "The location at which to create the item stack."
         },
-        "remarks": "Creates a new item stack as an entity at the specified location. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates a new item stack as an entity at the specified location. This function can't be called in read-only mode."
+        ],
         "returns": "Newly created item stack entity at the specified location.",
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}",
         "example": "```typescript const featherItem = new mc.ItemStack(mc.MinecraftItemTypes.Feather, 1); overworld.spawnItem(featherItem, targetLocation); log(`New feather created at ${targetLocation.x}, ${targetLocation.y}, ${targetLocation.z}!`); ```"
@@ -3197,7 +3714,9 @@ let Spinnet = {
           "location": "The location at which to create the particle emitter.",
           "molangVariables": "A set of optional, customizable variables that can be adjusted for this particle."
         },
-        "remarks": "Creates a new particle emitter at a specified location in the world. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates a new particle emitter at a specified location in the world. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors. {@link LocationInUnloadedChunkError} {@link LocationOutOfWorldBoundariesError}",
         "example": "```typescript for (let i = 0; i < 100; i++) { const molang = new mc.MolangVariableMap(); molang.setColorRGB(\"variable.color\", { red: Math.random(), green: Math.random(), blue: Math.random(), alpha: 1 }); let newLocation = { x: targetLocation.x + Math.floor(Math.random() * 8) - 4, y: targetLocation.y + Math.floor(Math.random() * 8) - 4, z: targetLocation.z + Math.floor(Math.random() * 8) - 4, }; overworld.spawnParticle(\"minecraft:colored_flame_particle\", newLocation, molang); } ```"
       },
@@ -3210,7 +3729,8 @@ let Spinnet = {
   "DimensionType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3220,7 +3740,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the dimension type."
+        "remarks": [
+          "Identifier of the dimension type."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -3231,7 +3753,8 @@ let Spinnet = {
   "DimensionTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3241,7 +3764,9 @@ let Spinnet = {
     "get": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves a dimension type using a string-based identifier."
+        "remarks": [
+          "Retrieves a dimension type using a string-based identifier."
+        ]
       },
       "match": "static get(dimensionTypeId: string): DimensionType | undefined",
       "kind": "static",
@@ -3251,7 +3776,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves an array of all dimension types."
+        "remarks": [
+          "Retrieves an array of all dimension types."
+        ]
       },
       "match": "static getAll(): DimensionType[]",
       "kind": "static",
@@ -3262,7 +3789,8 @@ let Spinnet = {
   "Effect": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3272,7 +3800,9 @@ let Spinnet = {
     "amplifier": {
       "comment": {
         "params": {},
-        "remarks": "Gets an amplifier that may have been applied to this effect. Sample values range typically from 0 to 4. Example: The effect 'Jump Boost II' will have an amplifier value of 1.",
+        "remarks": [
+          "Gets an amplifier that may have been applied to this effect. Sample values range typically from 0 to 4. Example: The effect 'Jump Boost II' will have an amplifier value of 1."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly amplifier: number",
@@ -3283,7 +3813,9 @@ let Spinnet = {
     "displayName": {
       "comment": {
         "params": {},
-        "remarks": "Gets the player-friendly name of this effect.",
+        "remarks": [
+          "Gets the player-friendly name of this effect."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly displayName: string",
@@ -3294,7 +3826,9 @@ let Spinnet = {
     "duration": {
       "comment": {
         "params": {},
-        "remarks": "Gets the entire specified duration, in ticks, of this effect. There are 20 ticks per second. Use {@link TicksPerSecond} constant to convert between ticks and seconds.",
+        "remarks": [
+          "Gets the entire specified duration, in ticks, of this effect. There are 20 ticks per second. Use {@link TicksPerSecond} constant to convert between ticks and seconds."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly duration: number",
@@ -3305,7 +3839,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Gets the type id of this effect.",
+        "remarks": [
+          "Gets the type id of this effect."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly typeId: string",
@@ -3316,7 +3852,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether an effect instance is available for use in this context."
+        "remarks": [
+          "Returns whether an effect instance is available for use in this context."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -3327,7 +3865,8 @@ let Spinnet = {
   "EffectAddAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3337,7 +3876,9 @@ let Spinnet = {
     "effect": {
       "comment": {
         "params": {},
-        "remarks": "Additional properties and details of the effect. This property can't be edited in read-only mode."
+        "remarks": [
+          "Additional properties and details of the effect. This property can't be edited in read-only mode."
+        ]
       },
       "match": "effect: Effect",
       "kind": "public",
@@ -3347,7 +3888,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that the effect is being added to. This property can't be edited in read-only mode."
+        "remarks": [
+          "Entity that the effect is being added to. This property can't be edited in read-only mode."
+        ]
       },
       "match": "entity: Entity",
       "kind": "public",
@@ -3358,7 +3901,8 @@ let Spinnet = {
   "EffectAddAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3368,7 +3912,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an effect is added to an entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an effect is added to an entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EffectAddAfterEvent) => void,options?: EntityEventOptions,): (arg: EffectAddAfterEvent) => void",
       "kind": "public",
@@ -3378,7 +3924,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an effect is added to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an effect is added to an entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EffectAddAfterEvent) => void): void",
@@ -3390,7 +3938,8 @@ let Spinnet = {
   "EffectAddBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3400,7 +3949,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "When set to true will cancel the event."
+        "remarks": [
+          "When set to true will cancel the event."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -3410,7 +3961,9 @@ let Spinnet = {
     "duration": {
       "comment": {
         "params": {},
-        "remarks": "Effect duration."
+        "remarks": [
+          "Effect duration."
+        ]
       },
       "match": "duration: number",
       "kind": "public",
@@ -3420,7 +3973,9 @@ let Spinnet = {
     "effectType": {
       "comment": {
         "params": {},
-        "remarks": "The type of the effect that is being added."
+        "remarks": [
+          "The type of the effect that is being added."
+        ]
       },
       "match": "readonly effectType: string",
       "kind": "readonly",
@@ -3430,7 +3985,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that the effect is being added to."
+        "remarks": [
+          "Entity that the effect is being added to."
+        ]
       },
       "match": "readonly entity: Entity",
       "kind": "readonly",
@@ -3441,7 +3998,8 @@ let Spinnet = {
   "EffectAddBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3451,7 +4009,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an effect is added to an entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an effect is added to an entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EffectAddBeforeEvent) => void): (arg: EffectAddBeforeEvent) => void",
       "kind": "public",
@@ -3461,7 +4021,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an effect is added to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an effect is added to an entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EffectAddBeforeEvent) => void): void",
@@ -3473,7 +4035,8 @@ let Spinnet = {
   "EffectType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3483,7 +4046,9 @@ let Spinnet = {
     "getName": {
       "comment": {
         "params": {},
-        "remarks": "Identifier name of this effect type.",
+        "remarks": [
+          "Identifier name of this effect type."
+        ],
         "returns": "Identifier of the effect type."
       },
       "match": "getName(): string",
@@ -3495,7 +4060,8 @@ let Spinnet = {
   "EffectTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3505,7 +4071,9 @@ let Spinnet = {
     "get": {
       "comment": {
         "params": {},
-        "remarks": "Effect type for the given identifier. This function can't be called in read-only mode.",
+        "remarks": [
+          "Effect type for the given identifier. This function can't be called in read-only mode."
+        ],
         "returns": "Effect type for the given identifier or undefined if the effect does not exist."
       },
       "match": "static get(identifier: string): EffectType | undefined",
@@ -3516,7 +4084,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Gets all effects. This function can't be called in read-only mode.",
+        "remarks": [
+          "Gets all effects. This function can't be called in read-only mode."
+        ],
         "returns": "A list of all effects."
       },
       "match": "static getAll(): EffectType[]",
@@ -3529,7 +4099,9 @@ let Spinnet = {
     "level": {
       "comment": {
         "params": {},
-        "remarks": "The level of this enchantment instance. This property can't be edited in read-only mode."
+        "remarks": [
+          "The level of this enchantment instance. This property can't be edited in read-only mode."
+        ]
       },
       "match": "level: number",
       "kind": "public",
@@ -3539,7 +4111,9 @@ let Spinnet = {
     "constructor": {
       "comment": {
         "params": {},
-        "remarks": "The enchantment type of this instance."
+        "remarks": [
+          "The enchantment type of this instance."
+        ]
       },
       "match": "constructor(enchantmentType: EnchantmentType | string, level?: number)",
       "kind": "public",
@@ -3551,7 +4125,9 @@ let Spinnet = {
     "slot": {
       "comment": {
         "params": {},
-        "remarks": "The item slot/type that this collection is applied to."
+        "remarks": [
+          "The item slot/type that this collection is applied to."
+        ]
       },
       "match": "readonly slot: number",
       "kind": "readonly",
@@ -3561,7 +4137,9 @@ let Spinnet = {
     "constructor": {
       "comment": {
         "params": {},
-        "remarks": "Creates a new EnchantmentList."
+        "remarks": [
+          "Creates a new EnchantmentList."
+        ]
       },
       "match": "constructor(enchantmentSlot: number)",
       "kind": "public",
@@ -3571,7 +4149,9 @@ let Spinnet = {
     "addEnchantment": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "addEnchantment(enchantment: Enchantment): boolean",
       "kind": "public",
@@ -3581,7 +4161,9 @@ let Spinnet = {
     "canAddEnchantment": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether or not the provided EnchantmentInstance can be added to this collection. This function can't be called in read-only mode."
+        "remarks": [
+          "Returns whether or not the provided EnchantmentInstance can be added to this collection. This function can't be called in read-only mode."
+        ]
       },
       "match": "canAddEnchantment(enchantment: Enchantment): boolean",
       "kind": "public",
@@ -3591,7 +4173,9 @@ let Spinnet = {
     "getEnchantment": {
       "comment": {
         "params": {},
-        "remarks": "Returns an enchantment associated with a type. This function can't be called in read-only mode.",
+        "remarks": [
+          "Returns an enchantment associated with a type. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getEnchantment(enchantmentType: EnchantmentType | string): Enchantment | undefined",
@@ -3602,7 +4186,9 @@ let Spinnet = {
     "hasEnchantment": {
       "comment": {
         "params": {},
-        "remarks": "If this collection has an EnchantmentInstance with type, returns the level of the enchantment. Returns 0 if not present.",
+        "remarks": [
+          "If this collection has an EnchantmentInstance with type, returns the level of the enchantment. Returns 0 if not present."
+        ],
         "throws": "function can throw errors."
       },
       "match": "hasEnchantment(enchantmentType: EnchantmentType | string): number",
@@ -3613,7 +4199,9 @@ let Spinnet = {
     "next": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "next(): IteratorResult<Enchantment>",
       "kind": "public",
@@ -3623,7 +4211,9 @@ let Spinnet = {
     "removeEnchantment": {
       "comment": {
         "params": {},
-        "remarks": "Removes an EnchantmentInstance with type from this collection if present. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes an EnchantmentInstance with type from this collection if present. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "removeEnchantment(enchantmentType: EnchantmentType | string): void",
@@ -3635,7 +4225,8 @@ let Spinnet = {
   "EnchantmentSlot": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3644,7 +4235,8 @@ let Spinnet = {
     },
     "all": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly all = -1",
       "kind": "static readonly",
@@ -3653,7 +4245,8 @@ let Spinnet = {
     },
     "armorFeet": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly armorFeet = 4",
       "kind": "static readonly",
@@ -3662,7 +4255,8 @@ let Spinnet = {
     },
     "armorHead": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly armorHead = 1",
       "kind": "static readonly",
@@ -3671,7 +4265,8 @@ let Spinnet = {
     },
     "armorLegs": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly armorLegs = 8",
       "kind": "static readonly",
@@ -3680,7 +4275,8 @@ let Spinnet = {
     },
     "armorTorso": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly armorTorso = 2",
       "kind": "static readonly",
@@ -3689,7 +4285,8 @@ let Spinnet = {
     },
     "axe": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly axe = 512",
       "kind": "static readonly",
@@ -3698,7 +4295,8 @@ let Spinnet = {
     },
     "bow": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly bow = 32",
       "kind": "static readonly",
@@ -3707,7 +4305,8 @@ let Spinnet = {
     },
     "carrotStick": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly carrotStick = 8192",
       "kind": "static readonly",
@@ -3716,7 +4315,8 @@ let Spinnet = {
     },
     "cosmeticHead": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly cosmeticHead = 262144",
       "kind": "static readonly",
@@ -3725,7 +4325,8 @@ let Spinnet = {
     },
     "crossbow": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly crossbow = 65536",
       "kind": "static readonly",
@@ -3734,7 +4335,8 @@ let Spinnet = {
     },
     "elytra": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly elytra = 16384",
       "kind": "static readonly",
@@ -3743,7 +4345,8 @@ let Spinnet = {
     },
     "fishingRod": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly fishingRod = 4096",
       "kind": "static readonly",
@@ -3752,7 +4355,8 @@ let Spinnet = {
     },
     "flintsteel": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly flintsteel = 256",
       "kind": "static readonly",
@@ -3761,7 +4365,8 @@ let Spinnet = {
     },
     "gArmor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly gArmor = 15",
       "kind": "static readonly",
@@ -3770,7 +4375,8 @@ let Spinnet = {
     },
     "gDigging": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly gDigging = 3648",
       "kind": "static readonly",
@@ -3779,7 +4385,8 @@ let Spinnet = {
     },
     "gTool": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly gTool = 131520",
       "kind": "static readonly",
@@ -3788,7 +4395,8 @@ let Spinnet = {
     },
     "hoe": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly hoe = 64",
       "kind": "static readonly",
@@ -3797,7 +4405,8 @@ let Spinnet = {
     },
     "none": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly none = 0",
       "kind": "static readonly",
@@ -3806,7 +4415,8 @@ let Spinnet = {
     },
     "pickaxe": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly pickaxe = 1024",
       "kind": "static readonly",
@@ -3815,7 +4425,8 @@ let Spinnet = {
     },
     "shears": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly shears = 128",
       "kind": "static readonly",
@@ -3824,7 +4435,8 @@ let Spinnet = {
     },
     "shield": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly shield = 131072",
       "kind": "static readonly",
@@ -3833,7 +4445,8 @@ let Spinnet = {
     },
     "shovel": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly shovel = 2048",
       "kind": "static readonly",
@@ -3842,7 +4455,8 @@ let Spinnet = {
     },
     "spear": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly spear = 32768",
       "kind": "static readonly",
@@ -3851,7 +4465,8 @@ let Spinnet = {
     },
     "sword": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly sword = 16",
       "kind": "static readonly",
@@ -3862,7 +4477,8 @@ let Spinnet = {
   "EnchantmentType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3872,7 +4488,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "The name of the enchantment type."
+        "remarks": [
+          "The name of the enchantment type."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -3882,7 +4500,9 @@ let Spinnet = {
     "maxLevel": {
       "comment": {
         "params": {},
-        "remarks": "The maximum level this type of enchantment can have."
+        "remarks": [
+          "The maximum level this type of enchantment can have."
+        ]
       },
       "match": "readonly maxLevel: number",
       "kind": "readonly",
@@ -3893,7 +4513,8 @@ let Spinnet = {
   "EnchantmentTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3905,7 +4526,9 @@ let Spinnet = {
         "params": {
           "enchantmentId": "Identifier of the enchantment.  For example, \"minecraft:flame\"."
         },
-        "remarks": "Retrieves an enchantment with the specified identifier.",
+        "remarks": [
+          "Retrieves an enchantment with the specified identifier."
+        ],
         "returns": "If available, returns an EnchantmentType object that represents the specified enchantment."
       },
       "match": "static get(enchantmentId: string): EnchantmentType | undefined",
@@ -3917,7 +4540,8 @@ let Spinnet = {
   "Entity": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -3927,7 +4551,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that the entity is currently within.",
+        "remarks": [
+          "Dimension that the entity is currently within."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly dimension: Dimension",
@@ -3938,8 +4564,10 @@ let Spinnet = {
     "fallDistance": {
       "comment": {
         "params": {},
+        "remarks": [
+          "The distance an entity has fallen. The value is reset when the entity is teleported. The value is always 1 when gliding with Elytra."
+        ],
         "beta": "",
-        "remarks": "The distance an entity has fallen. The value is reset when the entity is teleported. The value is always 1 when gliding with Elytra.",
         "throws": "property can throw when used."
       },
       "match": "readonly fallDistance: number",
@@ -3950,7 +4578,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Unique identifier of the entity. This identifier is intended to be consistent across loads of a world instance. No meaning should be inferred from the value and structure of this unique identifier - do not parse or interpret it. This property is accessible even if {@link Entity.isValid} is false."
+        "remarks": [
+          "Unique identifier of the entity. This identifier is intended to be consistent across loads of a world instance. No meaning should be inferred from the value and structure of this unique identifier - do not parse or interpret it. This property is accessible even if {@link Entity.isValid} is false."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -3960,7 +4590,9 @@ let Spinnet = {
     "isClimbing": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is touching a climbable block. For example, a player next to a ladder or a spider next to a stone wall.",
+        "remarks": [
+          "Whether the entity is touching a climbable block. For example, a player next to a ladder or a spider next to a stone wall."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isClimbing: boolean",
@@ -3971,7 +4603,9 @@ let Spinnet = {
     "isFalling": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity has a fall distance greater than 0, or greater than 1 while gliding.",
+        "remarks": [
+          "Whether the entity has a fall distance greater than 0, or greater than 1 while gliding."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isFalling: boolean",
@@ -3982,7 +4616,9 @@ let Spinnet = {
     "isInWater": {
       "comment": {
         "params": {},
-        "remarks": "Whether any part of the entity is inside a water block.",
+        "remarks": [
+          "Whether any part of the entity is inside a water block."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isInWater: boolean",
@@ -3993,7 +4629,9 @@ let Spinnet = {
     "isOnGround": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is on top of a solid block.",
+        "remarks": [
+          "Whether the entity is on top of a solid block."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isOnGround: boolean",
@@ -4004,7 +4642,9 @@ let Spinnet = {
     "isSleeping": {
       "comment": {
         "params": {},
-        "remarks": "If true, the entity is currently sleeping.",
+        "remarks": [
+          "If true, the entity is currently sleeping."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSleeping: boolean",
@@ -4015,7 +4655,9 @@ let Spinnet = {
     "isSneaking": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is sneaking - that is, moving more slowly and more quietly. This property can't be edited in read-only mode."
+        "remarks": [
+          "Whether the entity is sneaking - that is, moving more slowly and more quietly. This property can't be edited in read-only mode."
+        ]
       },
       "match": "isSneaking: boolean",
       "kind": "public",
@@ -4025,7 +4667,9 @@ let Spinnet = {
     "isSprinting": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is sprinting. For example, a player using the sprint action, an ocelot running away or a pig boosting with Carrot on a Stick.",
+        "remarks": [
+          "Whether the entity is sprinting. For example, a player using the sprint action, an ocelot running away or a pig boosting with Carrot on a Stick."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSprinting: boolean",
@@ -4036,7 +4680,9 @@ let Spinnet = {
     "isSwimming": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is in the swimming state. For example, a player using the swim action or a fish in water.",
+        "remarks": [
+          "Whether the entity is in the swimming state. For example, a player using the swim action or a fish in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSwimming: boolean",
@@ -4047,8 +4693,10 @@ let Spinnet = {
     "lifetimeState": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Whether the entity reference that you have is valid or not. For example, an entity may be unloaded if it moves into a chunk that is unloaded, but may be reactivated if the chunk it is within gets reloaded."
+        "remarks": [
+          "Whether the entity reference that you have is valid or not. For example, an entity may be unloaded if it moves into a chunk that is unloaded, but may be reactivated if the chunk it is within gets reloaded."
+        ],
+        "beta": ""
       },
       "match": "readonly lifetimeState: EntityLifetimeState",
       "kind": "readonly",
@@ -4058,7 +4706,9 @@ let Spinnet = {
     "location": {
       "comment": {
         "params": {},
-        "remarks": "Current location of the entity.",
+        "remarks": [
+          "Current location of the entity."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly location: Vector3",
@@ -4069,7 +4719,9 @@ let Spinnet = {
     "nameTag": {
       "comment": {
         "params": {},
-        "remarks": "Given name of the entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Given name of the entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "nameTag: string",
       "kind": "public",
@@ -4079,7 +4731,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Returns a scoreboard identity that represents this entity. Will remain valid when the entity is killed."
+        "remarks": [
+          "Returns a scoreboard identity that represents this entity. Will remain valid when the entity is killed."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -4093,7 +4747,9 @@ let Spinnet = {
           "duration": "Amount of time, in ticks, for the effect to apply. There are 20 ticks per second. Use {@link TicksPerSecond} constant to convert between ticks and seconds. The value must be within the range [0, 20000000].",
           "options": "Additional options for the effect."
         },
-        "remarks": "Adds or updates an effect, like poison, to the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds or updates an effect, like poison, to the entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns nothing if the effect was added or updated successfully. This can throw an error if the duration or amplifier are outside of the valid ranges, or if the effect does not exist.",
         "throws": "function can throw errors.",
         "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); const fox = overworld.spawnEntity(\"minecraft:fox\", { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 3, }); fox.addEffect(\"speed\", 10, { amplifier: 2, }); log(\"Created a fox.\"); const wolf = overworld.spawnEntity(\"minecraft:wolf\", { x: targetLocation.x + 4, y: targetLocation.y + 2, z: targetLocation.z + 3, }); wolf.addEffect(\"slowness\", 10, { amplifier: 2, }); wolf.isSneaking = true; log(\"Created a sneaking wolf.\", 1); ```"
@@ -4108,7 +4764,9 @@ let Spinnet = {
         "params": {
           "tag": "Content of the tag to add. The tag must be less than 256 characters."
         },
-        "remarks": "Adds a specified tag to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a specified tag to an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if the tag was added successfully. This can fail if the tag already exists on the entity.",
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
@@ -4124,7 +4782,9 @@ let Spinnet = {
           "amount": "Amount of damage to apply.",
           "options": "Additional options about the source of damage, which may add additional effects or spur additional behaviors on this entity."
         },
-        "remarks": "Applies a set of damage to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies a set of damage to an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Whether the entity takes any damage. This can return false if the entity is invulnerable or if the damage applied is less than or equal to 0.",
         "throws": "function can throw errors.",
         "example": "```typescript const skelly = overworld.spawnEntity(\"minecraft:skeleton\", targetLocation); skelly.applyDamage(19); // skeletons have max damage of 20 so this is a near-death skeleton mc.system.runTimeout(() => { let health = skelly.getComponent(\"health\") as mc.EntityHealthComponent; log(\"Skeleton health before heal: \" + health.currentValue); health.resetToMaxValue(); log(\"Skeleton health after heal: \" + health.currentValue); }, 20); ```"
@@ -4139,7 +4799,9 @@ let Spinnet = {
         "params": {
           "vector": "Impulse vector."
         },
-        "remarks": "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
       },
@@ -4156,7 +4818,9 @@ let Spinnet = {
           "horizontalStrength": "Knockback strength for the horizontal vector.",
           "verticalStrength": "Knockback strength for the vertical vector."
         },
-        "remarks": "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { overworld.spawnEntity(mobs[i % mobs.length], targetLocation); } let eqo: mc.EntityQueryOptions = { type: \"skeleton\", }; for (let entity of overworld.getEntities(eqo)) { entity.applyKnockback(0, 0, 0, 1); } ```"
       },
@@ -4168,7 +4832,9 @@ let Spinnet = {
     "clearDynamicProperties": {
       "comment": {
         "params": {},
-        "remarks": "Clears all dynamic properties that have been set on this entity.",
+        "remarks": [
+          "Clears all dynamic properties that have been set on this entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "clearDynamicProperties(): void",
@@ -4179,7 +4845,9 @@ let Spinnet = {
     "clearVelocity": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current velocity of the Entity to zero. Note that this method may not have an impact on Players. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current velocity of the Entity to zero. Note that this method may not have an impact on Players. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
       },
@@ -4193,8 +4861,10 @@ let Spinnet = {
         "params": {
           "useEffects": "Whether to show any visual effects connected to the extinguishing."
         },
+        "remarks": [
+          "Extinguishes the fire if the entity is on fire. Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Extinguishes the fire if the entity is on fire. Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode.",
         "returns": "Returns whether the entity was on fire.",
         "throws": "function can throw errors.",
         "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
@@ -4209,7 +4879,9 @@ let Spinnet = {
         "params": {
           "options": "Additional configuration options for the ray cast."
         },
-        "remarks": "Returns the first intersecting block from the direction that this entity is looking at.",
+        "remarks": [
+          "Returns the first intersecting block from the direction that this entity is looking at."
+        ],
         "returns": "Returns the first intersecting block from the direction that this entity is looking at.",
         "throws": "function can throw errors."
       },
@@ -4223,7 +4895,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:health'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the {@link EntityComponentTypes} enum."
         },
-        "remarks": "Gets a component (that represents additional capabilities) for an entity.",
+        "remarks": [
+          "Gets a component (that represents additional capabilities) for an entity."
+        ],
         "returns": "Returns the component if it exists on the entity, otherwise undefined."
       },
       "match": "getComponents(): EntityComponent[]",
@@ -4236,7 +4910,9 @@ let Spinnet = {
         "params": {
           "identifier": "The property identifier."
         },
-        "remarks": "Returns a property value.",
+        "remarks": [
+          "Returns a property value."
+        ],
         "returns": "Returns the value for the property, or undefined if the property has not been set.",
         "throws": "function can throw errors."
       },
@@ -4248,7 +4924,9 @@ let Spinnet = {
     "getDynamicPropertyIds": {
       "comment": {
         "params": {},
-        "remarks": "Returns the available set of dynamic property identifiers that have been used on this entity.",
+        "remarks": [
+          "Returns the available set of dynamic property identifiers that have been used on this entity."
+        ],
         "returns": "A string array of the dynamic properties set on this entity.",
         "throws": "function can throw errors."
       },
@@ -4260,7 +4938,9 @@ let Spinnet = {
     "getDynamicPropertyTotalByteCount": {
       "comment": {
         "params": {},
-        "remarks": "Returns the total size, in bytes, of all the dynamic properties that are currently stored for this entity.  This can be useful for diagnosing performance warning signs - if, for example, an entity has many megabytes of associated dynamic properties, it may be slow to load on various devices.",
+        "remarks": [
+          "Returns the total size, in bytes, of all the dynamic properties that are currently stored for this entity.  This can be useful for diagnosing performance warning signs - if, for example, an entity has many megabytes of associated dynamic properties, it may be slow to load on various devices."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getDynamicPropertyTotalByteCount(): number",
@@ -4273,7 +4953,9 @@ let Spinnet = {
         "params": {
           "effectType": "The effect identifier."
         },
-        "remarks": "Returns the effect for the specified EffectType on the entity, undefined if the effect is not present, or throws an error if the effect does not exist.",
+        "remarks": [
+          "Returns the effect for the specified EffectType on the entity, undefined if the effect is not present, or throws an error if the effect does not exist."
+        ],
         "returns": "Effect object for the specified effect, undefined if the effect is not present, or throws an error if the effect does not exist.",
         "throws": "function can throw errors."
       },
@@ -4285,7 +4967,9 @@ let Spinnet = {
     "getEffects": {
       "comment": {
         "params": {},
-        "remarks": "Returns a set of effects applied to this entity.",
+        "remarks": [
+          "Returns a set of effects applied to this entity."
+        ],
         "returns": "List of effects.",
         "throws": "function can throw errors."
       },
@@ -4299,7 +4983,9 @@ let Spinnet = {
         "params": {
           "options": "Additional configuration options for the ray cast."
         },
-        "remarks": "Gets the entities that this entity is looking at by performing a ray cast from the view of this entity.",
+        "remarks": [
+          "Gets the entities that this entity is looking at by performing a ray cast from the view of this entity."
+        ],
         "returns": "Returns a set of entities from the direction that this entity is looking at.",
         "throws": "function can throw errors."
       },
@@ -4311,7 +4997,9 @@ let Spinnet = {
     "getHeadLocation": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current location of the head component of this entity.",
+        "remarks": [
+          "Returns the current location of the head component of this entity."
+        ],
         "returns": "Returns the current location of the head component of this entity.",
         "throws": "function can throw errors."
       },
@@ -4325,7 +5013,9 @@ let Spinnet = {
         "params": {
           "identifier": "The entity Property identifier."
         },
-        "remarks": "Gets an entity Property value. If the property was set using the setProperty function within the same tick, the updated value will not be reflected until the subsequent tick.",
+        "remarks": [
+          "Gets an entity Property value. If the property was set using the setProperty function within the same tick, the updated value will not be reflected until the subsequent tick."
+        ],
         "returns": "Returns the current property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
         "throws": "Throws if the entity is invalid."
       },
@@ -4337,7 +5027,9 @@ let Spinnet = {
     "getRotation": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current rotation component of this entity.",
+        "remarks": [
+          "Returns the current rotation component of this entity."
+        ],
         "returns": "Returns a Vec2 containing the rotation of this entity (in degrees).",
         "throws": "function can throw errors."
       },
@@ -4349,7 +5041,9 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
-        "remarks": "",
+        "remarks": [
+          ""
+        ],
         "returns": "Returns all tags associated with an entity.",
         "throws": "function can throw errors."
       },
@@ -4361,7 +5055,9 @@ let Spinnet = {
     "getVelocity": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current velocity vector of the entity.",
+        "remarks": [
+          "Returns the current velocity vector of the entity."
+        ],
         "returns": "Returns the current velocity vector of the entity.",
         "throws": "function can throw errors.",
         "example": "```typescript const fireworkRocket = overworld.spawnEntity(\"minecraft:fireworks_rocket\", targetLocation); mc.system.runTimeout(() => { let velocity = fireworkRocket.getVelocity(); log(\"Velocity of firework is: (x: \" + velocity.x + \", y:\" + velocity.y + \", z:\" + velocity.z + \")\"); }, 5); ```"
@@ -4374,7 +5070,9 @@ let Spinnet = {
     "getViewDirection": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current view direction of the entity.",
+        "remarks": [
+          "Returns the current view direction of the entity."
+        ],
         "returns": "Returns the current view direction of the entity.",
         "throws": "function can throw errors."
       },
@@ -4388,7 +5086,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:rideable') to retrieve. If no namespace prefix is specified, 'minecraft:' is assumed."
         },
-        "remarks": "Returns true if the specified component is present on this entity.",
+        "remarks": [
+          "Returns true if the specified component is present on this entity."
+        ],
         "returns": "Returns true if the specified component is present on this entity."
       },
       "match": "hasComponent(componentId: string): boolean",
@@ -4401,7 +5101,9 @@ let Spinnet = {
         "params": {
           "tag": "Identifier of the tag to test for."
         },
-        "remarks": "Returns whether an entity has a particular tag.",
+        "remarks": [
+          "Returns whether an entity has a particular tag."
+        ],
         "returns": "Returns whether an entity has a particular tag.",
         "throws": "function can throw errors."
       },
@@ -4413,7 +5115,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the entity can be manipulated by script. A Player is considered valid when it's EntityLifetimeState is set to Loaded.",
+        "remarks": [
+          "Returns whether the entity can be manipulated by script. A Player is considered valid when it's EntityLifetimeState is set to Loaded."
+        ],
         "returns": "Whether the entity is valid."
       },
       "match": "isValid(): boolean",
@@ -4424,7 +5128,9 @@ let Spinnet = {
     "kill": {
       "comment": {
         "params": {},
-        "remarks": "Kills this entity. The entity will drop loot as normal. This function can't be called in read-only mode.",
+        "remarks": [
+          "Kills this entity. The entity will drop loot as normal. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if entity can be killed (even if it is already dead), otherwise it returns false.",
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
@@ -4437,7 +5143,9 @@ let Spinnet = {
     "matches": {
       "comment": {
         "params": {},
-        "remarks": "Matches the entity against the passed in options. Uses the location of the entity for matching if the location is not specified in the passed in EntityQueryOptions.",
+        "remarks": [
+          "Matches the entity against the passed in options. Uses the location of the entity for matching if the location is not specified in the passed in EntityQueryOptions."
+        ],
         "returns": "Returns true if the entity matches the criteria in the passed in EntityQueryOptions, otherwise it returns false.",
         "throws": "function can throw errors."
       },
@@ -4452,8 +5160,10 @@ let Spinnet = {
           "animationName": "The animation identifier. e.g. animation.creeper.swelling",
           "options": "Additional options to control the playback and transitions of the animation."
         },
+        "remarks": [
+          "Cause the entity to play the given animation. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Cause the entity to play the given animation. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "playAnimation(animationName: string, options?: PlayAnimationOptions): void",
@@ -4464,7 +5174,9 @@ let Spinnet = {
     "remove": {
       "comment": {
         "params": {},
-        "remarks": "Immediately removes the entity from the world. The removed entity will not perform a death animation or drop loot upon removal. This function can't be called in read-only mode.",
+        "remarks": [
+          "Immediately removes the entity from the world. The removed entity will not perform a death animation or drop loot upon removal. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "remove(): void",
@@ -4477,7 +5189,9 @@ let Spinnet = {
         "params": {
           "effectType": "The effect identifier."
         },
-        "remarks": "Removes the specified EffectType on the entity, or returns false if the effect is not present. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes the specified EffectType on the entity, or returns false if the effect is not present. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if the effect has been removed. Returns false if the effect is not found or does not exist.",
         "throws": "function can throw errors."
       },
@@ -4491,7 +5205,9 @@ let Spinnet = {
         "params": {
           "tag": "Content of the tag to remove."
         },
-        "remarks": "Removes a specified tag from an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a specified tag from an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns whether the tag existed on the entity.",
         "throws": "function can throw errors."
       },
@@ -4505,7 +5221,9 @@ let Spinnet = {
         "params": {
           "identifier": "The Entity Property identifier."
         },
-        "remarks": "Resets an Entity Property back to its default value, as specified in the Entity's definition. This property change is not applied until the next tick. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets an Entity Property back to its default value, as specified in the Entity's definition. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the default property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
         "throws": "Throws if the entity is invalid. {@link minecraftcommon.EngineError} {@link Error}"
       },
@@ -4519,7 +5237,9 @@ let Spinnet = {
         "params": {
           "commandString": "The command string. Note: This should not include a leading forward slash."
         },
-        "remarks": "Runs a synchronous command on the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Runs a synchronous command on the entity. This function can't be called in read-only mode."
+        ],
         "returns": "A command result containing whether the command was successful.",
         "throws": "function can throw errors. {@link CommandError} {@link Error}"
       },
@@ -4533,7 +5253,9 @@ let Spinnet = {
         "params": {
           "commandString": "Command to run. Note that command strings should not start with slash."
         },
-        "remarks": "Runs a particular command asynchronously from the context of this entity. Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick.",
+        "remarks": [
+          "Runs a particular command asynchronously from the context of this entity. Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick."
+        ],
         "returns": "For commands that return data, returns a JSON structure with command response values.",
         "throws": "function can throw errors."
       },
@@ -4548,7 +5270,9 @@ let Spinnet = {
           "identifier": "The property identifier.",
           "value": "Data value of the property to set."
         },
-        "remarks": "Sets a specified property to a value.",
+        "remarks": [
+          "Sets a specified property to a value."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void",
@@ -4562,8 +5286,10 @@ let Spinnet = {
           "seconds": "Length of time to set the entity on fire.",
           "useEffects": "Whether side-effects should be applied (e.g. thawing freeze) and other conditions such as rain or fire protection should be taken into consideration."
         },
+        "remarks": [
+          "Sets an entity on fire (if it is not in water or rain). Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Sets an entity on fire (if it is not in water or rain). Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode.",
         "returns": "Whether the entity was set on fire. This can fail if seconds is less than or equal to zero, the entity is wet or the entity is immune to fire.",
         "throws": "function can throw errors.",
         "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
@@ -4579,7 +5305,9 @@ let Spinnet = {
           "identifier": "The Entity Property identifier.",
           "value": "The property value. The provided type must be compatible with the type specified in the entity's definition."
         },
-        "remarks": "Sets an Entity Property to the provided value. This property change is not applied until the next tick. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets an Entity Property to the provided value. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the entity is invalid. Throws if an invalid identifier is provided. Throws if the provided value type does not match the property type. Throws if the provided value is outside the expected range (int, float properties). Throws if the provided string value does not match the set of accepted enum values (enum properties"
       },
       "match": "setProperty(identifier: string, value: boolean | number | string): void",
@@ -4592,7 +5320,9 @@ let Spinnet = {
         "params": {
           "rotation": "The x and y rotation of the entity (in degrees). For most mobs, the x rotation controls the head tilt and the y rotation controls the body rotation."
         },
-        "remarks": "Sets the main rotation of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the main rotation of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setRotation(rotation: Vector2): void",
@@ -4606,7 +5336,9 @@ let Spinnet = {
           "location": "New location for the entity.",
           "teleportOptions": "Options regarding the teleport operation."
         },
-        "remarks": "Teleports the selected entity to a new location This function can't be called in read-only mode.",
+        "remarks": [
+          "Teleports the selected entity to a new location This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const pig = overworld.spawnEntity(\"minecraft:pig\", targetLocation); let inc = 1; let runId = mc.system.runInterval(() => { pig.teleport( { x: targetLocation.x + inc / 4, y: targetLocation.y + inc / 4, z: targetLocation.z + inc / 4 }, { facingLocation: targetLocation, } ); if (inc > 100) { mc.system.clearRun(runId); } inc++; }, 4); ```"
       },
@@ -4620,7 +5352,9 @@ let Spinnet = {
         "params": {
           "eventName": "Name of the entity type event to trigger. If a namespace is not specified, minecraft: is assumed."
         },
-        "remarks": "Triggers an entity type event. For every entity, a number of events are defined in an entities' definition for key entity behaviors; for example, creepers have a minecraft:start_exploding type event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Triggers an entity type event. For every entity, a number of events are defined in an entities' definition for key entity behaviors; for example, creepers have a minecraft:start_exploding type event. This function can't be called in read-only mode."
+        ],
         "throws": "If the event is not defined in the definition of the entity, an error will be thrown.",
         "example": "```typescript const creeper = overworld.spawnEntity(\"minecraft:creeper\", targetLocation); creeper.triggerEvent(\"minecraft:start_exploding_forced\"); ```"
       },
@@ -4635,7 +5369,9 @@ let Spinnet = {
           "location": "Location to teleport the entity to.",
           "teleportOptions": "Options regarding the teleport operation."
         },
-        "remarks": "Attempts to try a teleport, but may not complete the teleport operation (for example, if there are blocks at the destination.) This function can't be called in read-only mode.",
+        "remarks": [
+          "Attempts to try a teleport, but may not complete the teleport operation (for example, if there are blocks at the destination.) This function can't be called in read-only mode."
+        ],
         "returns": "Returns whether the teleport succeeded. This can fail if the destination chunk is unloaded or if the teleport would result in intersecting with blocks.",
         "throws": "function can throw errors."
       },
@@ -4648,7 +5384,8 @@ let Spinnet = {
   "EntityAddRiderComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -4658,7 +5395,9 @@ let Spinnet = {
     "entityType": {
       "comment": {
         "params": {},
-        "remarks": "The type of entity that is added as a rider for this entity when spawned under certain conditions.",
+        "remarks": [
+          "The type of entity that is added as a rider for this entity when spawned under certain conditions."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly entityType: string",
@@ -4669,7 +5408,9 @@ let Spinnet = {
     "spawnEvent": {
       "comment": {
         "params": {},
-        "remarks": "Optional spawn event to trigger on the rider when that rider is spawned for this entity.",
+        "remarks": [
+          "Optional spawn event to trigger on the rider when that rider is spawned for this entity."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly spawnEvent: string",
@@ -4679,7 +5420,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:addrider'",
       "kind": "static readonly",
@@ -4689,8 +5431,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -4700,7 +5444,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -4712,7 +5458,8 @@ let Spinnet = {
   "EntityAgeableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -4722,7 +5469,9 @@ let Spinnet = {
     "duration": {
       "comment": {
         "params": {},
-        "remarks": "Amount of time before the entity grows up, -1 for always a baby.",
+        "remarks": [
+          "Amount of time before the entity grows up, -1 for always a baby."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly duration: number",
@@ -4733,7 +5482,9 @@ let Spinnet = {
     "growUp": {
       "comment": {
         "params": {},
-        "remarks": "Event to run when this entity grows up.",
+        "remarks": [
+          "Event to run when this entity grows up."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly growUp: Trigger",
@@ -4743,7 +5494,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:ageable'",
       "kind": "static readonly",
@@ -4753,7 +5505,9 @@ let Spinnet = {
     "getDropItems": {
       "comment": {
         "params": {},
-        "remarks": "List of items that the entity drops when it grows up.",
+        "remarks": [
+          "List of items that the entity drops when it grows up."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getDropItems(): string[]",
@@ -4764,7 +5518,9 @@ let Spinnet = {
     "getFeedItems": {
       "comment": {
         "params": {},
-        "remarks": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
+        "remarks": [
+          "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getFeedItems(): EntityDefinitionFeedItem[]",
@@ -4775,8 +5531,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -4786,7 +5544,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -4798,7 +5558,8 @@ let Spinnet = {
   "EntityAttributeComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -4808,7 +5569,9 @@ let Spinnet = {
     "currentValue": {
       "comment": {
         "params": {},
-        "remarks": "Current value of this attribute for this instance.",
+        "remarks": [
+          "Current value of this attribute for this instance."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly currentValue: number",
@@ -4819,7 +5582,9 @@ let Spinnet = {
     "defaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default defined value for this attribute.",
+        "remarks": [
+          "Returns the default defined value for this attribute."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly defaultValue: number",
@@ -4830,7 +5595,9 @@ let Spinnet = {
     "effectiveMax": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective max of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective max of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMax: number",
@@ -4841,7 +5608,9 @@ let Spinnet = {
     "effectiveMin": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective min of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective min of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMin: number",
@@ -4852,7 +5621,9 @@ let Spinnet = {
     "resetToDefaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToDefaultValue(): void",
@@ -4863,7 +5634,9 @@ let Spinnet = {
     "resetToMaxValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMaxValue(): void",
@@ -4874,7 +5647,9 @@ let Spinnet = {
     "resetToMinValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMinValue(): void",
@@ -4885,7 +5660,9 @@ let Spinnet = {
     "setCurrentValue": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current value of this attribute. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current value of this attribute. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCurrentValue(value: number): boolean",
@@ -4896,8 +5673,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -4907,7 +5686,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -4919,7 +5700,8 @@ let Spinnet = {
   "EntityBaseMovementComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -4929,7 +5711,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -4940,8 +5724,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -4951,7 +5737,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -4963,7 +5751,8 @@ let Spinnet = {
   "EntityBreathableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -4973,7 +5762,9 @@ let Spinnet = {
     "breathesAir": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity can breathe in air.",
+        "remarks": [
+          "If true, this entity can breathe in air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly breathesAir: boolean",
@@ -4984,7 +5775,9 @@ let Spinnet = {
     "breathesLava": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity can breathe in lava.",
+        "remarks": [
+          "If true, this entity can breathe in lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly breathesLava: boolean",
@@ -4995,7 +5788,9 @@ let Spinnet = {
     "breathesSolids": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity can breathe in solid blocks.",
+        "remarks": [
+          "If true, this entity can breathe in solid blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly breathesSolids: boolean",
@@ -5006,7 +5801,9 @@ let Spinnet = {
     "breathesWater": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity can breathe in water.",
+        "remarks": [
+          "If true, this entity can breathe in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly breathesWater: boolean",
@@ -5017,7 +5814,9 @@ let Spinnet = {
     "generatesBubbles": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity will have visible bubbles while in water.",
+        "remarks": [
+          "If true, this entity will have visible bubbles while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly generatesBubbles: boolean",
@@ -5028,7 +5827,9 @@ let Spinnet = {
     "inhaleTime": {
       "comment": {
         "params": {},
-        "remarks": "Time in seconds to recover breath to maximum.",
+        "remarks": [
+          "Time in seconds to recover breath to maximum."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly inhaleTime: number",
@@ -5039,7 +5840,9 @@ let Spinnet = {
     "suffocateTime": {
       "comment": {
         "params": {},
-        "remarks": "Time in seconds between suffocation damage.",
+        "remarks": [
+          "Time in seconds between suffocation damage."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly suffocateTime: number",
@@ -5050,7 +5853,9 @@ let Spinnet = {
     "totalSupply": {
       "comment": {
         "params": {},
-        "remarks": "Time in seconds the entity can hold its breath.",
+        "remarks": [
+          "Time in seconds the entity can hold its breath."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly totalSupply: number",
@@ -5060,7 +5865,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:breathable'",
       "kind": "static readonly",
@@ -5070,7 +5876,9 @@ let Spinnet = {
     "getBreatheBlocks": {
       "comment": {
         "params": {},
-        "remarks": "List of blocks this entity can breathe in, in addition to the separate properties for classes of blocks.",
+        "remarks": [
+          "List of blocks this entity can breathe in, in addition to the separate properties for classes of blocks."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getBreatheBlocks(): BlockPermutation[]",
@@ -5081,7 +5889,9 @@ let Spinnet = {
     "getNonBreatheBlocks": {
       "comment": {
         "params": {},
-        "remarks": "List of blocks this entity can't breathe in.",
+        "remarks": [
+          "List of blocks this entity can't breathe in."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getNonBreatheBlocks(): BlockPermutation[]",
@@ -5094,7 +5904,9 @@ let Spinnet = {
         "params": {
           "value": "New air supply for the entity."
         },
-        "remarks": "Sets the current air supply of the entity.",
+        "remarks": [
+          "Sets the current air supply of the entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setAirSupply(value: number): void",
@@ -5105,8 +5917,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5116,7 +5930,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5128,7 +5944,8 @@ let Spinnet = {
   "EntityCanClimbComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5137,7 +5954,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:can_climb'",
       "kind": "static readonly",
@@ -5147,8 +5965,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5158,7 +5978,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5170,7 +5992,8 @@ let Spinnet = {
   "EntityCanFlyComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5179,7 +6002,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:can_fly'",
       "kind": "static readonly",
@@ -5189,8 +6013,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5200,7 +6026,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5212,7 +6040,8 @@ let Spinnet = {
   "EntityCanPowerJumpComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5221,7 +6050,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:can_power_jump'",
       "kind": "static readonly",
@@ -5231,8 +6061,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5242,7 +6074,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5254,7 +6088,8 @@ let Spinnet = {
   "EntityColorComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5264,7 +6099,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Value of this particular color. This property can't be edited in read-only mode."
+        "remarks": [
+          "Value of this particular color. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -5273,7 +6110,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:color'",
       "kind": "static readonly",
@@ -5283,8 +6121,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5294,7 +6134,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5306,7 +6148,8 @@ let Spinnet = {
   "EntityComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5316,8 +6159,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5327,7 +6172,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5339,7 +6186,8 @@ let Spinnet = {
   "EntityDefinitionFeedItem": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5349,7 +6197,9 @@ let Spinnet = {
     "growth": {
       "comment": {
         "params": {},
-        "remarks": "The amount by which an entity's age will increase when fed this item. Values usually range between 0 and 1."
+        "remarks": [
+          "The amount by which an entity's age will increase when fed this item. Values usually range between 0 and 1."
+        ]
       },
       "match": "readonly growth: number",
       "kind": "readonly",
@@ -5359,7 +6209,9 @@ let Spinnet = {
     "item": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of type of item that can be fed. If a namespace is not specified, 'minecraft:' is assumed. Example values include 'wheat' or 'golden_apple'."
+        "remarks": [
+          "Identifier of type of item that can be fed. If a namespace is not specified, 'minecraft:' is assumed. Example values include 'wheat' or 'golden_apple'."
+        ]
       },
       "match": "readonly item: string",
       "kind": "readonly",
@@ -5370,7 +6222,8 @@ let Spinnet = {
   "EntityDieAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5380,7 +6233,9 @@ let Spinnet = {
     "damageSource": {
       "comment": {
         "params": {},
-        "remarks": "If specified, provides more information on the source of damage that caused the death of this entity."
+        "remarks": [
+          "If specified, provides more information on the source of damage that caused the death of this entity."
+        ]
       },
       "match": "readonly damageSource: EntityDamageSource",
       "kind": "readonly",
@@ -5390,7 +6245,9 @@ let Spinnet = {
     "deadEntity": {
       "comment": {
         "params": {},
-        "remarks": "Now-dead entity object."
+        "remarks": [
+          "Now-dead entity object."
+        ]
       },
       "match": "readonly deadEntity: Entity",
       "kind": "readonly",
@@ -5401,7 +6258,8 @@ let Spinnet = {
   "EntityDieAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5414,7 +6272,9 @@ let Spinnet = {
           "callback": "Function to call when an entity dies.",
           "options": "Additional filtering options for when the subscription fires."
         },
-        "remarks": "Subscribes to an event that fires when an entity dies. This function can't be called in read-only mode.",
+        "remarks": [
+          "Subscribes to an event that fires when an entity dies. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the closure that can be used in future downstream calls to unsubscribe."
       },
       "match": "subscribe(callback: (arg: EntityDieAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityDieAfterEvent) => void",
@@ -5425,7 +6285,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Stops this event from calling your function when an entity dies. This function can't be called in read-only mode.",
+        "remarks": [
+          "Stops this event from calling your function when an entity dies. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityDieAfterEvent) => void): void",
@@ -5437,7 +6299,8 @@ let Spinnet = {
   "EntityEquippableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5446,7 +6309,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:equippable'",
       "kind": "static readonly",
@@ -5458,7 +6322,9 @@ let Spinnet = {
         "params": {
           "equipmentSlot": "The equipment slot. e.g. \"head\", \"chest\", \"offhand\""
         },
-        "remarks": "Gets the equipped item for the given EquipmentSlot. This function can't be called in read-only mode.",
+        "remarks": [
+          "Gets the equipped item for the given EquipmentSlot. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the item equipped to the given EquipmentSlot. If empty, returns undefined.",
         "throws": "function can throw errors."
       },
@@ -5472,8 +6338,10 @@ let Spinnet = {
         "params": {
           "equipmentSlot": "The equipment slot. e.g. \"head\", \"chest\", \"offhand\"."
         },
+        "remarks": [
+          "Gets the ContainerSlot corresponding to the given EquipmentSlot. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Gets the ContainerSlot corresponding to the given EquipmentSlot. This function can't be called in read-only mode.",
         "returns": "Returns the ContainerSlot corresponding to the given EquipmentSlot.",
         "throws": "function can throw errors."
       },
@@ -5488,7 +6356,9 @@ let Spinnet = {
           "equipmentSlot": "The equipment slot. e.g. \"head\", \"chest\", \"offhand\".",
           "itemStack": "The item to equip. If undefined, clears the slot."
         },
-        "remarks": "Replaces the item in the given EquipmentSlot. This function can't be called in read-only mode.",
+        "remarks": [
+          "Replaces the item in the given EquipmentSlot. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setEquipment(equipmentSlot: EquipmentSlot, itemStack?: ItemStack): boolean",
@@ -5499,8 +6369,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5510,7 +6382,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5522,7 +6396,8 @@ let Spinnet = {
   "EntityFireImmuneComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5531,7 +6406,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:fire_immune'",
       "kind": "static readonly",
@@ -5541,8 +6417,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5552,7 +6430,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5564,7 +6444,8 @@ let Spinnet = {
   "EntityFloatsInLiquidComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5573,7 +6454,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:floats_in_liquid'",
       "kind": "static readonly",
@@ -5583,8 +6465,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5594,7 +6478,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5606,7 +6492,8 @@ let Spinnet = {
   "EntityFlyingSpeedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5616,7 +6503,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Current value of the flying speed of the associated entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Current value of the flying speed of the associated entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -5625,7 +6514,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:flying_speed'",
       "kind": "static readonly",
@@ -5635,8 +6525,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5646,7 +6538,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5658,7 +6552,8 @@ let Spinnet = {
   "EntityFrictionModifierComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5668,7 +6563,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Current value of the friction modifier of the associated entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Current value of the friction modifier of the associated entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -5677,7 +6574,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:friction_modifier'",
       "kind": "static readonly",
@@ -5687,8 +6585,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5698,7 +6598,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5710,7 +6612,8 @@ let Spinnet = {
   "EntityGroundOffsetComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5720,7 +6623,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Value of this particular ground offset. Note that this value is effectively read only; setting the ground offset value will not have an impact on the related entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Value of this particular ground offset. Note that this value is effectively read only; setting the ground offset value will not have an impact on the related entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -5729,7 +6634,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:ground_offset'",
       "kind": "static readonly",
@@ -5739,8 +6645,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5750,7 +6658,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5762,7 +6672,8 @@ let Spinnet = {
   "EntityHealableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5772,8 +6683,10 @@ let Spinnet = {
     "filters": {
       "comment": {
         "params": {},
+        "remarks": [
+          "A set of filters that healable items might be associated with."
+        ],
         "beta": "",
-        "remarks": "A set of filters that healable items might be associated with.",
         "throws": "property can throw when used."
       },
       "match": "readonly filters: FilterGroup",
@@ -5784,7 +6697,9 @@ let Spinnet = {
     "forceUse": {
       "comment": {
         "params": {},
-        "remarks": "Determines if an item can be used regardless of the entity being at full health.",
+        "remarks": [
+          "Determines if an item can be used regardless of the entity being at full health."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly forceUse: boolean",
@@ -5794,7 +6709,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:healable'",
       "kind": "static readonly",
@@ -5804,7 +6720,9 @@ let Spinnet = {
     "getFeedItems": {
       "comment": {
         "params": {},
-        "remarks": "A set of items that can specifically heal this entity.",
+        "remarks": [
+          "A set of items that can specifically heal this entity."
+        ],
         "returns": "Entity that this component is associated with.",
         "throws": "function can throw errors."
       },
@@ -5816,8 +6734,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -5827,7 +6747,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -5839,7 +6761,8 @@ let Spinnet = {
   "EntityHealthChangedAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5849,7 +6772,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity whose health changed."
+        "remarks": [
+          "Entity whose health changed."
+        ]
       },
       "match": "readonly entity: Entity",
       "kind": "readonly",
@@ -5859,7 +6784,9 @@ let Spinnet = {
     "newValue": {
       "comment": {
         "params": {},
-        "remarks": "New health value of the entity."
+        "remarks": [
+          "New health value of the entity."
+        ]
       },
       "match": "readonly newValue: number",
       "kind": "readonly",
@@ -5869,7 +6796,9 @@ let Spinnet = {
     "oldValue": {
       "comment": {
         "params": {},
-        "remarks": "Old health value of the entity."
+        "remarks": [
+          "Old health value of the entity."
+        ]
       },
       "match": "readonly oldValue: number",
       "kind": "readonly",
@@ -5880,7 +6809,8 @@ let Spinnet = {
   "EntityHealthChangedAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5890,7 +6820,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when the health of an entity changes. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when the health of an entity changes. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EntityHealthChangedAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityHealthChangedAfterEvent) => void",
       "kind": "public",
@@ -5900,7 +6832,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when the health of an entity changes. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when the health of an entity changes. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityHealthChangedAfterEvent) => void): void",
@@ -5912,7 +6846,8 @@ let Spinnet = {
   "EntityHealthComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -5921,7 +6856,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:health'",
       "kind": "static readonly",
@@ -5931,7 +6867,9 @@ let Spinnet = {
     "currentValue": {
       "comment": {
         "params": {},
-        "remarks": "Current value of this attribute for this instance.",
+        "remarks": [
+          "Current value of this attribute for this instance."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly currentValue: number",
@@ -5942,7 +6880,9 @@ let Spinnet = {
     "defaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default defined value for this attribute.",
+        "remarks": [
+          "Returns the default defined value for this attribute."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly defaultValue: number",
@@ -5953,7 +6893,9 @@ let Spinnet = {
     "effectiveMax": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective max of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective max of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMax: number",
@@ -5964,7 +6906,9 @@ let Spinnet = {
     "effectiveMin": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective min of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective min of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMin: number",
@@ -5975,7 +6919,9 @@ let Spinnet = {
     "resetToDefaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToDefaultValue(): void",
@@ -5986,7 +6932,9 @@ let Spinnet = {
     "resetToMaxValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMaxValue(): void",
@@ -5997,7 +6945,9 @@ let Spinnet = {
     "resetToMinValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMinValue(): void",
@@ -6008,7 +6958,9 @@ let Spinnet = {
     "setCurrentValue": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current value of this attribute. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current value of this attribute. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCurrentValue(value: number): boolean",
@@ -6019,8 +6971,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6030,7 +6984,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6042,7 +6998,8 @@ let Spinnet = {
   "EntityHitBlockAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6052,7 +7009,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "Face of the block that was hit."
+        "remarks": [
+          "Face of the block that was hit."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -6062,7 +7021,9 @@ let Spinnet = {
     "damagingEntity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that made the attack."
+        "remarks": [
+          "Entity that made the attack."
+        ]
       },
       "match": "readonly damagingEntity: Entity",
       "kind": "readonly",
@@ -6072,7 +7033,9 @@ let Spinnet = {
     "hitBlock": {
       "comment": {
         "params": {},
-        "remarks": "Block that was hit by the attack."
+        "remarks": [
+          "Block that was hit by the attack."
+        ]
       },
       "match": "readonly hitBlock: Block",
       "kind": "readonly",
@@ -6083,7 +7046,8 @@ let Spinnet = {
   "EntityHitBlockAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6093,7 +7057,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an entity hits a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an entity hits a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EntityHitBlockAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityHitBlockAfterEvent) => void",
       "kind": "public",
@@ -6103,7 +7069,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an entity hits a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an entity hits a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityHitBlockAfterEvent) => void): void",
@@ -6115,7 +7083,8 @@ let Spinnet = {
   "EntityHitEntityAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6125,7 +7094,9 @@ let Spinnet = {
     "damagingEntity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that made a hit/melee attack."
+        "remarks": [
+          "Entity that made a hit/melee attack."
+        ]
       },
       "match": "readonly damagingEntity: Entity",
       "kind": "readonly",
@@ -6135,7 +7106,9 @@ let Spinnet = {
     "hitEntity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that was hit by the attack."
+        "remarks": [
+          "Entity that was hit by the attack."
+        ]
       },
       "match": "readonly hitEntity: Entity",
       "kind": "readonly",
@@ -6146,7 +7119,8 @@ let Spinnet = {
   "EntityHitEntityAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6156,7 +7130,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an entity hits another entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an entity hits another entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EntityHitEntityAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityHitEntityAfterEvent) => void",
       "kind": "public",
@@ -6166,7 +7142,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an entity makes a melee attack on another entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an entity makes a melee attack on another entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityHitEntityAfterEvent) => void): void",
@@ -6178,7 +7156,8 @@ let Spinnet = {
   "EntityHurtAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6188,7 +7167,9 @@ let Spinnet = {
     "damage": {
       "comment": {
         "params": {},
-        "remarks": "Describes the amount of damage caused."
+        "remarks": [
+          "Describes the amount of damage caused."
+        ]
       },
       "match": "readonly damage: number",
       "kind": "readonly",
@@ -6198,7 +7179,9 @@ let Spinnet = {
     "damageSource": {
       "comment": {
         "params": {},
-        "remarks": "Source information on the entity that may have applied this damage."
+        "remarks": [
+          "Source information on the entity that may have applied this damage."
+        ]
       },
       "match": "readonly damageSource: EntityDamageSource",
       "kind": "readonly",
@@ -6208,7 +7191,9 @@ let Spinnet = {
     "hurtEntity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that was hurt."
+        "remarks": [
+          "Entity that was hurt."
+        ]
       },
       "match": "readonly hurtEntity: Entity",
       "kind": "readonly",
@@ -6219,7 +7204,8 @@ let Spinnet = {
   "EntityHurtAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6229,7 +7215,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an entity is hurt. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an entity is hurt. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EntityHurtAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityHurtAfterEvent) => void",
       "kind": "public",
@@ -6239,7 +7227,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an entity is hurt. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an entity is hurt. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityHurtAfterEvent) => void): void",
@@ -6251,7 +7241,8 @@ let Spinnet = {
   "EntityInventoryComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6261,7 +7252,9 @@ let Spinnet = {
     "additionalSlotsPerStrength": {
       "comment": {
         "params": {},
-        "remarks": "Number of slots that this entity can gain per extra strength.",
+        "remarks": [
+          "Number of slots that this entity can gain per extra strength."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly additionalSlotsPerStrength: number",
@@ -6272,7 +7265,9 @@ let Spinnet = {
     "canBeSiphonedFrom": {
       "comment": {
         "params": {},
-        "remarks": "If true, the contents of this inventory can be removed by a hopper.",
+        "remarks": [
+          "If true, the contents of this inventory can be removed by a hopper."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBeSiphonedFrom: boolean",
@@ -6283,7 +7278,9 @@ let Spinnet = {
     "containerType": {
       "comment": {
         "params": {},
-        "remarks": "Defines the container for this entity. The container will be undefined if the entity has been removed.",
+        "remarks": [
+          "Defines the container for this entity. The container will be undefined if the entity has been removed."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly containerType: string",
@@ -6294,7 +7291,9 @@ let Spinnet = {
     "inventorySize": {
       "comment": {
         "params": {},
-        "remarks": "Number of slots the container has.",
+        "remarks": [
+          "Number of slots the container has."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly inventorySize: number",
@@ -6305,7 +7304,9 @@ let Spinnet = {
     "restrictToOwner": {
       "comment": {
         "params": {},
-        "remarks": "If true, the entity will not drop it's inventory on death.",
+        "remarks": [
+          "If true, the entity will not drop it's inventory on death."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly restrictToOwner: boolean",
@@ -6315,7 +7316,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:inventory'",
       "kind": "static readonly",
@@ -6325,8 +7327,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6336,7 +7340,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6348,7 +7354,8 @@ let Spinnet = {
   "EntityIsBabyComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6357,7 +7364,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_baby'",
       "kind": "static readonly",
@@ -6367,8 +7375,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6378,7 +7388,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6390,7 +7402,8 @@ let Spinnet = {
   "EntityIsChargedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6399,7 +7412,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_charged'",
       "kind": "static readonly",
@@ -6409,8 +7423,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6420,7 +7436,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6432,7 +7450,8 @@ let Spinnet = {
   "EntityIsChestedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6441,7 +7460,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_chested'",
       "kind": "static readonly",
@@ -6451,8 +7471,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6462,7 +7484,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6474,7 +7498,8 @@ let Spinnet = {
   "EntityIsDyeableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6483,7 +7508,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_dyeable'",
       "kind": "static readonly",
@@ -6493,8 +7519,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6504,7 +7532,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6516,7 +7546,8 @@ let Spinnet = {
   "EntityIsHiddenWhenInvisibleComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6525,7 +7556,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_hidden_when_invisible'",
       "kind": "static readonly",
@@ -6535,8 +7567,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6546,7 +7580,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6558,7 +7594,8 @@ let Spinnet = {
   "EntityIsIgnitedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6567,7 +7604,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_ignited'",
       "kind": "static readonly",
@@ -6577,8 +7615,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6588,7 +7628,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6600,7 +7642,8 @@ let Spinnet = {
   "EntityIsIllagerCaptainComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6609,7 +7652,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_illager_captain'",
       "kind": "static readonly",
@@ -6619,8 +7663,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6630,7 +7676,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6642,7 +7690,8 @@ let Spinnet = {
   "EntityIsSaddledComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6651,7 +7700,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_saddled'",
       "kind": "static readonly",
@@ -6661,8 +7711,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6672,7 +7724,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6684,7 +7738,8 @@ let Spinnet = {
   "EntityIsShakingComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6693,7 +7748,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_shaking'",
       "kind": "static readonly",
@@ -6703,8 +7759,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6714,7 +7772,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6726,7 +7786,8 @@ let Spinnet = {
   "EntityIsShearedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6735,7 +7796,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_sheared'",
       "kind": "static readonly",
@@ -6745,8 +7807,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6756,7 +7820,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6768,7 +7834,8 @@ let Spinnet = {
   "EntityIsStackableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6777,7 +7844,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_stackable'",
       "kind": "static readonly",
@@ -6787,8 +7855,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6798,7 +7868,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6810,7 +7882,8 @@ let Spinnet = {
   "EntityIsStunnedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6819,7 +7892,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_stunned'",
       "kind": "static readonly",
@@ -6829,8 +7903,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6840,7 +7916,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6852,7 +7930,8 @@ let Spinnet = {
   "EntityIsTamedComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6861,7 +7940,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:is_tamed'",
       "kind": "static readonly",
@@ -6871,8 +7951,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6882,7 +7964,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6894,7 +7978,8 @@ let Spinnet = {
   "EntityItemComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6904,7 +7989,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "Item stack represented by this entity in the world.",
+        "remarks": [
+          "Item stack represented by this entity in the world."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly itemStack: ItemStack",
@@ -6914,7 +8001,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:item'",
       "kind": "static readonly",
@@ -6924,8 +8012,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -6935,7 +8025,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -6947,7 +8039,8 @@ let Spinnet = {
   "EntityIterator": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6957,7 +8050,9 @@ let Spinnet = {
     "next": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "next(): IteratorResult<Entity>",
       "kind": "public",
@@ -6968,7 +8063,8 @@ let Spinnet = {
   "EntityLavaMovementComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -6977,7 +8073,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:lava_movement'",
       "kind": "static readonly",
@@ -6987,7 +8084,9 @@ let Spinnet = {
     "currentValue": {
       "comment": {
         "params": {},
-        "remarks": "Current value of this attribute for this instance.",
+        "remarks": [
+          "Current value of this attribute for this instance."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly currentValue: number",
@@ -6998,7 +8097,9 @@ let Spinnet = {
     "defaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default defined value for this attribute.",
+        "remarks": [
+          "Returns the default defined value for this attribute."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly defaultValue: number",
@@ -7009,7 +8110,9 @@ let Spinnet = {
     "effectiveMax": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective max of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective max of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMax: number",
@@ -7020,7 +8123,9 @@ let Spinnet = {
     "effectiveMin": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective min of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective min of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMin: number",
@@ -7031,7 +8136,9 @@ let Spinnet = {
     "resetToDefaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToDefaultValue(): void",
@@ -7042,7 +8149,9 @@ let Spinnet = {
     "resetToMaxValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMaxValue(): void",
@@ -7053,7 +8162,9 @@ let Spinnet = {
     "resetToMinValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMinValue(): void",
@@ -7064,7 +8175,9 @@ let Spinnet = {
     "setCurrentValue": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current value of this attribute. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current value of this attribute. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCurrentValue(value: number): boolean",
@@ -7075,8 +8188,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7086,7 +8201,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7098,7 +8215,8 @@ let Spinnet = {
   "EntityLeashableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7108,7 +8226,9 @@ let Spinnet = {
     "softDistance": {
       "comment": {
         "params": {},
-        "remarks": "Distance in blocks at which the 'spring' effect starts acting to keep this entity close to the entity that leashed it.",
+        "remarks": [
+          "Distance in blocks at which the 'spring' effect starts acting to keep this entity close to the entity that leashed it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly softDistance: number",
@@ -7118,7 +8238,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:leashable'",
       "kind": "static readonly",
@@ -7130,7 +8251,9 @@ let Spinnet = {
         "params": {
           "leashHolder": "The entity to leash this entity to."
         },
-        "remarks": "Leashes this entity to another entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Leashes this entity to another entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "leash(leashHolder: Entity): void",
@@ -7141,7 +8264,9 @@ let Spinnet = {
     "unleash": {
       "comment": {
         "params": {},
-        "remarks": "Unleashes this entity if it is leashed to another entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unleashes this entity if it is leashed to another entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unleash(): void",
@@ -7152,8 +8277,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7163,7 +8290,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7175,7 +8304,8 @@ let Spinnet = {
   "EntityLoadAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7185,7 +8315,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that was loaded. This property can't be edited in read-only mode."
+        "remarks": [
+          "Entity that was loaded. This property can't be edited in read-only mode."
+        ]
       },
       "match": "entity: Entity",
       "kind": "public",
@@ -7196,7 +8328,8 @@ let Spinnet = {
   "EntityLoadAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7208,7 +8341,9 @@ let Spinnet = {
         "params": {
           "callback": "Function that handles the load event."
         },
-        "remarks": "Method to register an event handler for what happens when an entity loads. This function can't be called in read-only mode."
+        "remarks": [
+          "Method to register an event handler for what happens when an entity loads. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: EntityLoadAfterEvent) => void): (arg: EntityLoadAfterEvent) => void",
       "kind": "public",
@@ -7220,7 +8355,9 @@ let Spinnet = {
         "params": {
           "callback": "Original function that was passed into the subscribe event, that is to be unregistered."
         },
-        "remarks": "Unregisters a method that was previously subscribed to the subscription event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unregisters a method that was previously subscribed to the subscription event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityLoadAfterEvent) => void): void",
@@ -7232,7 +8369,8 @@ let Spinnet = {
   "EntityMarkVariantComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7242,7 +8380,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Value of the mark variant value for this entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Value of the mark variant value for this entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -7251,7 +8391,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:mark_variant'",
       "kind": "static readonly",
@@ -7261,8 +8402,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7272,7 +8415,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7284,7 +8429,8 @@ let Spinnet = {
   "EntityMountTamingComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7293,7 +8439,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:tamemount'",
       "kind": "static readonly",
@@ -7305,7 +8452,9 @@ let Spinnet = {
         "params": {
           "showParticles": "Whether to show effect particles when this entity is tamed."
         },
-        "remarks": "Sets this rideable entity as tamed. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets this rideable entity as tamed. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setTamed(showParticles: boolean): void",
@@ -7316,8 +8465,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7327,7 +8478,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7339,7 +8492,8 @@ let Spinnet = {
   "EntityMovementAmphibiousComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7348,7 +8502,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.amphibious'",
       "kind": "static readonly",
@@ -7358,7 +8513,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7369,8 +8526,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7380,7 +8539,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7392,7 +8553,8 @@ let Spinnet = {
   "EntityMovementBasicComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7401,7 +8563,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.basic'",
       "kind": "static readonly",
@@ -7411,7 +8574,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7422,8 +8587,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7433,7 +8600,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7445,7 +8614,8 @@ let Spinnet = {
   "EntityMovementComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7454,7 +8624,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement'",
       "kind": "static readonly",
@@ -7464,7 +8635,9 @@ let Spinnet = {
     "currentValue": {
       "comment": {
         "params": {},
-        "remarks": "Current value of this attribute for this instance.",
+        "remarks": [
+          "Current value of this attribute for this instance."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly currentValue: number",
@@ -7475,7 +8648,9 @@ let Spinnet = {
     "defaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default defined value for this attribute.",
+        "remarks": [
+          "Returns the default defined value for this attribute."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly defaultValue: number",
@@ -7486,7 +8661,9 @@ let Spinnet = {
     "effectiveMax": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective max of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective max of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMax: number",
@@ -7497,7 +8674,9 @@ let Spinnet = {
     "effectiveMin": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective min of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective min of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMin: number",
@@ -7508,7 +8687,9 @@ let Spinnet = {
     "resetToDefaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToDefaultValue(): void",
@@ -7519,7 +8700,9 @@ let Spinnet = {
     "resetToMaxValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMaxValue(): void",
@@ -7530,7 +8713,9 @@ let Spinnet = {
     "resetToMinValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMinValue(): void",
@@ -7541,7 +8726,9 @@ let Spinnet = {
     "setCurrentValue": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current value of this attribute. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current value of this attribute. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCurrentValue(value: number): boolean",
@@ -7552,8 +8739,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7563,7 +8752,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7575,7 +8766,8 @@ let Spinnet = {
   "EntityMovementFlyComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7584,7 +8776,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.fly'",
       "kind": "static readonly",
@@ -7594,7 +8787,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7605,8 +8800,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7616,7 +8813,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7628,7 +8827,8 @@ let Spinnet = {
   "EntityMovementGenericComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7637,7 +8837,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.generic'",
       "kind": "static readonly",
@@ -7647,7 +8848,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7658,8 +8861,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7669,7 +8874,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7681,7 +8888,8 @@ let Spinnet = {
   "EntityMovementGlideComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7691,7 +8899,9 @@ let Spinnet = {
     "speedWhenTurning": {
       "comment": {
         "params": {},
-        "remarks": "Speed in effect when the entity is turning.",
+        "remarks": [
+          "Speed in effect when the entity is turning."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly speedWhenTurning: number",
@@ -7702,7 +8912,9 @@ let Spinnet = {
     "startSpeed": {
       "comment": {
         "params": {},
-        "remarks": "Start speed during a glide.",
+        "remarks": [
+          "Start speed during a glide."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly startSpeed: number",
@@ -7712,7 +8924,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.glide'",
       "kind": "static readonly",
@@ -7722,7 +8935,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7733,8 +8948,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7744,7 +8961,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7756,7 +8975,8 @@ let Spinnet = {
   "EntityMovementHoverComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7765,7 +8985,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.hover'",
       "kind": "static readonly",
@@ -7775,7 +8996,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7786,8 +9009,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7797,7 +9022,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7809,7 +9036,8 @@ let Spinnet = {
   "EntityMovementJumpComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7818,7 +9046,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.jump'",
       "kind": "static readonly",
@@ -7828,7 +9057,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7839,8 +9070,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7850,7 +9083,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7862,7 +9097,8 @@ let Spinnet = {
   "EntityMovementSkipComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7871,7 +9107,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.skip'",
       "kind": "static readonly",
@@ -7881,7 +9118,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7892,8 +9131,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7903,7 +9144,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7915,7 +9158,8 @@ let Spinnet = {
   "EntityMovementSwayComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7925,7 +9169,9 @@ let Spinnet = {
     "swayAmplitude": {
       "comment": {
         "params": {},
-        "remarks": "Amplitude of the sway motion.",
+        "remarks": [
+          "Amplitude of the sway motion."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly swayAmplitude: number",
@@ -7936,7 +9182,9 @@ let Spinnet = {
     "swayFrequency": {
       "comment": {
         "params": {},
-        "remarks": "Amount of sway frequency.",
+        "remarks": [
+          "Amount of sway frequency."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly swayFrequency: number",
@@ -7946,7 +9194,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:movement.sway'",
       "kind": "static readonly",
@@ -7956,7 +9205,9 @@ let Spinnet = {
     "maxTurn": {
       "comment": {
         "params": {},
-        "remarks": "Maximum turn rate for this movement modality of the mob.",
+        "remarks": [
+          "Maximum turn rate for this movement modality of the mob."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxTurn: number",
@@ -7967,8 +9218,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -7978,7 +9231,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -7990,7 +9245,8 @@ let Spinnet = {
   "EntityNavigationClimbComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -7999,7 +9255,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.climb'",
       "kind": "static readonly",
@@ -8009,7 +9266,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -8020,7 +9279,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -8031,7 +9292,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -8042,7 +9305,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -8053,7 +9318,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -8064,7 +9331,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -8075,7 +9344,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -8086,7 +9357,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -8097,7 +9370,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -8108,7 +9383,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -8119,7 +9396,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -8130,7 +9409,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -8141,7 +9422,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -8152,7 +9435,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -8163,7 +9448,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -8174,7 +9461,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -8185,7 +9474,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -8196,7 +9487,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -8207,7 +9500,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -8218,8 +9513,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -8229,7 +9526,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -8241,7 +9540,8 @@ let Spinnet = {
   "EntityNavigationComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -8251,7 +9551,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -8262,7 +9564,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -8273,7 +9577,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -8284,7 +9590,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -8295,7 +9603,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -8306,7 +9616,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -8317,7 +9629,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -8328,7 +9642,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -8339,7 +9655,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -8350,7 +9668,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -8361,7 +9681,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -8372,7 +9694,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -8383,7 +9707,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -8394,7 +9720,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -8405,7 +9733,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -8416,7 +9746,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -8427,7 +9759,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -8438,7 +9772,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -8449,7 +9785,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -8460,8 +9798,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -8471,7 +9811,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -8483,7 +9825,8 @@ let Spinnet = {
   "EntityNavigationFloatComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -8492,7 +9835,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.float'",
       "kind": "static readonly",
@@ -8502,7 +9846,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -8513,7 +9859,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -8524,7 +9872,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -8535,7 +9885,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -8546,7 +9898,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -8557,7 +9911,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -8568,7 +9924,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -8579,7 +9937,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -8590,7 +9950,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -8601,7 +9963,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -8612,7 +9976,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -8623,7 +9989,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -8634,7 +10002,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -8645,7 +10015,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -8656,7 +10028,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -8667,7 +10041,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -8678,7 +10054,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -8689,7 +10067,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -8700,7 +10080,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -8711,8 +10093,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -8722,7 +10106,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -8734,7 +10120,8 @@ let Spinnet = {
   "EntityNavigationFlyComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -8743,7 +10130,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.fly'",
       "kind": "static readonly",
@@ -8753,7 +10141,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -8764,7 +10154,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -8775,7 +10167,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -8786,7 +10180,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -8797,7 +10193,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -8808,7 +10206,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -8819,7 +10219,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -8830,7 +10232,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -8841,7 +10245,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -8852,7 +10258,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -8863,7 +10271,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -8874,7 +10284,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -8885,7 +10297,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -8896,7 +10310,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -8907,7 +10323,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -8918,7 +10336,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -8929,7 +10349,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -8940,7 +10362,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -8951,7 +10375,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -8962,8 +10388,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -8973,7 +10401,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -8985,7 +10415,8 @@ let Spinnet = {
   "EntityNavigationGenericComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -8994,7 +10425,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.generic'",
       "kind": "static readonly",
@@ -9004,7 +10436,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -9015,7 +10449,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -9026,7 +10462,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -9037,7 +10475,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -9048,7 +10488,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -9059,7 +10501,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -9070,7 +10514,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -9081,7 +10527,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -9092,7 +10540,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -9103,7 +10553,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -9114,7 +10566,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -9125,7 +10579,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -9136,7 +10592,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -9147,7 +10605,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -9158,7 +10618,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -9169,7 +10631,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -9180,7 +10644,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -9191,7 +10657,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -9202,7 +10670,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -9213,8 +10683,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9224,7 +10696,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9236,7 +10710,8 @@ let Spinnet = {
   "EntityNavigationHoverComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9245,7 +10720,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.hover'",
       "kind": "static readonly",
@@ -9255,7 +10731,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -9266,7 +10744,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -9277,7 +10757,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -9288,7 +10770,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -9299,7 +10783,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -9310,7 +10796,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -9321,7 +10809,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -9332,7 +10822,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -9343,7 +10835,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -9354,7 +10848,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -9365,7 +10861,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -9376,7 +10874,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -9387,7 +10887,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -9398,7 +10900,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -9409,7 +10913,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -9420,7 +10926,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -9431,7 +10939,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -9442,7 +10952,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -9453,7 +10965,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -9464,8 +10978,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9475,7 +10991,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9487,7 +11005,8 @@ let Spinnet = {
   "EntityNavigationWalkComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9496,7 +11015,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:navigation.walk'",
       "kind": "static readonly",
@@ -9506,7 +11026,9 @@ let Spinnet = {
     "avoidDamageBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid blocks that cause damage when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid blocks that cause damage when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidDamageBlocks: boolean",
@@ -9517,7 +11039,9 @@ let Spinnet = {
     "avoidPortals": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid portals (like nether portals) when finding a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid portals (like nether portals) when finding a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidPortals: boolean",
@@ -9528,7 +11052,9 @@ let Spinnet = {
     "avoidSun": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths.",
+        "remarks": [
+          "Whether or not the pathfinder should avoid tiles that are exposed to the sun when creating paths."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidSun: boolean",
@@ -9539,7 +11065,9 @@ let Spinnet = {
     "avoidWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder to avoid water when creating a path.",
+        "remarks": [
+          "Tells the pathfinder to avoid water when creating a path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly avoidWater: boolean",
@@ -9550,7 +11078,9 @@ let Spinnet = {
     "canBreach": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump out of water (like a dolphin).",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump out of water (like a dolphin)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreach: boolean",
@@ -9561,7 +11091,9 @@ let Spinnet = {
     "canBreakDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door and break it.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door and break it."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canBreakDoors: boolean",
@@ -9572,7 +11104,9 @@ let Spinnet = {
     "canFloat": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can float.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can float."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canFloat: boolean",
@@ -9583,7 +11117,9 @@ let Spinnet = {
     "canJump": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can jump up blocks.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can jump up blocks."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canJump: boolean",
@@ -9594,7 +11130,9 @@ let Spinnet = {
     "canOpenDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenDoors: boolean",
@@ -9605,7 +11143,9 @@ let Spinnet = {
     "canOpenIronDoors": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door.",
+        "remarks": [
+          "Tells the pathfinder that it can path through a closed iron door assuming the AI will open the door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canOpenIronDoors: boolean",
@@ -9616,7 +11156,9 @@ let Spinnet = {
     "canPassDoors": {
       "comment": {
         "params": {},
-        "remarks": "Whether a path can be created through a door.",
+        "remarks": [
+          "Whether a path can be created through a door."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPassDoors: boolean",
@@ -9627,7 +11169,9 @@ let Spinnet = {
     "canPathFromAir": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder that it can start pathing when in the air.",
+        "remarks": [
+          "Tells the pathfinder that it can start pathing when in the air."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathFromAir: boolean",
@@ -9638,7 +11182,9 @@ let Spinnet = {
     "canPathOverLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the lava.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the lava."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverLava: boolean",
@@ -9649,7 +11195,9 @@ let Spinnet = {
     "canPathOverWater": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel on the surface of the water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel on the surface of the water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canPathOverWater: boolean",
@@ -9660,7 +11208,9 @@ let Spinnet = {
     "canSink": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it will be pulled down by gravity while in water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it will be pulled down by gravity while in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSink: boolean",
@@ -9671,7 +11221,9 @@ let Spinnet = {
     "canSwim": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can path anywhere through water and plays swimming animation along that path."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canSwim: boolean",
@@ -9682,7 +11234,9 @@ let Spinnet = {
     "canWalk": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground outside water.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground outside water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalk: boolean",
@@ -9693,7 +11247,9 @@ let Spinnet = {
     "canWalkInLava": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can travel in lava like walking on ground.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can travel in lava like walking on ground."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canWalkInLava: boolean",
@@ -9704,7 +11260,9 @@ let Spinnet = {
     "isAmphibious": {
       "comment": {
         "params": {},
-        "remarks": "Tells the pathfinder whether or not it can walk on the ground or go underwater.",
+        "remarks": [
+          "Tells the pathfinder whether or not it can walk on the ground or go underwater."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isAmphibious: boolean",
@@ -9715,8 +11273,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9726,7 +11286,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9738,7 +11300,8 @@ let Spinnet = {
   "EntityNpcComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9748,7 +11311,9 @@ let Spinnet = {
     "defaultScene": {
       "comment": {
         "params": {},
-        "remarks": "The DialogueScene that is opened when players first interact with the NPC. This property can't be edited in read-only mode."
+        "remarks": [
+          "The DialogueScene that is opened when players first interact with the NPC. This property can't be edited in read-only mode."
+        ]
       },
       "match": "defaultScene: string",
       "kind": "public",
@@ -9758,7 +11323,9 @@ let Spinnet = {
     "name": {
       "comment": {
         "params": {},
-        "remarks": "The name of the NPC as it is displayed to players. This property can't be edited in read-only mode."
+        "remarks": [
+          "The name of the NPC as it is displayed to players. This property can't be edited in read-only mode."
+        ]
       },
       "match": "name: string",
       "kind": "public",
@@ -9768,7 +11335,9 @@ let Spinnet = {
     "skinIndex": {
       "comment": {
         "params": {},
-        "remarks": "The index of the skin the NPC will use. This property can't be edited in read-only mode."
+        "remarks": [
+          "The index of the skin the NPC will use. This property can't be edited in read-only mode."
+        ]
       },
       "match": "skinIndex: number",
       "kind": "public",
@@ -9777,7 +11346,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:npc'",
       "kind": "static readonly",
@@ -9787,8 +11357,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9798,7 +11370,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9810,7 +11384,8 @@ let Spinnet = {
   "EntityOnFireComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9820,7 +11395,9 @@ let Spinnet = {
     "onFireTicksRemaining": {
       "comment": {
         "params": {},
-        "remarks": "The number of ticks remaining before the fire goes out."
+        "remarks": [
+          "The number of ticks remaining before the fire goes out."
+        ]
       },
       "match": "readonly onFireTicksRemaining: number",
       "kind": "readonly",
@@ -9829,7 +11406,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:onfire'",
       "kind": "static readonly",
@@ -9839,8 +11417,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9850,7 +11430,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9862,7 +11444,8 @@ let Spinnet = {
   "EntityPushThroughComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9872,7 +11455,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Value of the push through distances of this entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Value of the push through distances of this entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -9881,7 +11466,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:push_through'",
       "kind": "static readonly",
@@ -9891,8 +11477,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9902,7 +11490,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -9914,7 +11504,8 @@ let Spinnet = {
   "EntityRemoveAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9924,7 +11515,9 @@ let Spinnet = {
     "removedEntityId": {
       "comment": {
         "params": {},
-        "remarks": "Id of the entity that was removed."
+        "remarks": [
+          "Id of the entity that was removed."
+        ]
       },
       "match": "readonly removedEntityId: string",
       "kind": "readonly",
@@ -9934,7 +11527,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the type of the entity removed - for example, 'minecraft:skeleton'."
+        "remarks": [
+          "Identifier of the type of the entity removed - for example, 'minecraft:skeleton'."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -9945,7 +11540,8 @@ let Spinnet = {
   "EntityRemoveAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9958,7 +11554,9 @@ let Spinnet = {
           "callback": "Function to call.",
           "options": "Additional filtering options for this event."
         },
-        "remarks": "Will call your function every time an entity is removed from the game. This function can't be called in read-only mode.",
+        "remarks": [
+          "Will call your function every time an entity is removed from the game. This function can't be called in read-only mode."
+        ],
         "returns": "Returns a closure that can be used in subsequent unsubscribe operations."
       },
       "match": "subscribe(callback: (arg: EntityRemoveAfterEvent) => void,options?: EntityEventOptions,): (arg: EntityRemoveAfterEvent) => void",
@@ -9969,7 +11567,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes your function from subsequent calls when an entity is removed. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes your function from subsequent calls when an entity is removed. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityRemoveAfterEvent) => void): void",
@@ -9981,7 +11581,8 @@ let Spinnet = {
   "EntityRemoveBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -9991,7 +11592,9 @@ let Spinnet = {
     "removedEntity": {
       "comment": {
         "params": {},
-        "remarks": "Reference to an entity that is being removed."
+        "remarks": [
+          "Reference to an entity that is being removed."
+        ]
       },
       "match": "readonly removedEntity: Entity",
       "kind": "readonly",
@@ -10002,7 +11605,8 @@ let Spinnet = {
   "EntityRemoveBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10014,7 +11618,9 @@ let Spinnet = {
         "params": {
           "callback": "Function to call."
         },
-        "remarks": "Will call your function every time an entity is being removed from the game. This function can't be called in read-only mode.",
+        "remarks": [
+          "Will call your function every time an entity is being removed from the game. This function can't be called in read-only mode."
+        ],
         "returns": "Returns a closure that can be used in subsequent unsubscribe operations."
       },
       "match": "subscribe(callback: (arg: EntityRemoveBeforeEvent) => void): (arg: EntityRemoveBeforeEvent) => void",
@@ -10025,7 +11631,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes your function from subsequent calls when an entity is being removed. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes your function from subsequent calls when an entity is being removed. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntityRemoveBeforeEvent) => void): void",
@@ -10037,7 +11645,8 @@ let Spinnet = {
   "EntityRideableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10047,7 +11656,9 @@ let Spinnet = {
     "controllingSeat": {
       "comment": {
         "params": {},
-        "remarks": "Zero-based index of the seat that can used to control this entity.",
+        "remarks": [
+          "Zero-based index of the seat that can used to control this entity."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly controllingSeat: number",
@@ -10058,7 +11669,9 @@ let Spinnet = {
     "crouchingSkipInteract": {
       "comment": {
         "params": {},
-        "remarks": "Determines whether interactions are not supported if the entity is crouching.",
+        "remarks": [
+          "Determines whether interactions are not supported if the entity is crouching."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly crouchingSkipInteract: boolean",
@@ -10069,7 +11682,9 @@ let Spinnet = {
     "interactText": {
       "comment": {
         "params": {},
-        "remarks": "Set of text that should be displayed when a player is looking to ride on this entity (commonly with touch-screen controls).",
+        "remarks": [
+          "Set of text that should be displayed when a player is looking to ride on this entity (commonly with touch-screen controls)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly interactText: string",
@@ -10080,7 +11695,9 @@ let Spinnet = {
     "pullInEntities": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity will pull in entities that are in the correct family_types into any available seat.",
+        "remarks": [
+          "If true, this entity will pull in entities that are in the correct family_types into any available seat."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly pullInEntities: boolean",
@@ -10091,7 +11708,9 @@ let Spinnet = {
     "riderCanInteract": {
       "comment": {
         "params": {},
-        "remarks": "If true, this entity will be picked when looked at by the rider.",
+        "remarks": [
+          "If true, this entity will be picked when looked at by the rider."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly riderCanInteract: boolean",
@@ -10102,7 +11721,9 @@ let Spinnet = {
     "seatCount": {
       "comment": {
         "params": {},
-        "remarks": "Number of seats for riders defined for this entity.",
+        "remarks": [
+          "Number of seats for riders defined for this entity."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly seatCount: number",
@@ -10112,7 +11733,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:rideable'",
       "kind": "static readonly",
@@ -10124,7 +11746,9 @@ let Spinnet = {
         "params": {
           "rider": "Entity that will become the rider of this entity."
         },
-        "remarks": "Adds an entity to this entity as a rider. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds an entity to this entity as a rider. This function can't be called in read-only mode."
+        ],
         "returns": "True if the rider entity was successfully added.",
         "throws": "function can throw errors."
       },
@@ -10138,7 +11762,9 @@ let Spinnet = {
         "params": {
           "rider": "Entity that should be ejected from this entity."
         },
-        "remarks": "Ejects the specified rider of this entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Ejects the specified rider of this entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "ejectRider(rider: Entity): void",
@@ -10149,7 +11775,9 @@ let Spinnet = {
     "ejectRiders": {
       "comment": {
         "params": {},
-        "remarks": "Ejects all riders of this entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Ejects all riders of this entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "ejectRiders(): void",
@@ -10160,7 +11788,9 @@ let Spinnet = {
     "getFamilyTypes": {
       "comment": {
         "params": {},
-        "remarks": "A string-list of entity types that this entity can support as riders.",
+        "remarks": [
+          "A string-list of entity types that this entity can support as riders."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getFamilyTypes(): string[]",
@@ -10171,7 +11801,9 @@ let Spinnet = {
     "getRiders": {
       "comment": {
         "params": {},
-        "remarks": "Gets a list of the all the entities currently riding this entity.",
+        "remarks": [
+          "Gets a list of the all the entities currently riding this entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getRiders(): Entity[]",
@@ -10182,7 +11814,9 @@ let Spinnet = {
     "getSeats": {
       "comment": {
         "params": {},
-        "remarks": "Gets a list of positions and number of riders for each position for entities riding this entity.",
+        "remarks": [
+          "Gets a list of positions and number of riders for each position for entities riding this entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getSeats(): Seat[]",
@@ -10193,8 +11827,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10204,7 +11840,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10216,7 +11854,8 @@ let Spinnet = {
   "EntityRidingComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10226,7 +11865,9 @@ let Spinnet = {
     "entityRidingOn": {
       "comment": {
         "params": {},
-        "remarks": "The entity this entity is currently riding on.",
+        "remarks": [
+          "The entity this entity is currently riding on."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly entityRidingOn: Entity",
@@ -10236,7 +11877,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:riding'",
       "kind": "static readonly",
@@ -10246,8 +11888,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10257,7 +11901,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10269,7 +11915,8 @@ let Spinnet = {
   "EntityScaleComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10279,7 +11926,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Current value for the scale property set on entities. This property can't be edited in read-only mode."
+        "remarks": [
+          "Current value for the scale property set on entities. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -10288,7 +11937,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:scale'",
       "kind": "static readonly",
@@ -10298,8 +11948,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10309,7 +11961,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10321,7 +11975,8 @@ let Spinnet = {
   "EntitySkinIdComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10331,7 +11986,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Returns the value of the skin Id identifier of the entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Returns the value of the skin Id identifier of the entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -10340,7 +11997,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:skin_id'",
       "kind": "static readonly",
@@ -10350,8 +12008,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10361,7 +12021,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10373,7 +12035,8 @@ let Spinnet = {
   "EntitySpawnAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10383,7 +12046,9 @@ let Spinnet = {
     "cause": {
       "comment": {
         "params": {},
-        "remarks": "Initialization cause (Spawned, Born ...)."
+        "remarks": [
+          "Initialization cause (Spawned, Born ...)."
+        ]
       },
       "match": "readonly cause: EntityInitializationCause",
       "kind": "readonly",
@@ -10393,7 +12058,9 @@ let Spinnet = {
     "entity": {
       "comment": {
         "params": {},
-        "remarks": "Entity that was spawned. This property can't be edited in read-only mode."
+        "remarks": [
+          "Entity that was spawned. This property can't be edited in read-only mode."
+        ]
       },
       "match": "entity: Entity",
       "kind": "public",
@@ -10404,7 +12071,8 @@ let Spinnet = {
   "EntitySpawnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10416,7 +12084,9 @@ let Spinnet = {
         "params": {
           "callback": "Function that handles the spawn event."
         },
-        "remarks": "Method to register an event handler for what happens when an entity spawns. This function can't be called in read-only mode.",
+        "remarks": [
+          "Method to register an event handler for what happens when an entity spawns. This function can't be called in read-only mode."
+        ],
         "example": "```typescript // register a new function that is called when a new entity is created. mc.world.afterEvents.entitySpawn.subscribe((entityEvent: mc.EntitySpawnAfterEvent) => { if (entityEvent && entityEvent.entity) { log(`New entity of type '${entityEvent.entity.typeId}' created!`, 1); } else { log(`The entity event didn't work as expected.`, -1); } }); mc.system.runTimeout(() => { createOldHorse(log, targetLocation); }, 20); ```"
       },
       "match": "subscribe(callback: (arg: EntitySpawnAfterEvent) => void): (arg: EntitySpawnAfterEvent) => void",
@@ -10429,7 +12099,9 @@ let Spinnet = {
         "params": {
           "callback": "Original function that was passed into the subscribe event, that is to be unregistered."
         },
-        "remarks": "Unregisters a method that was previously subscribed to the subscription event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unregisters a method that was previously subscribed to the subscription event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: EntitySpawnAfterEvent) => void): void",
@@ -10441,7 +12113,8 @@ let Spinnet = {
   "EntityStrengthComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10451,7 +12124,9 @@ let Spinnet = {
     "max": {
       "comment": {
         "params": {},
-        "remarks": "Maximum strength of this entity, as defined in the entity type definition.",
+        "remarks": [
+          "Maximum strength of this entity, as defined in the entity type definition."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly max: number",
@@ -10462,7 +12137,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Current value of the strength component that has been set for entities.",
+        "remarks": [
+          "Current value of the strength component that has been set for entities."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly value: number",
@@ -10472,7 +12149,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:strength'",
       "kind": "static readonly",
@@ -10482,8 +12160,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10493,7 +12173,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10505,7 +12187,8 @@ let Spinnet = {
   "EntityTameableComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10515,7 +12198,9 @@ let Spinnet = {
     "probability": {
       "comment": {
         "params": {},
-        "remarks": "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%",
+        "remarks": [
+          "The chance of taming the entity with each item use between 0.0 and 1.0, where 1.0 is 100%"
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly probability: number",
@@ -10525,7 +12210,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:tameable'",
       "kind": "static readonly",
@@ -10535,7 +12221,9 @@ let Spinnet = {
     "getTameItems": {
       "comment": {
         "params": {},
-        "remarks": "Returns a set of items that can be used to tame this entity.",
+        "remarks": [
+          "Returns a set of items that can be used to tame this entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getTameItems(): string[]",
@@ -10546,7 +12234,9 @@ let Spinnet = {
     "tame": {
       "comment": {
         "params": {},
-        "remarks": "Tames this entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Tames this entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if the entity was tamed.",
         "throws": "function can throw errors."
       },
@@ -10558,8 +12248,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10569,7 +12261,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10581,7 +12275,8 @@ let Spinnet = {
   "EntityType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10591,7 +12286,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of this entity type - for example, 'minecraft:skeleton'."
+        "remarks": [
+          "Identifier of this entity type - for example, 'minecraft:skeleton'."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -10602,7 +12299,8 @@ let Spinnet = {
   "EntityTypeIterator": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10612,7 +12310,9 @@ let Spinnet = {
     "next": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "next(): IteratorResult<EntityType>",
       "kind": "public",
@@ -10623,7 +12323,8 @@ let Spinnet = {
   "EntityTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10633,7 +12334,9 @@ let Spinnet = {
     "get": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves an entity type using a string-based identifier."
+        "remarks": [
+          "Retrieves an entity type using a string-based identifier."
+        ]
       },
       "match": "static get(identifier: string): EntityType | undefined",
       "kind": "static",
@@ -10643,7 +12346,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves an iterator of all entity types within this world."
+        "remarks": [
+          "Retrieves an iterator of all entity types within this world."
+        ]
       },
       "match": "static getAll(): EntityTypeIterator",
       "kind": "static",
@@ -10654,7 +12359,8 @@ let Spinnet = {
   "EntityUnderwaterMovementComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10663,7 +12369,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:underwater_movement'",
       "kind": "static readonly",
@@ -10673,7 +12380,9 @@ let Spinnet = {
     "currentValue": {
       "comment": {
         "params": {},
-        "remarks": "Current value of this attribute for this instance.",
+        "remarks": [
+          "Current value of this attribute for this instance."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly currentValue: number",
@@ -10684,7 +12393,9 @@ let Spinnet = {
     "defaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default defined value for this attribute.",
+        "remarks": [
+          "Returns the default defined value for this attribute."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly defaultValue: number",
@@ -10695,7 +12406,9 @@ let Spinnet = {
     "effectiveMax": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective max of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective max of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMax: number",
@@ -10706,7 +12419,9 @@ let Spinnet = {
     "effectiveMin": {
       "comment": {
         "params": {},
-        "remarks": "Returns the effective min of this attribute given any other ambient components or factors.",
+        "remarks": [
+          "Returns the effective min of this attribute given any other ambient components or factors."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly effectiveMin: number",
@@ -10717,7 +12432,9 @@ let Spinnet = {
     "resetToDefaultValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the defined default value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToDefaultValue(): void",
@@ -10728,7 +12445,9 @@ let Spinnet = {
     "resetToMaxValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the maximum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMaxValue(): void",
@@ -10739,7 +12458,9 @@ let Spinnet = {
     "resetToMinValue": {
       "comment": {
         "params": {},
-        "remarks": "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the current value of this attribute to the minimum defined value. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetToMinValue(): void",
@@ -10750,7 +12471,9 @@ let Spinnet = {
     "setCurrentValue": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current value of this attribute. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current value of this attribute. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setCurrentValue(value: number): boolean",
@@ -10761,8 +12484,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10772,7 +12497,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10784,7 +12511,8 @@ let Spinnet = {
   "EntityVariantComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10794,7 +12522,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Current value for variant for this entity, as specified via components.",
+        "remarks": [
+          "Current value for variant for this entity, as specified via components."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly value: number",
@@ -10804,7 +12534,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:variant'",
       "kind": "static readonly",
@@ -10814,8 +12545,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10825,7 +12558,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10837,7 +12572,8 @@ let Spinnet = {
   "EntityWantsJockeyComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10846,7 +12582,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:wants_jockey'",
       "kind": "static readonly",
@@ -10856,8 +12593,10 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "The entity that owns this component. The entity will be undefined if it has been removed."
+        "remarks": [
+          "The entity that owns this component. The entity will be undefined if it has been removed."
+        ],
+        "beta": ""
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -10867,7 +12606,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -10879,7 +12620,8 @@ let Spinnet = {
   "ExplosionAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10889,7 +12631,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension where the explosion has occurred."
+        "remarks": [
+          "Dimension where the explosion has occurred."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -10899,7 +12643,9 @@ let Spinnet = {
     "getImpactedBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Optional source of the explosion."
+        "remarks": [
+          "Optional source of the explosion."
+        ]
       },
       "match": "getImpactedBlocks(): Block[]",
       "kind": "public",
@@ -10910,7 +12656,8 @@ let Spinnet = {
   "ExplosionAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10920,7 +12667,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an explosion occurs. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an explosion occurs. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ExplosionAfterEvent) => void): (arg: ExplosionAfterEvent) => void",
       "kind": "public",
@@ -10930,7 +12679,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an explosion occurs. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an explosion occurs. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ExplosionAfterEvent) => void): void",
@@ -10942,7 +12693,8 @@ let Spinnet = {
   "ExplosionBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -10952,7 +12704,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, cancels the explosion event."
+        "remarks": [
+          "If set to true, cancels the explosion event."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -10964,7 +12718,9 @@ let Spinnet = {
         "params": {
           "blocks": "New list of blocks that are impacted by this explosion."
         },
-        "remarks": "Updates a collection of blocks impacted by this explosion event."
+        "remarks": [
+          "Updates a collection of blocks impacted by this explosion event."
+        ]
       },
       "match": "setImpactedBlocks(blocks: Block[]): void",
       "kind": "public",
@@ -10974,7 +12730,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension where the explosion has occurred."
+        "remarks": [
+          "Dimension where the explosion has occurred."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -10984,7 +12742,9 @@ let Spinnet = {
     "getImpactedBlocks": {
       "comment": {
         "params": {},
-        "remarks": "Optional source of the explosion."
+        "remarks": [
+          "Optional source of the explosion."
+        ]
       },
       "match": "getImpactedBlocks(): Block[]",
       "kind": "public",
@@ -10995,7 +12755,8 @@ let Spinnet = {
   "ExplosionBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11005,7 +12766,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when before an explosion occurs. The callback can optionally change or cancel explosion behavior. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when before an explosion occurs. The callback can optionally change or cancel explosion behavior. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ExplosionBeforeEvent) => void): (arg: ExplosionBeforeEvent) => void",
       "kind": "public",
@@ -11015,7 +12778,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called from before when an explosion would occur. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called from before when an explosion would occur. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ExplosionBeforeEvent) => void): void",
@@ -11027,7 +12792,8 @@ let Spinnet = {
   "FeedItem": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11037,7 +12803,9 @@ let Spinnet = {
     "healAmount": {
       "comment": {
         "params": {},
-        "remarks": "The amount of health this entity gains when fed this item. This number is an integer starting at 0. Sample values can go as high as 40."
+        "remarks": [
+          "The amount of health this entity gains when fed this item. This number is an integer starting at 0. Sample values can go as high as 40."
+        ]
       },
       "match": "readonly healAmount: number",
       "kind": "readonly",
@@ -11047,7 +12815,9 @@ let Spinnet = {
     "item": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of type of item that can be fed. If a namespace is not specified, 'minecraft:' is assumed. Example values include 'wheat' or 'golden_apple'."
+        "remarks": [
+          "Identifier of type of item that can be fed. If a namespace is not specified, 'minecraft:' is assumed. Example values include 'wheat' or 'golden_apple'."
+        ]
       },
       "match": "readonly item: string",
       "kind": "readonly",
@@ -11057,7 +12827,9 @@ let Spinnet = {
     "getEffects": {
       "comment": {
         "params": {},
-        "remarks": "As part of the Healable component, an optional collection of side effects that can occur from being fed an item."
+        "remarks": [
+          "As part of the Healable component, an optional collection of side effects that can occur from being fed an item."
+        ]
       },
       "match": "getEffects(): FeedItemEffect[]",
       "kind": "public",
@@ -11068,7 +12840,8 @@ let Spinnet = {
   "FeedItemEffect": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11078,7 +12851,9 @@ let Spinnet = {
     "amplifier": {
       "comment": {
         "params": {},
-        "remarks": "Gets an amplifier that may have been applied to this effect. Valid values are integers starting at 0 and up - but usually ranging between 0 and 4."
+        "remarks": [
+          "Gets an amplifier that may have been applied to this effect. Valid values are integers starting at 0 and up - but usually ranging between 0 and 4."
+        ]
       },
       "match": "readonly amplifier: number",
       "kind": "readonly",
@@ -11088,7 +12863,9 @@ let Spinnet = {
     "chance": {
       "comment": {
         "params": {},
-        "remarks": "Chance that this effect is applied as a result of the entity being fed this item. Valid values range between 0 and 1."
+        "remarks": [
+          "Chance that this effect is applied as a result of the entity being fed this item. Valid values range between 0 and 1."
+        ]
       },
       "match": "readonly chance: number",
       "kind": "readonly",
@@ -11098,7 +12875,9 @@ let Spinnet = {
     "duration": {
       "comment": {
         "params": {},
-        "remarks": "Gets the duration, in ticks, of this effect."
+        "remarks": [
+          "Gets the duration, in ticks, of this effect."
+        ]
       },
       "match": "readonly duration: number",
       "kind": "readonly",
@@ -11108,7 +12887,9 @@ let Spinnet = {
     "name": {
       "comment": {
         "params": {},
-        "remarks": "Gets the identifier of the effect to apply. Example values include 'fire_resistance' or 'regeneration'."
+        "remarks": [
+          "Gets the identifier of the effect to apply. Example values include 'fire_resistance' or 'regeneration'."
+        ]
       },
       "match": "readonly name: string",
       "kind": "readonly",
@@ -11119,7 +12900,8 @@ let Spinnet = {
   "FilterGroup": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11130,7 +12912,8 @@ let Spinnet = {
   "FluidContainer": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11140,7 +12923,9 @@ let Spinnet = {
     "maxFillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Constant that represents the maximum fill level of a fluid container."
+        "remarks": [
+          "Constant that represents the maximum fill level of a fluid container."
+        ]
       },
       "match": "static readonly maxFillLevel = 6",
       "kind": "static readonly",
@@ -11150,7 +12935,9 @@ let Spinnet = {
     "minFillLevel": {
       "comment": {
         "params": {},
-        "remarks": "Constant that represents the minimum fill level of a fluid container."
+        "remarks": [
+          "Constant that represents the minimum fill level of a fluid container."
+        ]
       },
       "match": "static readonly minFillLevel = 0",
       "kind": "static readonly",
@@ -11161,7 +12948,8 @@ let Spinnet = {
   "IButtonPushAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11171,7 +12959,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ButtonPushAfterEvent) => void): (arg: ButtonPushAfterEvent) => void",
       "kind": "public",
@@ -11181,7 +12971,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ButtonPushAfterEvent) => void): void",
@@ -11193,7 +12985,8 @@ let Spinnet = {
   "ILeverActionAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11203,7 +12996,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: LeverActionAfterEvent) => void): (arg: LeverActionAfterEvent) => void",
       "kind": "public",
@@ -11213,7 +13008,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: LeverActionAfterEvent) => void): void",
@@ -11225,7 +13022,8 @@ let Spinnet = {
   "IPlayerJoinAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11235,7 +13033,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerJoinAfterEvent) => void): (arg: PlayerJoinAfterEvent) => void",
       "kind": "public",
@@ -11245,7 +13045,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerJoinAfterEvent) => void): void",
@@ -11257,7 +13059,8 @@ let Spinnet = {
   "IPlayerLeaveAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11267,7 +13070,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerLeaveAfterEvent) => void): (arg: PlayerLeaveAfterEvent) => void",
       "kind": "public",
@@ -11277,7 +13082,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerLeaveAfterEvent) => void): void",
@@ -11289,7 +13096,8 @@ let Spinnet = {
   "IPlayerSpawnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11299,7 +13107,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerSpawnAfterEvent) => void): (arg: PlayerSpawnAfterEvent) => void",
       "kind": "public",
@@ -11309,7 +13119,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerSpawnAfterEvent) => void): void",
@@ -11321,7 +13133,8 @@ let Spinnet = {
   "ItemCompleteUseAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11331,7 +13144,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "Returns the item stack that has completed charging."
+        "remarks": [
+          "Returns the item stack that has completed charging."
+        ]
       },
       "match": "readonly itemStack: ItemStack",
       "kind": "readonly",
@@ -11341,7 +13156,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -11351,7 +13168,9 @@ let Spinnet = {
     "useDuration": {
       "comment": {
         "params": {},
-        "remarks": "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        "remarks": [
+          "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        ]
       },
       "match": "readonly useDuration: number",
       "kind": "readonly",
@@ -11362,7 +13181,8 @@ let Spinnet = {
   "ItemCompleteUseAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11372,7 +13192,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a chargeable item completes charging. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a chargeable item completes charging. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): (arg: ItemCompleteUseAfterEvent) => void",
       "kind": "public",
@@ -11382,7 +13204,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a chargeable item completes charging. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a chargeable item completes charging. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemCompleteUseAfterEvent) => void): void",
@@ -11394,7 +13218,8 @@ let Spinnet = {
   "ItemComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11404,7 +13229,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -11414,7 +13241,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -11426,7 +13255,8 @@ let Spinnet = {
   "ItemCooldownComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11436,7 +13266,9 @@ let Spinnet = {
     "cooldownCategory": {
       "comment": {
         "params": {},
-        "remarks": "Represents the cooldown category that this item is associated with.",
+        "remarks": [
+          "Represents the cooldown category that this item is associated with."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly cooldownCategory: string",
@@ -11447,7 +13279,9 @@ let Spinnet = {
     "cooldownTicks": {
       "comment": {
         "params": {},
-        "remarks": "Amount of time, in ticks, that remain for this item cooldown.",
+        "remarks": [
+          "Amount of time, in ticks, that remain for this item cooldown."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly cooldownTicks: number",
@@ -11457,7 +13291,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:cooldown'",
       "kind": "static readonly",
@@ -11467,7 +13302,9 @@ let Spinnet = {
     "startCooldown": {
       "comment": {
         "params": {},
-        "remarks": "Starts a new cooldown period for this item. This function can't be called in read-only mode.",
+        "remarks": [
+          "Starts a new cooldown period for this item. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "startCooldown(player: Player): void",
@@ -11478,7 +13315,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -11488,7 +13327,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -11500,7 +13341,8 @@ let Spinnet = {
   "ItemDefinitionAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11510,7 +13352,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item's definition and components change. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item's definition and components change. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemDefinitionTriggeredAfterEvent) => void,): (arg: ItemDefinitionTriggeredAfterEvent) => void",
       "kind": "public",
@@ -11520,7 +13364,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item's definition and components change. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item's definition and components change. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemDefinitionTriggeredAfterEvent) => void): void",
@@ -11532,7 +13378,8 @@ let Spinnet = {
   "ItemDefinitionBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11542,7 +13389,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item's definition and components change. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item's definition and components change. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void,): (arg: ItemDefinitionTriggeredBeforeEvent) => void",
       "kind": "public",
@@ -11552,7 +13401,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item's definition and components change. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item's definition and components change. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemDefinitionTriggeredBeforeEvent) => void): void",
@@ -11564,7 +13415,8 @@ let Spinnet = {
   "ItemDefinitionTriggeredAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11574,7 +13426,9 @@ let Spinnet = {
     "eventName": {
       "comment": {
         "params": {},
-        "remarks": "Name of the data-driven item event that is triggering this change."
+        "remarks": [
+          "Name of the data-driven item event that is triggering this change."
+        ]
       },
       "match": "readonly eventName: string",
       "kind": "readonly",
@@ -11584,7 +13438,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "Related item stack that the definitional change has been triggered upon."
+        "remarks": [
+          "Related item stack that the definitional change has been triggered upon."
+        ]
       },
       "match": "itemStack: ItemStack",
       "kind": "public",
@@ -11595,7 +13451,8 @@ let Spinnet = {
   "ItemDefinitionTriggeredBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11605,7 +13462,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, will cancel the application of this item definition change."
+        "remarks": [
+          "If set to true, will cancel the application of this item definition change."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -11615,7 +13474,9 @@ let Spinnet = {
     "eventName": {
       "comment": {
         "params": {},
-        "remarks": "Name of the data-driven item event that is triggering this change."
+        "remarks": [
+          "Name of the data-driven item event that is triggering this change."
+        ]
       },
       "match": "readonly eventName: string",
       "kind": "readonly",
@@ -11625,7 +13486,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "Related item stack that the definitional change has been triggered upon."
+        "remarks": [
+          "Related item stack that the definitional change has been triggered upon."
+        ]
       },
       "match": "itemStack: ItemStack",
       "kind": "public",
@@ -11636,7 +13499,8 @@ let Spinnet = {
   "ItemDurabilityComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11646,7 +13510,9 @@ let Spinnet = {
     "damage": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current damage level of this particular item. This property can't be edited in read-only mode."
+        "remarks": [
+          "Returns the current damage level of this particular item. This property can't be edited in read-only mode."
+        ]
       },
       "match": "damage: number",
       "kind": "public",
@@ -11656,7 +13522,9 @@ let Spinnet = {
     "maxDurability": {
       "comment": {
         "params": {},
-        "remarks": "Represents the amount of damage that this item can take before breaking.",
+        "remarks": [
+          "Represents the amount of damage that this item can take before breaking."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly maxDurability: number",
@@ -11666,7 +13534,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:durability'",
       "kind": "static readonly",
@@ -11678,7 +13547,9 @@ let Spinnet = {
         "params": {
           "unbreaking": "Unbreaking factor to consider in factoring the damage chance. Incoming unbreaking parameter must be greater than 0."
         },
-        "remarks": "Returns the maximum chance that this item would be damaged using the damageRange property, given an unbreaking level. This function can't be called in read-only mode.",
+        "remarks": [
+          "Returns the maximum chance that this item would be damaged using the damageRange property, given an unbreaking level. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getDamageChance(unbreaking?: number): number",
@@ -11689,7 +13560,9 @@ let Spinnet = {
     "getDamageRange": {
       "comment": {
         "params": {},
-        "remarks": "A range of numbers that describes the chance of the item losing durability. This function can't be called in read-only mode.",
+        "remarks": [
+          "A range of numbers that describes the chance of the item losing durability. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getDamageRange(): minecraftcommon.NumberRange",
@@ -11700,7 +13573,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -11710,7 +13585,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -11722,7 +13599,8 @@ let Spinnet = {
   "ItemEnchantsComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11732,7 +13610,9 @@ let Spinnet = {
     "enchantments": {
       "comment": {
         "params": {},
-        "remarks": "Returns a collection of the enchantments applied to this item stack. This property can't be edited in read-only mode."
+        "remarks": [
+          "Returns a collection of the enchantments applied to this item stack. This property can't be edited in read-only mode."
+        ]
       },
       "match": "enchantments: EnchantmentList",
       "kind": "public",
@@ -11741,7 +13621,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:enchantments'",
       "kind": "static readonly",
@@ -11751,7 +13632,9 @@ let Spinnet = {
     "removeAllEnchantments": {
       "comment": {
         "params": {},
-        "remarks": "Removes all enchantments applied to this item stack. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes all enchantments applied to this item stack. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "removeAllEnchantments(): void",
@@ -11762,7 +13645,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -11772,7 +13657,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -11784,7 +13671,8 @@ let Spinnet = {
   "ItemFoodComponent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11794,7 +13682,9 @@ let Spinnet = {
     "canAlwaysEat": {
       "comment": {
         "params": {},
-        "remarks": "If true, the player can always eat this item (even when not hungry).",
+        "remarks": [
+          "If true, the player can always eat this item (even when not hungry)."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly canAlwaysEat: boolean",
@@ -11805,7 +13695,9 @@ let Spinnet = {
     "nutrition": {
       "comment": {
         "params": {},
-        "remarks": "Represents how much nutrition this food item will give an entity when eaten.",
+        "remarks": [
+          "Represents how much nutrition this food item will give an entity when eaten."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly nutrition: number",
@@ -11816,7 +13708,9 @@ let Spinnet = {
     "saturationModifier": {
       "comment": {
         "params": {},
-        "remarks": "When an item is eaten, this value is used according to this formula (nutrition * saturation_modifier * 2) to apply a saturation buff.",
+        "remarks": [
+          "When an item is eaten, this value is used according to this formula (nutrition * saturation_modifier * 2) to apply a saturation buff."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly saturationModifier: number",
@@ -11827,7 +13721,9 @@ let Spinnet = {
     "usingConvertsTo": {
       "comment": {
         "params": {},
-        "remarks": "When specified, converts the active item to the one specified by this property.",
+        "remarks": [
+          "When specified, converts the active item to the one specified by this property."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly usingConvertsTo: string",
@@ -11837,7 +13733,8 @@ let Spinnet = {
     },
     "componentId": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "static readonly componentId = 'minecraft:food'",
       "kind": "static readonly",
@@ -11847,7 +13744,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the component."
+        "remarks": [
+          "Identifier of the component."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -11857,7 +13756,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component.",
+        "remarks": [
+          "Returns whether the component is valid. A component is considered valid if its owner is valid, in addition to any addition to any additional validation required by the component."
+        ],
         "returns": "Whether the component is valid."
       },
       "match": "isValid(): boolean",
@@ -11869,7 +13770,8 @@ let Spinnet = {
   "ItemReleaseUseAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11879,7 +13781,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "Returns the item stack that triggered this item event."
+        "remarks": [
+          "Returns the item stack that triggered this item event."
+        ]
       },
       "match": "readonly itemStack: ItemStack",
       "kind": "readonly",
@@ -11889,7 +13793,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -11899,7 +13805,9 @@ let Spinnet = {
     "useDuration": {
       "comment": {
         "params": {},
-        "remarks": "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        "remarks": [
+          "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        ]
       },
       "match": "readonly useDuration: number",
       "kind": "readonly",
@@ -11910,7 +13818,8 @@ let Spinnet = {
   "ItemReleaseUseAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -11920,7 +13829,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a chargeable item is released from charging. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a chargeable item is released from charging. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): (arg: ItemReleaseUseAfterEvent) => void",
       "kind": "public",
@@ -11930,7 +13841,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a chargeable item is released from charging. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a chargeable item is released from charging. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemReleaseUseAfterEvent) => void): void",
@@ -11943,7 +13856,9 @@ let Spinnet = {
     "amount": {
       "comment": {
         "params": {},
-        "remarks": "Number of the items in the stack. Valid values range between 1-255. The provided value will be clamped to the item's maximum stack size. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Number of the items in the stack. Valid values range between 1-255. The provided value will be clamped to the item's maximum stack size. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the value is outside the range of 1-255."
       },
       "match": "amount: number",
@@ -11954,7 +13869,9 @@ let Spinnet = {
     "isStackable": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the item is stackable. An item is considered stackable if the item's maximum stack size is greater than 1 and the item does not contain any custom data or properties."
+        "remarks": [
+          "Returns whether the item is stackable. An item is considered stackable if the item's maximum stack size is greater than 1 and the item does not contain any custom data or properties."
+        ]
       },
       "match": "readonly isStackable: boolean",
       "kind": "readonly",
@@ -11964,7 +13881,9 @@ let Spinnet = {
     "keepOnDeath": {
       "comment": {
         "params": {},
-        "remarks": "Gets or sets whether the item is kept on death. This property can't be edited in read-only mode."
+        "remarks": [
+          "Gets or sets whether the item is kept on death. This property can't be edited in read-only mode."
+        ]
       },
       "match": "keepOnDeath: boolean",
       "kind": "public",
@@ -11974,7 +13893,9 @@ let Spinnet = {
     "lockMode": {
       "comment": {
         "params": {},
-        "remarks": "Gets or sets the item's lock mode. The default value is `ItemLockMode.none`. This property can't be edited in read-only mode."
+        "remarks": [
+          "Gets or sets the item's lock mode. The default value is `ItemLockMode.none`. This property can't be edited in read-only mode."
+        ]
       },
       "match": "lockMode: ItemLockMode",
       "kind": "public",
@@ -11984,7 +13905,9 @@ let Spinnet = {
     "maxAmount": {
       "comment": {
         "params": {},
-        "remarks": "The maximum stack size. This value varies depending on the type of item. For example, torches have a maximum stack size of 64, while eggs have a maximum stack size of 16."
+        "remarks": [
+          "The maximum stack size. This value varies depending on the type of item. For example, torches have a maximum stack size of 64, while eggs have a maximum stack size of 16."
+        ]
       },
       "match": "readonly maxAmount: number",
       "kind": "readonly",
@@ -11994,7 +13917,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Given name of this stack of items. The name tag is displayed when hovering over the item. Setting the name tag to an empty string or `undefined` will remove the name tag. This property can't be edited in read-only mode.",
+        "remarks": [
+          "Given name of this stack of items. The name tag is displayed when hovering over the item. Setting the name tag to an empty string or `undefined` will remove the name tag. This property can't be edited in read-only mode."
+        ],
         "throws": "Throws if the length exceeds 255 characters."
       },
       "match": "readonly typeId: string",
@@ -12008,7 +13933,9 @@ let Spinnet = {
           "itemType": "Type of item to create. See the {@link",
           "amount": "Number of items to place in the stack, between 1-255. The provided value will be clamped to the item's maximum stack size. Note that certain items can only have one item in the stack."
         },
-        "remarks": "Creates a new instance of a stack of items for use in the world.",
+        "remarks": [
+          "Creates a new instance of a stack of items for use in the world."
+        ],
         "minecraft/vanilla-data.MinecraftItemTypes}": "for a list of standard item types in Minecraft experiences.",
         "throws": "Throws if `itemType` is invalid, or if `amount` is outside the range of 1-255."
       },
@@ -12020,7 +13947,9 @@ let Spinnet = {
     "clone": {
       "comment": {
         "params": {},
-        "remarks": "Creates an exact copy of the item stack, including any custom data or properties.",
+        "remarks": [
+          "Creates an exact copy of the item stack, including any custom data or properties."
+        ],
         "returns": "Returns a copy of this item stack."
       },
       "match": "clone(): ItemStack",
@@ -12031,7 +13960,9 @@ let Spinnet = {
     "getCanDestroy": {
       "comment": {
         "params": {},
-        "remarks": "Get the list of block types this item can break in Adventure mode. This function can't be called in read-only mode."
+        "remarks": [
+          "Get the list of block types this item can break in Adventure mode. This function can't be called in read-only mode."
+        ]
       },
       "match": "getCanDestroy(): string[]",
       "kind": "public",
@@ -12041,7 +13972,9 @@ let Spinnet = {
     "getCanPlaceOn": {
       "comment": {
         "params": {},
-        "remarks": "Get the list of block types this item can be placed on in Adventure mode. This function can't be called in read-only mode."
+        "remarks": [
+          "Get the list of block types this item can be placed on in Adventure mode. This function can't be called in read-only mode."
+        ]
       },
       "match": "getCanPlaceOn(): string[]",
       "kind": "public",
@@ -12053,7 +13986,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:food'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the {@link ItemComponentTypes} enum."
         },
-        "remarks": "Gets a component (that represents additional capabilities) for an item stack.",
+        "remarks": [
+          "Gets a component (that represents additional capabilities) for an item stack."
+        ],
         "returns": "Returns the component if it exists on the item stack, otherwise undefined.",
         "example": "```typescript // Get the maximum durability of a custom sword item const itemStack = new ItemStack('custom:sword'); const durability = itemStack.getComponent(ItemComponentTypes.Durability); const maxDurability = durability.maxDurability; ```"
       },
@@ -12065,7 +14000,9 @@ let Spinnet = {
     "getLore": {
       "comment": {
         "params": {},
-        "remarks": "Returns the lore value - a secondary display string - for an ItemStack.",
+        "remarks": [
+          "Returns the lore value - a secondary display string - for an ItemStack."
+        ],
         "returns": "An array of lore lines. If the item does not have lore, returns an empty array."
       },
       "match": "getLore(): string[]",
@@ -12076,7 +14013,9 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
-        "remarks": "Returns a set of tags associated with this item stack."
+        "remarks": [
+          "Returns a set of tags associated with this item stack."
+        ]
       },
       "match": "getTags(): string[]",
       "kind": "public",
@@ -12088,7 +14027,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:food') to retrieve. If no namespace prefix is specified, 'minecraft:' is assumed."
         },
-        "remarks": "Returns true if the specified component is present on this item stack."
+        "remarks": [
+          "Returns true if the specified component is present on this item stack."
+        ]
       },
       "match": "hasComponent(componentId: string): boolean",
       "kind": "public",
@@ -12100,7 +14041,9 @@ let Spinnet = {
         "params": {
           "tag": "Tag to search for."
         },
-        "remarks": "Checks whether this item stack has a particular tag associated with it.",
+        "remarks": [
+          "Checks whether this item stack has a particular tag associated with it."
+        ],
         "returns": "True if the Item Stack has the tag associated with it, else false."
       },
       "match": "hasTag(tag: string): boolean",
@@ -12113,7 +14056,9 @@ let Spinnet = {
         "params": {
           "itemStack": "ItemStack to check stacking compatability with."
         },
-        "remarks": "Returns whether this item stack can be stacked with the given `itemStack`. This is determined by comparing the item type and any custom data and properties associated with the item stacks. The amount of each item stack is not taken into consideration.",
+        "remarks": [
+          "Returns whether this item stack can be stacked with the given `itemStack`. This is determined by comparing the item type and any custom data and properties associated with the item stacks. The amount of each item stack is not taken into consideration."
+        ],
         "returns": "True if the Item Stack is stackable with the itemStack passed in."
       },
       "match": "isStackableWith(itemStack: ItemStack): boolean",
@@ -12126,7 +14071,9 @@ let Spinnet = {
         "params": {
           "blockIdentifiers": "String list of block types that the item can destroy."
         },
-        "remarks": "The list of block types this item can break in Adventure mode. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode.",
+        "remarks": [
+          "The list of block types this item can break in Adventure mode. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if any of the provided block identifiers are invalid.",
         "example": "```typescript // Creates a diamond pickaxe that can destroy cobblestone and obsidian const specialPickaxe = new ItemStack(\"minecraft:diamond_pickaxe\"); specialPickaxe.setCanDestroy([\"minecraft:cobblestone\", \"minecraft:obsidian\"]); ```"
       },
@@ -12140,7 +14087,9 @@ let Spinnet = {
         "params": {
           "blockIdentifiers": "String list of block types that the item can be placed on."
         },
-        "remarks": "The list of block types this item can be placed on in Adventure mode. This is only applicable to block items. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode.",
+        "remarks": [
+          "The list of block types this item can be placed on in Adventure mode. This is only applicable to block items. The block names are displayed in the item's tooltip. Setting the value to undefined will clear the list. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if any of the provided block identifiers are invalid.",
         "example": "```typescript // Creates a gold block that can be placed on grass and dirt const specialGoldBlock = new ItemStack(\"minecraft:gold_block\"); specialPickaxe.setCanPlaceOn([\"minecraft:grass\", \"minecraft:dirt\"]); ```"
       },
@@ -12154,7 +14103,9 @@ let Spinnet = {
         "params": {
           "loreList": "List of lore lines. Each element in the list represents a new line. The maximum lore line count is 20. The maximum lore line length is 50 characters."
         },
-        "remarks": "Sets the lore value - a secondary display string - for an ItemStack. The lore list is cleared if set to an empty string or undefined. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the lore value - a secondary display string - for an ItemStack. The lore list is cleared if set to an empty string or undefined. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript // Set the lore of an item to multiple lines of text const itemStack = new ItemStack(\"minecraft:diamond_sword\"); itemStack.setLore([\"Line 1\", \"Line 2\", \"Line 3\"]); ```"
       },
@@ -12168,8 +14119,10 @@ let Spinnet = {
         "params": {
           "eventName": "Name of the item type event to trigger. If a namespace is not specified, minecraft: is assumed."
         },
-        "beta": "",
-        "remarks": "Triggers an item type event. For custom items, a number of events are defined in an items' definition for key item behaviors. This function can't be called in read-only mode."
+        "remarks": [
+          "Triggers an item type event. For custom items, a number of events are defined in an items' definition for key item behaviors. This function can't be called in read-only mode."
+        ],
+        "beta": ""
       },
       "match": "triggerEvent(eventName: string): void",
       "kind": "public",
@@ -12180,7 +14133,8 @@ let Spinnet = {
   "ItemStartUseAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12190,7 +14144,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is starting to be charged."
+        "remarks": [
+          "The impacted item stack that is starting to be charged."
+        ]
       },
       "match": "readonly itemStack: ItemStack",
       "kind": "readonly",
@@ -12200,7 +14156,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12210,7 +14168,9 @@ let Spinnet = {
     "useDuration": {
       "comment": {
         "params": {},
-        "remarks": "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        "remarks": [
+          "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        ]
       },
       "match": "readonly useDuration: number",
       "kind": "readonly",
@@ -12221,7 +14181,8 @@ let Spinnet = {
   "ItemStartUseAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12231,7 +14192,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a chargeable item starts charging. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a chargeable item starts charging. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemStartUseAfterEvent) => void): (arg: ItemStartUseAfterEvent) => void",
       "kind": "public",
@@ -12241,7 +14204,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a chargeable item starts charging. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a chargeable item starts charging. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemStartUseAfterEvent) => void): void",
@@ -12253,7 +14218,8 @@ let Spinnet = {
   "ItemStartUseOnAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12263,7 +14229,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that the item is used on."
+        "remarks": [
+          "The block that the item is used on."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -12273,7 +14241,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that an item is being used on."
+        "remarks": [
+          "The face of the block that an item is being used on."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -12283,7 +14253,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is starting to be used. Can be undefined in some gameplay scenarios like pushing a button with an empty hand."
+        "remarks": [
+          "The impacted item stack that is starting to be used. Can be undefined in some gameplay scenarios like pushing a button with an empty hand."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12294,7 +14266,8 @@ let Spinnet = {
   "ItemStartUseOnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12304,7 +14277,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item is used on a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item is used on a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): (arg: ItemStartUseOnAfterEvent) => void",
       "kind": "public",
@@ -12314,7 +14289,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemStartUseOnAfterEvent) => void): void",
@@ -12326,7 +14303,8 @@ let Spinnet = {
   "ItemStopUseAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12336,7 +14314,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is stopping being charged. ItemStopUseAfterEvent can be called when teleporting to a different dimension and this can be undefined."
+        "remarks": [
+          "The impacted item stack that is stopping being charged. ItemStopUseAfterEvent can be called when teleporting to a different dimension and this can be undefined."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12346,7 +14326,9 @@ let Spinnet = {
     "useDuration": {
       "comment": {
         "params": {},
-        "remarks": "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        "remarks": [
+          "Returns the time, in ticks, for the remaining duration left before the charge completes its cycle."
+        ]
       },
       "match": "readonly useDuration: number",
       "kind": "readonly",
@@ -12357,7 +14339,8 @@ let Spinnet = {
   "ItemStopUseAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12367,7 +14350,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a chargeable item stops charging. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a chargeable item stops charging. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemStopUseAfterEvent) => void): (arg: ItemStopUseAfterEvent) => void",
       "kind": "public",
@@ -12377,7 +14362,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a chargeable item stops charging. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a chargeable item stops charging. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemStopUseAfterEvent) => void): void",
@@ -12389,7 +14376,8 @@ let Spinnet = {
   "ItemStopUseOnAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12399,7 +14387,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that the item is used on."
+        "remarks": [
+          "The block that the item is used on."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -12409,7 +14399,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is being used on a block."
+        "remarks": [
+          "The impacted item stack that is being used on a block."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12420,7 +14412,8 @@ let Spinnet = {
   "ItemStopUseOnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12430,7 +14423,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item stops being used on a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item stops being used on a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): (arg: ItemStopUseOnAfterEvent) => void",
       "kind": "public",
@@ -12440,7 +14435,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemStopUseOnAfterEvent) => void): void",
@@ -12452,7 +14449,8 @@ let Spinnet = {
   "ItemType": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12462,7 +14460,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Returns the identifier of the item type - for example, 'minecraft:apple'."
+        "remarks": [
+          "Returns the identifier of the item type - for example, 'minecraft:apple'."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -12473,7 +14473,8 @@ let Spinnet = {
   "ItemTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12483,7 +14484,9 @@ let Spinnet = {
     "get": {
       "comment": {
         "params": {},
-        "remarks": "Returns a specific item type, if available within Minecraft."
+        "remarks": [
+          "Returns a specific item type, if available within Minecraft."
+        ]
       },
       "match": "static get(itemId: string): ItemType | undefined",
       "kind": "static",
@@ -12493,7 +14496,9 @@ let Spinnet = {
     "getAll": {
       "comment": {
         "params": {},
-        "remarks": "Retrieves all available item types registered within Minecraft."
+        "remarks": [
+          "Retrieves all available item types registered within Minecraft."
+        ]
       },
       "match": "static getAll(): ItemType[]",
       "kind": "static",
@@ -12504,7 +14509,8 @@ let Spinnet = {
   "ItemUseAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12514,7 +14520,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is being used."
+        "remarks": [
+          "The impacted item stack that is being used."
+        ]
       },
       "match": "itemStack: ItemStack",
       "kind": "public",
@@ -12524,7 +14532,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12535,7 +14545,8 @@ let Spinnet = {
   "ItemUseAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12545,7 +14556,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item is used. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item is used. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemUseAfterEvent) => void): (arg: ItemUseAfterEvent) => void",
       "kind": "public",
@@ -12555,7 +14568,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item is used. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item is used. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemUseAfterEvent) => void): void",
@@ -12567,7 +14582,8 @@ let Spinnet = {
   "ItemUseBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12577,7 +14593,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, this will cancel the item use behavior."
+        "remarks": [
+          "If set to true, this will cancel the item use behavior."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -12587,7 +14605,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is being used."
+        "remarks": [
+          "The impacted item stack that is being used."
+        ]
       },
       "match": "itemStack: ItemStack",
       "kind": "public",
@@ -12597,7 +14617,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12608,7 +14630,8 @@ let Spinnet = {
   "ItemUseBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12618,7 +14641,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before an item is used. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before an item is used. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemUseBeforeEvent) => void): (arg: ItemUseBeforeEvent) => void",
       "kind": "public",
@@ -12628,7 +14653,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before an item is used. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before an item is used. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemUseBeforeEvent) => void): void",
@@ -12640,7 +14667,8 @@ let Spinnet = {
   "ItemUseOnAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12650,7 +14678,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that the item is used on."
+        "remarks": [
+          "The block that the item is used on."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -12660,7 +14690,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that an item is being used on."
+        "remarks": [
+          "The face of the block that an item is being used on."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -12670,7 +14702,9 @@ let Spinnet = {
     "faceLocation": {
       "comment": {
         "params": {},
-        "remarks": "Location relative to the bottom north-west corner of the block where the item is placed."
+        "remarks": [
+          "Location relative to the bottom north-west corner of the block where the item is placed."
+        ]
       },
       "match": "readonly faceLocation: Vector3",
       "kind": "readonly",
@@ -12680,7 +14714,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is being used on a block."
+        "remarks": [
+          "The impacted item stack that is being used on a block."
+        ]
       },
       "match": "readonly itemStack: ItemStack",
       "kind": "readonly",
@@ -12690,7 +14726,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12701,7 +14739,8 @@ let Spinnet = {
   "ItemUseOnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12711,7 +14750,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an item is used on a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an item is used on a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemUseOnAfterEvent) => void): (arg: ItemUseOnAfterEvent) => void",
       "kind": "public",
@@ -12721,7 +14762,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an item is used on a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemUseOnAfterEvent) => void): void",
@@ -12733,7 +14776,8 @@ let Spinnet = {
   "ItemUseOnBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12743,7 +14787,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, this will cancel the item use behavior."
+        "remarks": [
+          "If set to true, this will cancel the item use behavior."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -12753,7 +14799,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that the item is used on."
+        "remarks": [
+          "The block that the item is used on."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -12763,7 +14811,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that an item is being used on."
+        "remarks": [
+          "The face of the block that an item is being used on."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -12773,7 +14823,9 @@ let Spinnet = {
     "faceLocation": {
       "comment": {
         "params": {},
-        "remarks": "Location relative to the bottom north-west corner of the block where the item is placed."
+        "remarks": [
+          "Location relative to the bottom north-west corner of the block where the item is placed."
+        ]
       },
       "match": "readonly faceLocation: Vector3",
       "kind": "readonly",
@@ -12783,7 +14835,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The impacted item stack that is being used on a block."
+        "remarks": [
+          "The impacted item stack that is being used on a block."
+        ]
       },
       "match": "readonly itemStack: ItemStack",
       "kind": "readonly",
@@ -12793,7 +14847,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Returns the source entity that triggered this item event."
+        "remarks": [
+          "Returns the source entity that triggered this item event."
+        ]
       },
       "match": "readonly source: Player",
       "kind": "readonly",
@@ -12804,7 +14860,8 @@ let Spinnet = {
   "ItemUseOnBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12814,7 +14871,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before an item is used on a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before an item is used on a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ItemUseOnBeforeEvent) => void): (arg: ItemUseOnBeforeEvent) => void",
       "kind": "public",
@@ -12824,7 +14883,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before an item is used on a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before an item is used on a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ItemUseOnBeforeEvent) => void): void",
@@ -12836,7 +14897,8 @@ let Spinnet = {
   "LeverActionAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12846,7 +14908,9 @@ let Spinnet = {
     "isPowered": {
       "comment": {
         "params": {},
-        "remarks": "True if the lever is activated (that is, transmitting power)."
+        "remarks": [
+          "True if the lever is activated (that is, transmitting power)."
+        ]
       },
       "match": "readonly isPowered: boolean",
       "kind": "readonly",
@@ -12856,7 +14920,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "Optional player that triggered the lever activation."
+        "remarks": [
+          "Optional player that triggered the lever activation."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -12866,7 +14932,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -12876,7 +14944,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -12887,7 +14957,8 @@ let Spinnet = {
   "LeverActionAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12897,7 +14968,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: LeverActionAfterEvent) => void): (arg: LeverActionAfterEvent) => void",
       "kind": "public",
@@ -12907,7 +14980,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: LeverActionAfterEvent) => void): void",
@@ -12919,7 +14994,8 @@ let Spinnet = {
   "MessageReceiveAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12929,7 +15005,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "The message identifier."
+        "remarks": [
+          "The message identifier."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -12939,7 +15017,9 @@ let Spinnet = {
     "message": {
       "comment": {
         "params": {},
-        "remarks": "The message."
+        "remarks": [
+          "The message."
+        ]
       },
       "match": "readonly message: string",
       "kind": "readonly",
@@ -12949,7 +15029,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The player who sent the message."
+        "remarks": [
+          "The player who sent the message."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -12960,7 +15042,8 @@ let Spinnet = {
   "MinecraftDimensionTypes": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -12970,7 +15053,9 @@ let Spinnet = {
     "nether": {
       "comment": {
         "params": {},
-        "remarks": "The Nether is a collection of biomes separate from the Overworld, including Soul Sand Valleys and Crimson forests. Nether fortresses contain exclusive resources. Mobs such as Blaze, Hoglins, Piglins, and Ghasts congregate here."
+        "remarks": [
+          "The Nether is a collection of biomes separate from the Overworld, including Soul Sand Valleys and Crimson forests. Nether fortresses contain exclusive resources. Mobs such as Blaze, Hoglins, Piglins, and Ghasts congregate here."
+        ]
       },
       "match": "static readonly nether = 'minecraft:nether'",
       "kind": "static readonly",
@@ -12980,7 +15065,9 @@ let Spinnet = {
     "overworld": {
       "comment": {
         "params": {},
-        "remarks": "The overworld is a collection of biomes, including forests, plains, jungles, mountains, deserts, taiga, and more. This is the default starter dimension for Minecraft. Mobs such as Axolotl, Cows, Creepers, and Zombies congregate here."
+        "remarks": [
+          "The overworld is a collection of biomes, including forests, plains, jungles, mountains, deserts, taiga, and more. This is the default starter dimension for Minecraft. Mobs such as Axolotl, Cows, Creepers, and Zombies congregate here."
+        ]
       },
       "match": "static readonly overworld = 'minecraft:overworld'",
       "kind": "static readonly",
@@ -12990,7 +15077,9 @@ let Spinnet = {
     "theEnd": {
       "comment": {
         "params": {},
-        "remarks": "The End is separate from the Overworld and the Nether and is generated whenever you create an End portal. Here, a giant center island is surrounded by several smaller areas and islands. You can find Endermen here. End midlands are larger areas that transition you from the center to the outer edges of the End. They contain Shulkers, Endermen, End gateway portals, and End cities. End gateway portals are commonly found at the outermost edge of the void. You usually find End barrens toward the edges of the main areas or land in the End."
+        "remarks": [
+          "The End is separate from the Overworld and the Nether and is generated whenever you create an End portal. Here, a giant center island is surrounded by several smaller areas and islands. You can find Endermen here. End midlands are larger areas that transition you from the center to the outer edges of the End. They contain Shulkers, Endermen, End gateway portals, and End cities. End gateway portals are commonly found at the outermost edge of the void. You usually find End barrens toward the edges of the main areas or land in the End."
+        ]
       },
       "match": "static readonly theEnd = 'minecraft:the_end'",
       "kind": "static readonly",
@@ -13002,7 +15091,9 @@ let Spinnet = {
     "setColorRGB": {
       "comment": {
         "params": {},
-        "remarks": "Adds the following variables to Molang: - `<variable_name>.r` - Red color value [0-1] - `<variable_name>.g` - Green color value [0-1] - `<variable_name>.b` - Blue color value [0-1]",
+        "remarks": [
+          "Adds the following variables to Molang: - `<variable_name>.r` - Red color value [0-1] - `<variable_name>.g` - Green color value [0-1] - `<variable_name>.b` - Blue color value [0-1]"
+        ],
         "throws": "function can throw errors."
       },
       "match": "setColorRGB(variableName: string, color: RGB): void",
@@ -13013,7 +15104,9 @@ let Spinnet = {
     "setColorRGBA": {
       "comment": {
         "params": {},
-        "remarks": "Adds the following variables to Molang: - `<variable_name>.r` - Red color value [0-1] - `<variable_name>.g` - Green color value [0-1] - `<variable_name>.b` - Blue color value [0-1] - `<variable_name>.a` - Alpha (transparency) color value [0-1]",
+        "remarks": [
+          "Adds the following variables to Molang: - `<variable_name>.r` - Red color value [0-1] - `<variable_name>.g` - Green color value [0-1] - `<variable_name>.b` - Blue color value [0-1] - `<variable_name>.a` - Alpha (transparency) color value [0-1]"
+        ],
         "throws": "function can throw errors."
       },
       "match": "setColorRGBA(variableName: string, color: RGBA): void",
@@ -13027,7 +15120,9 @@ let Spinnet = {
           "variableName": "Name of the float-based number to set.",
           "number": "Value for the Molang-based variable to set."
         },
-        "remarks": "Sets a numeric (decimal) value within the Molang variable map.",
+        "remarks": [
+          "Sets a numeric (decimal) value within the Molang variable map."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setFloat(variableName: string, number: number): void",
@@ -13038,7 +15133,9 @@ let Spinnet = {
     "setSpeedAndDirection": {
       "comment": {
         "params": {},
-        "remarks": "Adds the following variables to Molang: - `<variable_name>.speed` - Speed number provided - `<variable_name>.direction_x` - X value from the {@link Vector3} provided - `<variable_name>.direction_y` - Y value from the {@link Vector3} provided - `<variable_name>.direction_z` - Z value from the {@link Vector3} provided",
+        "remarks": [
+          "Adds the following variables to Molang: - `<variable_name>.speed` - Speed number provided - `<variable_name>.direction_x` - X value from the {@link Vector3} provided - `<variable_name>.direction_y` - Y value from the {@link Vector3} provided - `<variable_name>.direction_z` - Z value from the {@link Vector3} provided"
+        ],
         "throws": "function can throw errors."
       },
       "match": "setSpeedAndDirection(variableName: string, speed: number, direction: Vector3): void",
@@ -13049,7 +15146,9 @@ let Spinnet = {
     "setVector3": {
       "comment": {
         "params": {},
-        "remarks": "Adds the following variables to Molang: - `<variable_name>.x` - X value from the {@link Vector3} provided - `<variable_name>.y` - Y value from the {@link Vector3} provided - `<variable_name>.z` - Z value from the {@link Vector3} provided",
+        "remarks": [
+          "Adds the following variables to Molang: - `<variable_name>.x` - X value from the {@link Vector3} provided - `<variable_name>.y` - Y value from the {@link Vector3} provided - `<variable_name>.z` - Z value from the {@link Vector3} provided"
+        ],
         "throws": "function can throw errors."
       },
       "match": "setVector3(variableName: string, vector: Vector3): void",
@@ -13061,7 +15160,8 @@ let Spinnet = {
   "NavigationResult": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13071,7 +15171,9 @@ let Spinnet = {
     "isFullPath": {
       "comment": {
         "params": {},
-        "remarks": "Whether the navigation result contains a full path, including to the requested destination."
+        "remarks": [
+          "Whether the navigation result contains a full path, including to the requested destination."
+        ]
       },
       "match": "readonly isFullPath: boolean",
       "kind": "readonly",
@@ -13081,7 +15183,9 @@ let Spinnet = {
     "getPath": {
       "comment": {
         "params": {},
-        "remarks": "A set of block locations that comprise the navigation route."
+        "remarks": [
+          "A set of block locations that comprise the navigation route."
+        ]
       },
       "match": "getPath(): Vector3[]",
       "kind": "public",
@@ -13092,7 +15196,8 @@ let Spinnet = {
   "PistonActivateAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13102,7 +15207,9 @@ let Spinnet = {
     "isExpanding": {
       "comment": {
         "params": {},
-        "remarks": "True if the piston is the process of expanding."
+        "remarks": [
+          "True if the piston is the process of expanding."
+        ]
       },
       "match": "readonly isExpanding: boolean",
       "kind": "readonly",
@@ -13112,7 +15219,9 @@ let Spinnet = {
     "piston": {
       "comment": {
         "params": {},
-        "remarks": "Contains additional properties and details of the piston."
+        "remarks": [
+          "Contains additional properties and details of the piston."
+        ]
       },
       "match": "readonly piston: BlockPistonComponent",
       "kind": "readonly",
@@ -13122,7 +15231,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -13132,7 +15243,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -13143,7 +15256,8 @@ let Spinnet = {
   "PistonActivateAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13153,7 +15267,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a piston expands or retracts. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a callback that will be called when a piston expands or retracts. This function can't be called in read-only mode."
+        ],
         "example": "```typescript let canceled = false; const pistonLoc: mc.Vector3 = { x: Math.floor(targetLocation.x) + 1, y: Math.floor(targetLocation.y) + 2, z: Math.floor(targetLocation.z) + 1, }; const pistonCallback = mc.world.beforeEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateBeforeEvent) => { if (pistonEvent.piston.location.equals(pistonLoc)) { log(\"Cancelling piston event\"); pistonEvent.cancel = true; canceled = true; } }); ```"
       },
       "match": "subscribe(callback: (arg: PistonActivateAfterEvent) => void): (arg: PistonActivateAfterEvent) => void",
@@ -13164,7 +15280,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a piston expands or retracts. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a piston expands or retracts. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PistonActivateAfterEvent) => void): void",
@@ -13176,7 +15294,8 @@ let Spinnet = {
   "PistonActivateBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13186,7 +15305,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If this is set to true within an event handler, the piston activation is canceled."
+        "remarks": [
+          "If this is set to true within an event handler, the piston activation is canceled."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -13196,7 +15317,9 @@ let Spinnet = {
     "isExpanding": {
       "comment": {
         "params": {},
-        "remarks": "True if the piston is the process of expanding."
+        "remarks": [
+          "True if the piston is the process of expanding."
+        ]
       },
       "match": "readonly isExpanding: boolean",
       "kind": "readonly",
@@ -13206,7 +15329,9 @@ let Spinnet = {
     "piston": {
       "comment": {
         "params": {},
-        "remarks": "Contains additional properties and details of the piston."
+        "remarks": [
+          "Contains additional properties and details of the piston."
+        ]
       },
       "match": "readonly piston: BlockPistonComponent",
       "kind": "readonly",
@@ -13216,7 +15341,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -13226,7 +15353,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -13237,7 +15366,8 @@ let Spinnet = {
   "PistonActivateBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13247,7 +15377,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a piston expands or retracts. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a callback that will be called before a piston expands or retracts. This function can't be called in read-only mode."
+        ],
         "example": "```typescript // set up a couple of piston blocks let piston = overworld.getBlock(targetLocation); let button = overworld.getBlock({ x: targetLocation.x, y: targetLocation.y + 1, z: targetLocation.z }); if (piston === undefined || button === undefined) { log(\"Could not find block at location.\"); return -1; } piston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3)); button.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1)); const uncanceledPistonLoc = { x: Math.floor(targetLocation.x) + 2, y: Math.floor(targetLocation.y), z: Math.floor(targetLocation.z) + 2, }; // this is our control. let uncanceledPiston = overworld.getBlock(uncanceledPistonLoc); let uncanceledButton = overworld.getBlock({ x: uncanceledPistonLoc.x, y: uncanceledPistonLoc.y + 1, z: uncanceledPistonLoc.z, }); if (uncanceledPiston === undefined || uncanceledButton === undefined) { log(\"Could not find block at location.\"); return -1; } uncanceledPiston.setPermutation(mc.BlockPermutation.resolve('piston').withState('facing_direction', 3)); uncanceledButton.setPermutation(mc.BlockPermutation.resolve('acacia_button').withState('facing_direction', 1)); mc.world.beforeEvents.pistonActivate.subscribe((pistonEvent: mc.PistonActivateBeforeEvent) => { let eventLoc = pistonEvent.piston.block.location; if (eventLoc.x === targetLocation.x && eventLoc.y === targetLocation.y && eventLoc.z === targetLocation.z) { log(\"Cancelling piston event\"); pistonEvent.cancel = true; } }); ```"
       },
       "match": "subscribe(callback: (arg: PistonActivateBeforeEvent) => void): (arg: PistonActivateBeforeEvent) => void",
@@ -13258,7 +15390,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before a piston expands or retracts. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before a piston expands or retracts. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PistonActivateBeforeEvent) => void): void",
@@ -13270,7 +15404,8 @@ let Spinnet = {
   "Player": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -13280,7 +15415,9 @@ let Spinnet = {
     "camera": {
       "comment": {
         "params": {},
-        "remarks": "The player's Camera.",
+        "remarks": [
+          "The player's Camera."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly camera: Camera",
@@ -13291,7 +15428,9 @@ let Spinnet = {
     "isEmoting": {
       "comment": {
         "params": {},
-        "remarks": "If true, the player is currently emoting.",
+        "remarks": [
+          "If true, the player is currently emoting."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isEmoting: boolean",
@@ -13302,7 +15441,9 @@ let Spinnet = {
     "isFlying": {
       "comment": {
         "params": {},
-        "remarks": "Whether the player is flying. For example, in Creative or Spectator mode.",
+        "remarks": [
+          "Whether the player is flying. For example, in Creative or Spectator mode."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isFlying: boolean",
@@ -13313,7 +15454,9 @@ let Spinnet = {
     "isGliding": {
       "comment": {
         "params": {},
-        "remarks": "Whether the player is gliding with Elytra.",
+        "remarks": [
+          "Whether the player is gliding with Elytra."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isGliding: boolean",
@@ -13324,7 +15467,9 @@ let Spinnet = {
     "isJumping": {
       "comment": {
         "params": {},
-        "remarks": "Whether the player is jumping. This will remain true while the player is holding the jump action.",
+        "remarks": [
+          "Whether the player is jumping. This will remain true while the player is holding the jump action."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isJumping: boolean",
@@ -13335,7 +15480,9 @@ let Spinnet = {
     "level": {
       "comment": {
         "params": {},
-        "remarks": "The current overall level for the player, based on their experience.",
+        "remarks": [
+          "The current overall level for the player, based on their experience."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly level: number",
@@ -13346,7 +15493,9 @@ let Spinnet = {
     "name": {
       "comment": {
         "params": {},
-        "remarks": "Name of the player.",
+        "remarks": [
+          "Name of the player."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly name: string",
@@ -13357,7 +15506,9 @@ let Spinnet = {
     "onScreenDisplay": {
       "comment": {
         "params": {},
-        "remarks": "Contains methods for manipulating the on-screen display of a Player.",
+        "remarks": [
+          "Contains methods for manipulating the on-screen display of a Player."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly onScreenDisplay: ScreenDisplay",
@@ -13368,8 +15519,10 @@ let Spinnet = {
     "selectedSlot": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Manages the selected slot in the player's hotbar. This property can't be edited in read-only mode."
+        "remarks": [
+          "Manages the selected slot in the player's hotbar. This property can't be edited in read-only mode."
+        ],
+        "beta": ""
       },
       "match": "selectedSlot: number",
       "kind": "public",
@@ -13379,7 +15532,9 @@ let Spinnet = {
     "totalXpNeededForNextLevel": {
       "comment": {
         "params": {},
-        "remarks": "The overall total set of experience needed to achieve the next level for a player.",
+        "remarks": [
+          "The overall total set of experience needed to achieve the next level for a player."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly totalXpNeededForNextLevel: number",
@@ -13390,7 +15545,9 @@ let Spinnet = {
     "xpEarnedAtCurrentLevel": {
       "comment": {
         "params": {},
-        "remarks": "The current set of experience achieved for the player.",
+        "remarks": [
+          "The current set of experience achieved for the player."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly xpEarnedAtCurrentLevel: number",
@@ -13403,7 +15560,9 @@ let Spinnet = {
         "params": {
           "amount": "Amount of experience to add. Note that this can be negative. Min/max bounds at -2^24 ~ 2^24"
         },
-        "remarks": "Adds/removes experience to/from the Player and returns the current experience of the Player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds/removes experience to/from the Player and returns the current experience of the Player. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the current experience of the Player.",
         "throws": "function can throw errors."
       },
@@ -13417,7 +15576,9 @@ let Spinnet = {
         "params": {
           "amount": "Amount to add to the player. Min/max bounds at -2^24 ~ 2^24"
         },
-        "remarks": "Adds/removes level to/from the Player and returns the current level of the Player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds/removes level to/from the Player and returns the current level of the Player. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the current level of the Player.",
         "throws": "function can throw errors."
       },
@@ -13431,8 +15592,10 @@ let Spinnet = {
         "params": {
           "itemCategory": "Specifies the cooldown category to retrieve the current cooldown for."
         },
+        "remarks": [
+          "Gets the current item cooldown time for a particular cooldown category."
+        ],
         "beta": "",
-        "remarks": "Gets the current item cooldown time for a particular cooldown category.",
         "throws": "function can throw errors."
       },
       "match": "getItemCooldown(itemCategory: string): number",
@@ -13443,7 +15606,9 @@ let Spinnet = {
     "getSpawnPoint": {
       "comment": {
         "params": {},
-        "remarks": "Gets the current spawn point of the player.",
+        "remarks": [
+          "Gets the current spawn point of the player."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getSpawnPoint(): DimensionLocation | undefined",
@@ -13454,7 +15619,9 @@ let Spinnet = {
     "getTotalXp": {
       "comment": {
         "params": {},
-        "remarks": "Gets the total experience of the Player.",
+        "remarks": [
+          "Gets the total experience of the Player."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getTotalXp(): number",
@@ -13465,8 +15632,10 @@ let Spinnet = {
     "isOp": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Returns true if this player has operator-level permissions."
+        ],
         "beta": "",
-        "remarks": "Returns true if this player has operator-level permissions.",
         "throws": "function can throw errors."
       },
       "match": "isOp(): boolean",
@@ -13480,8 +15649,10 @@ let Spinnet = {
           "trackId": "Identifier of the music track to play.",
           "musicOptions": "Additional options for the music track."
         },
+        "remarks": [
+          "Plays a music track that only this particular player can hear. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Plays a music track that only this particular player can hear. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "playMusic(trackId: string, musicOptions?: MusicOptions): void",
@@ -13494,7 +15665,9 @@ let Spinnet = {
         "params": {
           "soundOptions": "Additional optional options for the sound."
         },
-        "remarks": "Plays a sound that only this particular player can hear. This function can't be called in read-only mode.",
+        "remarks": [
+          "Plays a sound that only this particular player can hear. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript let players = mc.world.getPlayers(); const musicOptions: mc.MusicOptions = { fade: 0.5, loop: true, volume: 1.0, }; mc.world.playMusic(\"music.menu\", musicOptions); const worldSoundOptions: mc.WorldSoundOptions = { pitch: 0.5, volume: 4.0, }; mc.world.playSound(\"ambient.weather.thunder\", targetLocation, worldSoundOptions); const playerSoundOptions: mc.PlayerSoundOptions = { pitch: 1.0, volume: 1.0, }; players[0].playSound(\"bucket.fill_water\", playerSoundOptions); ```"
       },
@@ -13506,8 +15679,10 @@ let Spinnet = {
     "postClientMessage": {
       "comment": {
         "params": {},
+        "remarks": [
+          "This is an internal-facing method for posting a system message to downstream clients. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "This is an internal-facing method for posting a system message to downstream clients. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "postClientMessage(id: string, value: string): void",
@@ -13521,8 +15696,10 @@ let Spinnet = {
           "trackId": "Identifier of the music track to play.",
           "musicOptions": "Additional options for the music track."
         },
+        "remarks": [
+          "Queues an additional music track that only this particular player can hear. If a track is not playing, a music track will play. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Queues an additional music track that only this particular player can hear. If a track is not playing, a music track will play. This function can't be called in read-only mode.",
         "throws": "An error will be thrown if volume is less than 0.0. An error will be thrown if fade is less than 0.0."
       },
       "match": "queueMusic(trackId: string, musicOptions?: MusicOptions): void",
@@ -13533,7 +15710,9 @@ let Spinnet = {
     "resetLevel": {
       "comment": {
         "params": {},
-        "remarks": "Resets the level of the player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets the level of the player. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "resetLevel(): void",
@@ -13546,7 +15725,9 @@ let Spinnet = {
         "params": {
           "message": "The message to be displayed."
         },
-        "remarks": "Sends a message to the player.",
+        "remarks": [
+          "Sends a message to the player."
+        ],
         "throws": "This method can throw if the provided {@link RawMessage} is in an invalid format. For example, if an empty `name` string is provided to `score`.",
         "example": "```typescript // Displays \"First or Second\" const rawMessage = { translate: \"accessibility.list.or.two\", with: [\"First\", \"Second\"] }; player.sendMessage(rawMessage); ```"
       },
@@ -13558,8 +15739,10 @@ let Spinnet = {
     "setOp": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Will change the specified players permissions, and whether they are operator or not. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Will change the specified players permissions, and whether they are operator or not. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "setOp(isOp: boolean): void",
@@ -13570,7 +15753,9 @@ let Spinnet = {
     "setSpawnPoint": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current starting spawn point for this particular player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current starting spawn point for this particular player. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors. {@link Error} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "setSpawnPoint(spawnPoint?: DimensionLocation): void",
@@ -13584,8 +15769,10 @@ let Spinnet = {
           "itemCategory": "Specifies the cooldown category to retrieve the current cooldown for.",
           "tickDuration": "Duration in ticks of the item cooldown."
         },
+        "remarks": [
+          "Sets the item cooldown time for a particular cooldown category. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Sets the item cooldown time for a particular cooldown category. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "startItemCooldown(itemCategory: string, tickDuration: number): void",
@@ -13596,8 +15783,10 @@ let Spinnet = {
     "stopMusic": {
       "comment": {
         "params": {},
+        "remarks": [
+          "Stops any music tracks from playing for this particular player. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Stops any music tracks from playing for this particular player. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "stopMusic(): void",
@@ -13608,7 +15797,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that the entity is currently within.",
+        "remarks": [
+          "Dimension that the entity is currently within."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly dimension: Dimension",
@@ -13619,8 +15810,10 @@ let Spinnet = {
     "fallDistance": {
       "comment": {
         "params": {},
+        "remarks": [
+          "The distance an entity has fallen. The value is reset when the entity is teleported. The value is always 1 when gliding with Elytra."
+        ],
         "beta": "",
-        "remarks": "The distance an entity has fallen. The value is reset when the entity is teleported. The value is always 1 when gliding with Elytra.",
         "throws": "property can throw when used."
       },
       "match": "readonly fallDistance: number",
@@ -13631,7 +15824,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Unique identifier of the entity. This identifier is intended to be consistent across loads of a world instance. No meaning should be inferred from the value and structure of this unique identifier - do not parse or interpret it. This property is accessible even if {@link Entity.isValid} is false."
+        "remarks": [
+          "Unique identifier of the entity. This identifier is intended to be consistent across loads of a world instance. No meaning should be inferred from the value and structure of this unique identifier - do not parse or interpret it. This property is accessible even if {@link Entity.isValid} is false."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -13641,7 +15836,9 @@ let Spinnet = {
     "isClimbing": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is touching a climbable block. For example, a player next to a ladder or a spider next to a stone wall.",
+        "remarks": [
+          "Whether the entity is touching a climbable block. For example, a player next to a ladder or a spider next to a stone wall."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isClimbing: boolean",
@@ -13652,7 +15849,9 @@ let Spinnet = {
     "isFalling": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity has a fall distance greater than 0, or greater than 1 while gliding.",
+        "remarks": [
+          "Whether the entity has a fall distance greater than 0, or greater than 1 while gliding."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isFalling: boolean",
@@ -13663,7 +15862,9 @@ let Spinnet = {
     "isInWater": {
       "comment": {
         "params": {},
-        "remarks": "Whether any part of the entity is inside a water block.",
+        "remarks": [
+          "Whether any part of the entity is inside a water block."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isInWater: boolean",
@@ -13674,7 +15875,9 @@ let Spinnet = {
     "isOnGround": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is on top of a solid block.",
+        "remarks": [
+          "Whether the entity is on top of a solid block."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isOnGround: boolean",
@@ -13685,7 +15888,9 @@ let Spinnet = {
     "isSleeping": {
       "comment": {
         "params": {},
-        "remarks": "If true, the entity is currently sleeping.",
+        "remarks": [
+          "If true, the entity is currently sleeping."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSleeping: boolean",
@@ -13696,7 +15901,9 @@ let Spinnet = {
     "isSneaking": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is sneaking - that is, moving more slowly and more quietly. This property can't be edited in read-only mode."
+        "remarks": [
+          "Whether the entity is sneaking - that is, moving more slowly and more quietly. This property can't be edited in read-only mode."
+        ]
       },
       "match": "isSneaking: boolean",
       "kind": "public",
@@ -13706,7 +15913,9 @@ let Spinnet = {
     "isSprinting": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is sprinting. For example, a player using the sprint action, an ocelot running away or a pig boosting with Carrot on a Stick.",
+        "remarks": [
+          "Whether the entity is sprinting. For example, a player using the sprint action, an ocelot running away or a pig boosting with Carrot on a Stick."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSprinting: boolean",
@@ -13717,7 +15926,9 @@ let Spinnet = {
     "isSwimming": {
       "comment": {
         "params": {},
-        "remarks": "Whether the entity is in the swimming state. For example, a player using the swim action or a fish in water.",
+        "remarks": [
+          "Whether the entity is in the swimming state. For example, a player using the swim action or a fish in water."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly isSwimming: boolean",
@@ -13728,8 +15939,10 @@ let Spinnet = {
     "lifetimeState": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Whether the entity reference that you have is valid or not. For example, an entity may be unloaded if it moves into a chunk that is unloaded, but may be reactivated if the chunk it is within gets reloaded."
+        "remarks": [
+          "Whether the entity reference that you have is valid or not. For example, an entity may be unloaded if it moves into a chunk that is unloaded, but may be reactivated if the chunk it is within gets reloaded."
+        ],
+        "beta": ""
       },
       "match": "readonly lifetimeState: EntityLifetimeState",
       "kind": "readonly",
@@ -13739,7 +15952,9 @@ let Spinnet = {
     "location": {
       "comment": {
         "params": {},
-        "remarks": "Current location of the entity.",
+        "remarks": [
+          "Current location of the entity."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly location: Vector3",
@@ -13750,7 +15965,9 @@ let Spinnet = {
     "nameTag": {
       "comment": {
         "params": {},
-        "remarks": "Given name of the entity. This property can't be edited in read-only mode."
+        "remarks": [
+          "Given name of the entity. This property can't be edited in read-only mode."
+        ]
       },
       "match": "nameTag: string",
       "kind": "public",
@@ -13760,7 +15977,9 @@ let Spinnet = {
     "typeId": {
       "comment": {
         "params": {},
-        "remarks": "Returns a scoreboard identity that represents this entity. Will remain valid when the entity is killed."
+        "remarks": [
+          "Returns a scoreboard identity that represents this entity. Will remain valid when the entity is killed."
+        ]
       },
       "match": "readonly typeId: string",
       "kind": "readonly",
@@ -13774,7 +15993,9 @@ let Spinnet = {
           "duration": "Amount of time, in ticks, for the effect to apply. There are 20 ticks per second. Use {@link TicksPerSecond} constant to convert between ticks and seconds. The value must be within the range [0, 20000000].",
           "options": "Additional options for the effect."
         },
-        "remarks": "Adds or updates an effect, like poison, to the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds or updates an effect, like poison, to the entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns nothing if the effect was added or updated successfully. This can throw an error if the duration or amplifier are outside of the valid ranges, or if the effect does not exist.",
         "throws": "function can throw errors.",
         "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); const fox = overworld.spawnEntity(\"minecraft:fox\", { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 3, }); fox.addEffect(\"speed\", 10, { amplifier: 2, }); log(\"Created a fox.\"); const wolf = overworld.spawnEntity(\"minecraft:wolf\", { x: targetLocation.x + 4, y: targetLocation.y + 2, z: targetLocation.z + 3, }); wolf.addEffect(\"slowness\", 10, { amplifier: 2, }); wolf.isSneaking = true; log(\"Created a sneaking wolf.\", 1); ```"
@@ -13789,7 +16010,9 @@ let Spinnet = {
         "params": {
           "tag": "Content of the tag to add. The tag must be less than 256 characters."
         },
-        "remarks": "Adds a specified tag to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a specified tag to an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if the tag was added successfully. This can fail if the tag already exists on the entity.",
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
@@ -13805,7 +16028,9 @@ let Spinnet = {
           "amount": "Amount of damage to apply.",
           "options": "Additional options about the source of damage, which may add additional effects or spur additional behaviors on this entity."
         },
-        "remarks": "Applies a set of damage to an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies a set of damage to an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Whether the entity takes any damage. This can return false if the entity is invulnerable or if the damage applied is less than or equal to 0.",
         "throws": "function can throw errors.",
         "example": "```typescript const skelly = overworld.spawnEntity(\"minecraft:skeleton\", targetLocation); skelly.applyDamage(19); // skeletons have max damage of 20 so this is a near-death skeleton mc.system.runTimeout(() => { let health = skelly.getComponent(\"health\") as mc.EntityHealthComponent; log(\"Skeleton health before heal: \" + health.currentValue); health.resetToMaxValue(); log(\"Skeleton health after heal: \" + health.currentValue); }, 20); ```"
@@ -13820,7 +16045,9 @@ let Spinnet = {
         "params": {
           "vector": "Impulse vector."
         },
-        "remarks": "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
       },
@@ -13837,7 +16064,9 @@ let Spinnet = {
           "horizontalStrength": "Knockback strength for the horizontal vector.",
           "verticalStrength": "Knockback strength for the vertical vector."
         },
-        "remarks": "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { overworld.spawnEntity(mobs[i % mobs.length], targetLocation); } let eqo: mc.EntityQueryOptions = { type: \"skeleton\", }; for (let entity of overworld.getEntities(eqo)) { entity.applyKnockback(0, 0, 0, 1); } ```"
       },
@@ -13849,7 +16078,9 @@ let Spinnet = {
     "clearDynamicProperties": {
       "comment": {
         "params": {},
-        "remarks": "Clears all dynamic properties that have been set on this entity.",
+        "remarks": [
+          "Clears all dynamic properties that have been set on this entity."
+        ],
         "throws": "function can throw errors."
       },
       "match": "clearDynamicProperties(): void",
@@ -13860,7 +16091,9 @@ let Spinnet = {
     "clearVelocity": {
       "comment": {
         "params": {},
-        "remarks": "Sets the current velocity of the Entity to zero. Note that this method may not have an impact on Players. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the current velocity of the Entity to zero. Note that this method may not have an impact on Players. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
       },
@@ -13874,8 +16107,10 @@ let Spinnet = {
         "params": {
           "useEffects": "Whether to show any visual effects connected to the extinguishing."
         },
+        "remarks": [
+          "Extinguishes the fire if the entity is on fire. Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Extinguishes the fire if the entity is on fire. Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode.",
         "returns": "Returns whether the entity was on fire.",
         "throws": "function can throw errors.",
         "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
@@ -13890,7 +16125,9 @@ let Spinnet = {
         "params": {
           "options": "Additional configuration options for the ray cast."
         },
-        "remarks": "Returns the first intersecting block from the direction that this entity is looking at.",
+        "remarks": [
+          "Returns the first intersecting block from the direction that this entity is looking at."
+        ],
         "returns": "Returns the first intersecting block from the direction that this entity is looking at.",
         "throws": "function can throw errors."
       },
@@ -13904,7 +16141,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:health'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the {@link EntityComponentTypes} enum."
         },
-        "remarks": "Gets a component (that represents additional capabilities) for an entity.",
+        "remarks": [
+          "Gets a component (that represents additional capabilities) for an entity."
+        ],
         "returns": "Returns the component if it exists on the entity, otherwise undefined."
       },
       "match": "getComponents(): EntityComponent[]",
@@ -13917,7 +16156,9 @@ let Spinnet = {
         "params": {
           "identifier": "The property identifier."
         },
-        "remarks": "Returns a property value.",
+        "remarks": [
+          "Returns a property value."
+        ],
         "returns": "Returns the value for the property, or undefined if the property has not been set.",
         "throws": "function can throw errors."
       },
@@ -13929,7 +16170,9 @@ let Spinnet = {
     "getDynamicPropertyIds": {
       "comment": {
         "params": {},
-        "remarks": "Returns the available set of dynamic property identifiers that have been used on this entity.",
+        "remarks": [
+          "Returns the available set of dynamic property identifiers that have been used on this entity."
+        ],
         "returns": "A string array of the dynamic properties set on this entity.",
         "throws": "function can throw errors."
       },
@@ -13941,7 +16184,9 @@ let Spinnet = {
     "getDynamicPropertyTotalByteCount": {
       "comment": {
         "params": {},
-        "remarks": "Returns the total size, in bytes, of all the dynamic properties that are currently stored for this entity.  This can be useful for diagnosing performance warning signs - if, for example, an entity has many megabytes of associated dynamic properties, it may be slow to load on various devices.",
+        "remarks": [
+          "Returns the total size, in bytes, of all the dynamic properties that are currently stored for this entity.  This can be useful for diagnosing performance warning signs - if, for example, an entity has many megabytes of associated dynamic properties, it may be slow to load on various devices."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getDynamicPropertyTotalByteCount(): number",
@@ -13954,7 +16199,9 @@ let Spinnet = {
         "params": {
           "effectType": "The effect identifier."
         },
-        "remarks": "Returns the effect for the specified EffectType on the entity, undefined if the effect is not present, or throws an error if the effect does not exist.",
+        "remarks": [
+          "Returns the effect for the specified EffectType on the entity, undefined if the effect is not present, or throws an error if the effect does not exist."
+        ],
         "returns": "Effect object for the specified effect, undefined if the effect is not present, or throws an error if the effect does not exist.",
         "throws": "function can throw errors."
       },
@@ -13966,7 +16213,9 @@ let Spinnet = {
     "getEffects": {
       "comment": {
         "params": {},
-        "remarks": "Returns a set of effects applied to this entity.",
+        "remarks": [
+          "Returns a set of effects applied to this entity."
+        ],
         "returns": "List of effects.",
         "throws": "function can throw errors."
       },
@@ -13980,7 +16229,9 @@ let Spinnet = {
         "params": {
           "options": "Additional configuration options for the ray cast."
         },
-        "remarks": "Gets the entities that this entity is looking at by performing a ray cast from the view of this entity.",
+        "remarks": [
+          "Gets the entities that this entity is looking at by performing a ray cast from the view of this entity."
+        ],
         "returns": "Returns a set of entities from the direction that this entity is looking at.",
         "throws": "function can throw errors."
       },
@@ -13992,7 +16243,9 @@ let Spinnet = {
     "getHeadLocation": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current location of the head component of this entity.",
+        "remarks": [
+          "Returns the current location of the head component of this entity."
+        ],
         "returns": "Returns the current location of the head component of this entity.",
         "throws": "function can throw errors."
       },
@@ -14006,7 +16259,9 @@ let Spinnet = {
         "params": {
           "identifier": "The entity Property identifier."
         },
-        "remarks": "Gets an entity Property value. If the property was set using the setProperty function within the same tick, the updated value will not be reflected until the subsequent tick.",
+        "remarks": [
+          "Gets an entity Property value. If the property was set using the setProperty function within the same tick, the updated value will not be reflected until the subsequent tick."
+        ],
         "returns": "Returns the current property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
         "throws": "Throws if the entity is invalid."
       },
@@ -14018,7 +16273,9 @@ let Spinnet = {
     "getRotation": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current rotation component of this entity.",
+        "remarks": [
+          "Returns the current rotation component of this entity."
+        ],
         "returns": "Returns a Vec2 containing the rotation of this entity (in degrees).",
         "throws": "function can throw errors."
       },
@@ -14030,7 +16287,9 @@ let Spinnet = {
     "getTags": {
       "comment": {
         "params": {},
-        "remarks": "",
+        "remarks": [
+          ""
+        ],
         "returns": "Returns all tags associated with an entity.",
         "throws": "function can throw errors."
       },
@@ -14042,7 +16301,9 @@ let Spinnet = {
     "getVelocity": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current velocity vector of the entity.",
+        "remarks": [
+          "Returns the current velocity vector of the entity."
+        ],
         "returns": "Returns the current velocity vector of the entity.",
         "throws": "function can throw errors.",
         "example": "```typescript const fireworkRocket = overworld.spawnEntity(\"minecraft:fireworks_rocket\", targetLocation); mc.system.runTimeout(() => { let velocity = fireworkRocket.getVelocity(); log(\"Velocity of firework is: (x: \" + velocity.x + \", y:\" + velocity.y + \", z:\" + velocity.z + \")\"); }, 5); ```"
@@ -14055,7 +16316,9 @@ let Spinnet = {
     "getViewDirection": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current view direction of the entity.",
+        "remarks": [
+          "Returns the current view direction of the entity."
+        ],
         "returns": "Returns the current view direction of the entity.",
         "throws": "function can throw errors."
       },
@@ -14069,7 +16332,9 @@ let Spinnet = {
         "params": {
           "componentId": "The identifier of the component (e.g., 'minecraft:rideable') to retrieve. If no namespace prefix is specified, 'minecraft:' is assumed."
         },
-        "remarks": "Returns true if the specified component is present on this entity.",
+        "remarks": [
+          "Returns true if the specified component is present on this entity."
+        ],
         "returns": "Returns true if the specified component is present on this entity."
       },
       "match": "hasComponent(componentId: string): boolean",
@@ -14082,7 +16347,9 @@ let Spinnet = {
         "params": {
           "tag": "Identifier of the tag to test for."
         },
-        "remarks": "Returns whether an entity has a particular tag.",
+        "remarks": [
+          "Returns whether an entity has a particular tag."
+        ],
         "returns": "Returns whether an entity has a particular tag.",
         "throws": "function can throw errors."
       },
@@ -14094,7 +16361,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns whether the entity can be manipulated by script. A Player is considered valid when it's EntityLifetimeState is set to Loaded.",
+        "remarks": [
+          "Returns whether the entity can be manipulated by script. A Player is considered valid when it's EntityLifetimeState is set to Loaded."
+        ],
         "returns": "Whether the entity is valid."
       },
       "match": "isValid(): boolean",
@@ -14105,7 +16374,9 @@ let Spinnet = {
     "kill": {
       "comment": {
         "params": {},
-        "remarks": "Kills this entity. The entity will drop loot as normal. This function can't be called in read-only mode.",
+        "remarks": [
+          "Kills this entity. The entity will drop loot as normal. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if entity can be killed (even if it is already dead), otherwise it returns false.",
         "throws": "function can throw errors.",
         "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
@@ -14118,7 +16389,9 @@ let Spinnet = {
     "matches": {
       "comment": {
         "params": {},
-        "remarks": "Matches the entity against the passed in options. Uses the location of the entity for matching if the location is not specified in the passed in EntityQueryOptions.",
+        "remarks": [
+          "Matches the entity against the passed in options. Uses the location of the entity for matching if the location is not specified in the passed in EntityQueryOptions."
+        ],
         "returns": "Returns true if the entity matches the criteria in the passed in EntityQueryOptions, otherwise it returns false.",
         "throws": "function can throw errors."
       },
@@ -14133,8 +16406,10 @@ let Spinnet = {
           "animationName": "The animation identifier. e.g. animation.creeper.swelling",
           "options": "Additional options to control the playback and transitions of the animation."
         },
+        "remarks": [
+          "Cause the entity to play the given animation. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Cause the entity to play the given animation. This function can't be called in read-only mode.",
         "throws": "function can throw errors."
       },
       "match": "playAnimation(animationName: string, options?: PlayAnimationOptions): void",
@@ -14145,7 +16420,9 @@ let Spinnet = {
     "remove": {
       "comment": {
         "params": {},
-        "remarks": "Immediately removes the entity from the world. The removed entity will not perform a death animation or drop loot upon removal. This function can't be called in read-only mode.",
+        "remarks": [
+          "Immediately removes the entity from the world. The removed entity will not perform a death animation or drop loot upon removal. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "remove(): void",
@@ -14158,7 +16435,9 @@ let Spinnet = {
         "params": {
           "effectType": "The effect identifier."
         },
-        "remarks": "Removes the specified EffectType on the entity, or returns false if the effect is not present. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes the specified EffectType on the entity, or returns false if the effect is not present. This function can't be called in read-only mode."
+        ],
         "returns": "Returns true if the effect has been removed. Returns false if the effect is not found or does not exist.",
         "throws": "function can throw errors."
       },
@@ -14172,7 +16451,9 @@ let Spinnet = {
         "params": {
           "tag": "Content of the tag to remove."
         },
-        "remarks": "Removes a specified tag from an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a specified tag from an entity. This function can't be called in read-only mode."
+        ],
         "returns": "Returns whether the tag existed on the entity.",
         "throws": "function can throw errors."
       },
@@ -14186,7 +16467,9 @@ let Spinnet = {
         "params": {
           "identifier": "The Entity Property identifier."
         },
-        "remarks": "Resets an Entity Property back to its default value, as specified in the Entity's definition. This property change is not applied until the next tick. This function can't be called in read-only mode.",
+        "remarks": [
+          "Resets an Entity Property back to its default value, as specified in the Entity's definition. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the default property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
         "throws": "Throws if the entity is invalid. {@link minecraftcommon.EngineError} {@link Error}"
       },
@@ -14200,7 +16483,9 @@ let Spinnet = {
         "params": {
           "commandString": "The command string. Note: This should not include a leading forward slash."
         },
-        "remarks": "Runs a synchronous command on the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Runs a synchronous command on the entity. This function can't be called in read-only mode."
+        ],
         "returns": "A command result containing whether the command was successful.",
         "throws": "function can throw errors. {@link CommandError} {@link Error}"
       },
@@ -14214,7 +16499,9 @@ let Spinnet = {
         "params": {
           "commandString": "Command to run. Note that command strings should not start with slash."
         },
-        "remarks": "Runs a particular command asynchronously from the context of this entity. Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick.",
+        "remarks": [
+          "Runs a particular command asynchronously from the context of this entity. Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick."
+        ],
         "returns": "For commands that return data, returns a JSON structure with command response values.",
         "throws": "function can throw errors."
       },
@@ -14229,7 +16516,9 @@ let Spinnet = {
           "identifier": "The property identifier.",
           "value": "Data value of the property to set."
         },
-        "remarks": "Sets a specified property to a value.",
+        "remarks": [
+          "Sets a specified property to a value."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void",
@@ -14243,8 +16532,10 @@ let Spinnet = {
           "seconds": "Length of time to set the entity on fire.",
           "useEffects": "Whether side-effects should be applied (e.g. thawing freeze) and other conditions such as rain or fire protection should be taken into consideration."
         },
+        "remarks": [
+          "Sets an entity on fire (if it is not in water or rain). Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
         "beta": "",
-        "remarks": "Sets an entity on fire (if it is not in water or rain). Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode.",
         "returns": "Whether the entity was set on fire. This can fail if seconds is less than or equal to zero, the entity is wet or the entity is immune to fire.",
         "throws": "function can throw errors.",
         "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
@@ -14260,7 +16551,9 @@ let Spinnet = {
           "identifier": "The Entity Property identifier.",
           "value": "The property value. The provided type must be compatible with the type specified in the entity's definition."
         },
-        "remarks": "Sets an Entity Property to the provided value. This property change is not applied until the next tick. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets an Entity Property to the provided value. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the entity is invalid. Throws if an invalid identifier is provided. Throws if the provided value type does not match the property type. Throws if the provided value is outside the expected range (int, float properties). Throws if the provided string value does not match the set of accepted enum values (enum properties"
       },
       "match": "setProperty(identifier: string, value: boolean | number | string): void",
@@ -14273,7 +16566,9 @@ let Spinnet = {
         "params": {
           "rotation": "The x and y rotation of the entity (in degrees). For most mobs, the x rotation controls the head tilt and the y rotation controls the body rotation."
         },
-        "remarks": "Sets the main rotation of the entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the main rotation of the entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setRotation(rotation: Vector2): void",
@@ -14287,7 +16582,9 @@ let Spinnet = {
           "location": "New location for the entity.",
           "teleportOptions": "Options regarding the teleport operation."
         },
-        "remarks": "Teleports the selected entity to a new location This function can't be called in read-only mode.",
+        "remarks": [
+          "Teleports the selected entity to a new location This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript const pig = overworld.spawnEntity(\"minecraft:pig\", targetLocation); let inc = 1; let runId = mc.system.runInterval(() => { pig.teleport( { x: targetLocation.x + inc / 4, y: targetLocation.y + inc / 4, z: targetLocation.z + inc / 4 }, { facingLocation: targetLocation, } ); if (inc > 100) { mc.system.clearRun(runId); } inc++; }, 4); ```"
       },
@@ -14301,7 +16598,9 @@ let Spinnet = {
         "params": {
           "eventName": "Name of the entity type event to trigger. If a namespace is not specified, minecraft: is assumed."
         },
-        "remarks": "Triggers an entity type event. For every entity, a number of events are defined in an entities' definition for key entity behaviors; for example, creepers have a minecraft:start_exploding type event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Triggers an entity type event. For every entity, a number of events are defined in an entities' definition for key entity behaviors; for example, creepers have a minecraft:start_exploding type event. This function can't be called in read-only mode."
+        ],
         "throws": "If the event is not defined in the definition of the entity, an error will be thrown.",
         "example": "```typescript const creeper = overworld.spawnEntity(\"minecraft:creeper\", targetLocation); creeper.triggerEvent(\"minecraft:start_exploding_forced\"); ```"
       },
@@ -14316,7 +16615,9 @@ let Spinnet = {
           "location": "Location to teleport the entity to.",
           "teleportOptions": "Options regarding the teleport operation."
         },
-        "remarks": "Attempts to try a teleport, but may not complete the teleport operation (for example, if there are blocks at the destination.) This function can't be called in read-only mode.",
+        "remarks": [
+          "Attempts to try a teleport, but may not complete the teleport operation (for example, if there are blocks at the destination.) This function can't be called in read-only mode."
+        ],
         "returns": "Returns whether the teleport succeeded. This can fail if the destination chunk is unloaded or if the teleport would result in intersecting with blocks.",
         "throws": "function can throw errors."
       },
@@ -14329,7 +16630,8 @@ let Spinnet = {
   "PlayerBreakBlockAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14339,7 +16641,9 @@ let Spinnet = {
     "brokenBlockPermutation": {
       "comment": {
         "params": {},
-        "remarks": "Returns permutation information about this block before it was broken."
+        "remarks": [
+          "Returns permutation information about this block before it was broken."
+        ]
       },
       "match": "readonly brokenBlockPermutation: BlockPermutation",
       "kind": "readonly",
@@ -14349,7 +16653,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that was used to break the block after the block was broken, or undefined if empty hand."
+        "remarks": [
+          "The item stack that was used to break the block after the block was broken, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14359,7 +16665,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -14369,7 +16677,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -14380,7 +16690,8 @@ let Spinnet = {
   "PlayerBreakBlockAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14390,7 +16701,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a block is broken by a player. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a block is broken by a player. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerBreakBlockAfterEvent) => void,options?: BlockEventOptions,): (arg: PlayerBreakBlockAfterEvent) => void",
       "kind": "public",
@@ -14400,7 +16713,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a player breaks a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a player breaks a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerBreakBlockAfterEvent) => void): void",
@@ -14412,7 +16727,8 @@ let Spinnet = {
   "PlayerBreakBlockBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14422,7 +16738,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, cancels the block break event."
+        "remarks": [
+          "If set to true, cancels the block break event."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -14432,7 +16750,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that is being used to break the block, or undefined if empty hand."
+        "remarks": [
+          "The item stack that is being used to break the block, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14442,7 +16762,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -14452,7 +16774,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -14463,7 +16787,8 @@ let Spinnet = {
   "PlayerBreakBlockBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14473,7 +16798,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a block is broken by a player. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before a block is broken by a player. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerBreakBlockBeforeEvent) => void,options?: BlockEventOptions,): (arg: PlayerBreakBlockBeforeEvent) => void",
       "kind": "public",
@@ -14483,7 +16810,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before a player breaks a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before a player breaks a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerBreakBlockBeforeEvent) => void): void",
@@ -14495,7 +16824,8 @@ let Spinnet = {
   "PlayerDimensionChangeAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14505,7 +16835,9 @@ let Spinnet = {
     "fromDimension": {
       "comment": {
         "params": {},
-        "remarks": "The dimension the player is changing from."
+        "remarks": [
+          "The dimension the player is changing from."
+        ]
       },
       "match": "readonly fromDimension: Dimension",
       "kind": "readonly",
@@ -14515,7 +16847,9 @@ let Spinnet = {
     "fromLocation": {
       "comment": {
         "params": {},
-        "remarks": "The location the player was at before changing dimensions."
+        "remarks": [
+          "The location the player was at before changing dimensions."
+        ]
       },
       "match": "readonly fromLocation: Vector3",
       "kind": "readonly",
@@ -14525,7 +16859,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "Handle to the player that is changing dimensions."
+        "remarks": [
+          "Handle to the player that is changing dimensions."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14535,7 +16871,9 @@ let Spinnet = {
     "toDimension": {
       "comment": {
         "params": {},
-        "remarks": "The dimension that the player is changing to."
+        "remarks": [
+          "The dimension that the player is changing to."
+        ]
       },
       "match": "readonly toDimension: Dimension",
       "kind": "readonly",
@@ -14545,7 +16883,9 @@ let Spinnet = {
     "toLocation": {
       "comment": {
         "params": {},
-        "remarks": "The location the player will spawn to after changing dimensions."
+        "remarks": [
+          "The location the player will spawn to after changing dimensions."
+        ]
       },
       "match": "readonly toLocation: Vector3",
       "kind": "readonly",
@@ -14556,7 +16896,8 @@ let Spinnet = {
   "PlayerDimensionChangeAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14566,7 +16907,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes the specified callback to a player dimension change after event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes the specified callback to a player dimension change after event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerDimensionChangeAfterEvent) => void): (arg: PlayerDimensionChangeAfterEvent) => void",
       "kind": "public",
@@ -14576,7 +16919,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes the specified callback from a player dimension change after event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes the specified callback from a player dimension change after event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerDimensionChangeAfterEvent) => void): void",
@@ -14588,7 +16933,8 @@ let Spinnet = {
   "PlayerInteractWithBlockAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14598,7 +16944,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that will be interacted with."
+        "remarks": [
+          "The block that will be interacted with."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -14608,7 +16956,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that is being interacted with."
+        "remarks": [
+          "The face of the block that is being interacted with."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -14618,7 +16968,9 @@ let Spinnet = {
     "faceLocation": {
       "comment": {
         "params": {},
-        "remarks": "Location relative to the bottom north-west corner of the block where the item is placed."
+        "remarks": [
+          "Location relative to the bottom north-west corner of the block where the item is placed."
+        ]
       },
       "match": "readonly faceLocation: Vector3",
       "kind": "readonly",
@@ -14628,7 +16980,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that is being used in the interaction, or undefined if empty hand."
+        "remarks": [
+          "The item stack that is being used in the interaction, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14639,7 +16993,8 @@ let Spinnet = {
   "PlayerInteractWithBlockAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14649,7 +17004,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called after a player interacts with a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called after a player interacts with a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerInteractWithBlockAfterEvent) => void,): (arg: PlayerInteractWithBlockAfterEvent) => void",
       "kind": "public",
@@ -14659,7 +17016,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called after a player interacts with a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called after a player interacts with a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerInteractWithBlockAfterEvent) => void): void",
@@ -14671,7 +17030,8 @@ let Spinnet = {
   "PlayerInteractWithBlockBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14681,7 +17041,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "The block that will be interacted with."
+        "remarks": [
+          "The block that will be interacted with."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -14691,7 +17053,9 @@ let Spinnet = {
     "blockFace": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that is being interacted with."
+        "remarks": [
+          "The face of the block that is being interacted with."
+        ]
       },
       "match": "readonly blockFace: Direction",
       "kind": "readonly",
@@ -14701,7 +17065,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true the interaction will be cancelled."
+        "remarks": [
+          "If set to true the interaction will be cancelled."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -14711,7 +17077,9 @@ let Spinnet = {
     "faceLocation": {
       "comment": {
         "params": {},
-        "remarks": "Location relative to the bottom north-west corner of the block where the item is placed."
+        "remarks": [
+          "Location relative to the bottom north-west corner of the block where the item is placed."
+        ]
       },
       "match": "readonly faceLocation: Vector3",
       "kind": "readonly",
@@ -14721,7 +17089,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that is being used in the interaction, or undefined if empty hand."
+        "remarks": [
+          "The item stack that is being used in the interaction, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14732,7 +17102,8 @@ let Spinnet = {
   "PlayerInteractWithBlockBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14742,7 +17113,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a player interacts with a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before a player interacts with a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerInteractWithBlockBeforeEvent) => void,): (arg: PlayerInteractWithBlockBeforeEvent) => void",
       "kind": "public",
@@ -14752,7 +17125,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before a player interacts with a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before a player interacts with a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerInteractWithBlockBeforeEvent) => void): void",
@@ -14764,7 +17139,8 @@ let Spinnet = {
   "PlayerInteractWithEntityAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14774,7 +17150,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that is being used in the interaction, or undefined if empty hand."
+        "remarks": [
+          "The item stack that is being used in the interaction, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14784,7 +17162,9 @@ let Spinnet = {
     "target": {
       "comment": {
         "params": {},
-        "remarks": "The entity that will be interacted with."
+        "remarks": [
+          "The entity that will be interacted with."
+        ]
       },
       "match": "readonly target: Entity",
       "kind": "readonly",
@@ -14795,7 +17175,8 @@ let Spinnet = {
   "PlayerInteractWithEntityAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14805,7 +17186,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called after a player interacts with an entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called after a player interacts with an entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerInteractWithEntityAfterEvent) => void,): (arg: PlayerInteractWithEntityAfterEvent) => void",
       "kind": "public",
@@ -14815,7 +17198,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called after a player interacts with an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called after a player interacts with an entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerInteractWithEntityAfterEvent) => void): void",
@@ -14827,7 +17212,8 @@ let Spinnet = {
   "PlayerInteractWithEntityBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14837,7 +17223,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true the interaction will be cancelled."
+        "remarks": [
+          "If set to true the interaction will be cancelled."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -14847,7 +17235,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "The item stack that is being used in the interaction, or undefined if empty hand."
+        "remarks": [
+          "The item stack that is being used in the interaction, or undefined if empty hand."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -14857,7 +17247,9 @@ let Spinnet = {
     "target": {
       "comment": {
         "params": {},
-        "remarks": "The entity that will be interacted with."
+        "remarks": [
+          "The entity that will be interacted with."
+        ]
       },
       "match": "readonly target: Entity",
       "kind": "readonly",
@@ -14868,7 +17260,8 @@ let Spinnet = {
   "PlayerInteractWithEntityBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14878,7 +17271,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a player interacts with an entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before a player interacts with an entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerInteractWithEntityBeforeEvent) => void,): (arg: PlayerInteractWithEntityBeforeEvent) => void",
       "kind": "public",
@@ -14888,7 +17283,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before a player interacts with an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before a player interacts with an entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerInteractWithEntityBeforeEvent) => void): void",
@@ -14900,7 +17297,8 @@ let Spinnet = {
   "PlayerIterator": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14910,7 +17308,9 @@ let Spinnet = {
     "next": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "next(): IteratorResult<Player>",
       "kind": "public",
@@ -14921,7 +17321,8 @@ let Spinnet = {
   "PlayerJoinAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14931,7 +17332,9 @@ let Spinnet = {
     "playerId": {
       "comment": {
         "params": {},
-        "remarks": "Opaque string identifier of the player that joined the game."
+        "remarks": [
+          "Opaque string identifier of the player that joined the game."
+        ]
       },
       "match": "readonly playerId: string",
       "kind": "readonly",
@@ -14941,7 +17344,9 @@ let Spinnet = {
     "playerName": {
       "comment": {
         "params": {},
-        "remarks": "Name of the player that has joined."
+        "remarks": [
+          "Name of the player that has joined."
+        ]
       },
       "match": "readonly playerName: string",
       "kind": "readonly",
@@ -14952,7 +17357,8 @@ let Spinnet = {
   "PlayerJoinAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14962,7 +17368,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerJoinAfterEvent) => void): (arg: PlayerJoinAfterEvent) => void",
       "kind": "public",
@@ -14972,7 +17380,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerJoinAfterEvent) => void): void",
@@ -14984,7 +17394,8 @@ let Spinnet = {
   "PlayerLeaveAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -14994,7 +17405,9 @@ let Spinnet = {
     "playerId": {
       "comment": {
         "params": {},
-        "remarks": "Opaque string identifier of the player that has left the event."
+        "remarks": [
+          "Opaque string identifier of the player that has left the event."
+        ]
       },
       "match": "readonly playerId: string",
       "kind": "readonly",
@@ -15004,7 +17417,9 @@ let Spinnet = {
     "playerName": {
       "comment": {
         "params": {},
-        "remarks": "Player that has left the world."
+        "remarks": [
+          "Player that has left the world."
+        ]
       },
       "match": "readonly playerName: string",
       "kind": "readonly",
@@ -15015,7 +17430,8 @@ let Spinnet = {
   "PlayerLeaveAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15025,7 +17441,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerLeaveAfterEvent) => void): (arg: PlayerLeaveAfterEvent) => void",
       "kind": "public",
@@ -15035,7 +17453,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerLeaveAfterEvent) => void): void",
@@ -15047,7 +17467,8 @@ let Spinnet = {
   "PlayerLeaveBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15056,7 +17477,8 @@ let Spinnet = {
     },
     "player": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -15067,7 +17489,8 @@ let Spinnet = {
   "PlayerLeaveBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15077,7 +17500,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode."
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerLeaveBeforeEvent) => void): (arg: PlayerLeaveBeforeEvent) => void",
       "kind": "public",
@@ -15087,7 +17512,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "This function can't be called in read-only mode.",
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerLeaveBeforeEvent) => void): void",
@@ -15099,7 +17526,8 @@ let Spinnet = {
   "PlayerPlaceBlockAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15109,7 +17537,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "Player that placed the block for this event."
+        "remarks": [
+          "Player that placed the block for this event."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -15119,7 +17549,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -15129,7 +17561,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15140,7 +17574,8 @@ let Spinnet = {
   "PlayerPlaceBlockAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15150,7 +17585,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a block is placed by a player. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a block is placed by a player. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerPlaceBlockAfterEvent) => void,options?: BlockEventOptions,): (arg: PlayerPlaceBlockAfterEvent) => void",
       "kind": "public",
@@ -15160,7 +17597,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an block is placed by a player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an block is placed by a player. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerPlaceBlockAfterEvent) => void): void",
@@ -15172,7 +17611,8 @@ let Spinnet = {
   "PlayerPlaceBlockBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15182,7 +17622,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, cancels the block place event."
+        "remarks": [
+          "If set to true, cancels the block place event."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -15192,7 +17634,9 @@ let Spinnet = {
     "face": {
       "comment": {
         "params": {},
-        "remarks": "The face of the block that the new block is being placed on."
+        "remarks": [
+          "The face of the block that the new block is being placed on."
+        ]
       },
       "match": "readonly face: Direction",
       "kind": "readonly",
@@ -15202,7 +17646,9 @@ let Spinnet = {
     "faceLocation": {
       "comment": {
         "params": {},
-        "remarks": "Location relative to the bottom north-west corner of the block where the new block is being placed onto."
+        "remarks": [
+          "Location relative to the bottom north-west corner of the block where the new block is being placed onto."
+        ]
       },
       "match": "readonly faceLocation: Vector3",
       "kind": "readonly",
@@ -15212,7 +17658,9 @@ let Spinnet = {
     "itemStack": {
       "comment": {
         "params": {},
-        "remarks": "The item being used to place the block."
+        "remarks": [
+          "The item being used to place the block."
+        ]
       },
       "match": "itemStack: ItemStack",
       "kind": "public",
@@ -15222,7 +17670,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "Player that is placing the block for this event."
+        "remarks": [
+          "Player that is placing the block for this event."
+        ]
       },
       "match": "readonly player: Player",
       "kind": "readonly",
@@ -15232,7 +17682,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -15242,7 +17694,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15253,7 +17707,8 @@ let Spinnet = {
   "PlayerPlaceBlockBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15263,7 +17718,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called before a block is placed by a player. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called before a block is placed by a player. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerPlaceBlockBeforeEvent) => void,options?: BlockEventOptions,): (arg: PlayerPlaceBlockBeforeEvent) => void",
       "kind": "public",
@@ -15273,7 +17730,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called before an block is placed by a player. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called before an block is placed by a player. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerPlaceBlockBeforeEvent) => void): void",
@@ -15285,7 +17744,8 @@ let Spinnet = {
   "PlayerSpawnAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15295,7 +17755,9 @@ let Spinnet = {
     "initialSpawn": {
       "comment": {
         "params": {},
-        "remarks": "If true, this is the initial spawn of a player after joining the game. This property can't be edited in read-only mode."
+        "remarks": [
+          "If true, this is the initial spawn of a player after joining the game. This property can't be edited in read-only mode."
+        ]
       },
       "match": "initialSpawn: boolean",
       "kind": "public",
@@ -15305,7 +17767,9 @@ let Spinnet = {
     "player": {
       "comment": {
         "params": {},
-        "remarks": "Object that represents the player that joined the game. This property can't be edited in read-only mode."
+        "remarks": [
+          "Object that represents the player that joined the game. This property can't be edited in read-only mode."
+        ]
       },
       "match": "player: Player",
       "kind": "public",
@@ -15316,7 +17780,8 @@ let Spinnet = {
   "PlayerSpawnAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15326,7 +17791,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Subscribes to the event. This function can't be called in read-only mode."
+        "remarks": [
+          "Subscribes to the event. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PlayerSpawnAfterEvent) => void): (arg: PlayerSpawnAfterEvent) => void",
       "kind": "public",
@@ -15336,7 +17803,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes from the event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes from the event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PlayerSpawnAfterEvent) => void): void",
@@ -15348,7 +17817,8 @@ let Spinnet = {
   "PressurePlatePopAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15358,7 +17828,9 @@ let Spinnet = {
     "previousRedstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power of the pressure plate before it was popped."
+        "remarks": [
+          "The redstone power of the pressure plate before it was popped."
+        ]
       },
       "match": "readonly previousRedstonePower: number",
       "kind": "readonly",
@@ -15368,7 +17840,9 @@ let Spinnet = {
     "redstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power of the pressure plate at the time of the pop."
+        "remarks": [
+          "The redstone power of the pressure plate at the time of the pop."
+        ]
       },
       "match": "readonly redstonePower: number",
       "kind": "readonly",
@@ -15378,7 +17852,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -15388,7 +17864,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15399,7 +17877,8 @@ let Spinnet = {
   "PressurePlatePopAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15409,7 +17888,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a pressure plate is popped. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a pressure plate is popped. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PressurePlatePopAfterEvent) => void): (arg: PressurePlatePopAfterEvent) => void",
       "kind": "public",
@@ -15419,7 +17900,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a pressure plate is popped. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a pressure plate is popped. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PressurePlatePopAfterEvent) => void): void",
@@ -15431,7 +17914,8 @@ let Spinnet = {
   "PressurePlatePushAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15441,7 +17925,9 @@ let Spinnet = {
     "previousRedstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power of the pressure plate before it was pushed."
+        "remarks": [
+          "The redstone power of the pressure plate before it was pushed."
+        ]
       },
       "match": "readonly previousRedstonePower: number",
       "kind": "readonly",
@@ -15451,7 +17937,9 @@ let Spinnet = {
     "redstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power of the pressure plate at the time of the push."
+        "remarks": [
+          "The redstone power of the pressure plate at the time of the push."
+        ]
       },
       "match": "readonly redstonePower: number",
       "kind": "readonly",
@@ -15461,7 +17949,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Source that triggered the pressure plate push."
+        "remarks": [
+          "Source that triggered the pressure plate push."
+        ]
       },
       "match": "readonly source: Entity",
       "kind": "readonly",
@@ -15471,7 +17961,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -15481,7 +17973,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15492,7 +17986,8 @@ let Spinnet = {
   "PressurePlatePushAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15502,7 +17997,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a pressure plate is pushed. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a pressure plate is pushed. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: PressurePlatePushAfterEvent) => void): (arg: PressurePlatePushAfterEvent) => void",
       "kind": "public",
@@ -15512,7 +18009,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a pressure plate is pushed. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a pressure plate is pushed. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: PressurePlatePushAfterEvent) => void): void",
@@ -15524,7 +18023,8 @@ let Spinnet = {
   "ProjectileHitBlockAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15534,7 +18034,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension where this projectile hit took place."
+        "remarks": [
+          "Dimension where this projectile hit took place."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15544,7 +18046,9 @@ let Spinnet = {
     "hitVector": {
       "comment": {
         "params": {},
-        "remarks": "Direction vector of the projectile as it hit a block."
+        "remarks": [
+          "Direction vector of the projectile as it hit a block."
+        ]
       },
       "match": "readonly hitVector: Vector3",
       "kind": "readonly",
@@ -15554,7 +18058,9 @@ let Spinnet = {
     "location": {
       "comment": {
         "params": {},
-        "remarks": "Location where the projectile hit occurred."
+        "remarks": [
+          "Location where the projectile hit occurred."
+        ]
       },
       "match": "readonly location: Vector3",
       "kind": "readonly",
@@ -15564,7 +18070,9 @@ let Spinnet = {
     "projectile": {
       "comment": {
         "params": {},
-        "remarks": "Entity for the projectile that hit a block."
+        "remarks": [
+          "Entity for the projectile that hit a block."
+        ]
       },
       "match": "readonly projectile: Entity",
       "kind": "readonly",
@@ -15574,7 +18082,9 @@ let Spinnet = {
     "getBlockHit": {
       "comment": {
         "params": {},
-        "remarks": "Optional source entity that fired the projectile."
+        "remarks": [
+          "Optional source entity that fired the projectile."
+        ]
       },
       "match": "getBlockHit(): BlockHitInformation",
       "kind": "public",
@@ -15585,7 +18095,8 @@ let Spinnet = {
   "ProjectileHitBlockAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15595,7 +18106,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a projectile hits a block. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a projectile hits a block. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ProjectileHitBlockAfterEvent) => void): (arg: ProjectileHitBlockAfterEvent) => void",
       "kind": "public",
@@ -15605,7 +18118,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a projectile hits a block. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a projectile hits a block. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ProjectileHitBlockAfterEvent) => void): void",
@@ -15617,7 +18132,8 @@ let Spinnet = {
   "ProjectileHitEntityAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15627,7 +18143,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension where this projectile hit took place."
+        "remarks": [
+          "Dimension where this projectile hit took place."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -15637,7 +18155,9 @@ let Spinnet = {
     "hitVector": {
       "comment": {
         "params": {},
-        "remarks": "Direction vector of the projectile as it hit an entity."
+        "remarks": [
+          "Direction vector of the projectile as it hit an entity."
+        ]
       },
       "match": "readonly hitVector: Vector3",
       "kind": "readonly",
@@ -15647,7 +18167,9 @@ let Spinnet = {
     "location": {
       "comment": {
         "params": {},
-        "remarks": "Location where the projectile hit occurred."
+        "remarks": [
+          "Location where the projectile hit occurred."
+        ]
       },
       "match": "readonly location: Vector3",
       "kind": "readonly",
@@ -15657,7 +18179,9 @@ let Spinnet = {
     "projectile": {
       "comment": {
         "params": {},
-        "remarks": "Entity for the projectile that hit an entity."
+        "remarks": [
+          "Entity for the projectile that hit an entity."
+        ]
       },
       "match": "readonly projectile: Entity",
       "kind": "readonly",
@@ -15667,7 +18191,9 @@ let Spinnet = {
     "getEntityHit": {
       "comment": {
         "params": {},
-        "remarks": "Optional source entity that fired the projectile."
+        "remarks": [
+          "Optional source entity that fired the projectile."
+        ]
       },
       "match": "getEntityHit(): EntityHitInformation",
       "kind": "public",
@@ -15678,7 +18204,8 @@ let Spinnet = {
   "ProjectileHitEntityAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15688,7 +18215,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a projectile hits an entity. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a projectile hits an entity. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ProjectileHitEntityAfterEvent) => void): (arg: ProjectileHitEntityAfterEvent) => void",
       "kind": "public",
@@ -15698,7 +18227,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a projectile hits an entity. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a projectile hits an entity. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ProjectileHitEntityAfterEvent) => void): void",
@@ -15710,7 +18241,8 @@ let Spinnet = {
   "Scoreboard": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15720,7 +18252,9 @@ let Spinnet = {
     "addObjective": {
       "comment": {
         "params": {},
-        "remarks": "Adds a new objective to the scoreboard. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a new objective to the scoreboard. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "addObjective(objectiveId: string, displayName: string): ScoreboardObjective",
@@ -15731,7 +18265,9 @@ let Spinnet = {
     "clearObjectiveAtDisplaySlot": {
       "comment": {
         "params": {},
-        "remarks": "Clears the objective that occupies a display slot. This function can't be called in read-only mode."
+        "remarks": [
+          "Clears the objective that occupies a display slot. This function can't be called in read-only mode."
+        ]
       },
       "match": "clearObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjective | undefined",
       "kind": "public",
@@ -15743,7 +18279,9 @@ let Spinnet = {
         "params": {
           "objectiveId": "Identifier of the objective."
         },
-        "remarks": "Returns a specific objective (by id)."
+        "remarks": [
+          "Returns a specific objective (by id)."
+        ]
       },
       "match": "getObjective(objectiveId: string): ScoreboardObjective | undefined",
       "kind": "public",
@@ -15753,7 +18291,9 @@ let Spinnet = {
     "getObjectiveAtDisplaySlot": {
       "comment": {
         "params": {},
-        "remarks": "Returns an objective that occupies the specified display slot."
+        "remarks": [
+          "Returns an objective that occupies the specified display slot."
+        ]
       },
       "match": "getObjectiveAtDisplaySlot(displaySlotId: DisplaySlotId): ScoreboardObjectiveDisplayOptions | undefined",
       "kind": "public",
@@ -15763,7 +18303,9 @@ let Spinnet = {
     "getObjectives": {
       "comment": {
         "params": {},
-        "remarks": "Returns all defined objectives."
+        "remarks": [
+          "Returns all defined objectives."
+        ]
       },
       "match": "getObjectives(): ScoreboardObjective[]",
       "kind": "public",
@@ -15773,7 +18315,9 @@ let Spinnet = {
     "getParticipants": {
       "comment": {
         "params": {},
-        "remarks": "Returns all defined scoreboard identities."
+        "remarks": [
+          "Returns all defined scoreboard identities."
+        ]
       },
       "match": "getParticipants(): ScoreboardIdentity[]",
       "kind": "public",
@@ -15783,7 +18327,9 @@ let Spinnet = {
     "removeObjective": {
       "comment": {
         "params": {},
-        "remarks": "Removes an objective from the scoreboard. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes an objective from the scoreboard. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "removeObjective(objectiveId: ScoreboardObjective | string): boolean",
@@ -15794,7 +18340,9 @@ let Spinnet = {
     "setObjectiveAtDisplaySlot": {
       "comment": {
         "params": {},
-        "remarks": "Sets an objective into a display slot with specified additional display settings. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets an objective into a display slot with specified additional display settings. This function can't be called in read-only mode."
+        ],
         "returns": "Returns the previous `ScoreboardObjective` set at the display slot, if no objective was previously set it returns `undefined`.",
         "throws": "function can throw errors."
       },
@@ -15807,7 +18355,8 @@ let Spinnet = {
   "ScoreboardIdentity": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15817,7 +18366,9 @@ let Spinnet = {
     "displayName": {
       "comment": {
         "params": {},
-        "remarks": "Returns the player-visible name of this identity."
+        "remarks": [
+          "Returns the player-visible name of this identity."
+        ]
       },
       "match": "readonly displayName: string",
       "kind": "readonly",
@@ -15827,7 +18378,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the scoreboard identity."
+        "remarks": [
+          "Identifier of the scoreboard identity."
+        ]
       },
       "match": "readonly id: number",
       "kind": "readonly",
@@ -15837,7 +18390,9 @@ let Spinnet = {
     "getEntity": {
       "comment": {
         "params": {},
-        "remarks": "Type of the scoreboard identity."
+        "remarks": [
+          "Type of the scoreboard identity."
+        ]
       },
       "match": "getEntity(): Entity | undefined",
       "kind": "public",
@@ -15847,7 +18402,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if the ScoreboardIdentity reference is still valid."
+        "remarks": [
+          "Returns true if the ScoreboardIdentity reference is still valid."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -15858,7 +18415,8 @@ let Spinnet = {
   "ScoreboardObjective": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15868,7 +18426,9 @@ let Spinnet = {
     "displayName": {
       "comment": {
         "params": {},
-        "remarks": "Returns the player-visible name of this scoreboard objective.",
+        "remarks": [
+          "Returns the player-visible name of this scoreboard objective."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly displayName: string",
@@ -15879,7 +18439,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of the scoreboard objective.",
+        "remarks": [
+          "Identifier of the scoreboard objective."
+        ],
         "throws": "property can throw when used."
       },
       "match": "readonly id: string",
@@ -15892,7 +18454,9 @@ let Spinnet = {
         "params": {
           "participant": "Participant to apply the scoreboard value addition to."
         },
-        "remarks": "Adds a score to the given participant and objective. This function can't be called in read-only mode.",
+        "remarks": [
+          "Adds a score to the given participant and objective. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "addScore(participant: Entity | ScoreboardIdentity | string, scoreToAdd: number): number",
@@ -15903,7 +18467,9 @@ let Spinnet = {
     "getParticipants": {
       "comment": {
         "params": {},
-        "remarks": "Returns all objective participant identities.",
+        "remarks": [
+          "Returns all objective participant identities."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getParticipants(): ScoreboardIdentity[]",
@@ -15916,7 +18482,9 @@ let Spinnet = {
         "params": {
           "participant": "Identifier of the participant to retrieve a score for."
         },
-        "remarks": "Returns a specific score for a participant.",
+        "remarks": [
+          "Returns a specific score for a participant."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getScore(participant: Entity | ScoreboardIdentity | string): number | undefined",
@@ -15927,7 +18495,9 @@ let Spinnet = {
     "getScores": {
       "comment": {
         "params": {},
-        "remarks": "Returns specific scores for this objective for all participants.",
+        "remarks": [
+          "Returns specific scores for this objective for all participants."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getScores(): ScoreboardScoreInfo[]",
@@ -15938,7 +18508,9 @@ let Spinnet = {
     "hasParticipant": {
       "comment": {
         "params": {},
-        "remarks": "Returns if the specified identity is a participant of the scoreboard objective.",
+        "remarks": [
+          "Returns if the specified identity is a participant of the scoreboard objective."
+        ],
         "throws": "function can throw errors."
       },
       "match": "hasParticipant(participant: Entity | ScoreboardIdentity | string): boolean",
@@ -15949,7 +18521,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if the ScoreboardObjective reference is still valid."
+        "remarks": [
+          "Returns true if the ScoreboardObjective reference is still valid."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -15961,7 +18535,9 @@ let Spinnet = {
         "params": {
           "participant": "Participant to remove from being tracked with this objective."
         },
-        "remarks": "Removes a participant from this scoreboard objective. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a participant from this scoreboard objective. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "removeParticipant(participant: Entity | ScoreboardIdentity | string): boolean",
@@ -15975,7 +18551,9 @@ let Spinnet = {
           "participant": "Identity of the participant.",
           "score": "New value of the score."
         },
-        "remarks": "Sets a score for a participant. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets a score for a participant. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setScore(participant: Entity | ScoreboardIdentity | string, score: number): void",
@@ -15987,7 +18565,8 @@ let Spinnet = {
   "ScoreboardScoreInfo": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -15997,7 +18576,9 @@ let Spinnet = {
     "participant": {
       "comment": {
         "params": {},
-        "remarks": "This scoreboard participant for this score."
+        "remarks": [
+          "This scoreboard participant for this score."
+        ]
       },
       "match": "readonly participant: ScoreboardIdentity",
       "kind": "readonly",
@@ -16007,7 +18588,9 @@ let Spinnet = {
     "score": {
       "comment": {
         "params": {},
-        "remarks": "Score value of the identity for this objective."
+        "remarks": [
+          "Score value of the identity for this objective."
+        ]
       },
       "match": "readonly score: number",
       "kind": "readonly",
@@ -16018,7 +18601,8 @@ let Spinnet = {
   "ScreenDisplay": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16028,7 +18612,9 @@ let Spinnet = {
     "isValid": {
       "comment": {
         "params": {},
-        "remarks": "Returns true if the current reference to this screen display manager object is valid and functional."
+        "remarks": [
+          "Returns true if the current reference to this screen display manager object is valid and functional."
+        ]
       },
       "match": "isValid(): boolean",
       "kind": "public",
@@ -16040,7 +18626,9 @@ let Spinnet = {
         "params": {
           "text": "New value for the action bar text."
         },
-        "remarks": "Set the action bar text - a piece of text that displays beneath the title and above the hot-bar. This function can't be called in read-only mode.",
+        "remarks": [
+          "Set the action bar text - a piece of text that displays beneath the title and above the hot-bar. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "setActionBar(text: (RawMessage | string)[] | RawMessage | string): void",
@@ -16051,7 +18639,9 @@ let Spinnet = {
     "setTitle": {
       "comment": {
         "params": {},
-        "remarks": "Will cause a title to show up on the player's on screen display. Will clear the title if set to empty string. You can optionally specify an additional subtitle as well as fade in, stay and fade out times. This function can't be called in read-only mode.",
+        "remarks": [
+          "Will cause a title to show up on the player's on screen display. Will clear the title if set to empty string. You can optionally specify an additional subtitle as well as fade in, stay and fade out times. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript let players = mc.world.getPlayers(); players[0].onScreenDisplay.setTitle(\"Chapter 1\", { stayDuration: 100, fadeInDuration: 2, fadeOutDuration: 4, subtitle: \"Trouble in Block Town\", }); ```"
       },
@@ -16063,7 +18653,9 @@ let Spinnet = {
     "updateSubtitle": {
       "comment": {
         "params": {},
-        "remarks": "Updates the subtitle if the subtitle was previously displayed via the setTitle method. This function can't be called in read-only mode.",
+        "remarks": [
+          "Updates the subtitle if the subtitle was previously displayed via the setTitle method. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "updateSubtitle(subtitle: (RawMessage | string)[] | RawMessage | string): void",
@@ -16075,7 +18667,8 @@ let Spinnet = {
   "ScriptEventCommandMessageAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16085,7 +18678,9 @@ let Spinnet = {
     "id": {
       "comment": {
         "params": {},
-        "remarks": "Identifier of this ScriptEvent command message."
+        "remarks": [
+          "Identifier of this ScriptEvent command message."
+        ]
       },
       "match": "readonly id: string",
       "kind": "readonly",
@@ -16095,7 +18690,9 @@ let Spinnet = {
     "message": {
       "comment": {
         "params": {},
-        "remarks": "If this command was initiated via an NPC, returns the entity that initiated the NPC dialogue."
+        "remarks": [
+          "If this command was initiated via an NPC, returns the entity that initiated the NPC dialogue."
+        ]
       },
       "match": "readonly message: string",
       "kind": "readonly",
@@ -16105,7 +18702,9 @@ let Spinnet = {
     "sourceType": {
       "comment": {
         "params": {},
-        "remarks": "Source block if this command was triggered via a block (e.g., a commandblock.)"
+        "remarks": [
+          "Source block if this command was triggered via a block (e.g., a commandblock.)"
+        ]
       },
       "match": "readonly sourceType: ScriptEventSource",
       "kind": "readonly",
@@ -16116,7 +18715,8 @@ let Spinnet = {
   "ScriptEventCommandMessageAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16126,7 +18726,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Registers a new ScriptEvent handler. This function can't be called in read-only mode."
+        "remarks": [
+          "Registers a new ScriptEvent handler. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void,options?: ScriptEventMessageFilterOptions,): (arg: ScriptEventCommandMessageAfterEvent) => void",
       "kind": "public",
@@ -16136,7 +18738,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Unsubscribes a particular handler for a ScriptEvent event. This function can't be called in read-only mode.",
+        "remarks": [
+          "Unsubscribes a particular handler for a ScriptEvent event. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: ScriptEventCommandMessageAfterEvent) => void): void",
@@ -16148,7 +18752,8 @@ let Spinnet = {
   "Seat": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16158,7 +18763,9 @@ let Spinnet = {
     "lockRiderRotation": {
       "comment": {
         "params": {},
-        "remarks": "If specified, contains a forced rotation that the riders in this seat are facing."
+        "remarks": [
+          "If specified, contains a forced rotation that the riders in this seat are facing."
+        ]
       },
       "match": "readonly lockRiderRotation: number",
       "kind": "readonly",
@@ -16168,7 +18775,9 @@ let Spinnet = {
     "maxRiderCount": {
       "comment": {
         "params": {},
-        "remarks": "A maximum number of riders that this seat can support."
+        "remarks": [
+          "A maximum number of riders that this seat can support."
+        ]
       },
       "match": "readonly maxRiderCount: number",
       "kind": "readonly",
@@ -16178,7 +18787,9 @@ let Spinnet = {
     "minRiderCount": {
       "comment": {
         "params": {},
-        "remarks": "A minimum number of riders that can be placed in this seat position, if this seat is to be filled."
+        "remarks": [
+          "A minimum number of riders that can be placed in this seat position, if this seat is to be filled."
+        ]
       },
       "match": "readonly minRiderCount: number",
       "kind": "readonly",
@@ -16188,7 +18799,9 @@ let Spinnet = {
     "position": {
       "comment": {
         "params": {},
-        "remarks": "Physical location of this seat, relative to the entity's location."
+        "remarks": [
+          "Physical location of this seat, relative to the entity's location."
+        ]
       },
       "match": "readonly position: Vector3",
       "kind": "readonly",
@@ -16199,7 +18812,8 @@ let Spinnet = {
   "ServerMessageAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16209,7 +18823,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when an internal message is passed. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when an internal message is passed. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: MessageReceiveAfterEvent) => void): (arg: MessageReceiveAfterEvent) => void",
       "kind": "public",
@@ -16219,7 +18835,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when an internal message is passed. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when an internal message is passed. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: MessageReceiveAfterEvent) => void): void",
@@ -16231,7 +18849,8 @@ let Spinnet = {
   "System": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16241,7 +18860,9 @@ let Spinnet = {
     "afterEvents": {
       "comment": {
         "params": {},
-        "remarks": "Returns a collection of after-events for system-level operations."
+        "remarks": [
+          "Returns a collection of after-events for system-level operations."
+        ]
       },
       "match": "readonly afterEvents: SystemAfterEvents",
       "kind": "readonly",
@@ -16251,8 +18872,10 @@ let Spinnet = {
     "beforeEvents": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Returns a collection of before-events for system-level operations."
+        "remarks": [
+          "Returns a collection of before-events for system-level operations."
+        ],
+        "beta": ""
       },
       "match": "readonly beforeEvents: SystemBeforeEvents",
       "kind": "readonly",
@@ -16262,7 +18885,9 @@ let Spinnet = {
     "currentTick": {
       "comment": {
         "params": {},
-        "remarks": "Represents the current world tick of the server."
+        "remarks": [
+          "Represents the current world tick of the server."
+        ]
       },
       "match": "readonly currentTick: number",
       "kind": "readonly",
@@ -16272,7 +18897,9 @@ let Spinnet = {
     "clearRun": {
       "comment": {
         "params": {},
-        "remarks": "Cancels the execution of a function run that was previously scheduled via the `run` function."
+        "remarks": [
+          "Cancels the execution of a function run that was previously scheduled via the `run` function."
+        ]
       },
       "match": "clearRun(runId: number): void",
       "kind": "public",
@@ -16284,7 +18911,9 @@ let Spinnet = {
         "params": {
           "callback": "Function callback to run when the tickDelay time criteria is met."
         },
-        "remarks": "Runs a specified function at a future time. This is frequently used to implement delayed behaviors and game loops.",
+        "remarks": [
+          "Runs a specified function at a future time. This is frequently used to implement delayed behaviors and game loops."
+        ],
         "returns": "An opaque identifier that can be used with the `clearRun` function to cancel the execution of this run.",
         "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); try { // Minecraft runs at 20 ticks per second. if (mc.system.currentTick % 1200 === 0) { mc.world.sendMessage(\"Another minute passes...\"); } } catch (e) { console.warn(\"Error: \" + e); } mc.system.run(trapTick); ```"
       },
@@ -16299,7 +18928,9 @@ let Spinnet = {
           "callback": "Functional code that will run when this interval occurs.",
           "tickInterval": "An interval of every N ticks that the callback will be called upon."
         },
-        "remarks": "Runs a set of code on an interval.",
+        "remarks": [
+          "Runs a set of code on an interval."
+        ],
         "returns": "An opaque handle that can be used with the clearRun method to stop the run of this function on an interval.",
         "example": "```typescript let intervalRunIdentifier = Math.floor(Math.random() * 10000); mc.system.runInterval(() => { mc.world.sendMessage(\"This is an interval run \" + intervalRunIdentifier + \" sending a message every 30 seconds.\"); }, 600); ```"
       },
@@ -16314,7 +18945,9 @@ let Spinnet = {
           "callback": "Functional code that will run when this timeout occurs.",
           "tickDelay": "Amount of time, in ticks, before the interval will be called."
         },
-        "remarks": "Runs a set of code at a future time specified by tickDelay.",
+        "remarks": [
+          "Runs a set of code at a future time specified by tickDelay."
+        ],
         "returns": "An opaque handle that can be used with the clearRun method to stop the run of this function on an interval."
       },
       "match": "runTimeout(callback: () => void, tickDelay?: number): number",
@@ -16326,7 +18959,8 @@ let Spinnet = {
   "SystemAfterEvents": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16336,7 +18970,9 @@ let Spinnet = {
     "scriptEventReceive": {
       "comment": {
         "params": {},
-        "remarks": "An event that fires when a /scriptevent command is set. This provides a way for commands and other systems to trigger behavior within script."
+        "remarks": [
+          "An event that fires when a /scriptevent command is set. This provides a way for commands and other systems to trigger behavior within script."
+        ]
       },
       "match": "readonly scriptEventReceive: ScriptEventCommandMessageAfterEventSignal",
       "kind": "readonly",
@@ -16347,7 +18983,8 @@ let Spinnet = {
   "SystemBeforeEvents": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16357,7 +18994,9 @@ let Spinnet = {
     "watchdogTerminate": {
       "comment": {
         "params": {},
-        "remarks": "Fires when the scripting watchdog shuts down the server. The can be due to using too much memory, or by causing significant slowdown or hang. To prevent shutdown, set the event's cancel property to true."
+        "remarks": [
+          "Fires when the scripting watchdog shuts down the server. The can be due to using too much memory, or by causing significant slowdown or hang. To prevent shutdown, set the event's cancel property to true."
+        ]
       },
       "match": "readonly watchdogTerminate: WatchdogTerminateBeforeEventSignal",
       "kind": "readonly",
@@ -16368,7 +19007,8 @@ let Spinnet = {
   "TargetBlockHitAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16378,7 +19018,9 @@ let Spinnet = {
     "hitVector": {
       "comment": {
         "params": {},
-        "remarks": "The position where the source hit the block."
+        "remarks": [
+          "The position where the source hit the block."
+        ]
       },
       "match": "readonly hitVector: Vector3",
       "kind": "readonly",
@@ -16388,7 +19030,9 @@ let Spinnet = {
     "previousRedstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power before the block is hit."
+        "remarks": [
+          "The redstone power before the block is hit."
+        ]
       },
       "match": "readonly previousRedstonePower: number",
       "kind": "readonly",
@@ -16398,7 +19042,9 @@ let Spinnet = {
     "redstonePower": {
       "comment": {
         "params": {},
-        "remarks": "The redstone power at the time the block is hit."
+        "remarks": [
+          "The redstone power at the time the block is hit."
+        ]
       },
       "match": "readonly redstonePower: number",
       "kind": "readonly",
@@ -16408,7 +19054,9 @@ let Spinnet = {
     "source": {
       "comment": {
         "params": {},
-        "remarks": "Optional source that hit the target block."
+        "remarks": [
+          "Optional source that hit the target block."
+        ]
       },
       "match": "readonly source: Entity",
       "kind": "readonly",
@@ -16418,7 +19066,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -16428,7 +19078,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -16439,7 +19091,8 @@ let Spinnet = {
   "TargetBlockHitAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16449,7 +19102,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a target block is hit. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a target block is hit. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: TargetBlockHitAfterEvent) => void): (arg: TargetBlockHitAfterEvent) => void",
       "kind": "public",
@@ -16459,7 +19114,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a target block is hit. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a target block is hit. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: TargetBlockHitAfterEvent) => void): void",
@@ -16472,7 +19129,9 @@ let Spinnet = {
     "eventName": {
       "comment": {
         "params": {},
-        "remarks": "Event name of the trigger."
+        "remarks": [
+          "Event name of the trigger."
+        ]
       },
       "match": "eventName: string",
       "kind": "public",
@@ -16482,7 +19141,9 @@ let Spinnet = {
     "constructor": {
       "comment": {
         "params": {},
-        "remarks": "Creates a new trigger."
+        "remarks": [
+          "Creates a new trigger."
+        ]
       },
       "match": "constructor(eventName: string)",
       "kind": "public",
@@ -16493,7 +19154,8 @@ let Spinnet = {
   "TripWireTripAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16503,7 +19165,9 @@ let Spinnet = {
     "isPowered": {
       "comment": {
         "params": {},
-        "remarks": "Whether or not the block has redstone power."
+        "remarks": [
+          "Whether or not the block has redstone power."
+        ]
       },
       "match": "readonly isPowered: boolean",
       "kind": "readonly",
@@ -16513,7 +19177,9 @@ let Spinnet = {
     "sources": {
       "comment": {
         "params": {},
-        "remarks": "The sources that triggered the trip wire to trip."
+        "remarks": [
+          "The sources that triggered the trip wire to trip."
+        ]
       },
       "match": "readonly sources: Entity[]",
       "kind": "readonly",
@@ -16523,7 +19189,9 @@ let Spinnet = {
     "block": {
       "comment": {
         "params": {},
-        "remarks": "Block impacted by this event."
+        "remarks": [
+          "Block impacted by this event."
+        ]
       },
       "match": "readonly block: Block",
       "kind": "readonly",
@@ -16533,7 +19201,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension that contains the block that is the subject of this event."
+        "remarks": [
+          "Dimension that contains the block that is the subject of this event."
+        ]
       },
       "match": "readonly dimension: Dimension",
       "kind": "readonly",
@@ -16544,7 +19214,8 @@ let Spinnet = {
   "TripWireTripAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16554,7 +19225,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a trip wire is tripped. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a trip wire is tripped. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: TripWireTripAfterEvent) => void): (arg: TripWireTripAfterEvent) => void",
       "kind": "public",
@@ -16564,7 +19237,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a trip wire is tripped. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a trip wire is tripped. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: TripWireTripAfterEvent) => void): void",
@@ -16577,7 +19252,9 @@ let Spinnet = {
     "x": {
       "comment": {
         "params": {},
-        "remarks": "X component of this vector."
+        "remarks": [
+          "X component of this vector."
+        ]
       },
       "match": "x: number",
       "kind": "public",
@@ -16587,7 +19264,9 @@ let Spinnet = {
     "y": {
       "comment": {
         "params": {},
-        "remarks": "Y component of this vector."
+        "remarks": [
+          "Y component of this vector."
+        ]
       },
       "match": "y: number",
       "kind": "public",
@@ -16597,7 +19276,9 @@ let Spinnet = {
     "z": {
       "comment": {
         "params": {},
-        "remarks": "Z component of this vector."
+        "remarks": [
+          "Z component of this vector."
+        ]
       },
       "match": "z: number",
       "kind": "public",
@@ -16607,7 +19288,9 @@ let Spinnet = {
     "back": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (0, 0, -1)."
+        "remarks": [
+          "A constant vector that represents (0, 0, -1)."
+        ]
       },
       "match": "static readonly back: Vector",
       "kind": "static readonly",
@@ -16617,7 +19300,9 @@ let Spinnet = {
     "down": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (0, -1, 0)."
+        "remarks": [
+          "A constant vector that represents (0, -1, 0)."
+        ]
       },
       "match": "static readonly down: Vector",
       "kind": "static readonly",
@@ -16627,7 +19312,9 @@ let Spinnet = {
     "forward": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (0, 0, 1)."
+        "remarks": [
+          "A constant vector that represents (0, 0, 1)."
+        ]
       },
       "match": "static readonly forward: Vector",
       "kind": "static readonly",
@@ -16637,7 +19324,9 @@ let Spinnet = {
     "left": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (-1, 0, 0)."
+        "remarks": [
+          "A constant vector that represents (-1, 0, 0)."
+        ]
       },
       "match": "static readonly left: Vector",
       "kind": "static readonly",
@@ -16647,7 +19336,9 @@ let Spinnet = {
     "one": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (1, 1, 1)."
+        "remarks": [
+          "A constant vector that represents (1, 1, 1)."
+        ]
       },
       "match": "static readonly one: Vector",
       "kind": "static readonly",
@@ -16657,7 +19348,9 @@ let Spinnet = {
     "right": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (1, 0, 0)."
+        "remarks": [
+          "A constant vector that represents (1, 0, 0)."
+        ]
       },
       "match": "static readonly right: Vector",
       "kind": "static readonly",
@@ -16667,7 +19360,9 @@ let Spinnet = {
     "up": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (0, 1, 0)."
+        "remarks": [
+          "A constant vector that represents (0, 1, 0)."
+        ]
       },
       "match": "static readonly up: Vector",
       "kind": "static readonly",
@@ -16677,7 +19372,9 @@ let Spinnet = {
     "zero": {
       "comment": {
         "params": {},
-        "remarks": "A constant vector that represents (0, 0, 0)."
+        "remarks": [
+          "A constant vector that represents (0, 0, 0)."
+        ]
       },
       "match": "static readonly zero: Vector",
       "kind": "static readonly",
@@ -16691,7 +19388,9 @@ let Spinnet = {
           "y": "Y component of the vector.",
           "z": "Z component of the vector."
         },
-        "remarks": "Creates a new instance of an abstract vector."
+        "remarks": [
+          "Creates a new instance of an abstract vector."
+        ]
       },
       "match": "constructor(x: number, y: number, z: number)",
       "kind": "public",
@@ -16703,7 +19402,9 @@ let Spinnet = {
         "params": {
           "other": "Other vector to compare this vector to."
         },
-        "remarks": "Compares this vector and another vector to one another.",
+        "remarks": [
+          "Compares this vector and another vector to one another."
+        ],
         "returns": "True if the two vectors are equal."
       },
       "match": "equals(other: Vector): boolean",
@@ -16714,7 +19415,9 @@ let Spinnet = {
     "length": {
       "comment": {
         "params": {},
-        "remarks": "Returns the length of this vector."
+        "remarks": [
+          "Returns the length of this vector."
+        ]
       },
       "match": "length(): number",
       "kind": "public",
@@ -16724,7 +19427,9 @@ let Spinnet = {
     "lengthSquared": {
       "comment": {
         "params": {},
-        "remarks": "Returns the squared length of this vector."
+        "remarks": [
+          "Returns the squared length of this vector."
+        ]
       },
       "match": "lengthSquared(): number",
       "kind": "public",
@@ -16734,7 +19439,9 @@ let Spinnet = {
     "normalized": {
       "comment": {
         "params": {},
-        "remarks": "Returns this vector as a normalized vector."
+        "remarks": [
+          "Returns this vector as a normalized vector."
+        ]
       },
       "match": "normalized(): Vector",
       "kind": "public",
@@ -16744,7 +19451,9 @@ let Spinnet = {
     "add": {
       "comment": {
         "params": {},
-        "remarks": "Returns the addition of these vectors."
+        "remarks": [
+          "Returns the addition of these vectors."
+        ]
       },
       "match": "static add(a: Vector3, b: Vector3): Vector",
       "kind": "static",
@@ -16754,7 +19463,9 @@ let Spinnet = {
     "cross": {
       "comment": {
         "params": {},
-        "remarks": "Returns the cross product of these two vectors."
+        "remarks": [
+          "Returns the cross product of these two vectors."
+        ]
       },
       "match": "static cross(a: Vector3, b: Vector3): Vector",
       "kind": "static",
@@ -16764,7 +19475,9 @@ let Spinnet = {
     "distance": {
       "comment": {
         "params": {},
-        "remarks": "Returns the distance between two vectors."
+        "remarks": [
+          "Returns the distance between two vectors."
+        ]
       },
       "match": "static distance(a: Vector3, b: Vector3): number",
       "kind": "static",
@@ -16774,7 +19487,9 @@ let Spinnet = {
     "divide": {
       "comment": {
         "params": {},
-        "remarks": "Returns the component-wise division of these vectors.",
+        "remarks": [
+          "Returns the component-wise division of these vectors."
+        ],
         "throws": "function can throw errors."
       },
       "match": "static divide(a: Vector3, b: number | Vector3): Vector",
@@ -16785,7 +19500,9 @@ let Spinnet = {
     "lerp": {
       "comment": {
         "params": {},
-        "remarks": "Returns the linear interpolation between a and b using t as the control."
+        "remarks": [
+          "Returns the linear interpolation between a and b using t as the control."
+        ]
       },
       "match": "static lerp(a: Vector3, b: Vector3, t: number): Vector",
       "kind": "static",
@@ -16795,7 +19512,9 @@ let Spinnet = {
     "max": {
       "comment": {
         "params": {},
-        "remarks": "Returns a vector that is made from the largest components of two vectors."
+        "remarks": [
+          "Returns a vector that is made from the largest components of two vectors."
+        ]
       },
       "match": "static max(a: Vector3, b: Vector3): Vector",
       "kind": "static",
@@ -16805,7 +19524,9 @@ let Spinnet = {
     "min": {
       "comment": {
         "params": {},
-        "remarks": "Returns a vector that is made from the smallest components of two vectors."
+        "remarks": [
+          "Returns a vector that is made from the smallest components of two vectors."
+        ]
       },
       "match": "static min(a: Vector3, b: Vector3): Vector",
       "kind": "static",
@@ -16815,7 +19536,9 @@ let Spinnet = {
     "multiply": {
       "comment": {
         "params": {},
-        "remarks": "Returns the component-wise product of these vectors."
+        "remarks": [
+          "Returns the component-wise product of these vectors."
+        ]
       },
       "match": "static multiply(a: Vector3, b: number | Vector3): Vector",
       "kind": "static",
@@ -16825,7 +19548,9 @@ let Spinnet = {
     "slerp": {
       "comment": {
         "params": {},
-        "remarks": "Returns the spherical linear interpolation between a and b using s as the control."
+        "remarks": [
+          "Returns the spherical linear interpolation between a and b using s as the control."
+        ]
       },
       "match": "static slerp(a: Vector3, b: Vector3, s: number): Vector",
       "kind": "static",
@@ -16835,7 +19560,9 @@ let Spinnet = {
     "subtract": {
       "comment": {
         "params": {},
-        "remarks": "Returns the subtraction of these vectors."
+        "remarks": [
+          "Returns the subtraction of these vectors."
+        ]
       },
       "match": "static subtract(a: Vector3, b: Vector3): Vector",
       "kind": "static",
@@ -16846,7 +19573,8 @@ let Spinnet = {
   "WatchdogTerminateBeforeEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16856,7 +19584,9 @@ let Spinnet = {
     "cancel": {
       "comment": {
         "params": {},
-        "remarks": "If set to true, cancels the termination of the script runtime. Note that depending on server configuration settings, cancellation of the termination may not be allowed."
+        "remarks": [
+          "If set to true, cancels the termination of the script runtime. Note that depending on server configuration settings, cancellation of the termination may not be allowed."
+        ]
       },
       "match": "cancel: boolean",
       "kind": "public",
@@ -16866,7 +19596,9 @@ let Spinnet = {
     "terminateReason": {
       "comment": {
         "params": {},
-        "remarks": "Contains the reason why a script runtime is to be terminated."
+        "remarks": [
+          "Contains the reason why a script runtime is to be terminated."
+        ]
       },
       "match": "readonly terminateReason: WatchdogTerminateReason",
       "kind": "readonly",
@@ -16877,7 +19609,8 @@ let Spinnet = {
   "WatchdogTerminateBeforeEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16887,7 +19620,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when a script runtime is being terminated due to a violation of the performance watchdog system. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when a script runtime is being terminated due to a violation of the performance watchdog system. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): (arg: WatchdogTerminateBeforeEvent) => void",
       "kind": "public",
@@ -16897,7 +19632,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when a script runtime is being terminated due to a violation of the performance watchdog system. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when a script runtime is being terminated due to a violation of the performance watchdog system. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: WatchdogTerminateBeforeEvent) => void): void",
@@ -16909,7 +19646,8 @@ let Spinnet = {
   "WeatherChangeAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16919,7 +19657,9 @@ let Spinnet = {
     "dimension": {
       "comment": {
         "params": {},
-        "remarks": "Dimension in which the weather has changed."
+        "remarks": [
+          "Dimension in which the weather has changed."
+        ]
       },
       "match": "readonly dimension: string",
       "kind": "readonly",
@@ -16929,7 +19669,9 @@ let Spinnet = {
     "lightning": {
       "comment": {
         "params": {},
-        "remarks": "Whether it is lightning after the change in weather."
+        "remarks": [
+          "Whether it is lightning after the change in weather."
+        ]
       },
       "match": "readonly lightning: boolean",
       "kind": "readonly",
@@ -16939,7 +19681,9 @@ let Spinnet = {
     "raining": {
       "comment": {
         "params": {},
-        "remarks": "Whether it is raining after the change in weather."
+        "remarks": [
+          "Whether it is raining after the change in weather."
+        ]
       },
       "match": "readonly raining: boolean",
       "kind": "readonly",
@@ -16950,7 +19694,8 @@ let Spinnet = {
   "WeatherChangeAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16960,7 +19705,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when weather changes. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when weather changes. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: WeatherChangeAfterEvent) => void): (arg: WeatherChangeAfterEvent) => void",
       "kind": "public",
@@ -16970,7 +19717,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called when weather changes. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called when weather changes. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: WeatherChangeAfterEvent) => void): void",
@@ -16982,7 +19731,8 @@ let Spinnet = {
   "World": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -16992,7 +19742,9 @@ let Spinnet = {
     "afterEvents": {
       "comment": {
         "params": {},
-        "remarks": "Contains a set of events that are applicable to the entirety of the world.  Event callbacks are called in a deferred manner. Event callbacks are executed in read-write mode."
+        "remarks": [
+          "Contains a set of events that are applicable to the entirety of the world.  Event callbacks are called in a deferred manner. Event callbacks are executed in read-write mode."
+        ]
       },
       "match": "readonly afterEvents: WorldAfterEvents",
       "kind": "readonly",
@@ -17002,7 +19754,9 @@ let Spinnet = {
     "beforeEvents": {
       "comment": {
         "params": {},
-        "remarks": "Contains a set of events that are applicable to the entirety of the world. Event callbacks are called immediately. Event callbacks are executed in read-only mode."
+        "remarks": [
+          "Contains a set of events that are applicable to the entirety of the world. Event callbacks are called immediately. Event callbacks are executed in read-only mode."
+        ]
       },
       "match": "readonly beforeEvents: WorldBeforeEvents",
       "kind": "readonly",
@@ -17012,7 +19766,9 @@ let Spinnet = {
     "scoreboard": {
       "comment": {
         "params": {},
-        "remarks": "Returns the general global scoreboard that applies to the world."
+        "remarks": [
+          "Returns the general global scoreboard that applies to the world."
+        ]
       },
       "match": "readonly scoreboard: Scoreboard",
       "kind": "readonly",
@@ -17025,8 +19781,10 @@ let Spinnet = {
           "id": "The message identifier.",
           "value": "The message."
         },
-        "beta": "",
-        "remarks": "A method that is internal-only, used for broadcasting specific messages between client and server. This function can't be called in read-only mode."
+        "remarks": [
+          "A method that is internal-only, used for broadcasting specific messages between client and server. This function can't be called in read-only mode."
+        ],
+        "beta": ""
       },
       "match": "broadcastClientMessage(id: string, value: string): void",
       "kind": "public",
@@ -17036,7 +19794,9 @@ let Spinnet = {
     "clearDynamicProperties": {
       "comment": {
         "params": {},
-        "remarks": "Clears the set of dynamic properties declared for this behavior pack within the world."
+        "remarks": [
+          "Clears the set of dynamic properties declared for this behavior pack within the world."
+        ]
       },
       "match": "clearDynamicProperties(): void",
       "kind": "public",
@@ -17046,7 +19806,9 @@ let Spinnet = {
     "getAbsoluteTime": {
       "comment": {
         "params": {},
-        "remarks": "Returns the absolute time since the start of the world."
+        "remarks": [
+          "Returns the absolute time since the start of the world."
+        ]
       },
       "match": "getAbsoluteTime(): number",
       "kind": "public",
@@ -17056,7 +19818,9 @@ let Spinnet = {
     "getAllPlayers": {
       "comment": {
         "params": {},
-        "remarks": "Returns an array of all active players within the world.",
+        "remarks": [
+          "Returns an array of all active players within the world."
+        ],
         "throws": "function can throw errors."
       },
       "match": "getAllPlayers(): Player[]",
@@ -17067,7 +19831,9 @@ let Spinnet = {
     "getDay": {
       "comment": {
         "params": {},
-        "remarks": "Returns the current day.",
+        "remarks": [
+          "Returns the current day."
+        ],
         "returns": "The current day, determined by the world time divided by the number of ticks per day. New worlds start at day 0."
       },
       "match": "getDay(): number",
@@ -17078,7 +19844,9 @@ let Spinnet = {
     "getDefaultSpawnLocation": {
       "comment": {
         "params": {},
-        "remarks": "Returns the default Overworld spawn location.",
+        "remarks": [
+          "Returns the default Overworld spawn location."
+        ],
         "returns": "The default Overworld spawn location. By default, the Y coordinate is 32767, indicating a player's spawn height is not fixed and will be determined by surrounding blocks."
       },
       "match": "getDefaultSpawnLocation(): Vector3",
@@ -17091,7 +19859,9 @@ let Spinnet = {
         "params": {
           "dimensionId": "The name of the dimension. For example, \"overworld\", \"nether\" or \"the_end\"."
         },
-        "remarks": "Returns a dimension object.",
+        "remarks": [
+          "Returns a dimension object."
+        ],
         "returns": "The requested dimension",
         "throws": "Throws if the given dimension name is invalid"
       },
@@ -17105,7 +19875,9 @@ let Spinnet = {
         "params": {
           "identifier": "The property identifier."
         },
-        "remarks": "Returns a property value.",
+        "remarks": [
+          "Returns a property value."
+        ],
         "returns": "Returns the value for the property, or undefined if the property has not been set.",
         "throws": "Throws if the given dynamic property identifier is not defined.",
         "example": "```typescript let paintStr = mc.world.getDynamicProperty(\"samplelibrary:longerjson\"); let paint: { color: string; intensity: number } | undefined = undefined; log(\"Current value is: \" + paintStr); if (paintStr === undefined) { paint = { color: \"purple\", intensity: 0, }; } else { if (typeof paintStr !== \"string\") { log(\"Paint is of an unexpected type.\"); return -1; } try { paint = JSON.parse(paintStr); } catch (e) { log(\"Error parsing serialized struct.\"); return -1; } } if (!paint) { log(\"Error parsing serialized struct.\"); return -1; } paint.intensity++; paintStr = JSON.stringify(paint); // be very careful to ensure your serialized JSON str cannot exceed limits mc.world.setDynamicProperty(\"samplelibrary:longerjson\", paintStr); ```"
@@ -17118,7 +19890,9 @@ let Spinnet = {
     "getDynamicPropertyIds": {
       "comment": {
         "params": {},
-        "remarks": "Gets a set of dynamic property identifiers that have been set in this world.",
+        "remarks": [
+          "Gets a set of dynamic property identifiers that have been set in this world."
+        ],
         "returns": "A string array of active dynamic property identifiers."
       },
       "match": "getDynamicPropertyIds(): string[]",
@@ -17129,7 +19903,9 @@ let Spinnet = {
     "getDynamicPropertyTotalByteCount": {
       "comment": {
         "params": {},
-        "remarks": "Gets the total byte count of dynamic properties. This could potentially be used for your own analytics to ensure you're not storing gigantic sets of dynamic properties."
+        "remarks": [
+          "Gets the total byte count of dynamic properties. This could potentially be used for your own analytics to ensure you're not storing gigantic sets of dynamic properties."
+        ]
       },
       "match": "getDynamicPropertyTotalByteCount(): number",
       "kind": "public",
@@ -17141,7 +19917,9 @@ let Spinnet = {
         "params": {
           "id": "The id of the entity."
         },
-        "remarks": "Returns an entity based on the provided id.",
+        "remarks": [
+          "Returns an entity based on the provided id."
+        ],
         "returns": "The requested entity object.",
         "throws": "Throws if the given entity id is invalid."
       },
@@ -17153,7 +19931,9 @@ let Spinnet = {
     "getMoonPhase": {
       "comment": {
         "params": {},
-        "remarks": "Returns the MoonPhase for the current time."
+        "remarks": [
+          "Returns the MoonPhase for the current time."
+        ]
       },
       "match": "getMoonPhase(): MoonPhase",
       "kind": "public",
@@ -17165,7 +19945,9 @@ let Spinnet = {
         "params": {
           "options": "Additional options that can be used to filter the set of players returned."
         },
-        "remarks": "Returns a set of players based on a set of conditions defined via the EntityQueryOptions set of filter criteria.",
+        "remarks": [
+          "Returns a set of players based on a set of conditions defined via the EntityQueryOptions set of filter criteria."
+        ],
         "returns": "A player array.",
         "throws": "Throws if the provided EntityQueryOptions are invalid."
       },
@@ -17177,7 +19959,9 @@ let Spinnet = {
     "getTimeOfDay": {
       "comment": {
         "params": {},
-        "remarks": "Returns the time of day.",
+        "remarks": [
+          "Returns the time of day."
+        ],
         "returns": "The time of day, in ticks, between 0 and 24000."
       },
       "match": "getTimeOfDay(): number",
@@ -17188,7 +19972,9 @@ let Spinnet = {
     "playMusic": {
       "comment": {
         "params": {},
-        "remarks": "Plays a particular music track for all players. This function can't be called in read-only mode.",
+        "remarks": [
+          "Plays a particular music track for all players. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors.",
         "example": "```typescript let players = mc.world.getPlayers(); const musicOptions: mc.MusicOptions = { fade: 0.5, loop: true, volume: 1.0, }; mc.world.playMusic(\"music.menu\", musicOptions); const worldSoundOptions: mc.WorldSoundOptions = { pitch: 0.5, volume: 4.0, }; mc.world.playSound(\"ambient.weather.thunder\", targetLocation, worldSoundOptions); const playerSoundOptions: mc.PlayerSoundOptions = { pitch: 1.0, volume: 1.0, }; players[0].playSound(\"bucket.fill_water\", playerSoundOptions); ```"
       },
@@ -17200,7 +19986,9 @@ let Spinnet = {
     "playSound": {
       "comment": {
         "params": {},
-        "remarks": "Plays a sound for all players. This function can't be called in read-only mode.",
+        "remarks": [
+          "Plays a sound for all players. This function can't be called in read-only mode."
+        ],
         "throws": "An error will be thrown if volume is less than 0.0. An error will be thrown if fade is less than 0.0. An error will be thrown if pitch is less than 0.01. An error will be thrown if volume is less than 0.0.",
         "example": "```typescript let players = mc.world.getPlayers(); const musicOptions: mc.MusicOptions = { fade: 0.5, loop: true, volume: 1.0, }; mc.world.playMusic(\"music.menu\", musicOptions); const worldSoundOptions: mc.WorldSoundOptions = { pitch: 0.5, volume: 4.0, }; mc.world.playSound(\"ambient.weather.thunder\", targetLocation, worldSoundOptions); const playerSoundOptions: mc.PlayerSoundOptions = { pitch: 1.0, volume: 1.0, }; players[0].playSound(\"bucket.fill_water\", playerSoundOptions); ```"
       },
@@ -17215,7 +20003,9 @@ let Spinnet = {
           "trackId": "Identifier of the music track to play.",
           "musicOptions": "Additional options for the music track."
         },
-        "remarks": "Queues an additional music track for players. If a track is not playing, a music track will play. This function can't be called in read-only mode.",
+        "remarks": [
+          "Queues an additional music track for players. If a track is not playing, a music track will play. This function can't be called in read-only mode."
+        ],
         "throws": "An error will be thrown if volume is less than 0.0. An error will be thrown if fade is less than 0.0."
       },
       "match": "queueMusic(trackId: string, musicOptions?: MusicOptions): void",
@@ -17228,7 +20018,9 @@ let Spinnet = {
         "params": {
           "message": "The message to be displayed."
         },
-        "remarks": "Sends a message to all players.",
+        "remarks": [
+          "Sends a message to all players."
+        ],
         "throws": "This method can throw if the provided {@link RawMessage} is in an invalid format. For example, if an empty `name` string is provided to `score`.",
         "example": "```typescript // Displays \"First or Second\" const rawMessage = { translate: \"accessibility.list.or.two\", with: [\"First\", \"Second\"] }; world.sendMessage(rawMessage); ```"
       },
@@ -17242,7 +20034,9 @@ let Spinnet = {
         "params": {
           "absoluteTime": "The world time, in ticks."
         },
-        "remarks": "Sets the world time. This function can't be called in read-only mode."
+        "remarks": [
+          "Sets the world time. This function can't be called in read-only mode."
+        ]
       },
       "match": "setAbsoluteTime(absoluteTime: number): void",
       "kind": "public",
@@ -17254,7 +20048,9 @@ let Spinnet = {
         "params": {
           "spawnLocation": "Location of the spawn point. Note that this is assumed to be within the overworld dimension."
         },
-        "remarks": "Sets a default spawn location for all players. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets a default spawn location for all players. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the provided spawn location is out of bounds. {@link Error} {@link LocationOutOfWorldBoundariesError}"
       },
       "match": "setDefaultSpawnLocation(spawnLocation: Vector3): void",
@@ -17268,7 +20064,9 @@ let Spinnet = {
           "identifier": "The property identifier.",
           "value": "Data value of the property to set."
         },
-        "remarks": "Sets a specified property to a value.",
+        "remarks": [
+          "Sets a specified property to a value."
+        ],
         "throws": "Throws if the given dynamic property identifier is not defined.",
         "example": "```typescript let paintStr = mc.world.getDynamicProperty(\"samplelibrary:longerjson\"); let paint: { color: string; intensity: number } | undefined = undefined; log(\"Current value is: \" + paintStr); if (paintStr === undefined) { paint = { color: \"purple\", intensity: 0, }; } else { if (typeof paintStr !== \"string\") { log(\"Paint is of an unexpected type.\"); return -1; } try { paint = JSON.parse(paintStr); } catch (e) { log(\"Error parsing serialized struct.\"); return -1; } } if (!paint) { log(\"Error parsing serialized struct.\"); return -1; } paint.intensity++; paintStr = JSON.stringify(paint); // be very careful to ensure your serialized JSON str cannot exceed limits mc.world.setDynamicProperty(\"samplelibrary:longerjson\", paintStr); ```"
       },
@@ -17282,7 +20080,9 @@ let Spinnet = {
         "params": {
           "timeOfDay": "The time of day, in ticks, between 0 and 24000."
         },
-        "remarks": "Sets the time of day. This function can't be called in read-only mode.",
+        "remarks": [
+          "Sets the time of day. This function can't be called in read-only mode."
+        ],
         "throws": "Throws if the provided time of day is not within the valid range."
       },
       "match": "setTimeOfDay(timeOfDay: number | TimeOfDay): void",
@@ -17293,7 +20093,9 @@ let Spinnet = {
     "stopMusic": {
       "comment": {
         "params": {},
-        "remarks": "Stops any music tracks from playing. This function can't be called in read-only mode."
+        "remarks": [
+          "Stops any music tracks from playing. This function can't be called in read-only mode."
+        ]
       },
       "match": "stopMusic(): void",
       "kind": "public",
@@ -17304,7 +20106,8 @@ let Spinnet = {
   "WorldAfterEvents": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17314,8 +20117,10 @@ let Spinnet = {
     "blockExplode": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires for each BlockLocation destroyed by an explosion. It is fired after the blocks have already been destroyed."
+        "remarks": [
+          "This event fires for each BlockLocation destroyed by an explosion. It is fired after the blocks have already been destroyed."
+        ],
+        "beta": ""
       },
       "match": "readonly blockExplode: BlockExplodeAfterEventSignal",
       "kind": "readonly",
@@ -17325,7 +20130,9 @@ let Spinnet = {
     "buttonPush": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a button is pushed."
+        "remarks": [
+          "This event fires when a button is pushed."
+        ]
       },
       "match": "readonly buttonPush: ButtonPushAfterEventSignal",
       "kind": "readonly",
@@ -17335,8 +20142,10 @@ let Spinnet = {
     "chatSend": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is triggered after a chat message has been broadcast or sent to players."
+        "remarks": [
+          "This event is triggered after a chat message has been broadcast or sent to players."
+        ],
+        "beta": ""
       },
       "match": "readonly chatSend: ChatSendAfterEventSignal",
       "kind": "readonly",
@@ -17346,6 +20155,7 @@ let Spinnet = {
     "dataDrivenEntityTriggerEvent": {
       "comment": {
         "params": {},
+        "remarks": [],
         "beta": ""
       },
       "match": "readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerAfterEventSignal",
@@ -17356,8 +20166,10 @@ let Spinnet = {
     "effectAdd": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires when an effect, like poisoning, is added to an entity."
+        "remarks": [
+          "This event fires when an effect, like poisoning, is added to an entity."
+        ],
+        "beta": ""
       },
       "match": "readonly effectAdd: EffectAddAfterEventSignal",
       "kind": "readonly",
@@ -17367,7 +20179,9 @@ let Spinnet = {
     "entityDie": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an entity dies."
+        "remarks": [
+          "This event fires when an entity dies."
+        ]
       },
       "match": "readonly entityDie: EntityDieAfterEventSignal",
       "kind": "readonly",
@@ -17377,7 +20191,9 @@ let Spinnet = {
     "entityHealthChanged": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when entity health changes in any degree."
+        "remarks": [
+          "This event fires when entity health changes in any degree."
+        ]
       },
       "match": "readonly entityHealthChanged: EntityHealthChangedAfterEventSignal",
       "kind": "readonly",
@@ -17387,7 +20203,9 @@ let Spinnet = {
     "entityHitBlock": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an entity hits (that is, melee attacks) a block."
+        "remarks": [
+          "This event fires when an entity hits (that is, melee attacks) a block."
+        ]
       },
       "match": "readonly entityHitBlock: EntityHitBlockAfterEventSignal",
       "kind": "readonly",
@@ -17397,7 +20215,9 @@ let Spinnet = {
     "entityHitEntity": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an entity hits (that is, melee attacks) another entity."
+        "remarks": [
+          "This event fires when an entity hits (that is, melee attacks) another entity."
+        ]
       },
       "match": "readonly entityHitEntity: EntityHitEntityAfterEventSignal",
       "kind": "readonly",
@@ -17407,7 +20227,9 @@ let Spinnet = {
     "entityHurt": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an entity is hurt (takes damage)."
+        "remarks": [
+          "This event fires when an entity is hurt (takes damage)."
+        ]
       },
       "match": "readonly entityHurt: EntityHurtAfterEventSignal",
       "kind": "readonly",
@@ -17417,7 +20239,9 @@ let Spinnet = {
     "entityLoad": {
       "comment": {
         "params": {},
-        "remarks": "Fires when an entity is loaded."
+        "remarks": [
+          "Fires when an entity is loaded."
+        ]
       },
       "match": "readonly entityLoad: EntityLoadAfterEventSignal",
       "kind": "readonly",
@@ -17427,7 +20251,9 @@ let Spinnet = {
     "entityRemove": {
       "comment": {
         "params": {},
-        "remarks": "Fires when an entity is removed (for example, potentially unloaded, or removed after being killed)."
+        "remarks": [
+          "Fires when an entity is removed (for example, potentially unloaded, or removed after being killed)."
+        ]
       },
       "match": "readonly entityRemove: EntityRemoveAfterEventSignal",
       "kind": "readonly",
@@ -17437,7 +20263,9 @@ let Spinnet = {
     "entitySpawn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an entity is spawned."
+        "remarks": [
+          "This event fires when an entity is spawned."
+        ]
       },
       "match": "readonly entitySpawn: EntitySpawnAfterEventSignal",
       "kind": "readonly",
@@ -17447,8 +20275,10 @@ let Spinnet = {
     "explosion": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is fired after an explosion occurs."
+        "remarks": [
+          "This event is fired after an explosion occurs."
+        ],
+        "beta": ""
       },
       "match": "readonly explosion: ExplosionAfterEventSignal",
       "kind": "readonly",
@@ -17458,7 +20288,9 @@ let Spinnet = {
     "itemCompleteUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a chargeable item completes charging."
+        "remarks": [
+          "This event fires when a chargeable item completes charging."
+        ]
       },
       "match": "readonly itemCompleteUse: ItemCompleteUseAfterEventSignal",
       "kind": "readonly",
@@ -17468,8 +20300,10 @@ let Spinnet = {
     "itemDefinitionEvent": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "For custom items, this event is triggered when the fundamental set of defined components for the item change. Note that this event is only fired for custom data-driven items."
+        "remarks": [
+          "For custom items, this event is triggered when the fundamental set of defined components for the item change. Note that this event is only fired for custom data-driven items."
+        ],
+        "beta": ""
       },
       "match": "readonly itemDefinitionEvent: ItemDefinitionAfterEventSignal",
       "kind": "readonly",
@@ -17479,7 +20313,9 @@ let Spinnet = {
     "itemReleaseUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a chargeable item is released from charging."
+        "remarks": [
+          "This event fires when a chargeable item is released from charging."
+        ]
       },
       "match": "readonly itemReleaseUse: ItemReleaseUseAfterEventSignal",
       "kind": "readonly",
@@ -17489,7 +20325,9 @@ let Spinnet = {
     "itemStartUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a chargeable item starts charging."
+        "remarks": [
+          "This event fires when a chargeable item starts charging."
+        ]
       },
       "match": "readonly itemStartUse: ItemStartUseAfterEventSignal",
       "kind": "readonly",
@@ -17499,7 +20337,9 @@ let Spinnet = {
     "itemStartUseOn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a player successfully uses an item or places a block by pressing the Use Item / Place Block button. If multiple blocks are placed, this event will only occur once at the beginning of the block placement. Note: This event cannot be used with Hoe or Axe items."
+        "remarks": [
+          "This event fires when a player successfully uses an item or places a block by pressing the Use Item / Place Block button. If multiple blocks are placed, this event will only occur once at the beginning of the block placement. Note: This event cannot be used with Hoe or Axe items."
+        ]
       },
       "match": "readonly itemStartUseOn: ItemStartUseOnAfterEventSignal",
       "kind": "readonly",
@@ -17509,7 +20349,9 @@ let Spinnet = {
     "itemStopUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a chargeable item stops charging."
+        "remarks": [
+          "This event fires when a chargeable item stops charging."
+        ]
       },
       "match": "readonly itemStopUse: ItemStopUseAfterEventSignal",
       "kind": "readonly",
@@ -17519,7 +20361,9 @@ let Spinnet = {
     "itemStopUseOn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a player releases the Use Item / Place Block button after successfully using an item. Note: This event cannot be used with Hoe or Axe items."
+        "remarks": [
+          "This event fires when a player releases the Use Item / Place Block button after successfully using an item. Note: This event cannot be used with Hoe or Axe items."
+        ]
       },
       "match": "readonly itemStopUseOn: ItemStopUseOnAfterEventSignal",
       "kind": "readonly",
@@ -17529,7 +20373,9 @@ let Spinnet = {
     "itemUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an item is successfully used by a player."
+        "remarks": [
+          "This event fires when an item is successfully used by a player."
+        ]
       },
       "match": "readonly itemUse: ItemUseAfterEventSignal",
       "kind": "readonly",
@@ -17539,7 +20385,9 @@ let Spinnet = {
     "itemUseOn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an item is used on a block by a player."
+        "remarks": [
+          "This event fires when an item is used on a block by a player."
+        ]
       },
       "match": "readonly itemUseOn: ItemUseOnAfterEventSignal",
       "kind": "readonly",
@@ -17549,7 +20397,9 @@ let Spinnet = {
     "leverAction": {
       "comment": {
         "params": {},
-        "remarks": "A lever has been pulled."
+        "remarks": [
+          "A lever has been pulled."
+        ]
       },
       "match": "readonly leverAction: LeverActionAfterEventSignal",
       "kind": "readonly",
@@ -17559,8 +20409,10 @@ let Spinnet = {
     "messageReceive": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is an internal implementation detail, and is otherwise not currently functional."
+        "remarks": [
+          "This event is an internal implementation detail, and is otherwise not currently functional."
+        ],
+        "beta": ""
       },
       "match": "readonly messageReceive: ServerMessageAfterEventSignal",
       "kind": "readonly",
@@ -17570,8 +20422,10 @@ let Spinnet = {
     "pistonActivate": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires when a piston expands or retracts."
+        "remarks": [
+          "This event fires when a piston expands or retracts."
+        ],
+        "beta": ""
       },
       "match": "readonly pistonActivate: PistonActivateAfterEventSignal",
       "kind": "readonly",
@@ -17581,7 +20435,9 @@ let Spinnet = {
     "playerBreakBlock": {
       "comment": {
         "params": {},
-        "remarks": "This event fires for a block that is broken by a player."
+        "remarks": [
+          "This event fires for a block that is broken by a player."
+        ]
       },
       "match": "readonly playerBreakBlock: PlayerBreakBlockAfterEventSignal",
       "kind": "readonly",
@@ -17591,7 +20447,9 @@ let Spinnet = {
     "playerDimensionChange": {
       "comment": {
         "params": {},
-        "remarks": "Fires when a player moved to a different dimension."
+        "remarks": [
+          "Fires when a player moved to a different dimension."
+        ]
       },
       "match": "readonly playerDimensionChange: PlayerDimensionChangeAfterEventSignal",
       "kind": "readonly",
@@ -17601,8 +20459,10 @@ let Spinnet = {
     "playerInteractWithBlock": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "An event for when a player interacts with a block."
+        "remarks": [
+          "An event for when a player interacts with a block."
+        ],
+        "beta": ""
       },
       "match": "readonly playerInteractWithBlock: PlayerInteractWithBlockAfterEventSignal",
       "kind": "readonly",
@@ -17612,8 +20472,10 @@ let Spinnet = {
     "playerInteractWithEntity": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires when a player interacts with an entity."
+        "remarks": [
+          "This event fires when a player interacts with an entity."
+        ],
+        "beta": ""
       },
       "match": "readonly playerInteractWithEntity: PlayerInteractWithEntityAfterEventSignal",
       "kind": "readonly",
@@ -17623,7 +20485,9 @@ let Spinnet = {
     "playerJoin": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a player joins a world.  See also playerSpawn for another related event you can trap for when a player is spawned the first time within a world."
+        "remarks": [
+          "This event fires when a player joins a world.  See also playerSpawn for another related event you can trap for when a player is spawned the first time within a world."
+        ]
       },
       "match": "readonly playerJoin: PlayerJoinAfterEventSignal",
       "kind": "readonly",
@@ -17633,7 +20497,9 @@ let Spinnet = {
     "playerLeave": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a player leaves a world."
+        "remarks": [
+          "This event fires when a player leaves a world."
+        ]
       },
       "match": "readonly playerLeave: PlayerLeaveAfterEventSignal",
       "kind": "readonly",
@@ -17643,7 +20509,9 @@ let Spinnet = {
     "playerPlaceBlock": {
       "comment": {
         "params": {},
-        "remarks": "This event fires for a block that is placed by a player."
+        "remarks": [
+          "This event fires for a block that is placed by a player."
+        ]
       },
       "match": "readonly playerPlaceBlock: PlayerPlaceBlockAfterEventSignal",
       "kind": "readonly",
@@ -17653,7 +20521,9 @@ let Spinnet = {
     "playerSpawn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a player spawns or respawns. Note that an additional flag within this event will tell you whether the player is spawning right after join vs. a respawn."
+        "remarks": [
+          "This event fires when a player spawns or respawns. Note that an additional flag within this event will tell you whether the player is spawning right after join vs. a respawn."
+        ]
       },
       "match": "readonly playerSpawn: PlayerSpawnAfterEventSignal",
       "kind": "readonly",
@@ -17663,7 +20533,9 @@ let Spinnet = {
     "pressurePlatePop": {
       "comment": {
         "params": {},
-        "remarks": "A pressure plate has popped back up (i.e., there are no entities on the pressure plate.)"
+        "remarks": [
+          "A pressure plate has popped back up (i.e., there are no entities on the pressure plate.)"
+        ]
       },
       "match": "readonly pressurePlatePop: PressurePlatePopAfterEventSignal",
       "kind": "readonly",
@@ -17673,7 +20545,9 @@ let Spinnet = {
     "pressurePlatePush": {
       "comment": {
         "params": {},
-        "remarks": "A pressure plate has pushed (at least one entity has moved onto a pressure plate.)"
+        "remarks": [
+          "A pressure plate has pushed (at least one entity has moved onto a pressure plate.)"
+        ]
       },
       "match": "readonly pressurePlatePush: PressurePlatePushAfterEventSignal",
       "kind": "readonly",
@@ -17683,7 +20557,9 @@ let Spinnet = {
     "projectileHitBlock": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a projectile hits a block."
+        "remarks": [
+          "This event fires when a projectile hits a block."
+        ]
       },
       "match": "readonly projectileHitBlock: ProjectileHitBlockAfterEventSignal",
       "kind": "readonly",
@@ -17693,7 +20569,9 @@ let Spinnet = {
     "projectileHitEntity": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when a projectile hits an entity."
+        "remarks": [
+          "This event fires when a projectile hits an entity."
+        ]
       },
       "match": "readonly projectileHitEntity: ProjectileHitEntityAfterEventSignal",
       "kind": "readonly",
@@ -17703,7 +20581,9 @@ let Spinnet = {
     "targetBlockHit": {
       "comment": {
         "params": {},
-        "remarks": "A target block was hit."
+        "remarks": [
+          "A target block was hit."
+        ]
       },
       "match": "readonly targetBlockHit: TargetBlockHitAfterEventSignal",
       "kind": "readonly",
@@ -17713,7 +20593,9 @@ let Spinnet = {
     "tripWireTrip": {
       "comment": {
         "params": {},
-        "remarks": "A trip wire was tripped."
+        "remarks": [
+          "A trip wire was tripped."
+        ]
       },
       "match": "readonly tripWireTrip: TripWireTripAfterEventSignal",
       "kind": "readonly",
@@ -17723,8 +20605,10 @@ let Spinnet = {
     "weatherChange": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event will be triggered when the weather changes within Minecraft."
+        "remarks": [
+          "This event will be triggered when the weather changes within Minecraft."
+        ],
+        "beta": ""
       },
       "match": "readonly weatherChange: WeatherChangeAfterEventSignal",
       "kind": "readonly",
@@ -17734,8 +20618,10 @@ let Spinnet = {
     "worldInitialize": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires when the script environment is initialized on a World. In addition, you can register dynamic properties within the scope of a world Initialize event."
+        "remarks": [
+          "This event fires when the script environment is initialized on a World. In addition, you can register dynamic properties within the scope of a world Initialize event."
+        ],
+        "beta": ""
       },
       "match": "readonly worldInitialize: WorldInitializeAfterEventSignal",
       "kind": "readonly",
@@ -17746,7 +20632,8 @@ let Spinnet = {
   "WorldBeforeEvents": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17756,8 +20643,10 @@ let Spinnet = {
     "chatSend": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is triggered after a chat message has been broadcast or sent to players."
+        "remarks": [
+          "This event is triggered after a chat message has been broadcast or sent to players."
+        ],
+        "beta": ""
       },
       "match": "readonly chatSend: ChatSendBeforeEventSignal",
       "kind": "readonly",
@@ -17767,8 +20656,10 @@ let Spinnet = {
     "dataDrivenEntityTriggerEvent": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is fired when an entity event has been triggered that will update the component definition state of an entity."
+        "remarks": [
+          "This event is fired when an entity event has been triggered that will update the component definition state of an entity."
+        ],
+        "beta": ""
       },
       "match": "readonly dataDrivenEntityTriggerEvent: DataDrivenEntityTriggerBeforeEventSignal",
       "kind": "readonly",
@@ -17778,8 +20669,10 @@ let Spinnet = {
     "effectAdd": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is triggered after an event has been added to an entity."
+        "remarks": [
+          "This event is triggered after an event has been added to an entity."
+        ],
+        "beta": ""
       },
       "match": "readonly effectAdd: EffectAddBeforeEventSignal",
       "kind": "readonly",
@@ -17789,7 +20682,9 @@ let Spinnet = {
     "entityRemove": {
       "comment": {
         "params": {},
-        "remarks": "Fires before an entity is removed from the world (for example, unloaded or removed after being killed.)"
+        "remarks": [
+          "Fires before an entity is removed from the world (for example, unloaded or removed after being killed.)"
+        ]
       },
       "match": "readonly entityRemove: EntityRemoveBeforeEventSignal",
       "kind": "readonly",
@@ -17799,8 +20694,10 @@ let Spinnet = {
     "explosion": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event is fired after an explosion occurs."
+        "remarks": [
+          "This event is fired after an explosion occurs."
+        ],
+        "beta": ""
       },
       "match": "readonly explosion: ExplosionBeforeEventSignal",
       "kind": "readonly",
@@ -17810,8 +20707,10 @@ let Spinnet = {
     "itemDefinitionEvent": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "For custom items, this event is triggered when the fundamental set of defined components for the item change. Note that this event is only fired for custom data-driven items."
+        "remarks": [
+          "For custom items, this event is triggered when the fundamental set of defined components for the item change. Note that this event is only fired for custom data-driven items."
+        ],
+        "beta": ""
       },
       "match": "readonly itemDefinitionEvent: ItemDefinitionBeforeEventSignal",
       "kind": "readonly",
@@ -17821,7 +20720,9 @@ let Spinnet = {
     "itemUse": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an item is successfully used by a player."
+        "remarks": [
+          "This event fires when an item is successfully used by a player."
+        ]
       },
       "match": "readonly itemUse: ItemUseBeforeEventSignal",
       "kind": "readonly",
@@ -17831,7 +20732,9 @@ let Spinnet = {
     "itemUseOn": {
       "comment": {
         "params": {},
-        "remarks": "This event fires when an item is used on a block by a player."
+        "remarks": [
+          "This event fires when an item is used on a block by a player."
+        ]
       },
       "match": "readonly itemUseOn: ItemUseOnBeforeEventSignal",
       "kind": "readonly",
@@ -17841,8 +20744,10 @@ let Spinnet = {
     "pistonActivate": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires when a piston expands or retracts."
+        "remarks": [
+          "This event fires when a piston expands or retracts."
+        ],
+        "beta": ""
       },
       "match": "readonly pistonActivate: PistonActivateBeforeEventSignal",
       "kind": "readonly",
@@ -17852,7 +20757,9 @@ let Spinnet = {
     "playerBreakBlock": {
       "comment": {
         "params": {},
-        "remarks": "This event fires before a block is broken by a player."
+        "remarks": [
+          "This event fires before a block is broken by a player."
+        ]
       },
       "match": "readonly playerBreakBlock: PlayerBreakBlockBeforeEventSignal",
       "kind": "readonly",
@@ -17862,8 +20769,10 @@ let Spinnet = {
     "playerInteractWithBlock": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Fires before a player interacts with a block."
+        "remarks": [
+          "Fires before a player interacts with a block."
+        ],
+        "beta": ""
       },
       "match": "readonly playerInteractWithBlock: PlayerInteractWithBlockBeforeEventSignal",
       "kind": "readonly",
@@ -17873,8 +20782,10 @@ let Spinnet = {
     "playerInteractWithEntity": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "Fires before a player interacts with an entity."
+        "remarks": [
+          "Fires before a player interacts with an entity."
+        ],
+        "beta": ""
       },
       "match": "readonly playerInteractWithEntity: PlayerInteractWithEntityBeforeEventSignal",
       "kind": "readonly",
@@ -17884,7 +20795,9 @@ let Spinnet = {
     "playerLeave": {
       "comment": {
         "params": {},
-        "remarks": "Fires when a player leaves the game."
+        "remarks": [
+          "Fires when a player leaves the game."
+        ]
       },
       "match": "readonly playerLeave: PlayerLeaveBeforeEventSignal",
       "kind": "readonly",
@@ -17894,8 +20807,10 @@ let Spinnet = {
     "playerPlaceBlock": {
       "comment": {
         "params": {},
-        "beta": "",
-        "remarks": "This event fires before a block is placed by a player."
+        "remarks": [
+          "This event fires before a block is placed by a player."
+        ],
+        "beta": ""
       },
       "match": "readonly playerPlaceBlock: PlayerPlaceBlockBeforeEventSignal",
       "kind": "readonly",
@@ -17906,7 +20821,8 @@ let Spinnet = {
   "WorldInitializeAfterEvent": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17917,7 +20833,8 @@ let Spinnet = {
   "WorldInitializeAfterEventSignal": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17927,7 +20844,9 @@ let Spinnet = {
     "subscribe": {
       "comment": {
         "params": {},
-        "remarks": "Adds a callback that will be called when the scripting environment is initialized for a World. This function can't be called in read-only mode."
+        "remarks": [
+          "Adds a callback that will be called when the scripting environment is initialized for a World. This function can't be called in read-only mode."
+        ]
       },
       "match": "subscribe(callback: (arg: WorldInitializeAfterEvent) => void): (arg: WorldInitializeAfterEvent) => void",
       "kind": "public",
@@ -17937,7 +20856,9 @@ let Spinnet = {
     "unsubscribe": {
       "comment": {
         "params": {},
-        "remarks": "Removes a callback from being called the scripting environment is initialized for a World. This function can't be called in read-only mode.",
+        "remarks": [
+          "Removes a callback from being called the scripting environment is initialized for a World. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "unsubscribe(callback: (arg: WorldInitializeAfterEvent) => void): void",
@@ -17949,7 +20870,8 @@ let Spinnet = {
   "CommandError": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17960,7 +20882,8 @@ let Spinnet = {
   "LocationInUnloadedChunkError": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17971,7 +20894,8 @@ let Spinnet = {
   "LocationOutOfWorldBoundariesError": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -17983,7 +20907,9 @@ let Spinnet = {
     "body": {
       "comment": {
         "params": {},
-        "remarks": "Method that sets the body text for the modal form."
+        "remarks": [
+          "Method that sets the body text for the modal form."
+        ]
       },
       "match": "body(bodyText: minecraftserver.RawMessage | string): ActionFormData",
       "kind": "public",
@@ -17993,7 +20919,9 @@ let Spinnet = {
     "button": {
       "comment": {
         "params": {},
-        "remarks": "Adds a button to this form with an icon from a resource pack."
+        "remarks": [
+          "Adds a button to this form with an icon from a resource pack."
+        ]
       },
       "match": "button(text: minecraftserver.RawMessage | string, iconPath?: string): ActionFormData",
       "kind": "public",
@@ -18005,7 +20933,9 @@ let Spinnet = {
         "params": {
           "player": "Player to show this dialog to."
         },
-        "remarks": "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "show(player: minecraftserver.Player): Promise<ActionFormResponse>",
@@ -18016,7 +20946,9 @@ let Spinnet = {
     "title": {
       "comment": {
         "params": {},
-        "remarks": "This builder method sets the title for the modal dialog."
+        "remarks": [
+          "This builder method sets the title for the modal dialog."
+        ]
       },
       "match": "title(titleText: minecraftserver.RawMessage | string): ActionFormData",
       "kind": "public",
@@ -18027,7 +20959,8 @@ let Spinnet = {
   "ActionFormResponse": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -18037,7 +20970,9 @@ let Spinnet = {
     "canceled": {
       "comment": {
         "params": {},
-        "remarks": "Returns the index of the button that was pushed."
+        "remarks": [
+          "Returns the index of the button that was pushed."
+        ]
       },
       "match": "readonly canceled: boolean",
       "kind": "readonly",
@@ -18048,7 +20983,8 @@ let Spinnet = {
   "FormResponse": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -18058,7 +20994,9 @@ let Spinnet = {
     "canceled": {
       "comment": {
         "params": {},
-        "remarks": "Contains additional details as to why a form was canceled."
+        "remarks": [
+          "Contains additional details as to why a form was canceled."
+        ]
       },
       "match": "readonly canceled: boolean",
       "kind": "readonly",
@@ -18070,7 +21008,9 @@ let Spinnet = {
     "body": {
       "comment": {
         "params": {},
-        "remarks": "Method that sets the body text for the modal form."
+        "remarks": [
+          "Method that sets the body text for the modal form."
+        ]
       },
       "match": "body(bodyText: minecraftserver.RawMessage | string): MessageFormData",
       "kind": "public",
@@ -18080,7 +21020,9 @@ let Spinnet = {
     "button1": {
       "comment": {
         "params": {},
-        "remarks": "Method that sets the text for the first button of the dialog."
+        "remarks": [
+          "Method that sets the text for the first button of the dialog."
+        ]
       },
       "match": "button1(text: minecraftserver.RawMessage | string): MessageFormData",
       "kind": "public",
@@ -18090,7 +21032,9 @@ let Spinnet = {
     "button2": {
       "comment": {
         "params": {},
-        "remarks": "This method sets the text for the second button on the dialog."
+        "remarks": [
+          "This method sets the text for the second button on the dialog."
+        ]
       },
       "match": "button2(text: minecraftserver.RawMessage | string): MessageFormData",
       "kind": "public",
@@ -18102,7 +21046,9 @@ let Spinnet = {
         "params": {
           "player": "Player to show this dialog to."
         },
-        "remarks": "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "show(player: minecraftserver.Player): Promise<MessageFormResponse>",
@@ -18113,7 +21059,9 @@ let Spinnet = {
     "title": {
       "comment": {
         "params": {},
-        "remarks": "This builder method sets the title for the modal dialog."
+        "remarks": [
+          "This builder method sets the title for the modal dialog."
+        ]
       },
       "match": "title(titleText: minecraftserver.RawMessage | string): MessageFormData",
       "kind": "public",
@@ -18124,7 +21072,8 @@ let Spinnet = {
   "MessageFormResponse": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -18134,7 +21083,9 @@ let Spinnet = {
     "canceled": {
       "comment": {
         "params": {},
-        "remarks": "Returns the index of the button that was pushed."
+        "remarks": [
+          "Returns the index of the button that was pushed."
+        ]
       },
       "match": "readonly canceled: boolean",
       "kind": "readonly",
@@ -18146,7 +21097,9 @@ let Spinnet = {
     "dropdown": {
       "comment": {
         "params": {},
-        "remarks": "Adds a dropdown with choices to the form."
+        "remarks": [
+          "Adds a dropdown with choices to the form."
+        ]
       },
       "match": "dropdown(label: minecraftserver.RawMessage | string,options: (minecraftserver.RawMessage | string)[],defaultValueIndex?: number,): ModalFormData",
       "kind": "public",
@@ -18158,7 +21111,9 @@ let Spinnet = {
         "params": {
           "player": "Player to show this dialog to."
         },
-        "remarks": "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode.",
+        "remarks": [
+          "Creates and shows this modal popup form. Returns asynchronously when the player confirms or cancels the dialog. This function can't be called in read-only mode."
+        ],
         "throws": "function can throw errors."
       },
       "match": "show(player: minecraftserver.Player): Promise<ModalFormResponse>",
@@ -18169,7 +21124,9 @@ let Spinnet = {
     "slider": {
       "comment": {
         "params": {},
-        "remarks": "Adds a numeric slider to the form."
+        "remarks": [
+          "Adds a numeric slider to the form."
+        ]
       },
       "match": "slider(label: minecraftserver.RawMessage | string,minimumValue: number,maximumValue: number,valueStep: number,defaultValue?: number,): ModalFormData",
       "kind": "public",
@@ -18179,7 +21136,9 @@ let Spinnet = {
     "textField": {
       "comment": {
         "params": {},
-        "remarks": "Adds a textbox to the form."
+        "remarks": [
+          "Adds a textbox to the form."
+        ]
       },
       "match": "textField(label: minecraftserver.RawMessage | string,placeholderText: minecraftserver.RawMessage | string,defaultValue?: minecraftserver.RawMessage | string,): ModalFormData",
       "kind": "public",
@@ -18189,7 +21148,9 @@ let Spinnet = {
     "title": {
       "comment": {
         "params": {},
-        "remarks": "This builder method sets the title for the modal dialog."
+        "remarks": [
+          "This builder method sets the title for the modal dialog."
+        ]
       },
       "match": "title(titleText: minecraftserver.RawMessage | string): ModalFormData",
       "kind": "public",
@@ -18199,7 +21160,9 @@ let Spinnet = {
     "toggle": {
       "comment": {
         "params": {},
-        "remarks": "Adds a toggle checkbox button to the form."
+        "remarks": [
+          "Adds a toggle checkbox button to the form."
+        ]
       },
       "match": "toggle(label: minecraftserver.RawMessage | string, defaultValue?: boolean): ModalFormData",
       "kind": "public",
@@ -18210,7 +21173,8 @@ let Spinnet = {
   "ModalFormResponse": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -18220,7 +21184,9 @@ let Spinnet = {
     "canceled": {
       "comment": {
         "params": {},
-        "remarks": "An ordered set of values based on the order of controls specified by ModalFormData."
+        "remarks": [
+          "An ordered set of values based on the order of controls specified by ModalFormData."
+        ]
       },
       "match": "readonly canceled: boolean",
       "kind": "readonly",
@@ -18231,7 +21197,8 @@ let Spinnet = {
   "ArgumentOutOfBoundsError": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
@@ -18241,7 +21208,9 @@ let Spinnet = {
     "maxValue": {
       "comment": {
         "params": {},
-        "remarks": "Max expected value for the condition."
+        "remarks": [
+          "Max expected value for the condition."
+        ]
       },
       "match": "maxValue: number",
       "kind": "public",
@@ -18251,7 +21220,9 @@ let Spinnet = {
     "minValue": {
       "comment": {
         "params": {},
-        "remarks": "Min expected value for the condition."
+        "remarks": [
+          "Min expected value for the condition."
+        ]
       },
       "match": "minValue: number",
       "kind": "public",
@@ -18261,7 +21232,9 @@ let Spinnet = {
     "value": {
       "comment": {
         "params": {},
-        "remarks": "Passed-in value for the argument."
+        "remarks": [
+          "Passed-in value for the argument."
+        ]
       },
       "match": "value: number",
       "kind": "public",
@@ -18272,12 +21245,3400 @@ let Spinnet = {
   "EngineError": {
     "constructor": {
       "comment": {
-        "params": {}
+        "params": {},
+        "remarks": []
       },
       "match": "private constructor()",
       "kind": "private",
       "param": "",
       "return": "EngineError"
+    }
+  },
+  "FenceConnectivity": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "FenceConnectivity"
+    },
+    "east": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Represents whether this fence block is connected to another fence to the east (x + 1)."
+        ]
+      },
+      "match": "readonly east: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "north": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Represents whether this fence block is connected to another fence to the north (z - 1)."
+        ]
+      },
+      "match": "readonly north: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "south": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Represents whether this fence block is connected to another fence to the south (z + 1)."
+        ]
+      },
+      "match": "readonly south: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "west": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Represents whether this fence block is connected to another fence to the west (x - 1)."
+        ]
+      },
+      "match": "readonly west: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    }
+  },
+  "GameTestSequence": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "GameTestSequence"
+    },
+    "thenExecute": {
+      "comment": {
+        "params": {
+          "callback": "Callback function to execute."
+        },
+        "remarks": [
+          "Runs the given callback as a step within a GameTest sequence. Exceptions thrown within the callback will end sequence execution. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenExecute(callback: () => void): GameTestSequence",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "GameTestSequence"
+    },
+    "thenExecuteAfter": {
+      "comment": {
+        "params": {
+          "delayTicks": "Number of ticks to wait before executing the callback.",
+          "callback": "Callback function to execute."
+        },
+        "remarks": [
+          "After a delay, runs the given callback as a step within a GameTest sequence. Exceptions thrown within the callback will end sequence execution. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenExecuteAfter(delayTicks: number, callback: () => void): GameTestSequence",
+      "kind": "public",
+      "param": "delayTicks: number, callback: () => void",
+      "return": "GameTestSequence"
+    },
+    "thenExecuteFor": {
+      "comment": {
+        "params": {
+          "callback": "Callback function to execute."
+        },
+        "remarks": [
+          "Runs the given callback every tick for the given number of ticks. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenExecuteFor(tickCount: number, callback: () => void): GameTestSequence",
+      "kind": "public",
+      "param": "tickCount: number, callback: () => void",
+      "return": "GameTestSequence"
+    },
+    "thenFail": {
+      "comment": {
+        "params": {
+          "errorMessage": "Error message summarizing the failure condition."
+        },
+        "remarks": [
+          "Causes the test to fail if this step in the GameTest sequence is reached. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "thenFail(errorMessage: string): void",
+      "kind": "public",
+      "param": "errorMessage: string",
+      "return": "void"
+    },
+    "thenIdle": {
+      "comment": {
+        "params": {
+          "delayTicks": "Number of ticks to delay for this step in the GameTest sequence."
+        },
+        "remarks": [
+          "Idles the GameTest sequence for the specified delayTicks. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenIdle(delayTicks: number): GameTestSequence",
+      "kind": "public",
+      "param": "delayTicks: number",
+      "return": "GameTestSequence"
+    },
+    "thenSucceed": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Marks the GameTest a success if this step is reached in the GameTest sequence. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "thenSucceed(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "thenWait": {
+      "comment": {
+        "params": {
+          "callback": "Testing callback function to execute. Typically, this function will have .assertXyz functions within it."
+        },
+        "remarks": [
+          "Executes the given callback every tick until it succeeds. Exceptions thrown within the callback will end sequence execution. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenWait(callback: () => void): GameTestSequence",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "GameTestSequence"
+    },
+    "thenWaitAfter": {
+      "comment": {
+        "params": {
+          "delayTicks": "Tick (after the previous step in the GameTest sequence) to run the callback at.",
+          "callback": "Testing callback function to execute. Typically, this function will have .assertXyz functions within it."
+        },
+        "remarks": [
+          "After a delay from the previous step, executes the given callback every tick until it succeeds. Exceptions thrown within the callback will end sequence execution. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns a GameTestSequence object where additional .thenXyz method steps can be added."
+      },
+      "match": "thenWaitAfter(delayTicks: number, callback: () => void): GameTestSequence",
+      "kind": "public",
+      "param": "delayTicks: number, callback: () => void",
+      "return": "GameTestSequence"
+    }
+  },
+  "RegistrationBuilder": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "RegistrationBuilder"
+    },
+    "batch": {
+      "comment": {
+        "params": {
+          "batchName": "Name of the batch for the test."
+        },
+        "remarks": [
+          "Sets the batch for the test to run in. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "batch(batchName: string): RegistrationBuilder",
+      "kind": "public",
+      "param": "batchName: string",
+      "return": "RegistrationBuilder"
+    },
+    "maxAttempts": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the maximum number of times a test will try to rerun if it fails. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "maxAttempts(attemptCount: number): RegistrationBuilder",
+      "kind": "public",
+      "param": "attemptCount: number",
+      "return": "RegistrationBuilder"
+    },
+    "maxTicks": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the maximum number of ticks a test will run for before timing out and failing. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "maxTicks(tickCount: number): RegistrationBuilder",
+      "kind": "public",
+      "param": "tickCount: number",
+      "return": "RegistrationBuilder"
+    },
+    "padding": {
+      "comment": {
+        "params": {
+          "paddingBlocks": "Size, in blocks, around the GameTest where additional GameTests should not be created."
+        },
+        "remarks": [
+          "Size around the GameTest, in blocks, that should be reserved for the test when running multiple tests together. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "padding(paddingBlocks: number): RegistrationBuilder",
+      "kind": "public",
+      "param": "paddingBlocks: number",
+      "return": "RegistrationBuilder"
+    },
+    "required": {
+      "comment": {
+        "params": {
+          "isRequired": "If set to true, the test must pass in order for the entire run of tests to pass."
+        },
+        "remarks": [
+          "Whether this test is required to pass as part of its broader set of tests. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "required(isRequired: boolean): RegistrationBuilder",
+      "kind": "public",
+      "param": "isRequired: boolean",
+      "return": "RegistrationBuilder"
+    },
+    "requiredSuccessfulAttempts": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the number of successful test runs to be considered successful. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "requiredSuccessfulAttempts(attemptCount: number): RegistrationBuilder",
+      "kind": "public",
+      "param": "attemptCount: number",
+      "return": "RegistrationBuilder"
+    },
+    "rotateTest": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "If true, runs the test in all four rotations when run via /gametest runset. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "rotateTest(rotate: boolean): RegistrationBuilder",
+      "kind": "public",
+      "param": "rotate: boolean",
+      "return": "RegistrationBuilder"
+    },
+    "setupTicks": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the number of ticks for a test to wait before executing when the structure is spawned. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "setupTicks(tickCount: number): RegistrationBuilder",
+      "kind": "public",
+      "param": "tickCount: number",
+      "return": "RegistrationBuilder"
+    },
+    "structureName": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the name of the structure for a test to use. \"xyz:bar\" will load `/structures/xyz/bar.mcstructure` from the behavior pack stack. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "structureName(structureName: string): RegistrationBuilder",
+      "kind": "public",
+      "param": "structureName: string",
+      "return": "RegistrationBuilder"
+    },
+    "tag": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Adds a tag to a test. You can run all tests with a given tag with `/gametest runset <tag>`. This function can't be called in read-only mode."
+        ],
+        "returns": "RegistrationBuilder object where additional configuration methods can be called."
+      },
+      "match": "tag(tag: string): RegistrationBuilder",
+      "kind": "public",
+      "param": "tag: string",
+      "return": "RegistrationBuilder"
+    }
+  },
+  "SculkSpreader": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "SculkSpreader"
+    },
+    "maxCharge": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Gets the maximum charge of a sculk spreader."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly maxCharge: number",
+      "kind": "readonly",
+      "param": "",
+      "return": "number"
+    },
+    "addCursorsWithOffset": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Adds a cursor - which is a notional waypoint that the sculk will spread in the direction of. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "addCursorsWithOffset(offset: minecraftserver.Vector3, charge: number): void",
+      "kind": "public",
+      "param": "offset: minecraftserver.Vector3, charge: number",
+      "return": "void"
+    },
+    "getCursorPosition": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Retrieves the current position of the specified cursor. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getCursorPosition(index: number): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "index: number",
+      "return": "minecraftserver.Vector3"
+    },
+    "getNumberOfCursors": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns a number of overall cursors for this sculk spreader. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getNumberOfCursors(): number",
+      "kind": "public",
+      "param": "",
+      "return": "number"
+    },
+    "getTotalCharge": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Gets the total current charge of the sculk spreader. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getTotalCharge(): number",
+      "kind": "public",
+      "param": "",
+      "return": "number"
+    }
+  },
+  "SimulatedPlayer": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "SimulatedPlayer"
+    },
+    "headRotation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Rotation of the head across pitch and yaw angles."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly headRotation: minecraftserver.Vector2",
+      "kind": "readonly",
+      "param": "",
+      "return": "minecraftserver.Vector2"
+    },
+    "isSprinting": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity is sprinting. For example, a player using the sprint action, an ocelot running away or a pig boosting with Carrot on a Stick."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isSprinting: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "attack": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to make an attack 'swipe'. Returns true if the attack was performed - for example, the player was not on cooldown and had a valid target. Target selection is performed by raycasting from the player's head. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "attack(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "attackEntity": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to attack the provided target. Returns true if the attack was performed - for example, the player was not on cooldown and had a valid target. The attack can be performed at any distance and does not require line of sight to the target entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "attackEntity(entity: minecraftserver.Entity): boolean",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity",
+      "return": "boolean"
+    },
+    "breakBlock": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to interact with.",
+          "direction": "Direction to place the specified item within."
+        },
+        "remarks": [
+          "Destroys the block at blockLocation, respecting the rules of the server player's game mode. The block will be hit until broken, an item is used or stopBreakingBlock is called. Returns true if the block at blockLocation is solid. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "breakBlock(blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction): boolean",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction",
+      "return": "boolean"
+    },
+    "chat": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "chat(message: string): void",
+      "kind": "public",
+      "param": "message: string",
+      "return": "void"
+    },
+    "disconnect": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Simulates and performs a disconnection of the simulated player from the world. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "disconnect(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "dropSelectedItem": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Drops the simulated player's selected item This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "dropSelectedItem(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "fly": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to start flying as though they were flying in creative mode. For flying with Elytra, see function glide. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "fly(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "giveItem": {
+      "comment": {
+        "params": {
+          "itemStack": "Item to give.",
+          "selectSlot": "Whether to set the selected slot once given."
+        },
+        "remarks": [
+          "Gives the simulated player a particular item stack. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "giveItem(itemStack: minecraftserver.ItemStack, selectSlot?: boolean): boolean",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack, selectSlot?: boolean",
+      "return": "boolean"
+    },
+    "glide": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to start gliding. Elytra must be equipped and the player must be in the air. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns true if the simulated player begins to glide. Returns false if the player is already gliding, or the player does not have Elytra equipped, is in water or is on the ground.",
+        "throws": "function can throw errors."
+      },
+      "match": "glide(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "interact": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Performs a raycast from the player’s head and interacts with the first intersected block or entity. Returns true if the interaction was successful. Maximum range is 6 blocks. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "interact(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "interactWithBlock": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to interact with.",
+          "direction": "Direction to place the specified item within."
+        },
+        "remarks": [
+          "Causes the simulated player to interact with a block. The block at the specified block location must be solid. Returns true if the interaction was performed. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "interactWithBlock(blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction): boolean",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, direction?: minecraftserver.Direction",
+      "return": "boolean"
+    },
+    "interactWithEntity": {
+      "comment": {
+        "params": {
+          "entity": "Entity to interact with."
+        },
+        "remarks": [
+          "Causes the simulated player to interact with a mob. Returns true if the interaction was performed. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "interactWithEntity(entity: minecraftserver.Entity): boolean",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity",
+      "return": "boolean"
+    },
+    "jump": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to jump. This function can't be called in read-only mode."
+        ],
+        "returns": "True if a jump was performed.",
+        "throws": "function can throw errors."
+      },
+      "match": "jump(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "lookAtBlock": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Rotates the simulated player's head/body to look at the given block location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "lookAtBlock(blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "lookAtEntity": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Rotates the simulated player's head/body to look at the given entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "lookAtEntity(entity: minecraftserver.Entity): void",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity",
+      "return": "void"
+    },
+    "lookAtLocation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Rotates the simulated player's head/body to look at the given location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "lookAtLocation(location: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "location: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "move": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to walk in the given direction relative to the GameTest. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "move(westEast: number, northSouth: number, speed?: number): void",
+      "kind": "public",
+      "param": "westEast: number, northSouth: number, speed?: number",
+      "return": "void"
+    },
+    "moveRelative": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to walk in the given direction relative to the player's current rotation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "moveRelative(leftRight: number, backwardForward: number, speed?: number): void",
+      "kind": "public",
+      "param": "leftRight: number, backwardForward: number, speed?: number",
+      "return": "void"
+    },
+    "moveToBlock": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to move to the given block location in a straight line. If a move or navigation is already playing, this will override the last move/navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "moveToBlock(blockLocation: minecraftserver.Vector3, speed?: number): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, speed?: number",
+      "return": "void"
+    },
+    "moveToLocation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to move to the given location in a straight line. If a move or navigation is already playing, this will override the last move/navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "moveToLocation(location: minecraftserver.Vector3, speed?: number): void",
+      "kind": "public",
+      "param": "location: minecraftserver.Vector3, speed?: number",
+      "return": "void"
+    },
+    "navigateToBlock": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to move to a specific block location using navigation. If a move or navigation is already playing, this will override the last move/walk. Note that if the simulated player gets stuck, that simulated player will stop. The player must be touching the ground in order to start navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "navigateToBlock(blockLocation: minecraftserver.Vector3, speed?: number): minecraftserver.NavigationResult",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, speed?: number",
+      "return": "minecraftserver.NavigationResult"
+    },
+    "navigateToEntity": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Will use navigation to follow the selected entity to within a one block radius. If a move or navigation is already playing, this will override the last move/navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "navigateToEntity(entity: minecraftserver.Entity, speed?: number): minecraftserver.NavigationResult",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity, speed?: number",
+      "return": "minecraftserver.NavigationResult"
+    },
+    "navigateToLocation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Orders the simulated player to move to a specific location using navigation. If a move or navigation is already playing, this will override the last move/walk. Note that if the simulated player gets stuck, that simulated player will stop. The player must be touching the ground in order to start navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "navigateToLocation(location: minecraftserver.Vector3, speed?: number): minecraftserver.NavigationResult",
+      "kind": "public",
+      "param": "location: minecraftserver.Vector3, speed?: number",
+      "return": "minecraftserver.NavigationResult"
+    },
+    "navigateToLocations": {
+      "comment": {
+        "params": {
+          "locations": "A list of locations to use for routing.",
+          "speed": "Net speed to use for doing the navigation."
+        },
+        "remarks": [
+          "Use navigation to follow the route provided via the locations parameter. If a move or navigation is already playing, this will override the last move/navigation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "navigateToLocations(locations: minecraftserver.Vector3[], speed?: number): void",
+      "kind": "public",
+      "param": "locations: minecraftserver.Vector3[], speed?: number",
+      "return": "void"
+    },
+    "respawn": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Respawns the particular simulated player. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "respawn(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "rotateBody": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to turn by the provided angle, relative to the player's current rotation. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "rotateBody(angleInDegrees: number): void",
+      "kind": "public",
+      "param": "angleInDegrees: number",
+      "return": "void"
+    },
+    "setBodyRotation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to turn to face the provided angle, relative to the GameTest. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "setBodyRotation(angleInDegrees: number): void",
+      "kind": "public",
+      "param": "angleInDegrees: number",
+      "return": "void"
+    },
+    "setGameMode": {
+      "comment": {
+        "params": {
+          "gameMode": "Game mode to set."
+        },
+        "remarks": [
+          "Sets the game mode that the simulated player is operating under. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "setGameMode(gameMode: minecraftserver.GameMode): void",
+      "kind": "public",
+      "param": "gameMode: minecraftserver.GameMode",
+      "return": "void"
+    },
+    "setItem": {
+      "comment": {
+        "params": {
+          "itemStack": "Item to set.",
+          "slot": "Slot to place the given item in.",
+          "selectSlot": "Whether to set the selected slot once set."
+        },
+        "remarks": [
+          "Sets a particular item for the simulated player. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "setItem(itemStack: minecraftserver.ItemStack, slot: number, selectSlot?: boolean): boolean",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack, slot: number, selectSlot?: boolean",
+      "return": "boolean"
+    },
+    "stopBreakingBlock": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Stops destroying the block that is currently being hit. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopBreakingBlock(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopFlying": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to stop flying. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopFlying(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopGliding": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to stop gliding. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopGliding(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopInteracting": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Stops interacting with entities or blocks. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopInteracting(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopMoving": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Stops moving/walking/following if the simulated player is moving. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopMoving(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopSwimming": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to stop swimming. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "stopSwimming(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "stopUsingItem": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Stops using the currently active item. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns the item that was in use. Undefined if no item was in use.",
+        "throws": "function can throw errors."
+      },
+      "match": "stopUsingItem(): minecraftserver.ItemStack | undefined",
+      "kind": "public",
+      "param": "",
+      "return": "minecraftserver.ItemStack | undefined"
+    },
+    "swim": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Causes the simulated player to start swimming. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "swim(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "useItem": {
+      "comment": {
+        "params": {
+          "itemStack": "Item to use."
+        },
+        "remarks": [
+          "Causes the simulated player to use an item. Does not consume the item. Returns false if the item is on cooldown. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "useItem(itemStack: minecraftserver.ItemStack): boolean",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack",
+      "return": "boolean"
+    },
+    "useItemInSlot": {
+      "comment": {
+        "params": {
+          "slot": "Index of the inventory slot."
+        },
+        "remarks": [
+          "Causes the simulated player to hold and use an item in their inventory. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "useItemInSlot(slot: number): boolean",
+      "kind": "public",
+      "param": "slot: number",
+      "return": "boolean"
+    },
+    "useItemInSlotOnBlock": {
+      "comment": {
+        "params": {
+          "slot": "Index of the slot to use.",
+          "blockLocation": "Location to use the item upon.",
+          "direction": "Direction to place the specified item within.",
+          "faceLocation": "Location relative to the bottom north-west corner of the block where the item is placed."
+        },
+        "remarks": [
+          "Causes the simulated player to use an item in their inventory on a block. The block at the specified block location must be solid. Returns true if the item was used. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "useItemInSlotOnBlock(slot: number,blockLocation: minecraftserver.Vector3,direction?: minecraftserver.Direction,faceLocation?: minecraftserver.Vector3,): boolean",
+      "kind": "public",
+      "param": "slot: number,blockLocation: minecraftserver.Vector3,direction?: minecraftserver.Direction,faceLocation?: minecraftserver.Vector3,",
+      "return": "boolean"
+    },
+    "useItemOnBlock": {
+      "comment": {
+        "params": {
+          "itemStack": "Item to use.",
+          "blockLocation": "Location to use the item upon.",
+          "direction": "Direction to place the specified item within.",
+          "faceLocation": "Location relative to the bottom north-west corner of the block where the item is placed."
+        },
+        "remarks": [
+          "Causes the simulated player to use an item on a block. The block at the specified block location must be solid. Returns true if the item was used. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "useItemOnBlock(itemStack: minecraftserver.ItemStack,blockLocation: minecraftserver.Vector3,direction?: minecraftserver.Direction,faceLocation?: minecraftserver.Vector3,): boolean",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack,blockLocation: minecraftserver.Vector3,direction?: minecraftserver.Direction,faceLocation?: minecraftserver.Vector3,",
+      "return": "boolean"
+    },
+    "camera": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "The player's Camera."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly camera: Camera",
+      "kind": "readonly",
+      "param": "",
+      "return": "Camera"
+    },
+    "isEmoting": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "If true, the player is currently emoting."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isEmoting: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isFlying": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the player is flying. For example, in Creative or Spectator mode."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isFlying: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isGliding": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the player is gliding with Elytra."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isGliding: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isJumping": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the player is jumping. This will remain true while the player is holding the jump action."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isJumping: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "level": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "The current overall level for the player, based on their experience."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly level: number",
+      "kind": "readonly",
+      "param": "",
+      "return": "number"
+    },
+    "name": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Name of the player."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly name: string",
+      "kind": "readonly",
+      "param": "",
+      "return": "string"
+    },
+    "onScreenDisplay": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Contains methods for manipulating the on-screen display of a Player."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly onScreenDisplay: ScreenDisplay",
+      "kind": "readonly",
+      "param": "",
+      "return": "ScreenDisplay"
+    },
+    "selectedSlot": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Manages the selected slot in the player's hotbar. This property can't be edited in read-only mode."
+        ],
+        "beta": ""
+      },
+      "match": "selectedSlot: number",
+      "kind": "public",
+      "param": "",
+      "return": "number"
+    },
+    "totalXpNeededForNextLevel": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "The overall total set of experience needed to achieve the next level for a player."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly totalXpNeededForNextLevel: number",
+      "kind": "readonly",
+      "param": "",
+      "return": "number"
+    },
+    "xpEarnedAtCurrentLevel": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "The current set of experience achieved for the player."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly xpEarnedAtCurrentLevel: number",
+      "kind": "readonly",
+      "param": "",
+      "return": "number"
+    },
+    "addExperience": {
+      "comment": {
+        "params": {
+          "amount": "Amount of experience to add. Note that this can be negative. Min/max bounds at -2^24 ~ 2^24"
+        },
+        "remarks": [
+          "Adds/removes experience to/from the Player and returns the current experience of the Player. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns the current experience of the Player.",
+        "throws": "function can throw errors."
+      },
+      "match": "addExperience(amount: number): number",
+      "kind": "public",
+      "param": "amount: number",
+      "return": "number"
+    },
+    "addLevels": {
+      "comment": {
+        "params": {
+          "amount": "Amount to add to the player. Min/max bounds at -2^24 ~ 2^24"
+        },
+        "remarks": [
+          "Adds/removes level to/from the Player and returns the current level of the Player. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns the current level of the Player.",
+        "throws": "function can throw errors."
+      },
+      "match": "addLevels(amount: number): number",
+      "kind": "public",
+      "param": "amount: number",
+      "return": "number"
+    },
+    "getItemCooldown": {
+      "comment": {
+        "params": {
+          "itemCategory": "Specifies the cooldown category to retrieve the current cooldown for."
+        },
+        "remarks": [
+          "Gets the current item cooldown time for a particular cooldown category."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "getItemCooldown(itemCategory: string): number",
+      "kind": "public",
+      "param": "itemCategory: string",
+      "return": "number"
+    },
+    "getSpawnPoint": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Gets the current spawn point of the player."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getSpawnPoint(): DimensionLocation | undefined",
+      "kind": "public",
+      "param": "",
+      "return": "DimensionLocation | undefined"
+    },
+    "getTotalXp": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Gets the total experience of the Player."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getTotalXp(): number",
+      "kind": "public",
+      "param": "",
+      "return": "number"
+    },
+    "isOp": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns true if this player has operator-level permissions."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "isOp(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "playMusic": {
+      "comment": {
+        "params": {
+          "trackId": "Identifier of the music track to play.",
+          "musicOptions": "Additional options for the music track."
+        },
+        "remarks": [
+          "Plays a music track that only this particular player can hear. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "playMusic(trackId: string, musicOptions?: MusicOptions): void",
+      "kind": "public",
+      "param": "trackId: string, musicOptions?: MusicOptions",
+      "return": "void"
+    },
+    "playSound": {
+      "comment": {
+        "params": {
+          "soundOptions": "Additional optional options for the sound."
+        },
+        "remarks": [
+          "Plays a sound that only this particular player can hear. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript let players = mc.world.getPlayers(); const musicOptions: mc.MusicOptions = { fade: 0.5, loop: true, volume: 1.0, }; mc.world.playMusic(\"music.menu\", musicOptions); const worldSoundOptions: mc.WorldSoundOptions = { pitch: 0.5, volume: 4.0, }; mc.world.playSound(\"ambient.weather.thunder\", targetLocation, worldSoundOptions); const playerSoundOptions: mc.PlayerSoundOptions = { pitch: 1.0, volume: 1.0, }; players[0].playSound(\"bucket.fill_water\", playerSoundOptions); ```"
+      },
+      "match": "playSound(soundId: string, soundOptions?: PlayerSoundOptions): void",
+      "kind": "public",
+      "param": "soundId: string, soundOptions?: PlayerSoundOptions",
+      "return": "void"
+    },
+    "postClientMessage": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "This is an internal-facing method for posting a system message to downstream clients. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "postClientMessage(id: string, value: string): void",
+      "kind": "public",
+      "param": "id: string, value: string",
+      "return": "void"
+    },
+    "queueMusic": {
+      "comment": {
+        "params": {
+          "trackId": "Identifier of the music track to play.",
+          "musicOptions": "Additional options for the music track."
+        },
+        "remarks": [
+          "Queues an additional music track that only this particular player can hear. If a track is not playing, a music track will play. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "An error will be thrown if volume is less than 0.0. An error will be thrown if fade is less than 0.0."
+      },
+      "match": "queueMusic(trackId: string, musicOptions?: MusicOptions): void",
+      "kind": "public",
+      "param": "trackId: string, musicOptions?: MusicOptions",
+      "return": "void"
+    },
+    "resetLevel": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Resets the level of the player. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "resetLevel(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "sendMessage": {
+      "comment": {
+        "params": {
+          "message": "The message to be displayed."
+        },
+        "remarks": [
+          "Sends a message to the player."
+        ],
+        "throws": "This method can throw if the provided {@link RawMessage} is in an invalid format. For example, if an empty `name` string is provided to `score`.",
+        "example": "```typescript // Displays \"First or Second\" const rawMessage = { translate: \"accessibility.list.or.two\", with: [\"First\", \"Second\"] }; player.sendMessage(rawMessage); ```"
+      },
+      "match": "sendMessage(message: (RawMessage | string)[] | RawMessage | string): void",
+      "kind": "public",
+      "param": "message: (RawMessage | string)[] | RawMessage | string",
+      "return": "void"
+    },
+    "setOp": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Will change the specified players permissions, and whether they are operator or not. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "setOp(isOp: boolean): void",
+      "kind": "public",
+      "param": "isOp: boolean",
+      "return": "void"
+    },
+    "setSpawnPoint": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the current starting spawn point for this particular player. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link Error} {@link LocationOutOfWorldBoundariesError}"
+      },
+      "match": "setSpawnPoint(spawnPoint?: DimensionLocation): void",
+      "kind": "public",
+      "param": "spawnPoint?: DimensionLocation",
+      "return": "void"
+    },
+    "startItemCooldown": {
+      "comment": {
+        "params": {
+          "itemCategory": "Specifies the cooldown category to retrieve the current cooldown for.",
+          "tickDuration": "Duration in ticks of the item cooldown."
+        },
+        "remarks": [
+          "Sets the item cooldown time for a particular cooldown category. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "startItemCooldown(itemCategory: string, tickDuration: number): void",
+      "kind": "public",
+      "param": "itemCategory: string, tickDuration: number",
+      "return": "void"
+    },
+    "stopMusic": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Stops any music tracks from playing for this particular player. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "stopMusic(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "dimension": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Dimension that the entity is currently within."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly dimension: Dimension",
+      "kind": "readonly",
+      "param": "",
+      "return": "Dimension"
+    },
+    "fallDistance": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "The distance an entity has fallen. The value is reset when the entity is teleported. The value is always 1 when gliding with Elytra."
+        ],
+        "beta": "",
+        "throws": "property can throw when used."
+      },
+      "match": "readonly fallDistance: number",
+      "kind": "readonly",
+      "param": "",
+      "return": "number"
+    },
+    "id": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Unique identifier of the entity. This identifier is intended to be consistent across loads of a world instance. No meaning should be inferred from the value and structure of this unique identifier - do not parse or interpret it. This property is accessible even if {@link Entity.isValid} is false."
+        ]
+      },
+      "match": "readonly id: string",
+      "kind": "readonly",
+      "param": "",
+      "return": "string"
+    },
+    "isClimbing": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity is touching a climbable block. For example, a player next to a ladder or a spider next to a stone wall."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isClimbing: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isFalling": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity has a fall distance greater than 0, or greater than 1 while gliding."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isFalling: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isInWater": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether any part of the entity is inside a water block."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isInWater: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isOnGround": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity is on top of a solid block."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isOnGround: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isSleeping": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "If true, the entity is currently sleeping."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isSleeping: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "isSneaking": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity is sneaking - that is, moving more slowly and more quietly. This property can't be edited in read-only mode."
+        ]
+      },
+      "match": "isSneaking: boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "isSwimming": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity is in the swimming state. For example, a player using the swim action or a fish in water."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly isSwimming: boolean",
+      "kind": "readonly",
+      "param": "",
+      "return": "boolean"
+    },
+    "lifetimeState": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Whether the entity reference that you have is valid or not. For example, an entity may be unloaded if it moves into a chunk that is unloaded, but may be reactivated if the chunk it is within gets reloaded."
+        ],
+        "beta": ""
+      },
+      "match": "readonly lifetimeState: EntityLifetimeState",
+      "kind": "readonly",
+      "param": "",
+      "return": "EntityLifetimeState"
+    },
+    "location": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Current location of the entity."
+        ],
+        "throws": "property can throw when used."
+      },
+      "match": "readonly location: Vector3",
+      "kind": "readonly",
+      "param": "",
+      "return": "Vector3"
+    },
+    "nameTag": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Given name of the entity. This property can't be edited in read-only mode."
+        ]
+      },
+      "match": "nameTag: string",
+      "kind": "public",
+      "param": "",
+      "return": "string"
+    },
+    "typeId": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns a scoreboard identity that represents this entity. Will remain valid when the entity is killed."
+        ]
+      },
+      "match": "readonly typeId: string",
+      "kind": "readonly",
+      "param": "",
+      "return": "string"
+    },
+    "addEffect": {
+      "comment": {
+        "params": {
+          "effectType": "Type of effect to add to the entity.",
+          "duration": "Amount of time, in ticks, for the effect to apply. There are 20 ticks per second. Use {@link TicksPerSecond} constant to convert between ticks and seconds. The value must be within the range [0, 20000000].",
+          "options": "Additional options for the effect."
+        },
+        "remarks": [
+          "Adds or updates an effect, like poison, to the entity. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns nothing if the effect was added or updated successfully. This can throw an error if the duration or amplifier are outside of the valid ranges, or if the effect does not exist.",
+        "throws": "function can throw errors.",
+        "example": "```typescript const overworld = mc.world.getDimension(\"overworld\"); const fox = overworld.spawnEntity(\"minecraft:fox\", { x: targetLocation.x + 1, y: targetLocation.y + 2, z: targetLocation.z + 3, }); fox.addEffect(\"speed\", 10, { amplifier: 2, }); log(\"Created a fox.\"); const wolf = overworld.spawnEntity(\"minecraft:wolf\", { x: targetLocation.x + 4, y: targetLocation.y + 2, z: targetLocation.z + 3, }); wolf.addEffect(\"slowness\", 10, { amplifier: 2, }); wolf.isSneaking = true; log(\"Created a sneaking wolf.\", 1); ```"
+      },
+      "match": "addEffect(effectType: EffectType | string, duration: number, options?: EntityEffectOptions): void",
+      "kind": "public",
+      "param": "effectType: EffectType | string, duration: number, options?: EntityEffectOptions",
+      "return": "void"
+    },
+    "addTag": {
+      "comment": {
+        "params": {
+          "tag": "Content of the tag to add. The tag must be less than 256 characters."
+        },
+        "remarks": [
+          "Adds a specified tag to an entity. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns true if the tag was added successfully. This can fail if the tag already exists on the entity.",
+        "throws": "function can throw errors.",
+        "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
+      },
+      "match": "addTag(tag: string): boolean",
+      "kind": "public",
+      "param": "tag: string",
+      "return": "boolean"
+    },
+    "applyDamage": {
+      "comment": {
+        "params": {
+          "amount": "Amount of damage to apply.",
+          "options": "Additional options about the source of damage, which may add additional effects or spur additional behaviors on this entity."
+        },
+        "remarks": [
+          "Applies a set of damage to an entity. This function can't be called in read-only mode."
+        ],
+        "returns": "Whether the entity takes any damage. This can return false if the entity is invulnerable or if the damage applied is less than or equal to 0.",
+        "throws": "function can throw errors.",
+        "example": "```typescript const skelly = overworld.spawnEntity(\"minecraft:skeleton\", targetLocation); skelly.applyDamage(19); // skeletons have max damage of 20 so this is a near-death skeleton mc.system.runTimeout(() => { let health = skelly.getComponent(\"health\") as mc.EntityHealthComponent; log(\"Skeleton health before heal: \" + health.currentValue); health.resetToMaxValue(); log(\"Skeleton health after heal: \" + health.currentValue); }, 20); ```"
+      },
+      "match": "applyDamage(amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions): boolean",
+      "kind": "public",
+      "param": "amount: number, options?: EntityApplyDamageByProjectileOptions | EntityApplyDamageOptions",
+      "return": "boolean"
+    },
+    "applyImpulse": {
+      "comment": {
+        "params": {
+          "vector": "Impulse vector."
+        },
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
+      },
+      "match": "applyImpulse(vector: Vector3): void",
+      "kind": "public",
+      "param": "vector: Vector3",
+      "return": "void"
+    },
+    "applyKnockback": {
+      "comment": {
+        "params": {
+          "directionX": "X direction in horizontal plane.",
+          "directionZ": "Z direction in horizontal plane.",
+          "horizontalStrength": "Knockback strength for the horizontal vector.",
+          "verticalStrength": "Knockback strength for the vertical vector."
+        },
+        "remarks": [
+          "Applies impulse vector to the current velocity of the entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { overworld.spawnEntity(mobs[i % mobs.length], targetLocation); } let eqo: mc.EntityQueryOptions = { type: \"skeleton\", }; for (let entity of overworld.getEntities(eqo)) { entity.applyKnockback(0, 0, 0, 1); } ```"
+      },
+      "match": "applyKnockback(directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number): void",
+      "kind": "public",
+      "param": "directionX: number, directionZ: number, horizontalStrength: number, verticalStrength: number",
+      "return": "void"
+    },
+    "clearDynamicProperties": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Clears all dynamic properties that have been set on this entity."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "clearDynamicProperties(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "clearVelocity": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Sets the current velocity of the Entity to zero. Note that this method may not have an impact on Players. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript const zombie = overworld.spawnEntity(\"minecraft:zombie\", targetLocation); zombie.clearVelocity(); // throw the zombie up in the air zombie.applyImpulse({ x: 0, y: 0.5, z: 0 }); ```"
+      },
+      "match": "clearVelocity(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "extinguishFire": {
+      "comment": {
+        "params": {
+          "useEffects": "Whether to show any visual effects connected to the extinguishing."
+        },
+        "remarks": [
+          "Extinguishes the fire if the entity is on fire. Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "returns": "Returns whether the entity was on fire.",
+        "throws": "function can throw errors.",
+        "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
+      },
+      "match": "extinguishFire(useEffects?: boolean): boolean",
+      "kind": "public",
+      "param": "useEffects?: boolean",
+      "return": "boolean"
+    },
+    "getBlockFromViewDirection": {
+      "comment": {
+        "params": {
+          "options": "Additional configuration options for the ray cast."
+        },
+        "remarks": [
+          "Returns the first intersecting block from the direction that this entity is looking at."
+        ],
+        "returns": "Returns the first intersecting block from the direction that this entity is looking at.",
+        "throws": "function can throw errors."
+      },
+      "match": "getBlockFromViewDirection(options?: BlockRaycastOptions): BlockRaycastHit | undefined",
+      "kind": "public",
+      "param": "options?: BlockRaycastOptions",
+      "return": "BlockRaycastHit | undefined"
+    },
+    "getComponents": {
+      "comment": {
+        "params": {
+          "componentId": "The identifier of the component (e.g., 'minecraft:health'). If no namespace prefix is specified, 'minecraft:' is assumed. Available component IDs can be found as part of the {@link EntityComponentTypes} enum."
+        },
+        "remarks": [
+          "Gets a component (that represents additional capabilities) for an entity."
+        ],
+        "returns": "Returns the component if it exists on the entity, otherwise undefined."
+      },
+      "match": "getComponents(): EntityComponent[]",
+      "kind": "public",
+      "param": "",
+      "return": "EntityComponent[]"
+    },
+    "getDynamicProperty": {
+      "comment": {
+        "params": {
+          "identifier": "The property identifier."
+        },
+        "remarks": [
+          "Returns a property value."
+        ],
+        "returns": "Returns the value for the property, or undefined if the property has not been set.",
+        "throws": "function can throw errors."
+      },
+      "match": "getDynamicProperty(identifier: string): boolean | number | string | Vector3 | undefined",
+      "kind": "public",
+      "param": "identifier: string",
+      "return": "boolean | number | string | Vector3 | undefined"
+    },
+    "getDynamicPropertyIds": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the available set of dynamic property identifiers that have been used on this entity."
+        ],
+        "returns": "A string array of the dynamic properties set on this entity.",
+        "throws": "function can throw errors."
+      },
+      "match": "getDynamicPropertyIds(): string[]",
+      "kind": "public",
+      "param": "",
+      "return": "string[]"
+    },
+    "getDynamicPropertyTotalByteCount": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the total size, in bytes, of all the dynamic properties that are currently stored for this entity.  This can be useful for diagnosing performance warning signs - if, for example, an entity has many megabytes of associated dynamic properties, it may be slow to load on various devices."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "getDynamicPropertyTotalByteCount(): number",
+      "kind": "public",
+      "param": "",
+      "return": "number"
+    },
+    "getEffect": {
+      "comment": {
+        "params": {
+          "effectType": "The effect identifier."
+        },
+        "remarks": [
+          "Returns the effect for the specified EffectType on the entity, undefined if the effect is not present, or throws an error if the effect does not exist."
+        ],
+        "returns": "Effect object for the specified effect, undefined if the effect is not present, or throws an error if the effect does not exist.",
+        "throws": "function can throw errors."
+      },
+      "match": "getEffect(effectType: EffectType | string): Effect | undefined",
+      "kind": "public",
+      "param": "effectType: EffectType | string",
+      "return": "Effect | undefined"
+    },
+    "getEffects": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns a set of effects applied to this entity."
+        ],
+        "returns": "List of effects.",
+        "throws": "function can throw errors."
+      },
+      "match": "getEffects(): Effect[]",
+      "kind": "public",
+      "param": "",
+      "return": "Effect[]"
+    },
+    "getEntitiesFromViewDirection": {
+      "comment": {
+        "params": {
+          "options": "Additional configuration options for the ray cast."
+        },
+        "remarks": [
+          "Gets the entities that this entity is looking at by performing a ray cast from the view of this entity."
+        ],
+        "returns": "Returns a set of entities from the direction that this entity is looking at.",
+        "throws": "function can throw errors."
+      },
+      "match": "getEntitiesFromViewDirection(options?: EntityRaycastOptions): EntityRaycastHit[]",
+      "kind": "public",
+      "param": "options?: EntityRaycastOptions",
+      "return": "EntityRaycastHit[]"
+    },
+    "getHeadLocation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the current location of the head component of this entity."
+        ],
+        "returns": "Returns the current location of the head component of this entity.",
+        "throws": "function can throw errors."
+      },
+      "match": "getHeadLocation(): Vector3",
+      "kind": "public",
+      "param": "",
+      "return": "Vector3"
+    },
+    "getProperty": {
+      "comment": {
+        "params": {
+          "identifier": "The entity Property identifier."
+        },
+        "remarks": [
+          "Gets an entity Property value. If the property was set using the setProperty function within the same tick, the updated value will not be reflected until the subsequent tick."
+        ],
+        "returns": "Returns the current property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
+        "throws": "Throws if the entity is invalid."
+      },
+      "match": "getProperty(identifier: string): boolean | number | string | undefined",
+      "kind": "public",
+      "param": "identifier: string",
+      "return": "boolean | number | string | undefined"
+    },
+    "getRotation": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the current rotation component of this entity."
+        ],
+        "returns": "Returns a Vec2 containing the rotation of this entity (in degrees).",
+        "throws": "function can throw errors."
+      },
+      "match": "getRotation(): Vector2",
+      "kind": "public",
+      "param": "",
+      "return": "Vector2"
+    },
+    "getTags": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          ""
+        ],
+        "returns": "Returns all tags associated with an entity.",
+        "throws": "function can throw errors."
+      },
+      "match": "getTags(): string[]",
+      "kind": "public",
+      "param": "",
+      "return": "string[]"
+    },
+    "getVelocity": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the current velocity vector of the entity."
+        ],
+        "returns": "Returns the current velocity vector of the entity.",
+        "throws": "function can throw errors.",
+        "example": "```typescript const fireworkRocket = overworld.spawnEntity(\"minecraft:fireworks_rocket\", targetLocation); mc.system.runTimeout(() => { let velocity = fireworkRocket.getVelocity(); log(\"Velocity of firework is: (x: \" + velocity.x + \", y:\" + velocity.y + \", z:\" + velocity.z + \")\"); }, 5); ```"
+      },
+      "match": "getVelocity(): Vector3",
+      "kind": "public",
+      "param": "",
+      "return": "Vector3"
+    },
+    "getViewDirection": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the current view direction of the entity."
+        ],
+        "returns": "Returns the current view direction of the entity.",
+        "throws": "function can throw errors."
+      },
+      "match": "getViewDirection(): Vector3",
+      "kind": "public",
+      "param": "",
+      "return": "Vector3"
+    },
+    "hasComponent": {
+      "comment": {
+        "params": {
+          "componentId": "The identifier of the component (e.g., 'minecraft:rideable') to retrieve. If no namespace prefix is specified, 'minecraft:' is assumed."
+        },
+        "remarks": [
+          "Returns true if the specified component is present on this entity."
+        ],
+        "returns": "Returns true if the specified component is present on this entity."
+      },
+      "match": "hasComponent(componentId: string): boolean",
+      "kind": "public",
+      "param": "componentId: string",
+      "return": "boolean"
+    },
+    "hasTag": {
+      "comment": {
+        "params": {
+          "tag": "Identifier of the tag to test for."
+        },
+        "remarks": [
+          "Returns whether an entity has a particular tag."
+        ],
+        "returns": "Returns whether an entity has a particular tag.",
+        "throws": "function can throw errors."
+      },
+      "match": "hasTag(tag: string): boolean",
+      "kind": "public",
+      "param": "tag: string",
+      "return": "boolean"
+    },
+    "isValid": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns whether the entity can be manipulated by script. A Player is considered valid when it's EntityLifetimeState is set to Loaded."
+        ],
+        "returns": "Whether the entity is valid."
+      },
+      "match": "isValid(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "kill": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Kills this entity. The entity will drop loot as normal. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns true if entity can be killed (even if it is already dead), otherwise it returns false.",
+        "throws": "function can throw errors.",
+        "example": "```typescript let mobs = [\"creeper\", \"skeleton\", \"sheep\"]; // create some sample mob data for (let i = 0; i < 10; i++) { let mobTypeId = mobs[i % mobs.length]; let entity = overworld.spawnEntity(mobTypeId, targetLocation); entity.addTag(\"mobparty.\" + mobTypeId); } let eqo: mc.EntityQueryOptions = { tags: [\"mobparty.skeleton\"], }; for (let entity of overworld.getEntities(eqo)) { entity.kill(); } ```"
+      },
+      "match": "kill(): boolean",
+      "kind": "public",
+      "param": "",
+      "return": "boolean"
+    },
+    "matches": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Matches the entity against the passed in options. Uses the location of the entity for matching if the location is not specified in the passed in EntityQueryOptions."
+        ],
+        "returns": "Returns true if the entity matches the criteria in the passed in EntityQueryOptions, otherwise it returns false.",
+        "throws": "function can throw errors."
+      },
+      "match": "matches(options: EntityQueryOptions): boolean",
+      "kind": "public",
+      "param": "options: EntityQueryOptions",
+      "return": "boolean"
+    },
+    "playAnimation": {
+      "comment": {
+        "params": {
+          "animationName": "The animation identifier. e.g. animation.creeper.swelling",
+          "options": "Additional options to control the playback and transitions of the animation."
+        },
+        "remarks": [
+          "Cause the entity to play the given animation. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "throws": "function can throw errors."
+      },
+      "match": "playAnimation(animationName: string, options?: PlayAnimationOptions): void",
+      "kind": "public",
+      "param": "animationName: string, options?: PlayAnimationOptions",
+      "return": "void"
+    },
+    "remove": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Immediately removes the entity from the world. The removed entity will not perform a death animation or drop loot upon removal. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "remove(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "removeEffect": {
+      "comment": {
+        "params": {
+          "effectType": "The effect identifier."
+        },
+        "remarks": [
+          "Removes the specified EffectType on the entity, or returns false if the effect is not present. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns true if the effect has been removed. Returns false if the effect is not found or does not exist.",
+        "throws": "function can throw errors."
+      },
+      "match": "removeEffect(effectType: EffectType | string): boolean",
+      "kind": "public",
+      "param": "effectType: EffectType | string",
+      "return": "boolean"
+    },
+    "removeTag": {
+      "comment": {
+        "params": {
+          "tag": "Content of the tag to remove."
+        },
+        "remarks": [
+          "Removes a specified tag from an entity. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns whether the tag existed on the entity.",
+        "throws": "function can throw errors."
+      },
+      "match": "removeTag(tag: string): boolean",
+      "kind": "public",
+      "param": "tag: string",
+      "return": "boolean"
+    },
+    "resetProperty": {
+      "comment": {
+        "params": {
+          "identifier": "The Entity Property identifier."
+        },
+        "remarks": [
+          "Resets an Entity Property back to its default value, as specified in the Entity's definition. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns the default property value. For enum properties, a string is returned. For float and int properties, a number is returned. For undefined properties, undefined is returned.",
+        "throws": "Throws if the entity is invalid. {@link minecraftcommon.EngineError} {@link Error}"
+      },
+      "match": "resetProperty(identifier: string): boolean | number | string",
+      "kind": "public",
+      "param": "identifier: string",
+      "return": "boolean | number | string"
+    },
+    "runCommand": {
+      "comment": {
+        "params": {
+          "commandString": "The command string. Note: This should not include a leading forward slash."
+        },
+        "remarks": [
+          "Runs a synchronous command on the entity. This function can't be called in read-only mode."
+        ],
+        "returns": "A command result containing whether the command was successful.",
+        "throws": "function can throw errors. {@link CommandError} {@link Error}"
+      },
+      "match": "runCommand(commandString: string): CommandResult",
+      "kind": "public",
+      "param": "commandString: string",
+      "return": "CommandResult"
+    },
+    "runCommandAsync": {
+      "comment": {
+        "params": {
+          "commandString": "Command to run. Note that command strings should not start with slash."
+        },
+        "remarks": [
+          "Runs a particular command asynchronously from the context of this entity. Note that there is a maximum queue of 128 asynchronous commands that can be run in a given tick."
+        ],
+        "returns": "For commands that return data, returns a JSON structure with command response values.",
+        "throws": "function can throw errors."
+      },
+      "match": "runCommandAsync(commandString: string): Promise<CommandResult>",
+      "kind": "public",
+      "param": "commandString: string",
+      "return": "Promise<CommandResult>"
+    },
+    "setDynamicProperty": {
+      "comment": {
+        "params": {
+          "identifier": "The property identifier.",
+          "value": "Data value of the property to set."
+        },
+        "remarks": [
+          "Sets a specified property to a value."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "setDynamicProperty(identifier: string, value?: boolean | number | string | Vector3): void",
+      "kind": "public",
+      "param": "identifier: string, value?: boolean | number | string | Vector3",
+      "return": "void"
+    },
+    "setOnFire": {
+      "comment": {
+        "params": {
+          "seconds": "Length of time to set the entity on fire.",
+          "useEffects": "Whether side-effects should be applied (e.g. thawing freeze) and other conditions such as rain or fire protection should be taken into consideration."
+        },
+        "remarks": [
+          "Sets an entity on fire (if it is not in water or rain). Note that you can call getComponent('minecraft:onfire') and, if present, the entity is on fire. This function can't be called in read-only mode."
+        ],
+        "beta": "",
+        "returns": "Whether the entity was set on fire. This can fail if seconds is less than or equal to zero, the entity is wet or the entity is immune to fire.",
+        "throws": "function can throw errors.",
+        "example": "```typescript const cow = overworld.spawnEntity(\"minecraft:cow\", targetLocation); mc.system.runTimeout(() => { cow.teleport( { x: targetLocation.x + 2, y: targetLocation.y + 2, z: targetLocation.z + 2 }, { facingLocation: targetLocation, } ); }, 20); ```"
+      },
+      "match": "setOnFire(seconds: number, useEffects?: boolean): boolean",
+      "kind": "public",
+      "param": "seconds: number, useEffects?: boolean",
+      "return": "boolean"
+    },
+    "setProperty": {
+      "comment": {
+        "params": {
+          "identifier": "The Entity Property identifier.",
+          "value": "The property value. The provided type must be compatible with the type specified in the entity's definition."
+        },
+        "remarks": [
+          "Sets an Entity Property to the provided value. This property change is not applied until the next tick. This function can't be called in read-only mode."
+        ],
+        "throws": "Throws if the entity is invalid. Throws if an invalid identifier is provided. Throws if the provided value type does not match the property type. Throws if the provided value is outside the expected range (int, float properties). Throws if the provided string value does not match the set of accepted enum values (enum properties"
+      },
+      "match": "setProperty(identifier: string, value: boolean | number | string): void",
+      "kind": "public",
+      "param": "identifier: string, value: boolean | number | string",
+      "return": "void"
+    },
+    "setRotation": {
+      "comment": {
+        "params": {
+          "rotation": "The x and y rotation of the entity (in degrees). For most mobs, the x rotation controls the head tilt and the y rotation controls the body rotation."
+        },
+        "remarks": [
+          "Sets the main rotation of the entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "setRotation(rotation: Vector2): void",
+      "kind": "public",
+      "param": "rotation: Vector2",
+      "return": "void"
+    },
+    "teleport": {
+      "comment": {
+        "params": {
+          "location": "New location for the entity.",
+          "teleportOptions": "Options regarding the teleport operation."
+        },
+        "remarks": [
+          "Teleports the selected entity to a new location This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript const pig = overworld.spawnEntity(\"minecraft:pig\", targetLocation); let inc = 1; let runId = mc.system.runInterval(() => { pig.teleport( { x: targetLocation.x + inc / 4, y: targetLocation.y + inc / 4, z: targetLocation.z + inc / 4 }, { facingLocation: targetLocation, } ); if (inc > 100) { mc.system.clearRun(runId); } inc++; }, 4); ```"
+      },
+      "match": "teleport(location: Vector3, teleportOptions?: TeleportOptions): void",
+      "kind": "public",
+      "param": "location: Vector3, teleportOptions?: TeleportOptions",
+      "return": "void"
+    },
+    "triggerEvent": {
+      "comment": {
+        "params": {
+          "eventName": "Name of the entity type event to trigger. If a namespace is not specified, minecraft: is assumed."
+        },
+        "remarks": [
+          "Triggers an entity type event. For every entity, a number of events are defined in an entities' definition for key entity behaviors; for example, creepers have a minecraft:start_exploding type event. This function can't be called in read-only mode."
+        ],
+        "throws": "If the event is not defined in the definition of the entity, an error will be thrown.",
+        "example": "```typescript const creeper = overworld.spawnEntity(\"minecraft:creeper\", targetLocation); creeper.triggerEvent(\"minecraft:start_exploding_forced\"); ```"
+      },
+      "match": "triggerEvent(eventName: string): void",
+      "kind": "public",
+      "param": "eventName: string",
+      "return": "void"
+    },
+    "tryTeleport": {
+      "comment": {
+        "params": {
+          "location": "Location to teleport the entity to.",
+          "teleportOptions": "Options regarding the teleport operation."
+        },
+        "remarks": [
+          "Attempts to try a teleport, but may not complete the teleport operation (for example, if there are blocks at the destination.) This function can't be called in read-only mode."
+        ],
+        "returns": "Returns whether the teleport succeeded. This can fail if the destination chunk is unloaded or if the teleport would result in intersecting with blocks.",
+        "throws": "function can throw errors."
+      },
+      "match": "tryTeleport(location: Vector3, teleportOptions?: TeleportOptions): boolean",
+      "kind": "public",
+      "param": "location: Vector3, teleportOptions?: TeleportOptions",
+      "return": "boolean"
+    }
+  },
+  "Tags": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "Tags"
+    },
+    "suiteAll": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Indicates that the tagged test should be a part of all suites."
+        ]
+      },
+      "match": "static readonly suiteAll = 'suite:all'",
+      "kind": "static readonly",
+      "param": "",
+      "return": "'suite:all'"
+    },
+    "suiteDebug": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Indicates that the tagged test should be a part of an internal (debug) test suite."
+        ]
+      },
+      "match": "static readonly suiteDebug = 'suite:debug'",
+      "kind": "static readonly",
+      "param": "",
+      "return": "'suite:debug'"
+    },
+    "suiteDefault": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Indicates that the tagged test should be a part of the default test suite."
+        ]
+      },
+      "match": "static readonly suiteDefault = 'suite:default'",
+      "kind": "static readonly",
+      "param": "",
+      "return": "'suite:default'"
+    },
+    "suiteDisabled": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Indicates that the tagged test should be a part of a suite of disabled tests."
+        ]
+      },
+      "match": "static readonly suiteDisabled = 'suite:disabled'",
+      "kind": "static readonly",
+      "param": "",
+      "return": "'suite:disabled'"
+    },
+    "suiteNextUpdate": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "static readonly suiteNextUpdate = 'suite:nextupdate'",
+      "kind": "static readonly",
+      "param": "",
+      "return": "'suite:nextupdate'"
+    }
+  },
+  "Test": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "Test"
+    },
+    "assert": {
+      "comment": {
+        "params": {
+          "condition": "Expression of the condition to evaluate.",
+          "message": "Message that is passed if the _condition_ does not evaluate to true."
+        },
+        "remarks": [
+          "Tests that the condition specified in _condition_ is true. If not, an error with the specified _message_ is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assert(condition: boolean, message: string): void",
+      "kind": "public",
+      "param": "condition: boolean, message: string",
+      "return": "void"
+    },
+    "assertBlockPresent": {
+      "comment": {
+        "params": {
+          "blockType": "Expected block type.",
+          "blockLocation": "Location of the block to test at.",
+          "isPresent": "If true, this function tests whether a block of the specified type is at the location. If false, tests that a block of the specified type is not present."
+        },
+        "remarks": [
+          "Tests that a block of the specified type is present at the specified location. If it is not, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertBlockPresent(blockType: minecraftserver.BlockType | string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "blockType: minecraftserver.BlockType | string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,",
+      "return": "void"
+    },
+    "assertBlockState": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to test at.",
+          "callback": "Callback function that contains additional tests based on the block at the specified location."
+        },
+        "remarks": [
+          "Tests that a block has a particular state value at the specified location. If it does not have that state value, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.assertBlockState(buttonPos, (block) => { return block.permutation.getProperty(\"button_pressed_bit\") == 0; }); ```"
+      },
+      "match": "assertBlockState(blockLocation: minecraftserver.Vector3, callback: (arg: minecraftserver.Block) => boolean): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, callback: (arg: minecraftserver.Block) => boolean",
+      "return": "void"
+    },
+    "assertCanReachLocation": {
+      "comment": {
+        "params": {
+          "mob": "Entity that you wish to test the location against.",
+          "blockLocation": "Structure-relative location to test whether the specified mob can reach.",
+          "canReach": "If true, tests whether the mob can reach the location. If false, tests whether the mob is not able to reach the location."
+        },
+        "remarks": [
+          "Tests that an entity can reach a particular location. Depending on the value of canReach, throws an exception if the condition is not met."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertCanReachLocation(mob: minecraftserver.Entity,blockLocation: minecraftserver.Vector3,canReach?: boolean,): void",
+      "kind": "public",
+      "param": "mob: minecraftserver.Entity,blockLocation: minecraftserver.Vector3,canReach?: boolean,",
+      "return": "void"
+    },
+    "assertContainerContains": {
+      "comment": {
+        "params": {
+          "itemStack": "Represents the type of item to check for. The specified container must contain at least 1 item matching the item type defined in _itemStack_.",
+          "blockLocation": "Location of the block with a container (for example, a chest) to test the contents of."
+        },
+        "remarks": [
+          "Tests that a container (e.g., a chest) at the specified location contains a specified of item stack. If not, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertContainerContains(itemStack: minecraftserver.ItemStack, blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack, blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "assertContainerEmpty": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block with a container (for example, a chest) to test is empty of contents."
+        },
+        "remarks": [
+          "Tests that a container (e.g., a chest) at the specified location is empty. If not, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertContainerEmpty(blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "assertEntityHasArmor": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Identifier of the entity to match (e.g., 'minecraft:skeleton').",
+          "armorSlot": "Container slot index to test.",
+          "armorName": "Name of the armor to look for.",
+          "armorData": "Data value integer to look for.",
+          "blockLocation": "Location of the entity with armor to test for.",
+          "hasArmor": "Whether or not the entity is expected to have the specified armor equipped."
+        },
+        "remarks": [
+          "Tests that an entity has a specific piece of armor equipped. If not, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.assertEntityHasArmor(\"minecraft:horse\", armorSlotTorso, \"diamond_horse_armor\", 0, horseLocation, true); ```"
+      },
+      "match": "assertEntityHasArmor(entityTypeIdentifier: string,armorSlot: number,armorName: string,armorData: number,blockLocation: minecraftserver.Vector3,hasArmor?: boolean,): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,armorSlot: number,armorName: string,armorData: number,blockLocation: minecraftserver.Vector3,hasArmor?: boolean,",
+      "return": "void"
+    },
+    "assertEntityHasComponent": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Identifier of the specified entity (e.g., 'minecraft:skeleton'). If the namespace is not specified, 'minecraft:' is assumed.",
+          "componentIdentifier": "Identifier of the component to check for. If the namespace is not specified, 'minecraft:' is assumed.",
+          "blockLocation": "Location of the block with a container (for example, a chest.)",
+          "hasComponent": "Determines whether to test that the component exists, or does not."
+        },
+        "remarks": [
+          "Tests that an entity has a particular component. If not, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.assertEntityHasComponent(\"minecraft:sheep\", \"minecraft:is_sheared\", entityLoc, false); ```"
+      },
+      "match": "assertEntityHasComponent(entityTypeIdentifier: string,componentIdentifier: string,blockLocation: minecraftserver.Vector3,hasComponent?: boolean,): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,componentIdentifier: string,blockLocation: minecraftserver.Vector3,hasComponent?: boolean,",
+      "return": "void"
+    },
+    "assertEntityInstancePresent": {
+      "comment": {
+        "params": {
+          "entity": "Specific entity to test for.",
+          "blockLocation": "Location of the entity to test for.",
+          "isPresent": "Whether to test that an entity is present or not present at the specified location."
+        },
+        "remarks": [
+          "Depending on the value for isPresent, tests that a particular entity is present or not present at the specified location. Depending on the value of isPresent, if the entity is found or not found, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertEntityInstancePresent(entity: minecraftserver.Entity,blockLocation: minecraftserver.Vector3,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity,blockLocation: minecraftserver.Vector3,isPresent?: boolean,",
+      "return": "void"
+    },
+    "assertEntityInstancePresentInArea": {
+      "comment": {
+        "params": {
+          "entity": "Entity instance to test for.",
+          "isPresent": "If true, this function tests whether the specified entity is present in the GameTest area. If false, tests that the specified entity is not present."
+        },
+        "remarks": [
+          "Tests that an entity instance is present within the GameTest area. If not, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript gt.register(\"StarterTests\", \"simpleMobTest\", (test: gt.Test) => { const attackerId = \"fox\"; const victimId = \"chicken\"; test.spawn(attackerId, { x: 5, y: 2, z: 5 }); let victim = test.spawn(victimId, { x: 2, y: 2, z: 2 }); test.assertEntityInstancePresentInArea(victim, true); test.succeedWhen(() => { test.assertEntityInstancePresentInArea(victim, false); }); }) .maxTicks(400) .structureName(\"gametests:mediumglass\"); ```"
+      },
+      "match": "assertEntityInstancePresentInArea(entity: minecraftserver.Entity, isPresent?: boolean): void",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity, isPresent?: boolean",
+      "return": "void"
+    },
+    "assertEntityPresent": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to test for (e.g., 'minecraft:skeleton'). If an entity namespace is not specified, 'minecraft:' is assumed.",
+          "blockLocation": "Location of the entity to test for.",
+          "searchDistance": "The distance to search for the entity from the blockLocation.",
+          "isPresent": "If true, this function tests whether an entity of the specified type is present. If false, tests that an entity of the specified type is not present."
+        },
+        "remarks": [
+          "Depending on the value of isPresent, tests for the presence or non-presence of entity of a specified type at a particular location. If the condition is not met, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertEntityPresent(entityTypeIdentifier: string,blockLocation: minecraftserver.Vector3,searchDistance?: number,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,blockLocation: minecraftserver.Vector3,searchDistance?: number,isPresent?: boolean,",
+      "return": "void"
+    },
+    "assertEntityPresentInArea": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to test for (e.g., 'minecraft:skeleton'). If an entity namespace is not specified, 'minecraft:' is assumed.",
+          "isPresent": "If true, this function tests whether an entity of the specified type is present in the GameTest area. If false, tests that an entity of the specified type is not present."
+        },
+        "remarks": [
+          "Tests that an entity of a specified type is present within the GameTest area. If not, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript gt.register(\"StarterTests\", \"simpleMobTest\", (test: gt.Test) => { const attackerId = \"fox\"; const victimId = \"chicken\"; test.spawn(attackerId, { x: 5, y: 2, z: 5 }); test.spawn(victimId, { x: 2, y: 2, z: 2 }); test.assertEntityPresentInArea(victimId, true); test.succeedWhen(() => { test.assertEntityPresentInArea(victimId, false); }); }) .maxTicks(400) .structureName(\"gametests:mediumglass\"); ```"
+      },
+      "match": "assertEntityPresentInArea(entityTypeIdentifier: string, isPresent?: boolean): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string, isPresent?: boolean",
+      "return": "void"
+    },
+    "assertEntityState": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the entity to look for.",
+          "entityTypeIdentifier": "Identifier of the entity (e.g., 'minecraft:skeleton') to look for. Note if no namespace is specified, 'minecraft:' is assumed.",
+          "callback": "Callback function where facets of the selected entity can be tested for. If this callback function returns false or no entity with the specified identifier is found, an exception is thrown."
+        },
+        "remarks": [
+          "Tests that an entity (e.g., a skeleton) at the specified location has a particular piece of data. If not, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.assertEntityState( villagerPos, \"minecraft:villager_v2\", (entity) => entity.getEffect(MinecraftEffectTypes.Regeneration).duration > 120 ); // At least 6 seconds remaining in the villagers' effect ```"
+      },
+      "match": "assertEntityState(blockLocation: minecraftserver.Vector3,entityTypeIdentifier: string,callback: (arg: minecraftserver.Entity) => boolean,): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3,entityTypeIdentifier: string,callback: (arg: minecraftserver.Entity) => boolean,",
+      "return": "void"
+    },
+    "assertEntityTouching": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to test for (e.g., 'minecraft:skeleton'). If an entity namespace is not specified, 'minecraft:' is assumed.",
+          "location": "Location of the entity to test for.",
+          "isTouching": "If true, this function tests whether the entity is touching the specified location. If false, tests that an entity is not testing the specified location."
+        },
+        "remarks": [
+          "Depending on the value of isTouching, tests that an entity of a specified type is touching or connected to another entity. If the condition is not met, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertEntityTouching(entityTypeIdentifier: string, location: minecraftserver.Vector3, isTouching?: boolean): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string, location: minecraftserver.Vector3, isTouching?: boolean",
+      "return": "void"
+    },
+    "assertIsWaterlogged": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to test for.",
+          "isWaterlogged": "Whether to test that the block at _position_ is expected to be waterlogged."
+        },
+        "remarks": [
+          "Depending on the value of isWaterlogged, tests that a block at a location contains water. If the condition is not met, an error is thrown. Pure water blocks are not considered to be waterlogged."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertIsWaterlogged(blockLocation: minecraftserver.Vector3, isWaterlogged?: boolean): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, isWaterlogged?: boolean",
+      "return": "void"
+    },
+    "assertItemEntityCountIs": {
+      "comment": {
+        "params": {
+          "itemType": "Type of item to look for.",
+          "blockLocation": "Location to search around for the specified set of items.",
+          "searchDistance": "Range, in blocks, to aggregate a count of items around. If 0, will only search the particular block at _position_.",
+          "count": "Number of items, at minimum, to look and test for."
+        },
+        "remarks": [
+          "Tests that items of a particular type and count are present within an area. If not, an error is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.assertItemEntityCountIs(Items.feather, expectedFeatherLoc, 0, 1); ```"
+      },
+      "match": "assertItemEntityCountIs(itemType: minecraftserver.ItemType | string,blockLocation: minecraftserver.Vector3,searchDistance: number,count: number,): void",
+      "kind": "public",
+      "param": "itemType: minecraftserver.ItemType | string,blockLocation: minecraftserver.Vector3,searchDistance: number,count: number,",
+      "return": "void"
+    },
+    "assertItemEntityPresent": {
+      "comment": {
+        "params": {
+          "itemType": "Type of item to test for.",
+          "blockLocation": "Location of the item entity to test for.",
+          "searchDistance": "Radius in blocks to look for the item entity.",
+          "isPresent": "If true, this function tests whether an item entity of the specified type is present. If false, tests that an item entity of the specified type is not present."
+        },
+        "remarks": [
+          "Depending on the value of isPresent, tests whether a particular item entity is present or not at a particular location. If the condition is not met, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertItemEntityPresent(itemType: minecraftserver.ItemType | string,blockLocation: minecraftserver.Vector3,searchDistance?: number,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "itemType: minecraftserver.ItemType | string,blockLocation: minecraftserver.Vector3,searchDistance?: number,isPresent?: boolean,",
+      "return": "void"
+    },
+    "assertRedstonePower": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location to test.",
+          "power": "Expected power level."
+        },
+        "remarks": [
+          "Tests that Redstone power at a particular location matches a particular value. If not, an exception is thrown."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "assertRedstonePower(blockLocation: minecraftserver.Vector3, power: number): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, power: number",
+      "return": "void"
+    },
+    "destroyBlock": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to destroy.",
+          "dropResources": "Whether to add resources exposed with a particular drop."
+        },
+        "remarks": [
+          "Destroys a block at a particular location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "destroyBlock(blockLocation: minecraftserver.Vector3, dropResources?: boolean): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, dropResources?: boolean",
+      "return": "void"
+    },
+    "fail": {
+      "comment": {
+        "params": {
+          "errorMessage": "Error message summarizing the failure condition."
+        },
+        "remarks": [
+          "Marks the current test as a failure case."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "fail(errorMessage: string): void",
+      "kind": "public",
+      "param": "errorMessage: string",
+      "return": "void"
+    },
+    "failIf": {
+      "comment": {
+        "params": {
+          "callback": "Callback function that runs. If the function runs successfully, the test is marked as a failure. Typically, this function will have .assertXyz method calls within it."
+        },
+        "remarks": [
+          "Runs the given callback. If the callback does not throw an exception, the test is marked as a failure."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "failIf(callback: () => void): void",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "void"
+    },
+    "getBlock": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to retrieve."
+        },
+        "remarks": [
+          "Gets a block at the specified block location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "getBlock(blockLocation: minecraftserver.Vector3): minecraftserver.Block",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Block"
+    },
+    "getDimension": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Gets the dimension of this test."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "getDimension(): minecraftserver.Dimension",
+      "kind": "public",
+      "param": "",
+      "return": "minecraftserver.Dimension"
+    },
+    "getFenceConnectivity": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to retrieve."
+        },
+        "remarks": [
+          "If the block at the specified block location is a fence, this returns a helper object with details on how a fence is connected. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "getFenceConnectivity(blockLocation: minecraftserver.Vector3): FenceConnectivity",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "FenceConnectivity"
+    },
+    "getSculkSpreader": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location of the block to retrieve a sculk spreader from."
+        },
+        "remarks": [
+          "Retrieves a sculk spreader object that can be used to control and manage how sculk grows from a block. This function can't be called in read-only mode."
+        ],
+        "returns": "Returns the SculkSpreader or undefined if no SculkSpreader is present on the block.",
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "getSculkSpreader(blockLocation: minecraftserver.Vector3): SculkSpreader | undefined",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "SculkSpreader | undefined"
+    },
+    "getTestDirection": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Returns the direction of the current test - see the {@link"
+        ],
+        "minecraft/server.Direction}": "for more information on potential values (north, east, south, west - values 2-5)."
+      },
+      "match": "getTestDirection(): minecraftserver.Direction",
+      "kind": "public",
+      "param": "",
+      "return": "minecraftserver.Direction"
+    },
+    "idle": {
+      "comment": {
+        "params": {
+          "tickDelay": "Amount of time to wait, in ticks."
+        },
+        "remarks": [
+          "This asynchronous function will wait for the specified time in ticks before continuing execution. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "idle(tickDelay: number): Promise<void>",
+      "kind": "public",
+      "param": "tickDelay: number",
+      "return": "Promise<void>"
+    },
+    "killAllEntities": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Kills all entities within the GameTest structure. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "killAllEntities(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "onPlayerJump": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "onPlayerJump(mob: minecraftserver.Entity, jumpAmount: number): void",
+      "kind": "public",
+      "param": "mob: minecraftserver.Entity, jumpAmount: number",
+      "return": "void"
+    },
+    "pressButton": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location to push the button at."
+        },
+        "remarks": [
+          "Presses a button at a block location. This function can't be called in read-only mode."
+        ],
+        "throws": "Will throw an error if a button is not present at the specified position. {@link GameTestError}"
+      },
+      "match": "pressButton(blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "print": {
+      "comment": {
+        "params": {
+          "text": "Message to display."
+        },
+        "remarks": [
+          "Displays the specified message to all players. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "print(text: string): void",
+      "kind": "public",
+      "param": "text: string",
+      "return": "void"
+    },
+    "pullLever": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location to pull the lever at."
+        },
+        "remarks": [
+          "Pulls a lever at a block location. This function can't be called in read-only mode."
+        ],
+        "throws": "Will throw an error if a lever is not present at the specified position. {@link GameTestError}"
+      },
+      "match": "pullLever(blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "pulseRedstone": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location to pulse Redstone at.",
+          "duration": "Number of ticks to pulse Redstone."
+        },
+        "remarks": [
+          "Sends a Redstone pulse at a particular location by creating a temporary Redstone block. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "pulseRedstone(blockLocation: minecraftserver.Vector3, duration: number): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, duration: number",
+      "return": "void"
+    },
+    "relativeBlockLocation": {
+      "comment": {
+        "params": {
+          "worldBlockLocation": "Absolute location in the world to convert to a relative location."
+        },
+        "remarks": [
+          "From a BlockLocation, returns a new BlockLocation with coordinates relative to the current GameTest structure block. For example, the relative coordinates for the block above the structure block are (0, 1, 0). Rotation of the GameTest structure is also taken into account."
+        ],
+        "returns": "A location relative to the GameTest command block.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "relativeBlockLocation(worldBlockLocation: minecraftserver.Vector3): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "worldBlockLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Vector3"
+    },
+    "relativeLocation": {
+      "comment": {
+        "params": {
+          "worldLocation": "Absolute location in the world to convert to a relative location."
+        },
+        "remarks": [
+          "From a location, returns a new location with coordinates relative to the current GameTest structure block. For example, the relative coordinates for the block above the structure block are (0, 1, 0). Rotation of the GameTest structure is also taken into account. This function can't be called in read-only mode."
+        ],
+        "returns": "A location relative to the GameTest command block.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "relativeLocation(worldLocation: minecraftserver.Vector3): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "worldLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Vector3"
+    },
+    "removeSimulatedPlayer": {
+      "comment": {
+        "params": {
+          "simulatedPlayer": "Simulated player to remove."
+        },
+        "remarks": [
+          "Removes a simulated player from the world. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "removeSimulatedPlayer(simulatedPlayer: SimulatedPlayer): void",
+      "kind": "public",
+      "param": "simulatedPlayer: SimulatedPlayer",
+      "return": "void"
+    },
+    "rotateDirection": {
+      "comment": {
+        "params": {
+          "direction": "Direction to translate into a direction relative to the GameTest facing. Passing in Direction.south will return the test direction; Passing in Direction.north will return the opposite of the test direction, and so on."
+        },
+        "remarks": [
+          "Returns a relative direction given the current rotation of the current test. Passing in Direction.south will return the test direction; Passing in Direction.north will return the opposite of the test direction, and so on. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "rotateDirection(direction: minecraftserver.Direction): minecraftserver.Direction",
+      "kind": "public",
+      "param": "direction: minecraftserver.Direction",
+      "return": "minecraftserver.Direction"
+    },
+    "rotateVector": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "rotateVector(vector: minecraftserver.Vector3): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "vector: minecraftserver.Vector3",
+      "return": "minecraftserver.Vector3"
+    },
+    "runAfterDelay": {
+      "comment": {
+        "params": {
+          "delayTicks": "Number of ticks to delay before running the specified callback.",
+          "callback": "Callback function to execute."
+        },
+        "remarks": [
+          "Runs a specific callback after a specified delay of ticks This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "runAfterDelay(delayTicks: number, callback: () => void): void",
+      "kind": "public",
+      "param": "delayTicks: number, callback: () => void",
+      "return": "void"
+    },
+    "runAtTickTime": {
+      "comment": {
+        "params": {
+          "tick": "Tick (after the start of the GameTest) to run the callback at.",
+          "callback": "Callback function to execute."
+        },
+        "remarks": [
+          "Runs the given callback after a delay of _tick_ ticks from the start of the GameTest. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "runAtTickTime(tick: number, callback: () => void): void",
+      "kind": "public",
+      "param": "tick: number, callback: () => void",
+      "return": "void"
+    },
+    "setBlockPermutation": {
+      "comment": {
+        "params": {
+          "blockData": "Permutation that contains the configuration data for a block.",
+          "blockLocation": "Location of the block to set."
+        },
+        "remarks": [
+          "Sets a block to a particular configuration (a BlockPermutation) at the specified block location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "setBlockPermutation(blockData: minecraftserver.BlockPermutation, blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockData: minecraftserver.BlockPermutation, blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "setBlockType": {
+      "comment": {
+        "params": {
+          "blockType": "Type of block to set.",
+          "blockLocation": "Location of the block to set."
+        },
+        "remarks": [
+          "Sets a block to a particular type at the specified block location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "setBlockType(blockType: minecraftserver.BlockType | string, blockLocation: minecraftserver.Vector3): void",
+      "kind": "public",
+      "param": "blockType: minecraftserver.BlockType | string, blockLocation: minecraftserver.Vector3",
+      "return": "void"
+    },
+    "setFluidContainer": {
+      "comment": {
+        "params": {
+          "location": "Location of the fluid container block.",
+          "type": "Type of fluid to set. See {@link"
+        },
+        "remarks": [
+          "For blocks that are fluid containers - like a cauldron - changes the type of fluid within that container. This function can't be called in read-only mode."
+        ],
+        "minecraft/server-gametest.FluidType}": "a list of values.",
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "setFluidContainer(location: minecraftserver.Vector3, type: minecraftserver.FluidType): void",
+      "kind": "public",
+      "param": "location: minecraftserver.Vector3, type: minecraftserver.FluidType",
+      "return": "void"
+    },
+    "setTntFuse": {
+      "comment": {
+        "params": {
+          "entity": "Entity that is explodable.",
+          "fuseLength": "Length of time, in ticks, before the entity explodes."
+        },
+        "remarks": [
+          "Sets the fuse of an explodable entity. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "setTntFuse(entity: minecraftserver.Entity, fuseLength: number): void",
+      "kind": "public",
+      "param": "entity: minecraftserver.Entity, fuseLength: number",
+      "return": "void"
+    },
+    "spawn": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to create. If no namespace is provided, 'minecraft:' is assumed. Note that an optional initial spawn event can be specified between less than/greater than signs (e.g., namespace:entityType<spawnEvent>)."
+        },
+        "remarks": [
+          "Spawns an entity at a location. This function can't be called in read-only mode."
+        ],
+        "returns": "The spawned entity. If the entity cannot be spawned, returns undefined.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}",
+        "example": "```typescript test.spawn(\"minecraft:pig<minecraft:ageable_grow_up>\", { x: 1, y: 2, z: 1 }); ```"
+      },
+      "match": "spawn(entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3): minecraftserver.Entity",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Entity"
+    },
+    "spawnAtLocation": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to create. If no namespace is provided, 'minecraft:' is assumed. Note that an optional initial spawn event can be specified between less than/greater than signs (e.g., namespace:entityType<spawnEvent>)."
+        },
+        "remarks": [
+          "Spawns an entity at a location. This function can't be called in read-only mode."
+        ],
+        "returns": "The spawned entity. If the entity cannot be spawned, returns undefined.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}",
+        "example": "```typescript test.spawn(\"minecraft:pig<minecraft:ageable_grow_up>\", { x: 1.5, y: 2, z: 1.5 }); ```"
+      },
+      "match": "spawnAtLocation(entityTypeIdentifier: string, location: minecraftserver.Vector3): minecraftserver.Entity",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string, location: minecraftserver.Vector3",
+      "return": "minecraftserver.Entity"
+    },
+    "spawnItem": {
+      "comment": {
+        "params": {
+          "itemStack": "ItemStack that describes the item entity to create.",
+          "location": "Location to create the item entity at."
+        },
+        "remarks": [
+          "Spawns an item entity at a specified location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}",
+        "example": "```typescript const oneEmerald = new ItemStack(MinecraftItemTypes.Emerald, 1, 0); const fiveEmeralds = new ItemStack(MinecraftItemTypes.Emerald, 5, 0); test.spawnItem(oneEmerald, { x: 3.5, y: 3, z: 1.5 }); test.spawnItem(fiveEmeralds, { x: 1.5, y: 3, z: 1.5 }); ```"
+      },
+      "match": "spawnItem(itemStack: minecraftserver.ItemStack, location: minecraftserver.Vector3): minecraftserver.Entity",
+      "kind": "public",
+      "param": "itemStack: minecraftserver.ItemStack, location: minecraftserver.Vector3",
+      "return": "minecraftserver.Entity"
+    },
+    "spawnSimulatedPlayer": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location where to spawn the simulated player.",
+          "name": "Name to give the new simulated player."
+        },
+        "remarks": [
+          "Creates a new simulated player within the world. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "spawnSimulatedPlayer(blockLocation: minecraftserver.Vector3,name?: string,gameMode?: minecraftserver.GameMode,): SimulatedPlayer",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3,name?: string,gameMode?: minecraftserver.GameMode,",
+      "return": "SimulatedPlayer"
+    },
+    "spawnWithoutBehaviors": {
+      "comment": {
+        "params": {
+          "blockLocation": "Location where the entity should be spawned."
+        },
+        "remarks": [
+          "Spawns an entity at a location without any AI behaviors. This method is frequently used in conjunction with methods like .walkTo to create predictable mob actions. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "spawnWithoutBehaviors(entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3): minecraftserver.Entity",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string, blockLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Entity"
+    },
+    "spawnWithoutBehaviorsAtLocation": {
+      "comment": {
+        "params": {
+          "location": "Location where the entity should be spawned."
+        },
+        "remarks": [
+          "Spawns an entity at a location without any AI behaviors. This method is frequently used in conjunction with methods like .walkTo to create predictable mob actions. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "spawnWithoutBehaviorsAtLocation(entityTypeIdentifier: string,location: minecraftserver.Vector3,): minecraftserver.Entity",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,location: minecraftserver.Vector3,",
+      "return": "minecraftserver.Entity"
+    },
+    "spreadFromFaceTowardDirection": {
+      "comment": {
+        "params": {
+          "blockLocation": "BlockLocation containing a multiface block.",
+          "fromFace": "Face to spread from. This face must already be set.",
+          "direction": "Direction to spread. Use the Minecraft.Direction enum to specify a direction."
+        },
+        "remarks": [
+          "Tests that a particular item entity is present at a particular location. If not, an exception is thrown. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}",
+        "example": "```typescript test.spreadFromFaceTowardDirection({ x: 1, y: 2, z: 1 }, Direction.south, Direction.down); ```"
+      },
+      "match": "spreadFromFaceTowardDirection(blockLocation: minecraftserver.Vector3,fromFace: minecraftserver.Direction,direction: minecraftserver.Direction,): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3,fromFace: minecraftserver.Direction,direction: minecraftserver.Direction,",
+      "return": "void"
+    },
+    "startSequence": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Creates a new GameTestSequence - A set of steps that play out sequentially within a GameTest. This function can't be called in read-only mode."
+        ],
+        "returns": "A new GameTestSequence with chaining methods that facilitate creating a set of steps."
+      },
+      "match": "startSequence(): GameTestSequence",
+      "kind": "public",
+      "param": "",
+      "return": "GameTestSequence"
+    },
+    "succeed": {
+      "comment": {
+        "params": {},
+        "remarks": [
+          "Marks the current test as a success case. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeed(): void",
+      "kind": "public",
+      "param": "",
+      "return": "void"
+    },
+    "succeedIf": {
+      "comment": {
+        "params": {
+          "callback": "Callback function that runs. If the function runs successfully, the test is marked as a success. Typically, this function will have .assertXyz method calls within it."
+        },
+        "remarks": [
+          "Runs the given callback. If the callback does not throw an exception, the test is marked as a success. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeedIf(callback: () => void): void",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "void"
+    },
+    "succeedOnTick": {
+      "comment": {
+        "params": {
+          "tick": "Tick after the start of the GameTest to mark the test as successful."
+        },
+        "remarks": [
+          "Marks the test as a success at the specified tick. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeedOnTick(tick: number): void",
+      "kind": "public",
+      "param": "tick: number",
+      "return": "void"
+    },
+    "succeedOnTickWhen": {
+      "comment": {
+        "params": {
+          "tick": "Tick after the start of the GameTest to run the testing callback at.",
+          "callback": "Callback function that runs. If the function runs successfully, the test is marked as a success."
+        },
+        "remarks": [
+          "Runs the given callback at _tick_ ticks after the start of the test. If the callback does not throw an exception, the test is marked as a failure. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeedOnTickWhen(tick: number, callback: () => void): void",
+      "kind": "public",
+      "param": "tick: number, callback: () => void",
+      "return": "void"
+    },
+    "succeedWhen": {
+      "comment": {
+        "params": {
+          "callback": "Testing callback function that runs. If the function runs successfully, the test is marked as a success."
+        },
+        "remarks": [
+          "Runs the given callback every tick. When the callback successfully executes, the test is marked as a success. Specifically, the test will succeed when the callback does not throw an exception. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors.",
+        "example": "```typescript gt.register(\"StarterTests\", \"simpleMobTest\", (test: gt.Test) => { const attackerId = \"fox\"; const victimId = \"chicken\"; test.spawn(attackerId, { x: 5, y: 2, z: 5 }); test.spawn(victimId, { x: 2, y: 2, z: 2 }); test.assertEntityPresentInArea(victimId, true); test.succeedWhen(() => { test.assertEntityPresentInArea(victimId, false); }); }) .maxTicks(400) .structureName(\"gametests:mediumglass\"); ```"
+      },
+      "match": "succeedWhen(callback: () => void): void",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "void"
+    },
+    "succeedWhenBlockPresent": {
+      "comment": {
+        "params": {
+          "blockType": "Type of block to test for.",
+          "blockLocation": "Location of the block to test at.",
+          "isPresent": "If true, this function tests whether a block of the specified type is present. If false, tests that a block of the specified type is not present."
+        },
+        "remarks": [
+          "Depending on the condition of isPresent, tests for the presence of a block of a particular type on every tick. When the specified block of a type is found or not found (depending on isPresent), the test is marked as a success. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "succeedWhenBlockPresent(blockType: minecraftserver.BlockType | string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "blockType: minecraftserver.BlockType | string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,",
+      "return": "void"
+    },
+    "succeedWhenEntityHasComponent": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to look for. If no namespace is specified, 'minecraft:' is assumed.",
+          "componentIdentifier": "Type of component to test for the presence of. If no namespace is specified, 'minecraft:' is assumed.",
+          "blockLocation": "Block location of the entity to test.",
+          "hasComponent": "If true, this function tests for the presence of a component. If false, this function tests for the lack of a component."
+        },
+        "remarks": [
+          "Tests for the presence of a component on every tick. Depending on the value of hasComponent, when the specified component is found, the test is marked as a success. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeedWhenEntityHasComponent(entityTypeIdentifier: string,componentIdentifier: string,blockLocation: minecraftserver.Vector3,hasComponent: boolean,): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,componentIdentifier: string,blockLocation: minecraftserver.Vector3,hasComponent: boolean,",
+      "return": "void"
+    },
+    "succeedWhenEntityPresent": {
+      "comment": {
+        "params": {
+          "entityTypeIdentifier": "Type of entity to test for (e.g., 'minecraft:skeleton'). If an entity namespace is not specified, 'minecraft:' is assumed.",
+          "blockLocation": "Location of the entity to test for.",
+          "isPresent": "If true, this function tests whether an entity of the specified type is present. If false, tests that an entity of the specified type is not present."
+        },
+        "remarks": [
+          "Depending on the value of isPresent, tests for the presence of an entity on every tick. When an entity of the specified type is found or not found (depending on isPresent), the test is marked as a success. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors."
+      },
+      "match": "succeedWhenEntityPresent(entityTypeIdentifier: string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,): void",
+      "kind": "public",
+      "param": "entityTypeIdentifier: string,blockLocation: minecraftserver.Vector3,isPresent?: boolean,",
+      "return": "void"
+    },
+    "triggerInternalBlockEvent": {
+      "comment": {
+        "params": {
+          "event": "Event to trigger. Valid values include minecraft:drip, minecraft:grow_stalagtite, minecraft:grow_stalagmite, minecraft:grow_up, minecraft:grow_down and minecraft:grow_sideways."
+        },
+        "remarks": [
+          "Triggers a block event from a fixed list of available block events. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "triggerInternalBlockEvent(blockLocation: minecraftserver.Vector3, event: string, eventParameters?: number[]): void",
+      "kind": "public",
+      "param": "blockLocation: minecraftserver.Vector3, event: string, eventParameters?: number[]",
+      "return": "void"
+    },
+    "until": {
+      "comment": {
+        "params": {
+          "callback": "Function with code to evaluate."
+        },
+        "remarks": [
+          "This asynchronous function will wait until the code in the specified callback successfully completes. until can be used in conjunction with .assert functions to evaluate that a condition is true. This function can't be called in read-only mode."
+        ]
+      },
+      "match": "until(callback: () => void): Promise<void>",
+      "kind": "public",
+      "param": "callback: () => void",
+      "return": "Promise<void>"
+    },
+    "walkTo": {
+      "comment": {
+        "params": {
+          "mob": "Mob entity to give orders to.",
+          "blockLocation": "Location where the entity should be walk to.",
+          "speedModifier": "Adjustable modifier to the mob's walking speed."
+        },
+        "remarks": [
+          "Forces a mob to walk to a particular location. Usually used in conjunction with methods like .spawnWithoutBehaviors to have more predictable mob behaviors. Mobs will stop navigation as soon as they intersect the target location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "walkTo(mob: minecraftserver.Entity, blockLocation: minecraftserver.Vector3, speedModifier?: number): void",
+      "kind": "public",
+      "param": "mob: minecraftserver.Entity, blockLocation: minecraftserver.Vector3, speedModifier?: number",
+      "return": "void"
+    },
+    "walkToLocation": {
+      "comment": {
+        "params": {
+          "mob": "Mob entity to give orders to.",
+          "location": "Location where the entity should be walk to.",
+          "speedModifier": "Adjustable modifier to the mob's walking speed."
+        },
+        "remarks": [
+          "Forces a mob to walk to a particular location. Usually used in conjunction with methods like .spawnWithoutBehaviors to have more predictable mob behaviors. Mobs will stop navigation as soon as they intersect the target location. This function can't be called in read-only mode."
+        ],
+        "throws": "function can throw errors. {@link GameTestError}"
+      },
+      "match": "walkToLocation(mob: minecraftserver.Entity, location: minecraftserver.Vector3, speedModifier?: number): void",
+      "kind": "public",
+      "param": "mob: minecraftserver.Entity, location: minecraftserver.Vector3, speedModifier?: number",
+      "return": "void"
+    },
+    "worldBlockLocation": {
+      "comment": {
+        "params": {
+          "relativeBlockLocation": "Location relative to the GameTest command block."
+        },
+        "remarks": [
+          "From a BlockLocation with coordinates relative to the GameTest structure block, returns a new BlockLocation with coordinates relative to world. Rotation of the GameTest structure is also taken into account."
+        ],
+        "returns": "An absolute location relative to the GameTest command block.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "worldBlockLocation(relativeBlockLocation: minecraftserver.Vector3): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "relativeBlockLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Vector3"
+    },
+    "worldLocation": {
+      "comment": {
+        "params": {
+          "relativeLocation": "Location relative to the GameTest command block."
+        },
+        "remarks": [
+          "From a location with coordinates relative to the GameTest structure block, returns a new location with coordinates relative to world. Rotation of the GameTest structure is also taken into account."
+        ],
+        "returns": "An absolute location relative to the GameTest command block.",
+        "throws": "function can throw errors. {@link minecraftserver.GameTestError}"
+      },
+      "match": "worldLocation(relativeLocation: minecraftserver.Vector3): minecraftserver.Vector3",
+      "kind": "public",
+      "param": "relativeLocation: minecraftserver.Vector3",
+      "return": "minecraftserver.Vector3"
+    }
+  },
+  "GameTestError": {
+    "constructor": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "private constructor()",
+      "kind": "private",
+      "param": "",
+      "return": "GameTestError"
+    },
+    "messageParameters": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "messageParameters: string[]",
+      "kind": "public",
+      "param": "",
+      "return": "string[]"
+    },
+    "type": {
+      "comment": {
+        "params": {},
+        "remarks": []
+      },
+      "match": "type: GameTestErrorType",
+      "kind": "public",
+      "param": "",
+      "return": "GameTestErrorType"
     }
   }
 };

@@ -5,20 +5,9 @@ const fs = require("fs"),
 colors.enable();
 
 function debug(match) {
-    console.log(
-"\n===================================================".gray,
-"\n                  Regexp Result                    ".yellow,
-"\nGroup 0: ".green, match[0]?.brightCyan,
-"\nGroup 1: ".green, match[1]?.brightCyan,
-"\nGroup 2: ".green, match[2]?.brightCyan,
-"\nGroup 3: ".green, match[3]?.brightCyan,
-"\nGroup 4: ".green, match[4]?.brightCyan,
-"\nGroup 5: ".green, match[5]?.brightCyan,
-"\nGroup 6: ".green, match[6]?.brightCyan,
-"\nGroup 7: ".green, match[7]?.brightCyan,
-"\nGroup 8: ".green, match[8]?.brightCyan,
-"\n===================================================\n".gray
-    );
+    console.log("\n===================================================".gray, "\n                  Regexp Result                    ".yellow)
+    for (let i = 0; i < match.length; i ++) console.log(`Group ${i}:`.green, match[i]?.brightCyan);
+    console.log("\n===================================================\n".gray);
 }
 
 function optionalParser(match, $) {
@@ -44,7 +33,7 @@ async function init(filePath) {
     
     fileContent = fileContent.replace(/\/\/[\S\s]+?;/m, "").replace(/\r/g, "").replace(/\/\/ @ts-ignore Class inheritance allowed for native defined classes\n/g, "");
 
-    let regex = /^(\/\*[\s\S]+?\*\/|\/\/[\s\S]+?|\/\*[\s\S]+?$|)\s+export\s+(class|enum|function|interface)\s+(\w+|(\w+)\s+(extends|implements)\s+([<>:()\w]+))\s*{[\S\s]+?}$(?=\n{2,3})/gm;
+    let regex = /^(\/\*[\s\S]+?\*\/|\/\/[\s\S]+?|\/\*[\s\S]+?$|)\s+export\s+(class|enum|function|interface)\s+(\w+|(\w+)\s+(extends|implements)\s+([<>:()\w\.]+))\s*{[\S\s]+?}$(?=\n{2,}|;)/gm;
 
     let exportClass = {},
         exportEnum = {},
@@ -114,13 +103,19 @@ function nestedExtend(data, cur, root = true) {
 function mergeExtends(data) {
     let o = {};
     for (let key in data) {
-        if (!data[key].extends) {
+        if (!data[key].extends || data[key].extends === "Error") {
             o[key] = data[key];
             continue;
         }
-        if (data[key].extends === "Error") {
-            o[key] = data[key];
-            continue;
+        let s = data[key].extends.split(/\./);
+        
+        if (s.length > 1) {
+            data[key].extends = s.pop();
+            o[key] = {
+                comment: data[key].comment,
+                match: nestedExtend(data, data[key])
+            }
+            continue;  
         }
         o[key] = {
             comment: data[key].comment,
@@ -156,9 +151,24 @@ function enumSlitor(c) {
     /(?:^\s*)(\/\/[\s\S]+?$|\/\*[\s\S]+?\*\/$|)(?!\s+export)\s*(\S+?)\s*=\s*([\s\S]+?(?=,|^))/gm
 }
 
-async function DocReader(filePath) {
-    const d = await init(filePath);
-    const c = mergeExtends(d.class);
+function DocReader(filePath) {
+    return init(filePath);
+}
+
+async function main() {
+    console.time("Reading and compiling the document is completed in");
+    let versions = {
+          "server": require("./node_modules/@minecraft/server/package.json").version,
+          "server-ui": require("./node_modules/@minecraft/server-ui/package.json").version,
+          "server-gametest": require("./node_modules/@minecraft/server-gametest/package.json").version
+        };
+
+    const c = mergeExtends({
+        ...(await DocReader("./node_modules/@minecraft/server/index.d.ts")).class,
+        ...(await DocReader("./node_modules/@minecraft/server-ui/index.d.ts")).class,
+        ...(await DocReader("./node_modules/@minecraft/common/index.d.ts")).class,
+        ...(await DocReader("./node_modules/@minecraft/server-gametest/index.d.ts")).class,
+    });
 
     const o = {};
     for (let className in c) o[className] = methodSplitor(c[className], className);
@@ -179,22 +189,9 @@ async function DocReader(filePath) {
           o[key][prop].comment[d.tag] = d.description;
         }
       }
-      
     }
-    return o;
-}
-
-async function main() {
-    console.time("Reading and compiling the document is completed in");
-    let mc = await DocReader("./node_modules/@minecraft/server/index.d.ts"),
-        mcui = await DocReader("./node_modules/@minecraft/server-ui/index.d.ts"),
-        mccm = await DocReader("./node_modules/@minecraft/common/index.d.ts"),
-        versions = {
-          "server": require("./node_modules/@minecraft/server/package.json").version,
-          "server-ui": require("./node_modules/@minecraft/server-ui/package.json").version
-        };
     
-    fs.writeFileSync("./bp/scripts/modules/spinnet.js", "let Spinnet = " + JSON.stringify({versions, ...mc, ...mcui, ...mccm}, void 0, 2) + ";\nexport default Spinnet;", "utf-8");
+    fs.writeFileSync("./bp/scripts/modules/spinnet.js", "let Spinnet = " + JSON.stringify({versions, ...o}, void 0, 2) + ";\nexport default Spinnet;", "utf-8");
     
     console.timeEnd("Reading and compiling the document is completed in");
     console.info("Document version:");
