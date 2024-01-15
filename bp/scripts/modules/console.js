@@ -32,12 +32,9 @@ import Spinnet from "./spinnet.js";
 export class ScriptDocument {
   /**
    * Version of documents
-   * @type {{ server: string, "server-ui": string }}
+   * @type {Object}
    */
-  static version = {
-    server: "null",
-    "server-ui": "null"
-  };
+  static version = {};
 
   /**
    * Id for json ui
@@ -50,8 +47,8 @@ export class ScriptDocument {
    */
   hasSpinnet() {
     try {
-      if (Object.keys(Spinnet)[0] !== "versions") return false;
-      ScriptDocument.version = Spinnet.versions;
+      if (Object.keys(Spinnet)[0] !== "version") return false;
+      ScriptDocument.version = Spinnet.version;
     } catch { return false }
     return true;
   }
@@ -63,12 +60,14 @@ export class ScriptDocument {
   constructor(player) {
     if (!this.hasSpinnet()) throw new InternalError("Spinnet not found");
 
-    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(`\n§aWelcome to script document. Here are all the classes for the specified script version. Choose any class to view.\n\n§6Version§f:§a @minecraft/server§f: ${ScriptDocument.version.server}\n              §a@minecraft/server-ui§f: ${ScriptDocument.version["server-ui"]}\n§6Made by§f:§e Hao1337`);
+    this.body = `\n§aWelcome to script document. Here are all the modules for the specified script version. Choose any class to view.\n\n§6Version§f:§f ${JSON.colorStringify(ScriptDocument.version, void 0, 4)}\n\n§6Made by§f:§e Hao1337`;
+    this.rootForm = new mcui.ActionFormData().title(ScriptDocument.uiID).body(this.body);
 
-    this.allClass = Object.keys(Spinnet).slice(1);
+    this.modules = Object.keys(Spinnet.version);
+
     this.forms = [];
 
-    for (let c of this.allClass) this.rootForm.button(`§4${c}`);
+    for (let c of this.modules) this.rootForm.button(`§4${c}`);
     
     this.player = player;
     this.ret = false;
@@ -79,7 +78,12 @@ export class ScriptDocument {
    * @param {Object} data - Data to render.
    */
   render(data) {
-    if (data.render === "root") this.rootForm.show(this.player).then(r => this.outputHandle(r, data, false)), this.ret = false, this.lastPop = void 0;
+    //world.debug(data)
+    if (data.render === "root") this.rootForm.show(this.player).then(r => this.outputHandle(r, data, false)), this.ret = false, this.lastPop = void 0, this.class = void 0;
+    if (data.render === "module") {
+      let f = this.moduleReader(data);
+      f.form.show(this.player).then(r => this.outputHandle(r, f));
+    }
     if (data.render === "class") {
       let f = this.classReader(data);
       f.form.show(this.player).then(r => this.outputHandle(r, f));
@@ -96,7 +100,6 @@ export class ScriptDocument {
    * @param {boolean} [hasReturn=true] - Indicates if there's a return action.
    */
   outputHandle({canceled, selection}, data, hasReturn = true) {
-    try {
     if (canceled) return;
      if (hasReturn && selection === 0) {
       !this.ret && this.forms.pop();
@@ -108,10 +111,15 @@ export class ScriptDocument {
     
     let save;
     if (data.render === "root") save = {
-      render: "class",
-      name: this.allClass[selection]
+      render: "module",
+      name: this.modules[selection]
     }
     else selection--;
+    if (data.render === "module") save = {
+      render: "class",
+      name: data.nextFormData.classKeys[selection],
+      classData: data.nextFormData.classData
+    }
     if (data.render === "class") save = {
       render: "prop",
       ...data.nextFormData,
@@ -124,15 +132,39 @@ export class ScriptDocument {
 
     this.forms.push(save);
     this.render(save);
-    } catch (e) { world.debug(e) }
+  }
+  /**
+   * Displays details of a modules.
+   * @param {Object} param - Parameters for reading the modules.
+   * @returns {Object} Returns form data and render type for the modules.
+   */
+  moduleReader({name: moduleName}) {
+    if (!this.modules.includes(moduleName)) throw new InternalError(`Invalid module name: ${moduleName}`);
+   
+    let classData = Spinnet[moduleName],
+        form = new mcui.ActionFormData().title(ScriptDocument.uiID).body(this.body);
+
+    form.button("§tPrevious Page", "textures/ui/feedIcon.png");
+
+    let classKeys = [];
+    for (let c in classData) form.button(`§4${c}`), classKeys.push(c);
+
+    return {
+      nextFormData: {
+        classData,
+        classKeys
+      },
+      form,
+      render: "module"
+    }
   }
   /**
    * Reads and displays details of a specific class.
    * @param {Object} param - Parameters for reading the class.
    * @returns {Object} Returns form data and render type for the class.
    */
-  classReader({name: className}) {
-    let cS = Spinnet[className];
+  classReader({name: className, classData}) {
+    let cS = classData[className];
     if (!cS) throw new InternalError(`Class name does not match anything: ${className}`);
   
     let kind = {
@@ -382,7 +414,7 @@ export class ScriptConsole {
       input = input.replace(match[0], ScriptConsole.staticImport(match[0]));
     }
     
-    //world.debug(input)
+    world.debug(input);
     function timeStamp() {
       let date = new Date(),
           mili = date.getMilliseconds();

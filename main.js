@@ -126,7 +126,6 @@ function mergeExtends(data) {
 }
 
 function methodSplitor(c, n) {
-  //  let regex = /(?:^\s*)(\/\/[\s\S]+?$|\/\*[\s\S]+?\*\/$|)(?!\s+export)\s*((static\ readonly|static|private|readonly|)\s+(\w+|\[[\s\S]+?\])\s*(\(\)|\([\s\S]+?\)\s*?=>\s*?\w+\)|\([\s\S]+?\)|)\s*(\:\s*|=\s*|\?:\s*|)([\s\S]+?|)(;|))$/gm;
     let regex = /(?:^\s*)(\/\/[\s\S]+?$|\/\*[\s\S]+?\*\/$|)(?!\s+export)\s*((static\ readonly|static|private|readonly|)\s*(\w+?)\s*(|\(\)|\([\s\S]+?\))(;$|:|=)($|\s([\s\S]+?);))/gm;
     let o = {},
         match, cache;
@@ -151,26 +150,25 @@ function enumSlitor(c) {
     /(?:^\s*)(\/\/[\s\S]+?$|\/\*[\s\S]+?\*\/$|)(?!\s+export)\s*(\S+?)\s*=\s*([\s\S]+?(?=,|^))/gm
 }
 
-function DocReader(filePath) {
-    return init(filePath);
-}
-
 async function main() {
     console.time("Reading and compiling the document is completed in");
-    let versions = {
-          "server": require("./node_modules/@minecraft/server/package.json").version,
-          "server-ui": require("./node_modules/@minecraft/server-ui/package.json").version,
-          "server-gametest": require("./node_modules/@minecraft/server-gametest/package.json").version
-        };
 
-    const c = mergeExtends({
-        ...(await DocReader("./node_modules/@minecraft/server/index.d.ts")).class,
-        ...(await DocReader("./node_modules/@minecraft/server-ui/index.d.ts")).class,
-        ...(await DocReader("./node_modules/@minecraft/common/index.d.ts")).class,
-        ...(await DocReader("./node_modules/@minecraft/server-gametest/index.d.ts")).class,
-    });
+    const mc = (await init("./node_modules/@minecraft/server/index.d.ts")).class,
+          mcui = (await init("./node_modules/@minecraft/server-ui/index.d.ts")).class,
+          mccm = (await init("./node_modules/@minecraft/common/index.d.ts")).class,
+          mcgt = (await init("./node_modules/@minecraft/server-gametest/index.d.ts")).class;
 
-    const o = {};
+    const o = {},
+          w = {},
+          v = {},
+          f = {
+            "@minecraft/server": Object.keys(mc).sort(),
+            "@minecraft/server-ui": Object.keys(mcui).sort(),
+            "@minecraft/server-gametest": Object.keys(mcgt).sort(),
+            "@minecraft/common": Object.keys(mccm).sort()
+          },
+          c = mergeExtends({...mc, ...mcui, ...mccm, ...mcgt});
+
     for (let className in c) o[className] = methodSplitor(c[className], className);
 
     for (let key in o) {
@@ -190,12 +188,17 @@ async function main() {
         }
       }
     }
-    
-    fs.writeFileSync("./bp/scripts/modules/spinnet.js", "let Spinnet = " + JSON.stringify({versions, ...o}, void 0, 2) + ";\nexport default Spinnet;", "utf-8");
-    
+
+    for (let moduleName in f) {
+      w[moduleName] = Object.fromEntries(Object.entries(o).filter(([name]) => f[moduleName].includes(name)));
+      v[moduleName] = require(`./node_modules/${moduleName}/package.json`).version
+    }
+
+    fs.writeFileSync("./bp/scripts/modules/spinnet.js", "let Spinnet = " + JSON.stringify({version: v, ...w}, void 0, 2) + ";\nexport default Spinnet;", "utf-8");
+
     console.timeEnd("Reading and compiling the document is completed in");
-    console.info("Document version:");
-    console.info(versions);
+    console.info("Document version:", v);
+
     process.exit(0);
 }
 main();

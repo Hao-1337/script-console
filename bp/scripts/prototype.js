@@ -12,8 +12,7 @@ export function JsonString(d) {
             keyC = b ? "" : "§4∆ ",
             pIs = "Pending",
             cache;
-
-        for (let k in d) switch (d[k]?.constructor?.name) {
+        for (let k in d) switch (d[k]?.constructor?.name || Object.getPrototypeOf(d[k])?.constructor?.name) {
             case undefined:
             case null:
                 out[keyC + k] = `§6o ${d[k]}`
@@ -51,7 +50,7 @@ export function JsonString(d) {
                 out[keyC + k] = `§d [Promise ${pIs}]`;
                 break;
             case "Function":
-                cache = Spinnet[d.constructor?.name]?.[k];
+                cache = SPINNET[d.constructor?.name]?.[k];
                 out[keyC + k] = /function \(\) \{\n    \[native code\]\n\}/gm.exec(d[k].toString()) ? (cache ? `§e (${cache.param}) => ${cache.return}` : "§u [Native Function]") : ("§t$ " + d[k].toString().replace(/\s{4,}/g, ""));
                 break;
             case "GeneratorFunction":
@@ -60,7 +59,6 @@ export function JsonString(d) {
             default:
                out[keyC + (b ? "" : `§0${d[k].constructor.name}0§ `) + k] = JsonString(d[k]);
         }
-
         return out;
     } catch (e) {
         console.error(e)
