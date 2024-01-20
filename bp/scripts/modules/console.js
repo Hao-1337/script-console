@@ -414,7 +414,7 @@ export class ScriptConsole {
       input = input.replace(match[0], ScriptConsole.staticImport(match[0]));
     }
     
-    world.debug(input);
+    //world.debug(input);
     function timeStamp() {
       let date = new Date(),
           mili = date.getMilliseconds();
