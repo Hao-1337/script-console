@@ -50,7 +50,7 @@ export function JsonString(d) {
                 out[keyC + k] = `§d [Promise ${pIs}]`;
                 break;
             case "Function":
-                cache = SPINNET[d.constructor?.name]?.[k];
+                cache = Spinnet[d.constructor?.name]?.[k];
                 out[keyC + k] = /function \(\) \{\n    \[native code\]\n\}/gm.exec(d[k].toString()) ? (cache ? `§e (${cache.param}) => ${cache.return}` : "§u [Native Function]") : ("§t$ " + d[k].toString().replace(/\s{4,}/g, ""));
                 break;
             case "GeneratorFunction":

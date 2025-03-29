@@ -563,8 +563,8 @@ async function core(modules = {}, addons = {}) {try{
       world.beforeEvents.itemUse.subscribe(async ({source: player, itemStack: item}) => {
          if (player.typeId !== "minecraft:player" || !item) return;
          await new Promise(r => system.runTimeout(() => r(), 1));
-         if (item.typeId === "choigame:script_document_book") new ScriptDocument(player);
-         if (item.typeId === "choigame:script_console_book") new ScriptConsole(player);
+         if (item.typeId === "hao1337:script_document_book") new ScriptDocument(player);
+         if (item.typeId === "hao1337:script_console_book") new ScriptConsole(player);
       });
 
       timeMarker("§nScript console loaded!");
